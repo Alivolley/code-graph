@@ -2,6 +2,7 @@
 /* eslint-disable no-restricted-globals */
 import axios from 'axios';
 import Cookies from 'js-cookie';
+import toast from 'react-hot-toast';
 
 const baseURL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
@@ -11,7 +12,7 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(
    config => {
-      const accessToken = Cookies.get('yalfan_accessToken');
+      const accessToken = Cookies.get('roadGraph_accessToken');
       const lang = Cookies.get('NEXT_LOCALE');
 
       if (accessToken) {
@@ -28,24 +29,14 @@ axiosInstance.interceptors.request.use(
 axiosInstance.interceptors.response.use(
    res => {
       if (res?.data?.detail) {
-         const lang = Cookies.get('NEXT_LOCALE');
-
-         // toast.success(res?.data?.detail, {
-         //    style: {
-         //       direction: lang === 'en' ? 'ltr' : 'rtl',
-         //       fontFamily: lang === 'en' ? 'poppins' : lang === 'fa' ? 'dana' : lang === 'ar' ? 'rubik' : 'poppins',
-         //       lineHeight: '25px',
-         //    },
-         //    theme: 'colored',
-         //    autoClose: 5000,
-         // });
+         toast.success(res?.data?.detail);
       }
 
       return res;
    },
    async error => {
       console.log(error);
-      const refreshToken = Cookies.get('yalfan_refreshToken');
+      const refreshToken = Cookies.get('roadGraph_refreshToken');
       const originalReq = error.config;
 
       if (error?.response?.status === 401) {
@@ -54,32 +45,22 @@ axiosInstance.interceptors.response.use(
             const res = await axiosInstance.post('accounts/token/refresh/', {
                refresh: refreshToken,
             });
-            Cookies.set('yalfan_accessToken', res.data.access, { expires: 365 });
+            Cookies.set('roadGraph_accessToken', res.data.access, { expires: 365 });
             originalReq.headers.Authorization = `Bearer ${res.data.access}`;
             return axiosInstance(originalReq);
          }
-         Cookies.remove('yalfan_accessToken');
-         Cookies.remove('yalfan_refreshToken');
-         Cookies.remove('yalfan_isLogin');
+         Cookies.remove('roadGraph_accessToken');
+         Cookies.remove('roadGraph_refreshToken');
+         Cookies.remove('roadGraph_isLogin');
          location.href = '/login';
       } else if (error?.response?.status === 410) {
          // refresh expired
-         Cookies.remove('yalfan_accessToken');
-         Cookies.remove('yalfan_refreshToken');
-         Cookies.remove('yalfan_isLogin');
+         Cookies.remove('roadGraph_accessToken');
+         Cookies.remove('roadGraph_refreshToken');
+         Cookies.remove('roadGraph_isLogin');
          location.href = '/login';
       } else if (error?.response?.data?.detail) {
-         const lang = Cookies.get('NEXT_LOCALE');
-
-         // toast.error(error?.response?.data?.detail, {
-         //    style: {
-         //       direction: lang === 'en' ? 'ltr' : 'rtl',
-         //       fontFamily: lang === 'en' ? 'poppins' : lang === 'fa' ? 'dana' : lang === 'ar' ? 'rubik' : 'poppins',
-         //       lineHeight: '25px',
-         //    },
-         //    theme: 'colored',
-         //    autoClose: 5000,
-         // });
+         toast.error(error?.response?.data?.detail);
       }
 
       return Promise.reject(error);

@@ -3,10 +3,20 @@
 @tailwind utilities;
 
 @layer {
-   /* @font-face {
-      font-family: 'dana';
-     src: url('../assets/fonts/DanaFaNum-Regular.ttf') format('truetype');
-   } */
+   @font-face {
+      font-family: 'almaraiRegular';
+      src: url('../assets/fonts/Almarai-Regular.ttf') format('truetype');
+   }
+
+   @font-face {
+      font-family: 'almaraiBold';
+      src: url('../assets/fonts/Almarai-Bold.ttf') format('truetype');
+   }
+
+   @font-face {
+      font-family: 'almaraiExtraBold';
+      src: url('../assets/fonts/Almarai-ExtraBold.ttf') format('truetype');
+   }
 
    html {
       scroll-behavior: smooth;

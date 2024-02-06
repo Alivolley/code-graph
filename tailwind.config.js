@@ -28,7 +28,9 @@ module.exports = {
          },
 
          fontFamily: {
-            // dana: 'dana',
+            almaraiRegular: 'almaraiRegular',
+            almaraiBold: 'almaraiBold',
+            almaraiExtraBold: 'almaraiExtraBold',
          },
          borderRadius: {
             10: '10px',

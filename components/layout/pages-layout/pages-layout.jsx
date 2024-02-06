@@ -9,11 +9,7 @@ function PagesLayout({ children, dir, language }) {
    const { pathname } = useRouter();
 
    return (
-      <div
-         dir={dir}
-         // className={language === 'en' ? 'font-poppins' : language === 'fa' ? 'font-dana' : 'font-rubik'}
-         id="pageLayout"
-      >
+      <div dir={dir} className="font-almaraiRegular">
          <RtlProvider isRtl={language !== 'en'}>
             {/* {pathname !== '/login' && !pathname.startsWith('/adminPanel') && ( */}
             <Header />

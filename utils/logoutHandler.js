@@ -4,12 +4,12 @@ import axiosInstance from '@/configs/axiosInstance';
 const logoutHandler = () => {
    axiosInstance
       .post('accounts/logout/', {
-         refresh: Cookies.get('yalfan_refreshToken'),
+         refresh: Cookies.get('roadGraph_refreshToken'),
       })
       .then(() => {
-         Cookies.remove('yalfan_accessToken');
-         Cookies.remove('yalfan_refreshToken');
-         Cookies.remove('yalfan_isLogin');
+         Cookies.remove('roadGraph_accessToken');
+         Cookies.remove('roadGraph_refreshToken');
+         Cookies.remove('roadGraph_isLogin');
          window.location.reload();
       });
 };

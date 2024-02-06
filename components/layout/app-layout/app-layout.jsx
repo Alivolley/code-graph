@@ -2,10 +2,13 @@ import Cookies from 'js-cookie';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { useSWRConfig } from 'swr';
-import { Toaster } from 'react-hot-toast';
+import toast, { ToastBar, Toaster } from 'react-hot-toast';
 
 // MUI
-import { Backdrop, ThemeProvider, createTheme } from '@mui/material';
+import { Backdrop, IconButton, ThemeProvider, createTheme } from '@mui/material';
+
+// Icons
+import { Add } from 'iconsax-react';
 
 // Components
 import PagesLayout from '../pages-layout/pages-layout';
@@ -51,7 +54,33 @@ function AppLayout({ children }) {
 
    return (
       <ThemeProvider theme={themeConfig}>
-         <Toaster />
+         <Toaster
+            position={locale === 'en' ? 'top-left' : 'top-right'}
+            toastOptions={{
+               style: { fontFamily: 'almaraiRegular', fontSize: '14px', direction: locale === 'en' ? 'ltr' : 'rtl' },
+               duration: 4000,
+            }}
+         >
+            {t => (
+               <ToastBar toast={t}>
+                  {({ icon, message }) => (
+                     <div className="flex items-center">
+                        {icon}
+                        {message}
+                        {t.type !== 'loading' && (
+                           <IconButton
+                              onClick={() => toast.dismiss(t.id)}
+                              className="!transition-all !duration-150 hover:!text-red-500"
+                              size="small"
+                           >
+                              <Add className="rotate-45" size="28" />
+                           </IconButton>
+                        )}
+                     </div>
+                  )}
+               </ToastBar>
+            )}
+         </Toaster>
          <Loading />
          <PagesLayout dir={direction} language={locale}>
             {children}

@@ -2,7 +2,7 @@ const getDesignTokens = (mode, direction, language) => ({
    direction,
 
    typography: {
-      // fontFamily: language === 'en' ? 'poppins' : language === 'fa' ? 'dana' : 'rubik',
+      fontFamily: 'almaraiRegular',
    },
 
    palette: {
@@ -17,7 +17,7 @@ const getDesignTokens = (mode, direction, language) => ({
       MuiDialog: {
          styleOverrides: {
             root: {
-               // fontFamily: language === 'en' ? 'poppins' : language === 'fa' ? 'dana' : 'rubik',
+               fontFamily: 'almaraiRegular',
             },
          },
       },
@@ -25,7 +25,7 @@ const getDesignTokens = (mode, direction, language) => ({
       MuiDrawer: {
          styleOverrides: {
             root: {
-               // fontFamily: language === 'en' ? 'poppins' : language === 'fa' ? 'dana' : 'rubik',
+               fontFamily: 'almaraiRegular',
             },
          },
       },
