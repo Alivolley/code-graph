@@ -1,5 +1,11 @@
 {
     "header": {
-        "Roadgraph": "رودگراف"
+        "Services": "سرویس ها",
+        "Projects": "پروژه ها",
+        "Blogs": "بلاگ ها",
+        "Prices": "قیمت ها",
+        "About us": "درباره ی ما",
+        "Contact us": "تماس با ما",
+        "Sign up / Login": "ورود / ثبت نام"
     }
 }

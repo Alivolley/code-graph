@@ -1,5 +1,11 @@
 {
     "header": {
-        "Roadgraph": "Roadgraph"
+        "Services": "Services",
+        "Projects": "Projects",
+        "Blogs": "Blogs",
+        "Prices": "Prices",
+        "About us": "About us",
+        "Contact us": "Contact us",
+        "Sign up / Login": "Sign up / Login"
     }
 }
