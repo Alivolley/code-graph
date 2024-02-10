@@ -22,6 +22,7 @@ import HeaderStyle from './header.style';
 
 function Header() {
    const [showMobileMenu, setShowMobileMenu] = useState(false);
+   const [hasBackGround, setHasBackGround] = useState(false);
 
    const t = useTranslations('header');
    const { locale, push, query, pathname, asPath } = useRouter();
@@ -34,9 +35,30 @@ function Header() {
       setShowMobileMenu(false);
    }, [pathname, query]);
 
+   const handleScroll = () => {
+      const currentPosition = window.scrollY;
+      if (currentPosition === 0) {
+         setHasBackGround(false);
+      } else {
+         setHasBackGround(true);
+      }
+   };
+
+   useEffect(() => {
+      window.addEventListener('scroll', handleScroll);
+
+      return () => {
+         window.removeEventListener('scroll', handleScroll);
+      };
+   }, []);
+
    return (
-      <header className="mx-auto max-w-[1440px] p-5 customMd:px-[60px] customMd:py-10">
-         <HeaderStyle className="hidden items-center justify-between customMd:flex">
+      <header
+         className={`fixed inset-x-0 top-0 p-5 transition-all duration-100 customMd:py-10 ${
+            hasBackGround ? 'bg-white customMd:py-3' : 'customMd:py-10'
+         }`}
+      >
+         <HeaderStyle className="mx-auto hidden max-w-[1440px] items-center justify-between customMd:flex customMd:px-[60px]">
             <div className="flex items-center gap-4 customLg:gap-9">
                <Link href="/">
                   <Image src={headerLogo} alt="header logo" />
