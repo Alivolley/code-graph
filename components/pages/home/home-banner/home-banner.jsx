@@ -22,7 +22,7 @@ function HomeBanner() {
 
    return (
       <div style={{ background: 'linear-gradient(80.33deg, #E6EBFA 7.96%, #F2F5FC 43.29%, #FFFFFF 98.56%)' }}>
-         <div className="mx-auto max-w-[1440px] p-5 pt-[91px] customMd:px-[60px] customMd:pt-[100px]">
+         <div className="mx-auto max-w-[1440px] px-5 pb-10 pt-[91px] customMd:px-[60px] customMd:pt-[100px]">
             <div className="flex flex-col lg:flex-row" dir="rtl">
                <div className="grow">
                   <Image src={bannerPic} alt="banner" className="size-full" />

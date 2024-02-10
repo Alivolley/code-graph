@@ -1,10 +1,12 @@
 // Components
 import HomeBanner from '@/components/pages/home/home-banner/home-banner';
+import HomeIntroduce from '@/components/pages/home/home-introduce/home-introduce';
 
 export default function Home() {
    return (
       <div>
          <HomeBanner />
+         <HomeIntroduce />
       </div>
    );
 }

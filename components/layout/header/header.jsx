@@ -54,7 +54,7 @@ function Header() {
 
    return (
       <header
-         className={`fixed inset-x-0 top-0 p-5 transition-all duration-100 customMd:py-10 ${
+         className={`fixed inset-x-0 top-0 z-10 p-5 transition-all duration-100 customMd:py-10 ${
             hasBackGround ? 'bg-white customMd:py-3' : 'customMd:py-10'
          }`}
       >
