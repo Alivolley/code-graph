@@ -1,3 +1,5 @@
+import { useTranslations } from 'next-intl';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -15,53 +17,55 @@ import pic3 from '@/assets/icons/HR.svg';
 import pic4 from '@/assets/icons/store.svg';
 
 function HomeBanner() {
+   const { locale } = useRouter();
+   const t = useTranslations('home');
+
    return (
       <div style={{ background: 'linear-gradient(80.33deg, #E6EBFA 7.96%, #F2F5FC 43.29%, #FFFFFF 98.56%)' }}>
          <div className="mx-auto max-w-[1440px] p-5 pt-[91px] customMd:px-[60px] customMd:pt-[100px]">
-            <div className="flex">
+            <div className="flex flex-col lg:flex-row" dir="rtl">
                <div className="grow">
                   <Image src={bannerPic} alt="banner" className="size-full" />
                </div>
-               <div className="mt-[70px] w-[450px]">
-                  <div className="font-bold leading-[73px]">
-                     <div className="flex items-center gap-3">
-                        <h1 className="text-5xl text-[#FD8266]">زندگی کاری</h1>
-                        <h1 className="text-[37px]">تو</h1>
-                        <h1 className="text-[37px] text-[#FD8266]">،</h1>
+               <div className="lg:mt-[70px] lg:w-[450px]" dir={locale === 'en' ? 'ltr' : 'rtl'}>
+                  <div className="text-center font-bold leading-[44px] lg:text-start lg:leading-[73px]">
+                     <div className="flex items-center justify-center gap-3 lg:justify-start">
+                        <h1 className="text-[28px] lg:text-[37px]">{t('Letter1')}</h1>
+                        <h1 className="text-[28px] text-[#FD8266] lg:text-5xl">{t('Letter2')}</h1>
+                        <h1 className="text-[28px] lg:text-[37px]">{t('Letter3')}</h1>
+                        <h1 className="text-[28px] text-[#FD8266] lg:text-[37px]">{t('comma')}</h1>
                      </div>
-                     <h1 className="text-[37px]">با پشتوانه تـلاش مـــــــا</h1>
+                     <h1 className="text-[28px] lg:text-[37px]">{t("powered by our life's work")}</h1>
                   </div>
-                  <p className="mt-6 text-base leading-[34px] text-[#576071]">
-                     لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها
-                     و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
-                     کاربردهای
+                  <p className="mt-6 text-center text-base leading-[26px] text-[#576071] lg:text-start lg:leading-[34px]">
+                     {t('lorem')}
                   </p>
-                  <div className="mt-6 flex items-center gap-[10px]">
+                  <div className="mt-6 flex flex-col gap-5 lg:flex-row lg:items-center lg:gap-[10px]">
                      <Link href="/">
                         <Button
                            color="customPink"
                            variant="contained"
+                           className="!w-full lg:!w-[174px]"
                            sx={{
                               height: 52,
-                              width: 174,
                               borderRadius: 57,
                               fontSize: 16,
                               ':hover': {
                                  backgroundColor: '#B46451',
                               },
                            }}
-                           endIcon={<ArrowLeft size="20" />}
+                           endIcon={<ArrowLeft size="20" {...(locale === 'en' && { className: 'rotate-180' })} />}
                         >
-                           شروع کنید
+                           {t('Get started')}
                         </Button>
                      </Link>
 
                      <Link href="/">
                         <Button
                            variant="contained"
+                           className="!w-full lg:!w-[153px]"
                            sx={{
                               height: 52,
-                              width: 153,
                               borderRadius: 57,
                               fontSize: 14,
                               backgroundColor: '#F1F3FB',
@@ -74,44 +78,36 @@ function HomeBanner() {
                            }}
                            startIcon={<DocumentText size="20" />}
                         >
-                           درباره ما
+                           {t('About us')}
                         </Button>
                      </Link>
                   </div>
                </div>
             </div>
 
-            <div className="mt-3 flex items-center justify-between rounded-3xl border border-solid border-[#AAAEB280] px-[18px] py-7">
-               <div className="flex max-w-[288px] flex-col items-center gap-[10px] px-[18px]">
+            <div className="mt-3 flex flex-nowrap items-center justify-between overflow-auto rounded-3xl border border-solid border-[#AAAEB280] px-[18px] py-7">
+               <div className="flex min-w-[215px] max-w-[288px] flex-col items-center gap-[10px] px-[18px]">
                   <Image src={pic4} alt="introduce" />
                   <h3 className="text-lg font-bold">Online shop</h3>
-                  <p className="text-center text-sm text-[#6F778A]">
-                     لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
-                  </p>
+                  <p className="text-center text-sm text-[#6F778A]">{t('lorem2')}</p>
                </div>
 
-               <div className="flex max-w-[288px] flex-col items-center gap-[10px] px-[18px]">
+               <div className="flex min-w-[215px] max-w-[288px] flex-col items-center gap-[10px] px-[18px]">
                   <Image src={pic3} alt="introduce" />
                   <h3 className="text-lg font-bold">HRM</h3>
-                  <p className="text-center text-sm text-[#6F778A]">
-                     لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
-                  </p>
+                  <p className="text-center text-sm text-[#6F778A]">{t('lorem2')}</p>
                </div>
 
-               <div className="flex max-w-[288px] flex-col items-center gap-[10px] px-[18px]">
+               <div className="flex min-w-[215px] max-w-[288px] flex-col items-center gap-[10px] px-[18px]">
                   <Image src={pic2} alt="introduce" />
                   <h3 className="text-lg font-bold">CRM</h3>
-                  <p className="text-center text-sm text-[#6F778A]">
-                     لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
-                  </p>
+                  <p className="text-center text-sm text-[#6F778A]">{t('lorem2')}</p>
                </div>
 
-               <div className="flex max-w-[288px] flex-col items-center gap-[10px] px-[18px]">
+               <div className="flex min-w-[215px] max-w-[288px] flex-col items-center gap-[10px] px-[18px]">
                   <Image src={pic1} alt="introduce" />
                   <h3 className="text-lg font-bold">Accounting</h3>
-                  <p className="text-center text-sm text-[#6F778A]">
-                     لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
-                  </p>
+                  <p className="text-center text-sm text-[#6F778A]">{t('lorem2')}</p>
                </div>
             </div>
          </div>

@@ -11,5 +11,16 @@
         "Redesign": "Redesign",
         "UiUx": "UiUx",
         "Website": "Website"
+    },
+    "home": {
+        "Letter1": "Your",
+        "Letter2": "life's work",
+        "Letter3": "",
+        "comma": ",",
+        "powered by our life's work": "powered by our life's work",
+        "lorem": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Egestas purus viverra accumsan in nisl nisi Arcu cursus vitae .",
+        "lorem2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do",
+        "Get started": "Get started",
+        "About us": "About us"
     }
 }
