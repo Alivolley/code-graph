@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
@@ -7,13 +8,21 @@ import Image from 'next/image';
 import { Button, IconButton } from '@mui/material';
 
 // Icons
-import { ArrowDown2, ProfileCircle } from 'iconsax-react';
+import { ArrowDown2, Calculator, ProfileCircle } from 'iconsax-react';
 
 // Assets
 import headerLogo from '@/assets/images/headerLogo.png';
 import menuSvg from '@/assets/icons/menu.svg';
 
+// Components
+import MobileMenu from '../mobile-menu/mobile-menu';
+
+// Styles
+import HeaderStyle from './header.style';
+
 function Header() {
+   const [showMobileMenu, setShowMobileMenu] = useState(false);
+
    const t = useTranslations('header');
    const { locale, push, query, pathname, asPath } = useRouter();
 
@@ -21,32 +30,187 @@ function Header() {
       push({ pathname, query }, asPath, { locale: locale === 'en' ? 'fa' : 'en' });
    };
 
+   useEffect(() => {
+      setShowMobileMenu(false);
+   }, [pathname, query]);
+
    return (
       <header className="mx-auto max-w-[1440px] p-5 customMd:px-[60px] customMd:py-10">
-         <div className="hidden items-center justify-between customMd:flex">
+         <HeaderStyle className="hidden items-center justify-between customMd:flex">
             <div className="flex items-center gap-4 customLg:gap-9">
                <Link href="/">
                   <Image src={headerLogo} alt="header logo" />
                </Link>
                <div className="flex items-center gap-3 customLg:gap-6">
-                  <div className="flex cursor-pointer items-center gap-2 text-[#3A3E4D] transition-all duration-150 hover:text-[#65A5FC]">
-                     <p className="text-xs customLg:text-sm">{t('Services')}</p>
-                     <ArrowDown2 size="15" />
+                  <div id="dropdownWrapper">
+                     <div className="flex cursor-pointer items-center gap-2 text-[#3A3E4D] transition-all duration-150 hover:text-[#65A5FC]">
+                        <p className="text-xs customLg:text-sm">{t('Services')}</p>
+                        <ArrowDown2 size="15" id="dropdownArrow" />
+                     </div>
+
+                     <div
+                        id="dropdownBox"
+                        className="flex w-[263px] items-center justify-between rounded-lg border-t-4 border-solid border-[#65A5FC] bg-white px-5 py-7"
+                     >
+                        <div className="flex flex-col gap-6 text-xs text-[#626E94]">
+                           <Link
+                              href="/"
+                              className="flex items-center gap-2 transition-all duration-200 hover:text-[#FD8266]"
+                           >
+                              <Calculator size="18" /> {t('Graphic')}
+                           </Link>
+                           <Link
+                              href="/"
+                              className="flex items-center gap-2 transition-all duration-200 hover:text-[#FD8266]"
+                           >
+                              <Calculator size="18" /> {t('Redesign')}
+                           </Link>
+                        </div>
+                        <div className="h-[73px] w-px bg-[#E4EAF0]" />
+                        <div className="flex flex-col gap-6 text-xs text-[#626E94]">
+                           <Link
+                              href="/"
+                              className="flex items-center gap-2 transition-all duration-200 hover:text-[#FD8266]"
+                           >
+                              <Calculator size="18" /> {t('UiUx')}
+                           </Link>
+                           <Link
+                              href="/"
+                              className="flex items-center gap-2 transition-all duration-200 hover:text-[#FD8266]"
+                           >
+                              <Calculator size="18" /> {t('Website')}
+                           </Link>
+                        </div>
+                     </div>
                   </div>
-                  <div className="flex cursor-pointer items-center gap-2 text-[#3A3E4D] transition-all duration-150 hover:text-[#65A5FC]">
-                     <p className="text-xs customLg:text-sm">{t('Projects')}</p>
-                     <ArrowDown2 size="15" />
+
+                  <div id="dropdownWrapper">
+                     <div className="flex cursor-pointer items-center gap-2 text-[#3A3E4D] transition-all duration-150 hover:text-[#65A5FC]">
+                        <p className="text-xs customLg:text-sm">{t('Projects')}</p>
+                        <ArrowDown2 size="15" id="dropdownArrow" />
+                     </div>
+
+                     <div
+                        id="dropdownBox"
+                        className="flex w-[263px] items-center justify-between rounded-lg border-t-4 border-solid border-[#65A5FC] bg-white px-5 py-7"
+                     >
+                        <div className="flex flex-col gap-6 text-xs text-[#626E94]">
+                           <Link
+                              href="/"
+                              className="flex items-center gap-2 transition-all duration-200 hover:text-[#FD8266]"
+                           >
+                              <Calculator size="18" /> {t('Graphic')}
+                           </Link>
+                           <Link
+                              href="/"
+                              className="flex items-center gap-2 transition-all duration-200 hover:text-[#FD8266]"
+                           >
+                              <Calculator size="18" /> {t('Redesign')}
+                           </Link>
+                        </div>
+                        <div className="h-[73px] w-px bg-[#E4EAF0]" />
+                        <div className="flex flex-col gap-6 text-xs text-[#626E94]">
+                           <Link
+                              href="/"
+                              className="flex items-center gap-2 transition-all duration-200 hover:text-[#FD8266]"
+                           >
+                              <Calculator size="18" /> {t('UiUx')}
+                           </Link>
+                           <Link
+                              href="/"
+                              className="flex items-center gap-2 transition-all duration-200 hover:text-[#FD8266]"
+                           >
+                              <Calculator size="18" /> {t('Website')}
+                           </Link>
+                        </div>
+                     </div>
                   </div>
-                  <div className="flex cursor-pointer items-center gap-2 text-[#3A3E4D] transition-all duration-150 hover:text-[#65A5FC]">
-                     <p className="text-xs customLg:text-sm">{t('Blogs')}</p>
-                     <ArrowDown2 size="15" />
+
+                  <div id="dropdownWrapper">
+                     <div className="flex cursor-pointer items-center gap-2 text-[#3A3E4D] transition-all duration-150 hover:text-[#65A5FC]">
+                        <p className="text-xs customLg:text-sm">{t('Blogs')}</p>
+                        <ArrowDown2 size="15" id="dropdownArrow" />
+                     </div>
+
+                     <div
+                        id="dropdownBox"
+                        className="flex w-[263px] items-center justify-between rounded-lg border-t-4 border-solid border-[#65A5FC] bg-white px-5 py-7"
+                     >
+                        <div className="flex flex-col gap-6 text-xs text-[#626E94]">
+                           <Link
+                              href="/"
+                              className="flex items-center gap-2 transition-all duration-200 hover:text-[#FD8266]"
+                           >
+                              <Calculator size="18" /> {t('Graphic')}
+                           </Link>
+                           <Link
+                              href="/"
+                              className="flex items-center gap-2 transition-all duration-200 hover:text-[#FD8266]"
+                           >
+                              <Calculator size="18" /> {t('Redesign')}
+                           </Link>
+                        </div>
+                        <div className="h-[73px] w-px bg-[#E4EAF0]" />
+                        <div className="flex flex-col gap-6 text-xs text-[#626E94]">
+                           <Link
+                              href="/"
+                              className="flex items-center gap-2 transition-all duration-200 hover:text-[#FD8266]"
+                           >
+                              <Calculator size="18" /> {t('UiUx')}
+                           </Link>
+                           <Link
+                              href="/"
+                              className="flex items-center gap-2 transition-all duration-200 hover:text-[#FD8266]"
+                           >
+                              <Calculator size="18" /> {t('Website')}
+                           </Link>
+                        </div>
+                     </div>
                   </div>
                   <div className="flex cursor-pointer items-center gap-2 text-[#3A3E4D] transition-all duration-150 hover:text-[#65A5FC]">
                      <p className="text-xs customLg:text-sm">{t('Prices')}</p>
                   </div>
-                  <div className="flex cursor-pointer items-center gap-2 text-[#3A3E4D] transition-all duration-150 hover:text-[#65A5FC]">
-                     <p className="text-xs customLg:text-sm">{t('About us')}</p>
-                     <ArrowDown2 size="15" />
+
+                  <div id="dropdownWrapper">
+                     <div className="flex cursor-pointer items-center gap-2 text-[#3A3E4D] transition-all duration-150 hover:text-[#65A5FC]">
+                        <p className="text-xs customLg:text-sm">{t('About us')}</p>
+                        <ArrowDown2 size="15" id="dropdownArrow" />
+                     </div>
+
+                     <div
+                        id="dropdownBox"
+                        className="flex w-[263px] items-center justify-between rounded-lg border-t-4 border-solid border-[#65A5FC] bg-white px-5 py-7"
+                     >
+                        <div className="flex flex-col gap-6 text-xs text-[#626E94]">
+                           <Link
+                              href="/"
+                              className="flex items-center gap-2 transition-all duration-200 hover:text-[#FD8266]"
+                           >
+                              <Calculator size="18" /> {t('Graphic')}
+                           </Link>
+                           <Link
+                              href="/"
+                              className="flex items-center gap-2 transition-all duration-200 hover:text-[#FD8266]"
+                           >
+                              <Calculator size="18" /> {t('Redesign')}
+                           </Link>
+                        </div>
+                        <div className="h-[73px] w-px bg-[#E4EAF0]" />
+                        <div className="flex flex-col gap-6 text-xs text-[#626E94]">
+                           <Link
+                              href="/"
+                              className="flex items-center gap-2 transition-all duration-200 hover:text-[#FD8266]"
+                           >
+                              <Calculator size="18" /> {t('UiUx')}
+                           </Link>
+                           <Link
+                              href="/"
+                              className="flex items-center gap-2 transition-all duration-200 hover:text-[#FD8266]"
+                           >
+                              <Calculator size="18" /> {t('Website')}
+                           </Link>
+                        </div>
+                     </div>
                   </div>
                   <div className="flex cursor-pointer items-center gap-2 text-[#3A3E4D] transition-all duration-150 hover:text-[#65A5FC]">
                      <p className="text-xs customLg:text-sm">{t('Contact us')}</p>
@@ -88,7 +252,7 @@ function Header() {
                   </Button>
                </Link>
             </div>
-         </div>
+         </HeaderStyle>
 
          <div className="flex items-center justify-between customMd:hidden">
             <div className="flex items-center gap-2">
@@ -115,11 +279,13 @@ function Header() {
                   <Image src={headerLogo} alt="header logo" className="size-full" />
                </div>
 
-               <IconButton>
+               <IconButton onClick={() => setShowMobileMenu(true)}>
                   <Image src={menuSvg} alt="menu" />
                </IconButton>
             </div>
          </div>
+
+         <MobileMenu open={showMobileMenu} onClose={() => setShowMobileMenu(false)} />
       </header>
    );
 }
