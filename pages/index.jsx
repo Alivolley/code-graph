@@ -1,4 +1,5 @@
 // Components
+import BoldProducts from '@/components/pages/home/bold-products/bold-products';
 import HomeBanner from '@/components/pages/home/home-banner/home-banner';
 import HomeIntroduce from '@/components/pages/home/home-introduce/home-introduce';
 
@@ -7,6 +8,7 @@ export default function Home() {
       <div>
          <HomeBanner />
          <HomeIntroduce />
+         <BoldProducts />
       </div>
    );
 }

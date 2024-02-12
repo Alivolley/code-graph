@@ -242,7 +242,7 @@ function Header() {
             <div className="flex items-center gap-4">
                <IconButton
                   sx={{
-                     fontSize: 14,
+                     fontSize: locale === 'en' ? 18 : 14,
                      border: '1px solid #FD8266',
                      color: '#FD8266',
                      width: 45,
@@ -254,7 +254,7 @@ function Header() {
                   }}
                   onClick={changeLanguage}
                >
-                  {locale.toLocaleUpperCase()}
+                  {locale === 'en' ? 'فا' : 'EN'}
                </IconButton>
                <Link href="/">
                   <Button
@@ -280,7 +280,7 @@ function Header() {
             <div className="flex items-center gap-2">
                <IconButton
                   sx={{
-                     fontSize: 12,
+                     fontSize: locale === 'en' ? 18 : 14,
                      border: '2px solid #FD8266',
                      color: '#FD8266',
                      width: 33,
@@ -288,7 +288,7 @@ function Header() {
                   }}
                   onClick={changeLanguage}
                >
-                  {locale.toLocaleUpperCase()}
+                  {locale === 'en' ? 'فا' : 'EN'}
                </IconButton>
                <div className="h-6 w-px bg-[#DEDEDE]" />
                <Link href="/" className="flex items-center justify-center">
