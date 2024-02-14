@@ -118,7 +118,7 @@ function BoldProducts() {
                <ProductCart />
             </div>
 
-            <Link href="/" className="mt-[50px] flex justify-center">
+            <Link href="/" className="mt-[50px] flex justify-center lg:mx-auto lg:w-fit">
                <Button
                   color="customPink"
                   variant="contained"
