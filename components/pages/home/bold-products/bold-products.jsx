@@ -12,6 +12,17 @@ import { ArrowLeft, Calculator, CallCalling, Shop, UserOctagon } from 'iconsax-r
 // Components
 import ProductCart from '@/components/templates/product-cart/product-cart';
 
+const categoryButtonStyle = {
+   borderRadius: '100px',
+   height: '100%',
+   whiteSpace: 'nowrap',
+   flexShrink: 0,
+   ':hover': {
+      backgroundColor: '#E5EFFD',
+      color: '#626E94',
+   },
+};
+
 function BoldProducts() {
    const [chosenCategory, setChosenCategory] = useState('graphic');
 
@@ -28,20 +39,16 @@ function BoldProducts() {
                {t('Every need you have for a business, codegeraph will take it')}
             </h2>
 
-            <div className="mt-9 flex h-[102px] flex-nowrap items-center gap-4 overflow-auto rounded-[100px] border-2 border-solid border-white bg-white p-4">
+            <div
+               className="mt-9 flex h-[70px] flex-nowrap items-center gap-4 overflow-auto rounded-[100px]
+             border-2 border-solid border-white bg-white px-4 py-[10px] customMd:h-[102px] customMd:p-4"
+            >
                <Button
                   startIcon={<Calculator size="24" />}
                   variant="contained"
-                  className="!px-10 !text-[18px] md:!flex-1 md:!px-0 md:!text-[20px]"
+                  className="!px-[46px] !text-[16px] md:!flex-1 md:!px-0 md:!text-[20px]"
                   sx={{
-                     borderRadius: '100px',
-                     height: '100%',
-                     whiteSpace: 'nowrap',
-                     flexShrink: 0,
-                     ':hover': {
-                        backgroundColor: '#E5EFFD',
-                        color: '#626E94',
-                     },
+                     ...categoryButtonStyle,
                      color: chosenCategory === 'graphic' ? '#fff' : '#626E94',
                      backgroundColor: chosenCategory === 'graphic' ? '#65A6FC' : '#F5F8FC',
                   }}
@@ -52,16 +59,9 @@ function BoldProducts() {
                <Button
                   startIcon={<UserOctagon size="24" />}
                   variant="contained"
-                  className="!px-10 !text-[18px] md:!flex-1 md:!px-0 md:!text-[20px]"
+                  className="!px-[46px] !text-[16px] md:!flex-1 md:!px-0 md:!text-[20px]"
                   sx={{
-                     borderRadius: '100px',
-                     height: '100%',
-                     whiteSpace: 'nowrap',
-                     flexShrink: 0,
-                     ':hover': {
-                        backgroundColor: '#E5EFFD',
-                        color: '#626E94',
-                     },
+                     ...categoryButtonStyle,
                      color: chosenCategory === 'webDevelop' ? '#fff' : '#626E94',
                      backgroundColor: chosenCategory === 'webDevelop' ? '#65A6FC' : '#F5F8FC',
                   }}
@@ -72,16 +72,9 @@ function BoldProducts() {
                <Button
                   startIcon={<CallCalling size="24" />}
                   variant="contained"
-                  className="!px-10 !text-[18px] md:!flex-1 md:!px-0 md:!text-[20px]"
+                  className="!px-[46px] !text-[16px] md:!flex-1 md:!px-0 md:!text-[20px]"
                   sx={{
-                     borderRadius: '100px',
-                     height: '100%',
-                     whiteSpace: 'nowrap',
-                     flexShrink: 0,
-                     ':hover': {
-                        backgroundColor: '#E5EFFD',
-                        color: '#626E94',
-                     },
+                     ...categoryButtonStyle,
                      color: chosenCategory === 'reDesign' ? '#fff' : '#626E94',
                      backgroundColor: chosenCategory === 'reDesign' ? '#65A6FC' : '#F5F8FC',
                   }}
@@ -92,16 +85,9 @@ function BoldProducts() {
                <Button
                   startIcon={<Shop size="24" />}
                   variant="contained"
-                  className="!px-10 !text-[18px] md:!flex-1 md:!px-0 md:!text-[20px]"
+                  className="!px-[46px] !text-[16px] md:!flex-1 md:!px-0 md:!text-[20px]"
                   sx={{
-                     borderRadius: '100px',
-                     height: '100%',
-                     whiteSpace: 'nowrap',
-                     flexShrink: 0,
-                     ':hover': {
-                        backgroundColor: '#E5EFFD',
-                        color: '#626E94',
-                     },
+                     ...categoryButtonStyle,
                      color: chosenCategory === 'uiux' ? '#fff' : '#626E94',
                      backgroundColor: chosenCategory === 'uiux' ? '#65A6FC' : '#F5F8FC',
                   }}

@@ -31,7 +31,7 @@ function HomeIntroduce() {
                         <p className="absolute inset-y-2 start-0 w-2 bg-[#FD8266] lg:start-[-30px]" />
                      </h3>
                   </div>
-                  <p className="mt-6 text-base leading-[26px] text-[#626E94] lg:leading-[34px]">{t('lorem3')}</p>
+                  <p className="mt-6 text-base leading-[30px] text-[#626E94] lg:leading-[34px]">{t('lorem3')}</p>
                   <div className="mt-7 flex flex-col gap-5 lg:mt-[52px] lg:flex-row lg:items-center lg:gap-[10px]">
                      <Link href="/">
                         <Button

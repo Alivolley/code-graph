@@ -31,10 +31,10 @@ function ValueDescription() {
                         <p className="absolute inset-y-2 start-0 w-2 bg-[#FD8266] lg:start-[-30px]" />
                      </h3>
                   </div>
-                  <p className="mt-2 text-base font-bold leading-[26px] text-[#626E94] lg:text-[18px] lg:leading-[34px]">
+                  <p className="mt-2 text-base font-bold leading-[30px] text-[#626E94] lg:text-[18px] lg:leading-[34px]">
                      {t('lorem4')}
                   </p>
-                  <p className="mt-2 text-sm leading-[26px] text-[#626E94] lg:text-base lg:leading-[34px]">
+                  <p className="mt-2 text-sm leading-[30px] text-[#626E94] lg:text-base lg:leading-[34px]">
                      {t('lorem')}
                   </p>
                   <div className="mt-10 flex flex-col gap-5 lg:mt-[27px] lg:flex-row lg:items-center lg:gap-[10px]">

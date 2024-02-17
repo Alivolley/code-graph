@@ -32,7 +32,7 @@ const socialButtonsStyles = {
 
 function Footer() {
    const { locale } = useRouter();
-   const t = useTranslations('home');
+   const t = useTranslations('footer');
 
    const sendEmail = e => {
       e?.preventDefault();
@@ -43,7 +43,7 @@ function Footer() {
          <div id="back">
             <div className="mx-auto flex max-w-[1440px] flex-col justify-between gap-9 px-5 py-12 customMd:flex-row customMd:items-center customMd:px-[60px] customMd:py-6">
                <p className="max-w-[542px] text-2xl font-bold leading-[46px] text-white customMd:text-3xl">
-                  شما آماده ساخت بهترین نسخه از کسب و کار خود هستید
+                  {t('Ready')}
                </p>
                <Link href="/">
                   <Button
@@ -76,11 +76,7 @@ function Footer() {
                         <div className="h-[51px] w-[110px] customMd:h-[31px] customMd:w-[67px]">
                            <Image src={headerLogo} alt="footer logo" className="size-full" />
                         </div>
-                        <p className="mt-4 text-xs leading-[30px]">
-                           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
-                           چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی
-                           مورد نیاز و کاربردهای متنوع با
-                        </p>
+                        <p className="mt-4 text-xs leading-[30px]">{t('lorem1')}</p>
                         <div className="mt-5 flex items-center gap-5">
                            <Link href="/">
                               <IconButton sx={socialButtonsStyles}>
@@ -110,8 +106,8 @@ function Footer() {
                         <Grid item xs={12} sm={7}>
                            <div>
                               <p className="relative text-xl font-bold">
-                                 لینک های سریع
-                                 <Image src={footerLine} alt="line" className="absolute bottom-[-12px] right-0" />
+                                 {t('Quick links')}
+                                 <Image src={footerLine} alt="line" className="absolute bottom-[-12px] start-0" />
                               </p>
                               <Grid container marginTop="37px">
                                  <Grid item xs={6}>
@@ -120,29 +116,45 @@ function Footer() {
                                           href="/"
                                           className="flex items-center gap-1 transition-all duration-150 hover:text-[#FD8266]"
                                        >
-                                          <Image src={footerArrow} alt="arrow" />
-                                          خانه
+                                          <Image
+                                             src={footerArrow}
+                                             alt="arrow"
+                                             {...(locale === 'en' && { className: 'rotate-180' })}
+                                          />
+                                          {t('Home')}
                                        </Link>
                                        <Link
                                           href="/"
                                           className="flex items-center gap-1 transition-all duration-150 hover:text-[#FD8266]"
                                        >
-                                          <Image src={footerArrow} alt="arrow" />
-                                          درباره ما
+                                          <Image
+                                             src={footerArrow}
+                                             alt="arrow"
+                                             {...(locale === 'en' && { className: 'rotate-180' })}
+                                          />
+                                          {t('About us')}
                                        </Link>
                                        <Link
                                           href="/"
                                           className="flex items-center gap-1 transition-all duration-150 hover:text-[#FD8266]"
                                        >
-                                          <Image src={footerArrow} alt="arrow" />
-                                          سرویس ها
+                                          <Image
+                                             src={footerArrow}
+                                             alt="arrow"
+                                             {...(locale === 'en' && { className: 'rotate-180' })}
+                                          />
+                                          {t('Services')}
                                        </Link>
                                        <Link
                                           href="/"
                                           className="flex items-center gap-1 transition-all duration-150 hover:text-[#FD8266]"
                                        >
-                                          <Image src={footerArrow} alt="arrow" />
-                                          پروژه ها
+                                          <Image
+                                             src={footerArrow}
+                                             alt="arrow"
+                                             {...(locale === 'en' && { className: 'rotate-180' })}
+                                          />
+                                          {t('Projects')}
                                        </Link>
                                     </div>
                                  </Grid>
@@ -152,22 +164,34 @@ function Footer() {
                                           href="/"
                                           className="flex items-center gap-1 transition-all duration-150 hover:text-[#FD8266]"
                                        >
-                                          <Image src={footerArrow} alt="arrow" />
-                                          سوالات پرتکرار
+                                          <Image
+                                             src={footerArrow}
+                                             alt="arrow"
+                                             {...(locale === 'en' && { className: 'rotate-180' })}
+                                          />
+                                          {t('FAQ')}
                                        </Link>
                                        <Link
                                           href="/"
                                           className="flex items-center gap-1 transition-all duration-150 hover:text-[#FD8266]"
                                        >
-                                          <Image src={footerArrow} alt="arrow" />
-                                          قیمت ها
+                                          <Image
+                                             src={footerArrow}
+                                             alt="arrow"
+                                             {...(locale === 'en' && { className: 'rotate-180' })}
+                                          />
+                                          {t('Prices')}
                                        </Link>
                                        <Link
                                           href="/"
                                           className="flex items-center gap-1 transition-all duration-150 hover:text-[#FD8266]"
                                        >
-                                          <Image src={footerArrow} alt="arrow" />
-                                          زیر مجموعه ها
+                                          <Image
+                                             src={footerArrow}
+                                             alt="arrow"
+                                             {...(locale === 'en' && { className: 'rotate-180' })}
+                                          />
+                                          {t('Subcategories')}
                                        </Link>
                                     </div>
                                  </Grid>
@@ -176,18 +200,22 @@ function Footer() {
                         </Grid>
                         <Grid item xs={12} sm={5}>
                            <p className="relative text-xl font-bold">
-                              بلاگ
-                              <Image src={footerLine} alt="line" className="absolute bottom-[-12px] right-0" />
+                              {t('Blog')}
+                              <Image src={footerLine} alt="line" className="absolute bottom-[-12px] start-0" />
                            </p>
 
-                           <div className="mt-[37px] flex max-w-[161px] flex-col gap-5 text-xs">
+                           <div className="mt-[37px] flex max-w-[150px] flex-col gap-5 text-xs">
                               <Link
                                  href="/"
                                  className="flex items-start gap-1 leading-[18px] transition-all duration-150 hover:text-[#FD8266]"
                               >
-                                 <Image src={footerArrow} alt="arrow" />
+                                 <Image
+                                    src={footerArrow}
+                                    alt="arrow"
+                                    {...(locale === 'en' && { className: 'rotate-180' })}
+                                 />
                                  <div>
-                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی</p>
+                                    <p>{t('Lorem2')}</p>
                                     <p className="text-10 text-[#626E94]">8 Nov, 2021</p>
                                  </div>
                               </Link>
@@ -195,9 +223,13 @@ function Footer() {
                                  href="/"
                                  className="flex items-start gap-1 leading-[18px] transition-all duration-150 hover:text-[#FD8266]"
                               >
-                                 <Image src={footerArrow} alt="arrow" />
+                                 <Image
+                                    src={footerArrow}
+                                    alt="arrow"
+                                    {...(locale === 'en' && { className: 'rotate-180' })}
+                                 />
                                  <div>
-                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی</p>
+                                    <p>{t('Lorem2')}</p>
                                     <p className="text-10 text-[#626E94]">8 Nov, 2021</p>
                                  </div>
                               </Link>
@@ -207,28 +239,24 @@ function Footer() {
                   </Grid>
                   <Grid item xs={12} md={4}>
                      <div className="mt-[83px] customMd:mt-0">
-                        <p className="mb-6 text-2xl font-bold customMd:text-base">خبرنامه</p>
+                        <p className="mb-6 text-2xl font-bold customMd:text-base">{t('Newsletter')}</p>
                         <form className="flex h-12 items-center rounded bg-white px-4" onSubmit={sendEmail}>
                            <input
                               type="text"
                               className="h-full grow border-none bg-transparent font-almaraiRegular text-sm outline-none placeholder:text-xs placeholder:text-black"
-                              placeholder="ایمیل خود را وارد کنید"
+                              placeholder={t('Enter your email')}
                            />
                            <IconButton type="submit" size="small" sx={{ ':hover': { backgroundColor: '#EBF3FF' } }}>
                               <Image src={emailIcon} alt="email" />
                            </IconButton>
                         </form>
 
-                        <p className="mt-3 text-sm leading-[30px]">
-                           در خبرنامه ما مشترک شوید و دنیایی از مزایای انحصاری را باز کنید. اولین کسی باشید که از آخرین
-                           محصولات، تبلیغات ویژه و به روز رسانی های هیجان انگیز ما مطلع می شوید. به جامعه ما از افراد
-                           همفکری بپیوندید که علاقه مشترکی به [شرکت/صنعت شما] دارند.
-                        </p>
+                        <p className="mt-3 text-sm leading-[30px]">{t('Newsletter description')}</p>
                      </div>
                   </Grid>
                </Grid>
 
-               <p className="mt-[103px] text-center text-xs customMd:mt-[62px]">© 2023 کلیه حقوق محفوظ است</p>
+               <p className="mt-[103px] text-center text-xs customMd:mt-[62px]">{t('Rights')}</p>
             </div>
          </div>
       </FooterStyle>
