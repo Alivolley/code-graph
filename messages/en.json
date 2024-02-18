@@ -61,6 +61,18 @@
         "Road": "Road",
         "Graph": "Graph",
         "This filed is required": "This filed is required",
-        "Please enter a valid email": "Please enter a valid email"
+        "Please enter a valid email": "Please enter a valid email",
+        "Sign up": "Sign up",
+        "Let’s get you all set up so you can access your personal account": "Let’s get you all set up so you can access your personal account",
+        "Username": "Username",
+        "Email": "Email",
+        "Password": "Password",
+        "Password must be greater than 8 character": "Password must be greater than 8 character",
+        "Confirm password": "Confirm password",
+        "Passwords are not match": "Passwords are not match",
+        "Create account": "Create account",
+        "Already have an account ?": "Already have an account ?",
+        "Login": "Login",
+        "Or login with": "Or login with"
     }
 }

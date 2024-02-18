@@ -61,6 +61,18 @@
         "Road": "رود",
         "Graph": "گراف",
         "This filed is required": "این فیلد اجباری است",
-        "Please enter a valid email": "لطفا یک ایمیل معتبر وارد کنید"
+        "Please enter a valid email": "لطفا یک ایمیل معتبر وارد کنید",
+        "Sign up": "ثبت نام",
+        "Let’s get you all set up so you can access your personal account": "بیایید حساب شما را راه اندازی کنیم تا بتوانید به حساب شخصی خود دسترسی داشته باشید",
+        "Username": "نام کاربری",
+        "Email": "ایمیل",
+        "Password": "رمز عبور",
+        "Password must be greater than 8 character": "رمز عبور باید حداقل ۸ حرف باشد",
+        "Confirm password": "تکرار رمز عبور",
+        "Passwords are not match": "رمز های عبور با یکدیگر همخوانی ندارند",
+        "Create account": "ساخت حساب",
+        "Already have an account ?": "از قبل حساب کاربری دارید ؟",
+        "Login": "ورود",
+        "Or login with": "یا ورود با"
     }
 }

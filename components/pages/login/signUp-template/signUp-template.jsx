@@ -32,16 +32,18 @@ function SignUpTemplate({ setChosenMethod, translator }) {
 
    return (
       <div className="mt-4 customMd:mt-[50px] customMd:pb-16">
-         <h2 className="text-4xl font-extrabold">ثبت نام</h2>
-         <p className="mt-4 text-[20px] leading-[30px] text-[#626E94]">
-            بیایید حساب شما را راه اندازی کنیم تا بتوانید به حساب شخصی خود دسترسی داشته باشید.
+         <h2 className="text-center text-2xl font-extrabold customMd:text-start customMd:text-4xl">
+            {translator('Sign up')}
+         </h2>
+         <p className="mt-4 text-center text-base leading-[30px] text-[#626E94] customMd:text-start customMd:text-[20px]">
+            {translator('Let’s get you all set up so you can access your personal account')}
          </p>
 
-         <form onSubmit={handleSubmit(formSubmit)} className="mt-10 space-y-[25px]">
+         <form onSubmit={handleSubmit(formSubmit)} className="mt-5 space-y-[25px] customMd:mt-10">
             <TextField
                fullWidth
                size="small"
-               label="نام کاربری"
+               label={translator('Username')}
                {...register('username', {
                   required: {
                      value: true,
@@ -55,7 +57,7 @@ function SignUpTemplate({ setChosenMethod, translator }) {
             <TextField
                fullWidth
                size="small"
-               label="ایمیل"
+               label={translator('Email')}
                {...register('email', {
                   required: {
                      value: true,
@@ -72,19 +74,19 @@ function SignUpTemplate({ setChosenMethod, translator }) {
             />
 
             <TextField
-               label="پسورد"
+               label={translator('Password')}
                fullWidth
                size="small"
                type={showPassword ? 'text' : 'password'}
                {...register('password', {
                   required: {
                      value: true,
-                     message: 'این فیلد اجباری است',
+                     message: translator('This filed is required'),
                   },
 
                   minLength: {
                      value: 8,
-                     message: 'رمز عبور باید حداقل ۸ حرف باشد',
+                     message: translator('Password must be greater than 8 character'),
                   },
                })}
                InputLabelProps={{ sx: { fontSize: 14 } }}
@@ -106,16 +108,16 @@ function SignUpTemplate({ setChosenMethod, translator }) {
             />
 
             <TextField
-               label="تکرار پسورد"
+               label={translator('Confirm password')}
                fullWidth
                size="small"
                type={showPassword ? 'text' : 'password'}
                {...register('confirmPassword', {
                   required: {
                      value: true,
-                     message: 'این فیلد اجباری است',
+                     message: translator('This filed is required'),
                   },
-                  validate: value => value === passwordValue || 'پسورد ها با یکدیگر همخوانی ندارند',
+                  validate: value => value === passwordValue || translator('Passwords are not match'),
                })}
                InputLabelProps={{ sx: { fontSize: 14 } }}
                error={!!errors?.confirmPassword}
@@ -152,23 +154,23 @@ function SignUpTemplate({ setChosenMethod, translator }) {
                   },
                }}
             >
-               ساخت حساب
+               {translator('Create account')}
             </LoadingButton>
          </form>
 
          <p className="mt-4 flex items-center justify-center gap-1 text-xs text-[#313131]">
-            از قبل حساب کاربری دارید ؟
+            {translator('Already have an account ?')}
             <Button
                sx={{ color: '#FD8266', fontWeight: 'bold', fontSize: 12, ':hover': { color: '#B46451' } }}
                onClick={() => setChosenMethod('login')}
             >
-               ورود
+               {translator('Login')}
             </Button>
          </p>
 
-         <div className="my-[25px] flex items-center justify-center gap-2">
+         <div className="my-4 flex items-center justify-center gap-2 customMd:my-[25px]">
             <div className="h-px grow bg-[#31313134]" />
-            <p className="text-10 text-[#31313180]">یا ورود با</p>
+            <p className="text-10 text-[#31313180]">{translator('Or login with')}</p>
             <div className="h-px grow bg-[#31313134]" />
          </div>
 
