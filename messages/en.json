@@ -56,5 +56,11 @@
         "Enter your email": "Enter your email",
         "Newsletter description": "Subscribe to our newsletter and unlock a world of exclusive benefits. Be the first to know about our latest products, special promotions, and exciting updates. Join our community of like-minded individuals who share a passion for [your niche/industry].",
         "Rights": "© 2023 All rights reserved"
+    },
+    "login": {
+        "Road": "Road",
+        "Graph": "Graph",
+        "This filed is required": "This filed is required",
+        "Please enter a valid email": "Please enter a valid email"
     }
 }

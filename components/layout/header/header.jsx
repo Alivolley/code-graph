@@ -256,7 +256,7 @@ function Header() {
                >
                   {locale === 'en' ? 'فا' : 'EN'}
                </IconButton>
-               <Link href="/">
+               <Link href="/login">
                   <Button
                      color="customPink"
                      variant="contained"
@@ -291,15 +291,15 @@ function Header() {
                   {locale === 'en' ? 'فا' : 'EN'}
                </IconButton>
                <div className="h-6 w-px bg-[#DEDEDE]" />
-               <Link href="/" className="flex items-center justify-center">
+               <Link href="/login" className="flex items-center justify-center">
                   <ProfileCircle size="35" color="#FD8266" />
                </Link>
             </div>
 
             <div className="flex items-center gap-3">
-               <div className="h-[35px] w-[76px]">
+               <Link href="/" className="h-[35px] w-[76px]">
                   <Image src={headerLogo} alt="header logo" className="size-full" />
-               </div>
+               </Link>
 
                <IconButton onClick={() => setShowMobileMenu(true)}>
                   <Image src={menuSvg} alt="menu" />

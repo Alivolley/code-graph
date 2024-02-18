@@ -8,6 +8,9 @@ const getDesignTokens = (mode, direction, language) => ({
    palette: {
       mode,
 
+      primary: {
+         main: '#65a5fc', // Replace this color with your desired primary color
+      },
       customPink: {
          main: '#FD8266',
       },
@@ -45,6 +48,19 @@ const getDesignTokens = (mode, direction, language) => ({
             root: {
                fontFamily: 'almaraiRegular',
             },
+         },
+      },
+
+      MuiTextField: {
+         styleOverrides: {
+            root: props => ({
+               '& .MuiOutlinedInput-root': {
+                  ...(props?.size === 'small' && {
+                     height: '45px',
+                  }),
+                  borderRadius: '47px',
+               },
+            }),
          },
       },
    },

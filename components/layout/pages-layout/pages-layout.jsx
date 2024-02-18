@@ -11,15 +11,11 @@ function PagesLayout({ children, dir, language }) {
    return (
       <div dir={dir} className="font-almaraiRegular">
          <RtlProvider isRtl={language !== 'en'}>
-            {/* {pathname !== '/login' && !pathname.startsWith('/adminPanel') && ( */}
-            <Header />
-            {/* )} */}
+            {pathname !== '/login' && <Header />}
 
             <main>{children}</main>
 
-            {/* {pathname !== '/login' && !pathname.startsWith('/adminPanel') && ( */}
-            <Footer />
-            {/* )} */}
+            {pathname !== '/login' && <Footer />}
          </RtlProvider>
       </div>
    );
