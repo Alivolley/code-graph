@@ -73,6 +73,10 @@
         "Create account": "Create account",
         "Already have an account ?": "Already have an account ?",
         "Login": "Login",
-        "Or login with": "Or login with"
+        "Or login with": "Or login with",
+        "Login to access your account": "Login to access your account",
+        "Email or username": "Email or username",
+        "Don't have any account ?": "Don't have any account ?",
+        "Forgot password": "Forgot password"
     }
 }

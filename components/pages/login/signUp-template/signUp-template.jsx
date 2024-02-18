@@ -4,7 +4,9 @@ import { useForm } from 'react-hook-form';
 // MUI
 import { Button, IconButton, InputAdornment, TextField } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
-import { Eye, EyeSlash, Google } from 'iconsax-react';
+
+// Icons
+import { Eye, EyeSlash } from 'iconsax-react';
 
 function SignUpTemplate({ setChosenMethod, translator }) {
    const [showPassword, setShowPassword] = useState(false);
@@ -31,7 +33,7 @@ function SignUpTemplate({ setChosenMethod, translator }) {
    };
 
    return (
-      <div className="mt-4 customMd:mt-[50px] customMd:pb-16">
+      <div className="mt-4 customMd:mt-[50px]">
          <h2 className="text-center text-2xl font-extrabold customMd:text-start customMd:text-4xl">
             {translator('Sign up')}
          </h2>
@@ -167,27 +169,6 @@ function SignUpTemplate({ setChosenMethod, translator }) {
                {translator('Login')}
             </Button>
          </p>
-
-         <div className="my-4 flex items-center justify-center gap-2 customMd:my-[25px]">
-            <div className="h-px grow bg-[#31313134]" />
-            <p className="text-10 text-[#31313180]">{translator('Or login with')}</p>
-            <div className="h-px grow bg-[#31313134]" />
-         </div>
-
-         <LoadingButton
-            fullWidth
-            sx={{
-               height: 45,
-               borderRadius: 47,
-               color: '#1976D2',
-               border: '1px solid #3868eb7a',
-               ':hover': {
-                  backgroundColor: '#ced2de81',
-               },
-            }}
-         >
-            <Google size="21" variant="Bold" />
-         </LoadingButton>
       </div>
    );
 }

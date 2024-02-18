@@ -3,6 +3,12 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
+// MUI
+import { LoadingButton } from '@mui/lab';
+
+// Icons
+import { Google } from 'iconsax-react';
+
 // Assets
 import loginPic from '@/assets/images/loginPic.png';
 import loginPicMobile from '@/assets/images/loginPicMobile.png';
@@ -14,10 +20,7 @@ import SignUpTemplate from '@/components/pages/login/signUp-template/signUp-temp
 import ForgotPasswordTemplate from '@/components/pages/login/forgot-password-template/forgot-password-template';
 
 function Login() {
-   const [chosenMethod, setChosenMethod] = useState(
-      // 'login'
-      'signUp'
-   );
+   const [chosenMethod, setChosenMethod] = useState('login');
    const t = useTranslations('login');
 
    return (
@@ -39,6 +42,29 @@ function Login() {
             ) : chosenMethod === 'password' ? (
                <ForgotPasswordTemplate setChosenMethod={setChosenMethod} translator={t} />
             ) : null}
+
+            <div className="mt-4 customMd:my-[25px] customMd:pb-16">
+               <div className="mb-4 flex items-center justify-center gap-2">
+                  <div className="h-px grow bg-[#31313134]" />
+                  <p className="text-10 text-[#31313180]">{t('Or login with')}</p>
+                  <div className="h-px grow bg-[#31313134]" />
+               </div>
+
+               <LoadingButton
+                  fullWidth
+                  sx={{
+                     height: 45,
+                     borderRadius: 47,
+                     color: '#1976D2',
+                     border: '1px solid #3868eb7a',
+                     ':hover': {
+                        backgroundColor: '#ced2de81',
+                     },
+                  }}
+               >
+                  <Google size="21" variant="Bold" />
+               </LoadingButton>
+            </div>
          </div>
          <div className="shrink-0 overflow-hidden rounded-[25px] border border-solid border-[#E4EAF0] bg-[#f5f8fc] customMd:w-[500px] customLg:w-[740px]">
             <Link href="/" className="my-3 flex flex-col items-center gap-2 customMd:hidden">
