@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -8,8 +9,13 @@ import { LoadingButton } from '@mui/lab';
 // Icons
 import { Eye, EyeSlash } from 'iconsax-react';
 
+// Apis
+import useLogin from '@/apis/auth/useLogin';
+
 function LoginTemplate({ setChosenMethod, translator }) {
    const [showPassword, setShowPassword] = useState(false);
+   const { trigger: loginTrigger, isMutating: loginIsMutating } = useLogin();
+   const { back } = useRouter();
 
    const {
       register,
@@ -24,7 +30,16 @@ function LoginTemplate({ setChosenMethod, translator }) {
    });
 
    const formSubmit = data => {
-      console.log(data);
+      const newData = {
+         email: data?.usernameOrEmail,
+         password: data?.password,
+      };
+
+      loginTrigger(newData, {
+         onSuccess: () => {
+            back();
+         },
+      });
    };
 
    return (
@@ -50,6 +65,7 @@ function LoginTemplate({ setChosenMethod, translator }) {
                InputLabelProps={{ sx: { fontSize: 14 } }}
                error={!!errors?.usernameOrEmail}
                helperText={errors?.usernameOrEmail?.message}
+               disabled={loginIsMutating}
             />
 
             <TextField
@@ -79,6 +95,7 @@ function LoginTemplate({ setChosenMethod, translator }) {
                      </InputAdornment>
                   ),
                }}
+               disabled={loginIsMutating}
             />
 
             <div className="!mt-4">
@@ -106,6 +123,7 @@ function LoginTemplate({ setChosenMethod, translator }) {
                      backgroundColor: '#B46451',
                   },
                }}
+               loading={loginIsMutating}
             >
                {translator('Login')}
             </LoadingButton>

@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -8,8 +9,14 @@ import { LoadingButton } from '@mui/lab';
 // Icons
 import { Eye, EyeSlash } from 'iconsax-react';
 
+// Apis
+import useSignUp from '@/apis/auth/useSignUp';
+
 function SignUpTemplate({ setChosenMethod, translator }) {
    const [showPassword, setShowPassword] = useState(false);
+   const { back } = useRouter();
+
+   const { trigger: signUpTrigger, isMutating: signUpIsMutating } = useSignUp();
 
    const {
       register,
@@ -29,7 +36,17 @@ function SignUpTemplate({ setChosenMethod, translator }) {
    const passwordValue = watch('password');
 
    const formSubmit = data => {
-      console.log(data);
+      const newData = {
+         name: data?.username,
+         email: data?.email,
+         password: data?.password,
+      };
+
+      signUpTrigger(newData, {
+         onSuccess: () => {
+            back();
+         },
+      });
    };
 
    return (
@@ -55,6 +72,7 @@ function SignUpTemplate({ setChosenMethod, translator }) {
                InputLabelProps={{ sx: { fontSize: 14 } }}
                error={!!errors?.username}
                helperText={errors?.username?.message}
+               disabled={signUpIsMutating}
             />
             <TextField
                fullWidth
@@ -73,6 +91,7 @@ function SignUpTemplate({ setChosenMethod, translator }) {
                InputLabelProps={{ sx: { fontSize: 14 } }}
                error={!!errors?.email}
                helperText={errors?.email?.message}
+               disabled={signUpIsMutating}
             />
 
             <TextField
@@ -107,6 +126,7 @@ function SignUpTemplate({ setChosenMethod, translator }) {
                      </InputAdornment>
                   ),
                }}
+               disabled={signUpIsMutating}
             />
 
             <TextField
@@ -137,6 +157,7 @@ function SignUpTemplate({ setChosenMethod, translator }) {
                      </InputAdornment>
                   ),
                }}
+               disabled={signUpIsMutating}
             />
 
             <LoadingButton
@@ -155,6 +176,7 @@ function SignUpTemplate({ setChosenMethod, translator }) {
                      backgroundColor: '#B46451',
                   },
                }}
+               loading={signUpIsMutating}
             >
                {translator('Create account')}
             </LoadingButton>
