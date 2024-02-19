@@ -20,16 +20,25 @@ import MobileMenu from '../mobile-menu/mobile-menu';
 // Styles
 import HeaderStyle from './header.style';
 
+// Context
+import { useGlobalContext } from '@/context/store';
+
 function Header() {
    const [showMobileMenu, setShowMobileMenu] = useState(false);
    const [hasBackGround, setHasBackGround] = useState(false);
+   const [isUserLogin, setIsUserLogin] = useState();
 
+   const { isLogin } = useGlobalContext();
    const t = useTranslations('header');
    const { locale, push, query, pathname, asPath } = useRouter();
 
    const changeLanguage = () => {
       push({ pathname, query }, asPath, { locale: locale === 'en' ? 'fa' : 'en' });
    };
+
+   useEffect(() => {
+      setIsUserLogin(isLogin);
+   }, [isLogin]);
 
    useEffect(() => {
       setShowMobileMenu(false);
@@ -256,7 +265,7 @@ function Header() {
                >
                   {locale === 'en' ? 'فا' : 'EN'}
                </IconButton>
-               <Link href="/login">
+               {isUserLogin ? (
                   <Button
                      color="customPink"
                      variant="contained"
@@ -270,9 +279,27 @@ function Header() {
                         },
                      }}
                   >
-                     {t('Sign up / Login')}
+                     علی ازقندی
                   </Button>
-               </Link>
+               ) : (
+                  <Link href="/login">
+                     <Button
+                        color="customPink"
+                        variant="contained"
+                        sx={{
+                           height: 45,
+                           width: 162,
+                           borderRadius: 57,
+                           fontSize: 16,
+                           ':hover': {
+                              backgroundColor: '#B46451',
+                           },
+                        }}
+                     >
+                        {t('Sign up / Login')}
+                     </Button>
+                  </Link>
+               )}
             </div>
          </HeaderStyle>
 

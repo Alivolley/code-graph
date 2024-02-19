@@ -17,6 +17,9 @@ import LoadingComponent from '@/components/templates/loading-component/loading-c
 // Styles
 import getDesignTokens from '@/configs/theme';
 
+// Context
+import { GlobalContextProvider } from '@/context/store';
+
 function Loading() {
    const [loading, setLoading] = useState(false);
    const router = useRouter();
@@ -53,39 +56,41 @@ function AppLayout({ children }) {
    }, [locale]);
 
    return (
-      <ThemeProvider theme={themeConfig}>
-         <Toaster
-            position={locale === 'en' ? 'top-left' : 'top-right'}
-            toastOptions={{
-               style: { fontFamily: 'almaraiRegular', fontSize: '14px', direction: locale === 'en' ? 'ltr' : 'rtl' },
-               duration: 4000,
-            }}
-         >
-            {t => (
-               <ToastBar toast={t}>
-                  {({ icon, message }) => (
-                     <div className="flex items-center">
-                        {icon}
-                        {message}
-                        {t.type !== 'loading' && (
-                           <IconButton
-                              onClick={() => toast.dismiss(t.id)}
-                              className="!transition-all !duration-150 hover:!text-red-500"
-                              size="small"
-                           >
-                              <Add className="rotate-45" size="28" />
-                           </IconButton>
-                        )}
-                     </div>
-                  )}
-               </ToastBar>
-            )}
-         </Toaster>
-         <Loading />
-         <PagesLayout dir={direction} language={locale}>
-            {children}
-         </PagesLayout>
-      </ThemeProvider>
+      <GlobalContextProvider>
+         <ThemeProvider theme={themeConfig}>
+            <Toaster
+               position={locale === 'en' ? 'top-left' : 'top-right'}
+               toastOptions={{
+                  style: { fontFamily: 'almaraiRegular', fontSize: '14px', direction: locale === 'en' ? 'ltr' : 'rtl' },
+                  duration: 4000,
+               }}
+            >
+               {t => (
+                  <ToastBar toast={t}>
+                     {({ icon, message }) => (
+                        <div className="flex items-center">
+                           {icon}
+                           {message}
+                           {t.type !== 'loading' && (
+                              <IconButton
+                                 onClick={() => toast.dismiss(t.id)}
+                                 className="!transition-all !duration-150 hover:!text-red-500"
+                                 size="small"
+                              >
+                                 <Add className="rotate-45" size="28" />
+                              </IconButton>
+                           )}
+                        </div>
+                     )}
+                  </ToastBar>
+               )}
+            </Toaster>
+            <Loading />
+            <PagesLayout dir={direction} language={locale}>
+               {children}
+            </PagesLayout>
+         </ThemeProvider>
+      </GlobalContextProvider>
    );
 }
 
