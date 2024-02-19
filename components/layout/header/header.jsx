@@ -1,14 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
 
 // MUI
-import { Button, IconButton } from '@mui/material';
+import { Button, Grow, IconButton, Paper, Popper } from '@mui/material';
 
 // Icons
-import { ArrowDown2, Calculator, ProfileCircle } from 'iconsax-react';
+import { ArrowDown2, Calculator, LogoutCurve, Profile, ProfileCircle, UserEdit } from 'iconsax-react';
 
 // Assets
 import headerLogo from '@/assets/images/headerLogo.png';
@@ -16,6 +16,7 @@ import menuSvg from '@/assets/icons/menu.svg';
 
 // Components
 import MobileMenu from '../mobile-menu/mobile-menu';
+import LogoutModal from '@/components/templates/logout-modal/logout-modal';
 
 // Styles
 import HeaderStyle from './header.style';
@@ -27,7 +28,10 @@ function Header() {
    const [showMobileMenu, setShowMobileMenu] = useState(false);
    const [hasBackGround, setHasBackGround] = useState(false);
    const [isUserLogin, setIsUserLogin] = useState();
+   const [profileDropDown, setProfileDropDown] = useState(false);
+   const [showLogoutModal, setShowLogoutModal] = useState(false);
 
+   const profileRef = useRef();
    const { isLogin } = useGlobalContext();
    const t = useTranslations('header');
    const { locale, push, query, pathname, asPath } = useRouter();
@@ -266,21 +270,71 @@ function Header() {
                   {locale === 'en' ? 'فا' : 'EN'}
                </IconButton>
                {isUserLogin ? (
-                  <Button
-                     color="customPink"
-                     variant="contained"
-                     sx={{
-                        height: 45,
-                        width: 162,
-                        borderRadius: 57,
-                        fontSize: 16,
-                        ':hover': {
-                           backgroundColor: '#B46451',
-                        },
-                     }}
-                  >
-                     علی ازقندی
-                  </Button>
+                  <>
+                     <div
+                        className="flex h-[45px] min-w-[184px] cursor-pointer items-center justify-center
+                         gap-[5px] rounded-[57px] bg-[#FD8266] px-3 text-white transition-all duration-200"
+                        ref={profileRef}
+                        onMouseEnter={() => setProfileDropDown(true)}
+                        onMouseLeave={() => setProfileDropDown(false)}
+                     >
+                        <Profile size="20" />
+                        {/* {userInfo?.name || userInfo?.phone_number} */}
+                        علی ازقندی
+                        <ArrowDown2
+                           size="18"
+                           className={`!transition-all !duration-200 ${profileDropDown ? 'rotate-180' : ''}`}
+                        />
+                     </div>
+
+                     <Popper
+                        open={profileDropDown}
+                        anchorEl={profileRef.current}
+                        transition
+                        disablePortal
+                        onMouseEnter={() => setProfileDropDown(true)}
+                        onMouseLeave={() => setProfileDropDown(false)}
+                     >
+                        {({ TransitionProps, placement }) => (
+                           <Grow
+                              {...TransitionProps}
+                              style={{
+                                 transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom',
+                              }}
+                           >
+                              <Paper
+                                 sx={{
+                                    backgroundColor: 'transparent',
+                                    boxShadow: 'none',
+                                    marginTop: '-2px',
+                                    borderRadius: '0 0 10px 10px',
+                                    overflow: 'hidden',
+                                 }}
+                              >
+                                 <div className="flex min-w-[148px] flex-col">
+                                    <Link
+                                       href="/profile/information"
+                                       className="flex h-10 items-center gap-3 bg-[#FD8266] px-3 text-xs text-white transition-all duration-150 hover:bg-[#B46451]"
+                                       onClick={() => setProfileDropDown(false)}
+                                    >
+                                       <UserEdit size="15" variant="Broken" />
+                                       {t('Account info')}
+                                    </Link>
+
+                                    <Button
+                                       className="!flex !h-11 !items-center !justify-start !gap-3 !border-t !border-solid
+                                        !border-[#E4EAF0] !bg-[#FD8266] !px-3 !text-xs !text-white hover:!bg-[#B46451]"
+                                       onClick={() => setShowLogoutModal(true)}
+                                    >
+                                       <LogoutCurve size="15" variant="Broken" />
+                                       {t('Logout')}
+                                    </Button>
+                                 </div>
+                              </Paper>
+                           </Grow>
+                        )}
+                     </Popper>
+                  </>
                ) : (
                   <Link href="/login">
                      <Button
@@ -335,6 +389,7 @@ function Header() {
          </div>
 
          <MobileMenu open={showMobileMenu} onClose={() => setShowMobileMenu(false)} isUserLogin={isUserLogin} />
+         <LogoutModal show={showLogoutModal} onClose={() => setShowLogoutModal(false)} />
       </header>
    );
 }

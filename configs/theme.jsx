@@ -9,7 +9,7 @@ const getDesignTokens = (mode, direction, language) => ({
       mode,
 
       primary: {
-         main: '#65a5fc', // Replace this color with your desired primary color
+         main: '#65a5fc',
       },
       customPink: {
          main: '#FD8266',

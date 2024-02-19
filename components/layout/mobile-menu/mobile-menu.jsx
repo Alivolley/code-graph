@@ -53,12 +53,12 @@ function MobileMenu({ open, onClose, isUserLogin }) {
                                  href="/profile/information"
                                  className="flex w-full items-center gap-1 border-b border-solid border-[#E4EAF0] py-3 text-xs"
                               >
-                                 <UserEdit size="18" color="#626E94" />
+                                 <UserEdit size="18" color="#626E94" variant="Broken" />
                                  {t('Account info')}
                               </Link>
 
                               <Button
-                                 startIcon={<LogoutCurve size="18" color="#626E94" />}
+                                 startIcon={<LogoutCurve size="18" color="#626E94" variant="Broken" />}
                                  onClick={() => setShowLogoutModal(true)}
                                  sx={{
                                     color: 'black',

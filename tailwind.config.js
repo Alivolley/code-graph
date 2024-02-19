@@ -24,7 +24,7 @@ module.exports = {
          },
 
          colors: {
-            // customPink: '#FFA3A1',
+            customPink: '#FD8266',
          },
 
          fontFamily: {
