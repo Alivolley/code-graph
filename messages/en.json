@@ -2,6 +2,9 @@
     "header": {
         "Services": "Services",
         "Projects": "Projects",
+        "Profile": "Profile",
+        "Account info": "Account info",
+        "Logout": "Logout",
         "Blogs": "Blogs",
         "Prices": "Prices",
         "About us": "About us",
@@ -10,7 +13,10 @@
         "Graphic": "Graphic",
         "Redesign": "Redesign",
         "UiUx": "UiUx",
-        "Website": "Website"
+        "Website": "Website",
+        "Are you sure about logging out ?": "Are you sure about logging out ?",
+        "Yes": "Yes",
+        "No": "No"
     },
     "home": {
         "Letter1": "Your",

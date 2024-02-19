@@ -2,6 +2,9 @@
     "header": {
         "Services": "سرویس ها",
         "Projects": "پروژه ها",
+        "Profile": "پروفایل",
+        "Account info": "اطلاعات حساب",
+        "Logout": "خروج از حساب کاربری",
         "Blogs": "بلاگ ها",
         "Prices": "قیمت ها",
         "About us": "درباره ی ما",
@@ -10,7 +13,10 @@
         "Graphic": "گرافیک",
         "Redesign": "طراحی",
         "UiUx": "یوآی یو ایکس",
-        "Website": "وبسایت"
+        "Website": "وبسایت",
+        "Are you sure about logging out ?": "آیا از خروج از حساب کاربری خود مطمئن هستید ؟",
+        "Yes": "بله",
+        "No": "خیر"
     },
     "home": {
         "Letter1": "",

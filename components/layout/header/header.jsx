@@ -334,7 +334,7 @@ function Header() {
             </div>
          </div>
 
-         <MobileMenu open={showMobileMenu} onClose={() => setShowMobileMenu(false)} />
+         <MobileMenu open={showMobileMenu} onClose={() => setShowMobileMenu(false)} isUserLogin={isUserLogin} />
       </header>
    );
 }
