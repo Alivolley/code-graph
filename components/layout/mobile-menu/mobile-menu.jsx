@@ -50,7 +50,7 @@ function MobileMenu({ open, onClose, isUserLogin }) {
                         <AccordionDetails>
                            <div className="-mt-4 flex flex-col items-start">
                               <Link
-                                 href="/profile/information"
+                                 href="/"
                                  className="flex w-full items-center gap-1 border-b border-solid border-[#E4EAF0] py-3 text-xs"
                               >
                                  <UserEdit size="18" color="#626E94" variant="Broken" />
@@ -83,28 +83,28 @@ function MobileMenu({ open, onClose, isUserLogin }) {
                      <AccordionDetails>
                         <div className="-mt-4 flex flex-col items-start">
                            <Link
-                              href="/profile/information"
+                              href="/categoryDetail/graphic"
                               className="flex w-full items-center gap-1 border-b border-solid border-[#E4EAF0] py-3 text-xs"
                            >
                               <Calculator size="16" color="#626E94" />
                               {t('Graphic')}
                            </Link>
                            <Link
-                              href="/profile/information"
+                              href="/categoryDetail/design"
                               className="flex w-full items-center gap-1 border-b border-solid border-[#E4EAF0] py-3 text-xs"
                            >
                               <Calculator size="16" color="#626E94" />
                               {t('Redesign')}
                            </Link>
                            <Link
-                              href="/profile/information"
+                              href="/categoryDetail/uiux"
                               className="flex w-full items-center gap-1 border-b border-solid border-[#E4EAF0] py-3 text-xs"
                            >
                               <Calculator size="16" color="#626E94" />
                               {t('UiUx')}
                            </Link>
                            <Link
-                              href="/profile/information"
+                              href="/categoryDetail/website"
                               className="flex w-full items-center gap-1 border-b border-solid border-[#E4EAF0] py-3 text-xs"
                            >
                               <Calculator size="16" color="#626E94" />
@@ -123,28 +123,28 @@ function MobileMenu({ open, onClose, isUserLogin }) {
                      <AccordionDetails>
                         <div className="-mt-4 flex flex-col items-start">
                            <Link
-                              href="/profile/information"
+                              href="/categoryDetail/graphic"
                               className="flex w-full items-center gap-1 border-b border-solid border-[#E4EAF0] py-3 text-xs"
                            >
                               <Calculator size="16" color="#626E94" />
                               {t('Graphic')}
                            </Link>
                            <Link
-                              href="/profile/information"
+                              href="/categoryDetail/design"
                               className="flex w-full items-center gap-1 border-b border-solid border-[#E4EAF0] py-3 text-xs"
                            >
                               <Calculator size="16" color="#626E94" />
                               {t('Redesign')}
                            </Link>
                            <Link
-                              href="/profile/information"
+                              href="/categoryDetail/uiux"
                               className="flex w-full items-center gap-1 border-b border-solid border-[#E4EAF0] py-3 text-xs"
                            >
                               <Calculator size="16" color="#626E94" />
                               {t('UiUx')}
                            </Link>
                            <Link
-                              href="/profile/information"
+                              href="/categoryDetail/website"
                               className="flex w-full items-center gap-1 border-b border-solid border-[#E4EAF0] py-3 text-xs"
                            >
                               <Calculator size="16" color="#626E94" />
@@ -163,28 +163,28 @@ function MobileMenu({ open, onClose, isUserLogin }) {
                      <AccordionDetails>
                         <div className="-mt-4 flex flex-col items-start">
                            <Link
-                              href="/profile/information"
+                              href="/categoryDetail/graphic"
                               className="flex w-full items-center gap-1 border-b border-solid border-[#E4EAF0] py-3 text-xs"
                            >
                               <Calculator size="16" color="#626E94" />
                               {t('Graphic')}
                            </Link>
                            <Link
-                              href="/profile/information"
+                              href="/categoryDetail/design"
                               className="flex w-full items-center gap-1 border-b border-solid border-[#E4EAF0] py-3 text-xs"
                            >
                               <Calculator size="16" color="#626E94" />
                               {t('Redesign')}
                            </Link>
                            <Link
-                              href="/profile/information"
+                              href="/categoryDetail/uiux"
                               className="flex w-full items-center gap-1 border-b border-solid border-[#E4EAF0] py-3 text-xs"
                            >
                               <Calculator size="16" color="#626E94" />
                               {t('UiUx')}
                            </Link>
                            <Link
-                              href="/profile/information"
+                              href="/categoryDetail/website"
                               className="flex w-full items-center gap-1 border-b border-solid border-[#E4EAF0] py-3 text-xs"
                            >
                               <Calculator size="16" color="#626E94" />
@@ -203,28 +203,28 @@ function MobileMenu({ open, onClose, isUserLogin }) {
                      <AccordionDetails>
                         <div className="-mt-4 flex flex-col items-start">
                            <Link
-                              href="/profile/information"
+                              href="/categoryDetail/graphic"
                               className="flex w-full items-center gap-1 border-b border-solid border-[#E4EAF0] py-3 text-xs"
                            >
                               <Calculator size="16" color="#626E94" />
                               {t('Graphic')}
                            </Link>
                            <Link
-                              href="/profile/information"
+                              href="/categoryDetail/design"
                               className="flex w-full items-center gap-1 border-b border-solid border-[#E4EAF0] py-3 text-xs"
                            >
                               <Calculator size="16" color="#626E94" />
                               {t('Redesign')}
                            </Link>
                            <Link
-                              href="/profile/information"
+                              href="/categoryDetail/uiux"
                               className="flex w-full items-center gap-1 border-b border-solid border-[#E4EAF0] py-3 text-xs"
                            >
                               <Calculator size="16" color="#626E94" />
                               {t('UiUx')}
                            </Link>
                            <Link
-                              href="/profile/information"
+                              href="/categoryDetail/website"
                               className="flex w-full items-center gap-1 border-b border-solid border-[#E4EAF0] py-3 text-xs"
                            >
                               <Calculator size="16" color="#626E94" />

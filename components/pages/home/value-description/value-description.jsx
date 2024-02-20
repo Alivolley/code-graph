@@ -26,7 +26,10 @@ function ValueDescription() {
                <div className="lg:mt-[100px] lg:w-[637px] lg:px-[26px]" dir={locale === 'en' ? 'ltr' : 'rtl'}>
                   <div className="font-bold leading-[46px] lg:leading-[66px]">
                      <h3 className="relative ps-5 text-[24px] lg:ps-0 lg:text-[34px]">
-                        {t('The')} <span className="text-[28px] text-[#65A5FC] lg:text-[48px]">{t('Value')}</span>{' '}
+                        {t('The')}{' '}
+                        <span className="font-almaraiExtraBold text-[28px] text-[#65A5FC] lg:text-[48px]">
+                           {t('Value')}
+                        </span>{' '}
                         <p>{t('We create for a business')}</p>
                         <p className="absolute inset-y-2 start-0 w-2 bg-[#FD8266] lg:start-[-30px]" />
                      </h3>

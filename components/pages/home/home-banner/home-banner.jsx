@@ -31,7 +31,7 @@ function HomeBanner() {
                   <div className="text-center font-bold leading-[44px] lg:text-start lg:leading-[73px]">
                      <div className="flex items-center justify-center gap-3 lg:justify-start">
                         <h1 className="text-[28px] lg:text-[37px]">{t('Letter1')}</h1>
-                        <h1 className="text-[28px] text-[#FD8266] lg:text-5xl">{t('Letter2')}</h1>
+                        <h1 className="font-almaraiExtraBold text-[28px] text-[#FD8266] lg:text-5xl">{t('Letter2')}</h1>
                         <h1 className="text-[28px] lg:text-[37px]">{t('Letter3')}</h1>
                         <h1 className="text-[28px] text-[#FD8266] lg:text-[37px]">{t('comma')}</h1>
                      </div>
@@ -88,25 +88,25 @@ function HomeBanner() {
             <div className="mt-3 flex flex-nowrap items-center justify-between overflow-auto rounded-3xl border border-solid border-[#AAAEB280] px-[18px] py-7">
                <div className="flex min-w-[215px] max-w-[288px] flex-col items-center gap-[10px] px-[18px]">
                   <Image src={pic4} alt="introduce" />
-                  <h3 className="text-lg font-bold">Online shop</h3>
+                  <h3 className="font-almaraiBold text-lg">Online shop</h3>
                   <p className="text-center text-sm text-[#6F778A]">{t('lorem2')}</p>
                </div>
 
                <div className="flex min-w-[215px] max-w-[288px] flex-col items-center gap-[10px] px-[18px]">
                   <Image src={pic3} alt="introduce" />
-                  <h3 className="text-lg font-bold">HRM</h3>
+                  <h3 className="font-almaraiBold text-lg">HRM</h3>
                   <p className="text-center text-sm text-[#6F778A]">{t('lorem2')}</p>
                </div>
 
                <div className="flex min-w-[215px] max-w-[288px] flex-col items-center gap-[10px] px-[18px]">
                   <Image src={pic2} alt="introduce" />
-                  <h3 className="text-lg font-bold">CRM</h3>
+                  <h3 className="font-almaraiBold text-lg">CRM</h3>
                   <p className="text-center text-sm text-[#6F778A]">{t('lorem2')}</p>
                </div>
 
                <div className="flex min-w-[215px] max-w-[288px] flex-col items-center gap-[10px] px-[18px]">
                   <Image src={pic1} alt="introduce" />
-                  <h3 className="text-lg font-bold">Accounting</h3>
+                  <h3 className="font-almaraiBold text-lg">Accounting</h3>
                   <p className="text-center text-sm text-[#6F778A]">{t('lorem2')}</p>
                </div>
             </div>

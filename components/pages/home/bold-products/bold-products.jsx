@@ -35,7 +35,7 @@ function BoldProducts() {
             <p className="text-center text-xs text-[#3C4252] customMd:text-base">
                {t('Our goal at codegeraph is to meet the basic needs of any business that loves to grow')}
             </p>
-            <h2 className="mx-auto mt-6 max-w-[830px] text-center text-2xl font-extrabold leading-[42px] text-[#050F2C] customMd:text-[32px] customMd:leading-[56px]">
+            <h2 className="mx-auto mt-6 max-w-[830px] text-center font-almaraiExtraBold text-2xl leading-[42px] text-[#050F2C] customMd:text-[32px] customMd:leading-[56px]">
                {t('Every need you have for a business, codegeraph will take it')}
             </h2>
 

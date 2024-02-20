@@ -42,7 +42,7 @@ function Footer() {
       <FooterStyle>
          <div id="back">
             <div className="mx-auto flex max-w-[1440px] flex-col justify-between gap-9 px-5 py-12 customMd:flex-row customMd:items-center customMd:px-[60px] customMd:py-6">
-               <p className="max-w-[542px] text-2xl font-bold leading-[46px] text-white customMd:text-3xl">
+               <p className="max-w-[542px] font-almaraiBold text-2xl leading-[46px] text-white customMd:text-3xl">
                   {t('Ready')}
                </p>
                <Link href="/">
