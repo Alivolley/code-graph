@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
 
-const ProductCartStyle = styled(Link)(() => ({
+const ArticleCartStyle = styled(Link)(() => ({
    ':hover': {
       boxShadow: '0px 12px 22.700000762939453px 0px #AAB2BC26',
 
@@ -17,4 +17,4 @@ const ProductCartStyle = styled(Link)(() => ({
    },
 }));
 
-export default ProductCartStyle;
+export default ArticleCartStyle;

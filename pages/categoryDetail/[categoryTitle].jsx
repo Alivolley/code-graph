@@ -20,6 +20,10 @@ import pic2 from '@/assets/icons/CRM.svg';
 import pic3 from '@/assets/icons/HR.svg';
 import pic4 from '@/assets/icons/store.svg';
 
+// Components
+import ProductCart from '@/components/templates/product-cart/product-cart';
+import ArticleCart from '@/components/templates/article-cart/article-cart';
+
 function CategoryTitle() {
    const { locale } = useRouter();
    const t = useTranslations('categoryDetail');
@@ -149,6 +153,106 @@ function CategoryTitle() {
                   <h3 className="font-almaraiBold text-lg">Accounting</h3>
                   <p className="text-center text-sm text-[#6F778A]">{t('lorem2')}</p>
                </div>
+            </div>
+         </div>
+
+         <div className="bg-[#F5F8FC]">
+            <div className="mx-auto max-w-[1440px] px-5 pb-16 pt-[30px] customMd:px-[103px] customMd:py-[60px]">
+               <p className="text-center text-xs text-[#3C4252] customMd:text-base">
+                  ما برای روابط قوی ارزش زیادی قائل هستیم و مزایای آنها را برای کسب و کارمان دیده ایم
+               </p>
+               <h2 className="mx-auto mt-3 max-w-[830px] text-center font-almaraiExtraBold text-2xl leading-[42px] text-[#050F2C] customMd:text-[32px] customMd:leading-[56px]">
+                  پروژه های انجام شده
+               </h2>
+
+               <div className="mt-[50px] flex flex-nowrap items-center gap-5 overflow-auto">
+                  <ProductCart />
+                  <ProductCart />
+                  <ProductCart />
+                  <ProductCart />
+               </div>
+
+               <Link href="/" className="mt-[50px] flex justify-center lg:mx-auto lg:w-fit">
+                  <Button
+                     color="customPink"
+                     variant="contained"
+                     className="!w-full lg:!w-[174px]"
+                     sx={{
+                        height: 52,
+                        borderRadius: 57,
+                        fontSize: 16,
+                        ':hover': {
+                           backgroundColor: '#B46451',
+                        },
+                     }}
+                     endIcon={<ArrowLeft size="20" {...(locale === 'en' && { className: 'rotate-180' })} />}
+                  >
+                     {t('Get started')}
+                  </Button>
+               </Link>
+            </div>
+         </div>
+
+         <div className="bg-white" dir="rtl">
+            <div className="mx-auto mt-[30px] max-w-[1440px] px-5 pb-10 customMd:mt-20 customMd:px-[60px] customMd:pb-0">
+               <Grid container>
+                  <Grid item xs={12} md={6} order={{ xs: 2, md: 1 }}>
+                     <div className="mt-10" dir={locale === 'en' ? 'ltr' : 'rtl'}>
+                        <div className="relative ps-[30px] font-almaraiExtraBold text-2xl leading-[46px] text-[#EF6D33] customMd:text-[40px] customMd:leading-[75px]">
+                           <p className="text-[#65A5FC]">تفاوت</p>
+                           <p className="text-xl leading-[46px] customMd:text-[34px] customMd:leading-[75px]">
+                              ما برای یک کسب و کار ایجاد می کنیم
+                           </p>
+                           <p className="absolute inset-y-2 start-0 w-2 bg-[#65A5FC]" />
+                        </div>
+                        <p className="mt-[18px] text-sm leading-[32px] text-[#576071] customMd:text-base customMd:leading-[45px]">
+                           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
+                           چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی
+                           مورد نیاز و کاربردهای لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
+                           از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
+                           برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای
+                        </p>
+                     </div>
+                  </Grid>
+                  <Grid item xs={12} md={6} order={{ xs: 1, md: 2 }}>
+                     <div className="mx-auto max-w-[530px]">
+                        <Image src={mainPic3} alt="uiux" className="size-full" />
+                     </div>
+                  </Grid>
+               </Grid>
+            </div>
+         </div>
+
+         <div className="bg-[#F5F8FC]">
+            <div className="mx-auto max-w-[1440px] px-5 pb-16 pt-[30px] customMd:px-[103px] customMd:py-[50px]">
+               <h2 className="text-center font-almaraiExtraBold text-2xl leading-[42px] text-[#050F2C] customMd:text-[32px] customMd:leading-[56px]">
+                  مقالات مرتبط
+               </h2>
+
+               <div className="mt-[30px] flex flex-nowrap items-center gap-5 overflow-auto">
+                  <ArticleCart />
+                  <ArticleCart />
+                  <ArticleCart />
+               </div>
+
+               <Link href="/" className="mt-[30px] flex justify-center lg:mx-auto lg:w-fit">
+                  <Button
+                     color="customPink"
+                     variant="contained"
+                     className="!w-full lg:!w-[174px]"
+                     sx={{
+                        height: 52,
+                        borderRadius: 57,
+                        fontSize: 16,
+                        ':hover': {
+                           backgroundColor: '#B46451',
+                        },
+                     }}
+                     endIcon={<ArrowLeft size="20" {...(locale === 'en' && { className: 'rotate-180' })} />}
+                  >
+                     {t('Get started')}
+                  </Button>
+               </Link>
             </div>
          </div>
       </div>

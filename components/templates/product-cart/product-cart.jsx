@@ -50,6 +50,7 @@ function ProductCart() {
                endIcon={
                   <ArrowLeft
                      size="19"
+                     id="icon"
                      className={`rounded-full bg-white text-[#EA8C90] ${locale === 'en' ? 'rotate-180' : ''}`}
                   />
                }
