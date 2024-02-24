@@ -362,11 +362,12 @@ function Header() {
             <div className="flex items-center gap-2">
                <IconButton
                   sx={{
-                     fontSize: locale === 'en' ? 18 : 14,
+                     fontSize: 14,
                      border: '2px solid #FD8266',
                      color: '#FD8266',
                      width: 33,
                      height: 33,
+                     fontFamily: 'almaraiBold',
                   }}
                   onClick={changeLanguage}
                >
