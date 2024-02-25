@@ -23,6 +23,7 @@ import pic4 from '@/assets/icons/store.svg';
 // Components
 import ProductCart from '@/components/templates/product-cart/product-cart';
 import ArticleCart from '@/components/templates/article-cart/article-cart';
+import Comments from '@/components/pages/categoryDetail/comments/comments';
 
 function CategoryTitle() {
    const { locale } = useRouter();
@@ -253,6 +254,12 @@ function CategoryTitle() {
                      {t('Get started')}
                   </Button>
                </Link>
+            </div>
+         </div>
+
+         <div className="bg-white">
+            <div className="mx-auto max-w-[1440px] px-5 py-[46px] customMd:px-[60px]">
+               <Comments />
             </div>
          </div>
       </div>
