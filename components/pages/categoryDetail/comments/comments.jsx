@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { useRef } from 'react';
 
 // Swiper
@@ -32,6 +33,7 @@ const navigationStyle = {
 function Comments() {
    const array = [0, 1, 2, 3, 4, 5, 6, 7];
    const swiperRef = useRef(null);
+   const { locale } = useRouter();
 
    const navigatePrev = () => {
       if (swiperRef.current) {
@@ -51,10 +53,10 @@ function Comments() {
             <p className="font-almaraiExtraBold text-[28px] customMd:text-[32px]">نظرات مشتریان</p>
             <div className="hidden items-center gap-5 customMd:flex">
                <IconButton sx={navigationStyle} onClick={navigatePrev}>
-                  <ArrowRight2 size="30" />
+                  <ArrowRight2 size="30" {...(locale === 'en' && { className: 'rotate-180' })} />
                </IconButton>
                <IconButton sx={navigationStyle} onClick={navigateNext}>
-                  <ArrowLeft2 size="30" />
+                  <ArrowLeft2 size="30" {...(locale === 'en' && { className: 'rotate-180' })} />
                </IconButton>
             </div>
          </div>

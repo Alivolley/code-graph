@@ -1,7 +1,9 @@
+import { useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
+import toast from 'react-hot-toast';
 
 // MUI
 import { Button, Grid } from '@mui/material';
@@ -10,9 +12,6 @@ import { Button, Grid } from '@mui/material';
 import { ArrowLeft } from 'iconsax-react';
 
 // Assets
-import mainPic from '@/assets/images/uiuxPic.png';
-import mainPic2 from '@/assets/images/uiuxPic2.png';
-import mainPic3 from '@/assets/images/uiuxPic3.png';
 import wheelFirst from '@/assets/icons/wheel1.svg';
 import wheelSecond from '@/assets/icons/wheel2.svg';
 import pic1 from '@/assets/icons/accounting.svg';
@@ -25,7 +24,16 @@ import ProductCart from '@/components/templates/product-cart/product-cart';
 import ArticleCart from '@/components/templates/article-cart/article-cart';
 import Comments from '@/components/pages/categoryDetail/comments/comments';
 
-function CategoryTitle() {
+// Data
+import selectCategory from '@/data/categories';
+
+function CategoryTitle({ error, categoryData }) {
+   useEffect(() => {
+      if (error) {
+         toast.error(error);
+      }
+   }, [error]);
+
    const { locale } = useRouter();
    const t = useTranslations('categoryDetail');
 
@@ -42,20 +50,22 @@ function CategoryTitle() {
             <div className="relative mx-auto max-w-[1440px] px-5 pb-[67px] pt-[91px] customMd:px-[60px] customMd:pt-[158px] lg:pb-0">
                <div className="flex flex-col lg:flex-row">
                   <div className="order-2 mt-9 grow lg:order-1 lg:mt-0 lg:min-w-[345px] customXl:shrink-0">
-                     <p className="text-center font-almaraiExtraBold text-2xl leading-[40px] lg:text-[36px]">
-                        {t('User experience design')}
+                     <p className="text-center font-almaraiExtraBold text-2xl leading-[40px] lg:text-start lg:text-[36px]">
+                        {t(categoryData?.bannerFirstLetter)}
                      </p>
-                     <p className="mt-3 text-center font-almaraiExtraBold text-2xl text-[#FD8266] lg:text-[36px] lg:leading-[75px]">
-                        {t('User interface design')}
+                     <p className="mt-3 text-center font-almaraiExtraBold text-2xl text-[#FD8266] lg:text-start lg:text-[36px] lg:leading-[75px]">
+                        {t(categoryData?.bannerSecondLetter)}
                      </p>
                   </div>
 
-                  <div className="order-1 mt-[53px] px-5 lg:order-2 lg:px-0 customXl:shrink-0">
-                     <Image src={mainPic} alt="uiux" className="size-full" />
+                  <div className="order-1 mt-[53px] px-5 lg:order-2 lg:px-0 customXl:max-w-[620px] customXl:shrink-0">
+                     <Image src={categoryData?.bannerPic} alt="uiux" className="size-full" />
                   </div>
 
                   <div className={`order-3 mt-[30px] grow lg:mt-0 lg:max-w-[319px] ${locale === 'en' ? 'ps-4' : ''}`}>
-                     <p className="text-sm leading-[29px] text-[#576071] lg:text-black">{t('lorem')}</p>
+                     <p className="text-sm leading-[29px] text-[#576071] lg:text-black">
+                        {t(categoryData?.bannerDescription)}
+                     </p>
 
                      <Link href="/" className="mt-6 block">
                         <Button
@@ -106,22 +116,18 @@ function CategoryTitle() {
                <Grid container>
                   <Grid item xs={12} md={6}>
                      <div className="mx-auto max-w-[556px] customMd:mx-0">
-                        <Image src={mainPic2} alt="uiux" className="size-full" />
+                        <Image src={categoryData?.introducePic} alt="uiux" className="size-full" />
                      </div>
                   </Grid>
                   <Grid item xs={12} md={6}>
                      <div className="mt-10 customMd:mt-20" dir={locale === 'en' ? 'ltr' : 'rtl'}>
                         <div className="relative ps-[30px] font-almaraiExtraBold text-2xl leading-[46px] text-[#EF6D33] customMd:text-[40px] customMd:leading-[75px]">
-                           <p>طراحی و تجربه</p>
-                           <p>رابط کاربــــــــــــــــــــــــری</p>
+                           <p>{t(categoryData?.introduceFirstLetter)}</p>
+                           <p>{t(categoryData?.introduceSecondLetter)}</p>
                            <p className="absolute inset-y-2 start-0 w-2 bg-[#65A5FC]" />
                         </div>
                         <p className="mt-[18px] text-sm leading-[32px] text-[#576071] customMd:text-base customMd:leading-[45px]">
-                           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
-                           چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی
-                           مورد نیاز و کاربردهای لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
-                           از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
-                           برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای
+                           {t(categoryData?.introduceDescription)}
                         </p>
                      </div>
                   </Grid>
@@ -217,7 +223,7 @@ function CategoryTitle() {
                   </Grid>
                   <Grid item xs={12} md={6} order={{ xs: 1, md: 2 }}>
                      <div className="mx-auto max-w-[530px]">
-                        <Image src={mainPic3} alt="uiux" className="size-full" />
+                        <Image src={categoryData?.introduce2Pic} alt="uiux" className="size-full" />
                      </div>
                   </Grid>
                </Grid>
@@ -274,16 +280,25 @@ export async function getStaticPaths() {
          { params: { categoryTitle: 'uiux' } },
          { params: { categoryTitle: 'website' } },
          { params: { categoryTitle: 'graphic' } },
-         { params: { categoryTitle: 'design' } },
+         // { params: { categoryTitle: 'design' } },
       ],
       fallback: 'blocking',
    };
 }
 
 export async function getStaticProps(context) {
+   const categoryData = selectCategory(context?.params?.categoryTitle);
+
+   if (!categoryData) {
+      return {
+         notFound: true,
+      };
+   }
+
    try {
       return {
          props: {
+            categoryData,
             messages: (await import(`@/messages/${context.locale}.json`)).default,
          },
          revalidate: 3600,
