@@ -131,16 +131,16 @@ function Header() {
                      >
                         <div className="flex flex-col gap-6 text-xs text-[#626E94]">
                            <Link
+                              href="/allProducts"
+                              className="flex items-center gap-2 transition-all duration-200 hover:text-[#FD8266]"
+                           >
+                              <Calculator size="18" /> {t('All projects')}
+                           </Link>
+                           <Link
                               href="/categoryDetail/graphic"
                               className="flex items-center gap-2 transition-all duration-200 hover:text-[#FD8266]"
                            >
                               <Calculator size="18" /> {t('Graphic')}
-                           </Link>
-                           <Link
-                              href="/categoryDetail/design"
-                              className="flex items-center gap-2 transition-all duration-200 hover:text-[#FD8266]"
-                           >
-                              <Calculator size="18" /> {t('Redesign')}
                            </Link>
                         </div>
                         <div className="h-[73px] w-px bg-[#E4EAF0]" />
