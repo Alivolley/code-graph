@@ -173,10 +173,10 @@ function CategoryTitle({ error, categoryData }) {
                </h2>
 
                <div className="mt-[50px] flex flex-nowrap items-center gap-5 overflow-auto">
-                  <ProductCart />
-                  <ProductCart />
-                  <ProductCart />
-                  <ProductCart />
+                  <ProductCart className="w-[240px] customMd:flex-1" />
+                  <ProductCart className="w-[240px] customMd:flex-1" />
+                  <ProductCart className="w-[240px] customMd:flex-1" />
+                  <ProductCart className="w-[240px] customMd:flex-1" />
                </div>
 
                <Link href="/" className="mt-[50px] flex justify-center lg:mx-auto lg:w-fit">

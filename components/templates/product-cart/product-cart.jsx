@@ -12,12 +12,12 @@ import { ArrowLeft } from 'iconsax-react';
 import picSample from '@/assets/images/productSample.png';
 import ProductCartStyle from './product-cart.style';
 
-function ProductCart() {
+function ProductCart({ className }) {
    const { locale } = useRouter();
    const t = useTranslations('home');
 
    return (
-      <ProductCartStyle href="/" className="w-[240px] shrink-0 rounded-[20px] bg-white p-[14px] customMd:flex-1">
+      <ProductCartStyle href="/" className={`shrink-0 rounded-[20px] bg-white p-[14px] ${className}`}>
          <div className="h-[175px] rounded-[18px] bg-[#fdebeb] px-[10px] pt-[10px] md:h-[200px]">
             <p className="text-center text-xs font-bold text-[#284565]">فروشگاه کیف یلفان</p>
             <div className="mt-3 h-[110px] w-full md:h-[135px]">
