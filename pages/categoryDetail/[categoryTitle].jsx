@@ -23,6 +23,7 @@ import pic4 from '@/assets/icons/store.svg';
 import ProductCart from '@/components/templates/product-cart/product-cart';
 import ArticleCart from '@/components/templates/article-cart/article-cart';
 import Comments from '@/components/pages/categoryDetail/comments/comments';
+import Faqs from '@/components/templates/faqs/faqs';
 
 // Data
 import selectCategory from '@/data/categories';
@@ -268,6 +269,8 @@ function CategoryTitle({ error, categoryData }) {
                <Comments />
             </div>
          </div>
+
+         <Faqs />
       </div>
    );
 }

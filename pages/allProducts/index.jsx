@@ -17,6 +17,7 @@ import bannerPic from '@/assets/images/allProductsPic.png';
 
 // Components
 import ProductCart from '@/components/templates/product-cart/product-cart';
+import Faqs from '@/components/templates/faqs/faqs';
 
 const categoryButtonStyle = {
    display: 'flex',
@@ -118,9 +119,9 @@ function AllProducts() {
          </div>
 
          <div className="mx-auto max-w-[1440px] px-5 pb-[59px] pt-[53px] customMd:px-[60px]">
-            <p className="text-center text-[18px] text-[#050F2C]">موضوع جستوجوی شما چیست ؟</p>
+            <p className="text-center text-[18px] text-[#050F2C]">{t('What is the subject of your search?')}</p>
             <p className="mb-[20px] mt-[18px] text-center text-xs leading-[22px] text-[#626E94] customMd:text-sm">
-               موضوع مورد نظرتان را سرچ کرده و یا از دسته بندی های زیر انتخاب کنید
+               {t('Search for the topic you want or choose from the categories below')}
             </p>
             <form
                className="mx-auto flex h-[50px] max-w-[534px] items-center rounded-[60px] border border-solid border-[#E4EAF0] bg-[#F5F8FC] px-5"
@@ -132,13 +133,13 @@ function AllProducts() {
                <input
                   type="text"
                   className="h-full grow border-none bg-transparent font-almaraiRegular outline-none placeholder:text-[#7E8AAB]"
-                  placeholder="جستجوی موضوع"
+                  placeholder={t('Search topic')}
                   {...register('searchValue', { required: { value: true } })}
                />
             </form>
 
             <p className="mt-[47px] flex h-12 items-center rounded-[47px] bg-[#FD8266] px-8 font-almaraiBold text-base text-white customMd:h-16 customMd:text-[20px]">
-               دسته بندی پروژه ها
+               {t('Category of projects')}
             </p>
             <div className="mt-6 flex flex-wrap items-center border-b border-solid border-[#E4EAF0]">
                <Button
@@ -153,7 +154,7 @@ function AllProducts() {
                   onClick={() => changeCategoryHandler('')}
                >
                   <Truck size="28" color="#d14d72" variant="TwoTone" />
-                  <p className="leading-[18px] text-[#050F2C]">همه</p>
+                  <p className="leading-[18px] text-[#050F2C]">{t('All')}</p>
                </Button>
                <Button
                   sx={{
@@ -167,7 +168,7 @@ function AllProducts() {
                   onClick={() => changeCategoryHandler('website')}
                >
                   <User size="28" color="#d14d72" variant="TwoTone" />
-                  <p className="leading-[18px] text-[#050F2C]">طراحی وبسایت</p>
+                  <p className="leading-[18px] text-[#050F2C]">{t('Website')}</p>
                </Button>
                <Button
                   sx={{
@@ -181,7 +182,7 @@ function AllProducts() {
                   onClick={() => changeCategoryHandler('uiux')}
                >
                   <ShoppingCart size="28" color="#d14d72" variant="TwoTone" />
-                  <p className="leading-[18px] text-[#050F2C]">طراحی رابط کاربری</p>
+                  <p className="leading-[18px] text-[#050F2C]">{t('UiUx')}</p>
                </Button>
                <Button
                   sx={{
@@ -195,7 +196,7 @@ function AllProducts() {
                   onClick={() => changeCategoryHandler('graphic')}
                >
                   <DiscountShape size="28" color="#d14d72" variant="TwoTone" />
-                  <p className="leading-[18px] text-[#050F2C]">گرافیک</p>
+                  <p className="leading-[18px] text-[#050F2C]">{t('Graphic')}</p>
                </Button>
             </div>
 
@@ -237,6 +238,8 @@ function AllProducts() {
                />
             </div>
          </div>
+
+         <Faqs />
       </div>
    );
 }

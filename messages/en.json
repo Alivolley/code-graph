@@ -98,12 +98,22 @@
         "user interface": "user interface",
         "lorem3": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Egestas purus viverra accumsan in nisl nisi Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque In egestas erat imperdiet sed euismod  Morbi tristique senectus et netus Mattis pellentesque id nibh tortor i lectus proin Sapien faucibus et molestie ac feugiat sed lectus vestibulum Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget Dictum varius duis at consectetur lorem Nisi vitae",
         "How a website": "How a website",
-        "going to help you": "going to help you"
+        "going to help you": "going to help you",
+        "Answer to": "Answer to",
+        "Your frequently asked questions": "Your frequently asked questions"
     },
     "allProducts": {
         "Letter1": "Portfolio",
         "Letter2": "Experience the best of our collaborations",
         "lorem": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,  sit amet, consectetur adipiscing elit,  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Egestas purus viverra accumsan in nisl nisi Arcu cursus vitae .",
-        "Get free advice": "Get free advice"
+        "Get free advice": "Get free advice",
+        "What is the subject of your search?": "What is the subject of your search?",
+        "Search for the topic you want or choose from the categories below": "Search for the topic you want or choose from the categories below",
+        "Search topic": "Search topic",
+        "Category of projects": "Category of projects",
+        "All": "All",
+        "Website": "Website",
+        "UiUx": "UiUx",
+        "Graphic": "Graphic"
     }
 }
