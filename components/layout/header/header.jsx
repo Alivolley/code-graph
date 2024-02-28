@@ -202,9 +202,12 @@ function Header() {
                         </div>
                      </div>
                   </div>
-                  <div className="flex cursor-pointer items-center gap-2 text-[#3A3E4D] transition-all duration-150 hover:text-[#65A5FC]">
+                  <Link
+                     href="/prices"
+                     className="flex cursor-pointer items-center gap-2 text-[#3A3E4D] transition-all duration-150 hover:text-[#65A5FC]"
+                  >
                      <p className="text-xs customLg:text-sm">{t('Prices')}</p>
-                  </div>
+                  </Link>
 
                   <div id="dropdownWrapper">
                      <div className="flex cursor-pointer items-center gap-2 text-[#3A3E4D] transition-all duration-150 hover:text-[#65A5FC]">

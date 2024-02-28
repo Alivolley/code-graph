@@ -234,6 +234,10 @@ function MobileMenu({ open, onClose, isUserLogin }) {
                      </AccordionDetails>
                   </Accordion>
 
+                  <Link href="/prices" className="block w-full border-t border-solid border-[#E4EAF0] py-3 text-sm">
+                     {t('Prices')}
+                  </Link>
+
                   <div className="mt-10">
                      {!isUserLogin && (
                         <Link href="/login">
