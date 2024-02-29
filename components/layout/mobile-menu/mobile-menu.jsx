@@ -60,12 +60,7 @@ function MobileMenu({ open, onClose, isUserLogin }) {
                               <Button
                                  startIcon={<LogoutCurve size="18" color="#626E94" variant="Broken" />}
                                  onClick={() => setShowLogoutModal(true)}
-                                 sx={{
-                                    color: 'black',
-                                    marginTop: '12px',
-                                    paddingInlineStart: '4px',
-                                    fontSize: '12px',
-                                 }}
+                                 sx={{ color: 'black', marginTop: '12px', paddingInlineStart: '4px', fontSize: '12px' }}
                               >
                                  {t('Logout')}
                               </Button>
@@ -245,11 +240,7 @@ function MobileMenu({ open, onClose, isUserLogin }) {
                               startIcon={<Profile size="18" />}
                               variant="contained"
                               fullWidth
-                              sx={{
-                                 height: '47px',
-                                 borderRadius: '10px',
-                                 color: 'white',
-                              }}
+                              sx={{ height: '47px', borderRadius: '10px', color: 'white' }}
                            >
                               {t('Sign up / Login')}
                            </Button>

@@ -30,13 +30,7 @@ function LogoutModal({ show, onClose }) {
                   fullWidth
                   color="customPink"
                   onClick={onClose}
-                  sx={{
-                     height: 40,
-                     borderRadius: '10px',
-                     ':hover': {
-                        backgroundColor: '#B46451',
-                     },
-                  }}
+                  sx={{ height: 40, borderRadius: '10px', ':hover': { backgroundColor: '#B46451' } }}
                >
                   {t('No')}
                </Button>

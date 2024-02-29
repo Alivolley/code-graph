@@ -30,6 +30,15 @@ const categoryButtonStyle = {
    },
 };
 
+const featureButtonStyle = {
+   width: '105px',
+   borderRadius: '51px',
+   fontFamily: 'almaraiBold',
+   ':hover': {
+      backgroundColor: '#E5EFFD',
+   },
+};
+
 function Prices() {
    const [chosenCategory, setChosenCategory] = useState('graphic');
 
@@ -127,6 +136,77 @@ function Prices() {
          >
             ویژگی های برتر را کاوش کنید
          </p>
+
+         <div className="mx-auto max-w-[1440px] px-5 customMd:px-[60px]">
+            <div className="mt-[64px] flex flex-col rounded-t-10 border-solid border-[#E4EAF0] customMd:h-[276px] customMd:flex-row customMd:border">
+               <div className="order-2 flex items-center justify-center py-10 font-almaraiBold text-[32px] text-[#050F2C] customMd:order-1 customMd:w-[250px] customLg:w-[520px]">
+                  قابلیت ها
+               </div>
+
+               <div className="order-1 grid grow grid-cols-2 gap-x-5 gap-y-3 customMd:order-2 customMd:flex customMd:gap-0">
+                  <div
+                     className="flex flex-col items-center justify-center gap-4 rounded-10 border border-solid border-[#E4EAF0]
+                   py-[18px] customMd:flex-1 customMd:gap-5 customMd:rounded-none customMd:border-y-0 customMd:border-e-0 customMd:border-s"
+                  >
+                     <div className="w-[51px] customMd:w-[65px]">
+                        <Image src={grayMedal} alt="medal" className="size-full" />
+                     </div>
+                     <p className="text-[#050F2C]">Standard</p>
+                     <Button
+                        sx={{ ...featureButtonStyle, border: '1px solid #050F2C', color: '#050F2C' }}
+                        className="h-[35px] customMd:h-[41px]"
+                     >
+                        Try free
+                     </Button>
+                  </div>
+                  <div
+                     className="flex flex-col items-center justify-center gap-4 rounded-10 border border-solid border-[#E4EAF0]
+                   py-[18px] customMd:flex-1 customMd:gap-5 customMd:rounded-none customMd:border-y-0 customMd:border-e-0 customMd:border-s"
+                  >
+                     <div className="w-[51px] customMd:w-[65px]">
+                        <Image src={greenMedal} alt="medal" className="size-full" />
+                     </div>
+                     <p className="text-[#050F2C]">Professional</p>
+                     <Button
+                        sx={{ ...featureButtonStyle, border: '1px solid #5A3AFF', color: '#5A3AFF' }}
+                        className="h-[35px] customMd:h-[41px]"
+                     >
+                        Try free
+                     </Button>
+                  </div>
+                  <div
+                     className="flex flex-col items-center justify-center gap-4 rounded-10 border border-solid border-[#E4EAF0]
+                   py-[18px] customMd:flex-1 customMd:gap-5 customMd:rounded-none customMd:border-y-0 customMd:border-e-0 customMd:border-s"
+                  >
+                     <div className="w-[51px] customMd:w-[65px]">
+                        <Image src={purpleMedal} alt="medal" className="size-full" />
+                     </div>
+                     <p className="text-[#050F2C]">Enterprise</p>
+                     <Button
+                        sx={{ ...featureButtonStyle, border: '1px solid #E71D36', color: '#E71D36' }}
+                        className="h-[35px] customMd:h-[41px]"
+                     >
+                        Try free
+                     </Button>
+                  </div>
+                  <div
+                     className="flex flex-col items-center justify-center gap-4 rounded-10 border border-solid border-[#E4EAF0]
+                   py-[18px] customMd:flex-1 customMd:gap-5 customMd:rounded-none customMd:border-y-0 customMd:border-e-0 customMd:border-s"
+                  >
+                     <div className="w-[51px] customMd:w-[65px]">
+                        <Image src={yellowMedal} alt="medal" className="size-full" />
+                     </div>
+                     <p className="text-[#050F2C]">Ultimate</p>
+                     <Button
+                        sx={{ ...featureButtonStyle, border: '1px solid #FC742B', color: '#FC742B' }}
+                        className="h-[35px] customMd:h-[41px]"
+                     >
+                        Try free
+                     </Button>
+                  </div>
+               </div>
+            </div>
+         </div>
       </div>
    );
 }
