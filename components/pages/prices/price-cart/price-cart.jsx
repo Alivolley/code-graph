@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 
@@ -10,6 +11,7 @@ import checkGreen from '@/assets/icons/checkGreen.svg';
 
 function PriceCart({ className }) {
    const { locale } = useRouter();
+   const t = useTranslations('prices');
 
    return (
       <div
@@ -71,7 +73,7 @@ function PriceCart({ className }) {
                },
             }}
          >
-            Try it
+            {t('Try it')}
          </Button>
       </div>
    );

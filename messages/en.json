@@ -115,5 +115,17 @@
         "Website": "Website",
         "UiUx": "UiUx",
         "Graphic": "Graphic"
+    },
+    "prices": {
+        "Graphic": "Graphic",
+        "Web design": "Web design",
+        "Redesign": "Redesign",
+        "UiUx": "UiUx",
+        "Try it": "Try it",
+        "Happy customers - energetic employees": "Happy customers - energetic employees",
+        "We have designed so many plans that you can boost your business by choosing a suitable plan": "We have designed so many plans that you can boost your business by choosing a suitable plan",
+        "Explore the top features": "Explore the top features",
+        "Features": "Features",
+        "Try free": "Try free"
     }
 }

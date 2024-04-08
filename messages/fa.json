@@ -115,5 +115,17 @@
         "Website": "طراحی وبسایت",
         "UiUx": "طراحی رابط کاربری",
         "Graphic": "گرافیک"
+    },
+    "prices": {
+        "Graphic": "گرافیک",
+        "Web design": "طراحی وب",
+        "Redesign": "ریدیزاین",
+        "UiUx": "یوآی یو ایکس",
+        "Try it": "امتحان کن",
+        "Happy customers - energetic employees": "مشتریان خوشحال - کارمند پر انرژی",
+        "We have designed so many plans that you can boost your business by choosing a suitable plan": "ما طرح‌های زیادی طراحی کرده‌ایم که می‌توانید با انتخاب یک طرح مناسب، کسب‌وکار خود را تقویت کنید",
+        "Explore the top features": "ویژگی های برتر را کاوش کنید",
+        "Features": "قابلیت ها",
+        "Try free": "تست رایگان"
     }
 }

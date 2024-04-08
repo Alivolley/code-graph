@@ -18,6 +18,8 @@ import yellowMedal from '@/assets/images/yellowMedal.png';
 
 // Components
 import PriceCart from '@/components/pages/prices/price-cart/price-cart';
+import FeatureAccordion from '@/components/pages/prices/feature-accordion/feature-accordion';
+import Faqs from '@/components/templates/faqs/faqs';
 
 const categoryButtonStyle = {
    borderRadius: '100px',
@@ -42,7 +44,7 @@ const featureButtonStyle = {
 function Prices() {
    const [chosenCategory, setChosenCategory] = useState('graphic');
 
-   const t = useTranslations('home');
+   const t = useTranslations('prices');
 
    return (
       <div>
@@ -56,10 +58,10 @@ function Prices() {
 
             <div className="relative mx-auto max-w-[1440px] px-5 pb-[187px] pt-[100px] customMd:px-[60px] customMd:pt-[152px] lg:pb-[370px]">
                <p className="text-center font-almaraiExtraBold text-[28px] leading-[47px] lg:text-[34px] lg:leading-[63px]">
-                  مشتریان خوشحال - کارمند پر انرژی
+                  {t('Happy customers - energetic employees')}
                </p>
                <p className="mx-auto mt-[6px] max-w-[543px] text-center text-sm leading-[27px] lg:text-base lg:leading-[32px]">
-                  ما طرح‌های زیادی طراحی کرده‌ایم که می‌توانید با انتخاب یک طرح مناسب، کسب‌وکار خود را تقویت کنید
+                  {t('We have designed so many plans that you can boost your business by choosing a suitable plan')}
                </p>
 
                <div className="mt-5 lg:px-[43px]">
@@ -134,13 +136,13 @@ function Prices() {
             className="mx-auto max-w-[1440px] bg-[#f5f8fc] px-5 pb-[46px] pt-[331px] text-center
           font-almaraiExtraBold text-[28px] leading-[40px] text-[#65A5FC] customMd:px-[60px] customMd:pb-[70px] customMd:pt-[302px] customMd:text-[32px]"
          >
-            ویژگی های برتر را کاوش کنید
+            {t('Explore the top features')}
          </p>
 
-         <div className="mx-auto max-w-[1440px] px-5 customMd:px-[60px]">
+         <div className="mx-auto mb-20 max-w-[1440px] px-5 customMd:px-[60px]">
             <div className="mt-[64px] flex flex-col rounded-t-10 border-solid border-[#E4EAF0] customMd:h-[276px] customMd:flex-row customMd:border">
                <div className="order-2 flex items-center justify-center py-10 font-almaraiBold text-[32px] text-[#050F2C] customMd:order-1 customMd:w-[250px] customLg:w-[520px]">
-                  قابلیت ها
+                  {t('Features')}
                </div>
 
                <div className="order-1 grid grow grid-cols-2 gap-x-5 gap-y-3 customMd:order-2 customMd:flex customMd:gap-0">
@@ -156,7 +158,7 @@ function Prices() {
                         sx={{ ...featureButtonStyle, border: '1px solid #050F2C', color: '#050F2C' }}
                         className="h-[35px] customMd:h-[41px]"
                      >
-                        Try free
+                        {t('Try free')}
                      </Button>
                   </div>
                   <div
@@ -171,7 +173,7 @@ function Prices() {
                         sx={{ ...featureButtonStyle, border: '1px solid #5A3AFF', color: '#5A3AFF' }}
                         className="h-[35px] customMd:h-[41px]"
                      >
-                        Try free
+                        {t('Try free')}
                      </Button>
                   </div>
                   <div
@@ -186,7 +188,7 @@ function Prices() {
                         sx={{ ...featureButtonStyle, border: '1px solid #E71D36', color: '#E71D36' }}
                         className="h-[35px] customMd:h-[41px]"
                      >
-                        Try free
+                        {t('Try free')}
                      </Button>
                   </div>
                   <div
@@ -201,12 +203,23 @@ function Prices() {
                         sx={{ ...featureButtonStyle, border: '1px solid #FC742B', color: '#FC742B' }}
                         className="h-[35px] customMd:h-[41px]"
                      >
-                        Try free
+                        {t('Try free')}
                      </Button>
                   </div>
                </div>
             </div>
+
+            <div>
+               <FeatureAccordion />
+               <FeatureAccordion />
+               <FeatureAccordion />
+               <FeatureAccordion />
+               <FeatureAccordion />
+               <FeatureAccordion />
+            </div>
          </div>
+
+         <Faqs />
       </div>
    );
 }

@@ -73,9 +73,9 @@ function Footer() {
                <Grid container spacing={{ md: 5, lg: 0 }}>
                   <Grid item xs={12} md={3.5}>
                      <div className="mb-[75px] customMd:mb-0 customMd:max-w-[306px]">
-                        <div className="h-[51px] w-[110px] customMd:h-[31px] customMd:w-[67px]">
+                        <Link href="/" className="block h-[51px] w-[110px] customMd:h-[31px] customMd:w-[67px]">
                            <Image src={headerLogo} alt="footer logo" className="size-full" />
-                        </div>
+                        </Link>
                         <p className="mt-4 text-xs leading-[30px]">{t('lorem1')}</p>
                         <div className="mt-5 flex items-center gap-5">
                            <Link href="/">
