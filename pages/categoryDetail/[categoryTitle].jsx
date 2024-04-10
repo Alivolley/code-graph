@@ -1,9 +1,7 @@
-import { useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
-import toast from 'react-hot-toast';
 
 // MUI
 import { Button, Grid } from '@mui/material';
@@ -28,13 +26,7 @@ import Faqs from '@/components/templates/faqs/faqs';
 // Data
 import selectCategory from '@/data/categories';
 
-function CategoryTitle({ error, categoryData }) {
-   useEffect(() => {
-      if (error) {
-         toast.error(error);
-      }
-   }, [error]);
-
+function CategoryTitle({ categoryData }) {
    const { locale } = useRouter();
    const t = useTranslations('categoryDetail');
 
@@ -298,20 +290,11 @@ export async function getStaticProps(context) {
       };
    }
 
-   try {
-      return {
-         props: {
-            categoryData,
-            messages: (await import(`@/messages/${context.locale}.json`)).default,
-         },
-         revalidate: 3600,
-      };
-   } catch (error) {
-      return {
-         props: {
-            messages: (await import(`@/messages/${context.locale}.json`)).default,
-            error: error?.message,
-         },
-      };
-   }
+   return {
+      props: {
+         categoryData,
+         messages: (await import(`@/messages/${context.locale}.json`)).default,
+      },
+      revalidate: 3600,
+   };
 }

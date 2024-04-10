@@ -29,22 +29,22 @@
    }
 
    @media only screen and (min-width: 900px) {
-      /* ::-webkit-scrollbar {
-        width: 8px;
-        height: 5px;
-     }
+      ::-webkit-scrollbar {
+         width: 8px;
+         height: 8px;
+      }
 
-     ::-webkit-scrollbar-track {
-        background: #ffffff;
-     }
+      ::-webkit-scrollbar-track {
+         background: #ffffff;
+      }
 
-     ::-webkit-scrollbar-thumb {
-        background: #d14f4d;
-        border-radius: 3px;
-     }
+      ::-webkit-scrollbar-thumb {
+         background: #0b1c3f8a;
+         border-radius: 3px;
+      }
 
-     ::-webkit-scrollbar-thumb:hover {
-        background: #df8482;
-     } */
+      ::-webkit-scrollbar-thumb:hover {
+         background: #0b1c3fc5;
+      }
    }
 }

@@ -148,89 +148,21 @@ function MobileMenu({ open, onClose, isUserLogin }) {
                         </div>
                      </AccordionDetails>
                   </Accordion>
-                  <Accordion sx={{ boxShadow: 'none' }}>
-                     <AccordionSummary
-                        expandIcon={<ArrowDown2 size="18" />}
-                        sx={{ padding: '0 !important', fontSize: '14px' }}
-                     >
-                        {t('Blogs')}
-                     </AccordionSummary>
-                     <AccordionDetails>
-                        <div className="-mt-4 flex flex-col items-start">
-                           <Link
-                              href="/categoryDetail/graphic"
-                              className="flex w-full items-center gap-1 border-b border-solid border-[#E4EAF0] py-3 text-xs"
-                           >
-                              <Calculator size="16" color="#626E94" />
-                              {t('Graphic')}
-                           </Link>
-                           <Link
-                              href="/categoryDetail/design"
-                              className="flex w-full items-center gap-1 border-b border-solid border-[#E4EAF0] py-3 text-xs"
-                           >
-                              <Calculator size="16" color="#626E94" />
-                              {t('Redesign')}
-                           </Link>
-                           <Link
-                              href="/categoryDetail/uiux"
-                              className="flex w-full items-center gap-1 border-b border-solid border-[#E4EAF0] py-3 text-xs"
-                           >
-                              <Calculator size="16" color="#626E94" />
-                              {t('UiUx')}
-                           </Link>
-                           <Link
-                              href="/categoryDetail/website"
-                              className="flex w-full items-center gap-1 border-b border-solid border-[#E4EAF0] py-3 text-xs"
-                           >
-                              <Calculator size="16" color="#626E94" />
-                              {t('Website')}
-                           </Link>
-                        </div>
-                     </AccordionDetails>
-                  </Accordion>
-                  <Accordion sx={{ boxShadow: 'none' }}>
-                     <AccordionSummary
-                        expandIcon={<ArrowDown2 size="18" />}
-                        sx={{ padding: '0 !important', fontSize: '14px' }}
-                     >
-                        {t('About us')}
-                     </AccordionSummary>
-                     <AccordionDetails>
-                        <div className="-mt-4 flex flex-col items-start">
-                           <Link
-                              href="/categoryDetail/graphic"
-                              className="flex w-full items-center gap-1 border-b border-solid border-[#E4EAF0] py-3 text-xs"
-                           >
-                              <Calculator size="16" color="#626E94" />
-                              {t('Graphic')}
-                           </Link>
-                           <Link
-                              href="/categoryDetail/design"
-                              className="flex w-full items-center gap-1 border-b border-solid border-[#E4EAF0] py-3 text-xs"
-                           >
-                              <Calculator size="16" color="#626E94" />
-                              {t('Redesign')}
-                           </Link>
-                           <Link
-                              href="/categoryDetail/uiux"
-                              className="flex w-full items-center gap-1 border-b border-solid border-[#E4EAF0] py-3 text-xs"
-                           >
-                              <Calculator size="16" color="#626E94" />
-                              {t('UiUx')}
-                           </Link>
-                           <Link
-                              href="/categoryDetail/website"
-                              className="flex w-full items-center gap-1 border-b border-solid border-[#E4EAF0] py-3 text-xs"
-                           >
-                              <Calculator size="16" color="#626E94" />
-                              {t('Website')}
-                           </Link>
-                        </div>
-                     </AccordionDetails>
-                  </Accordion>
+
+                  <Link href="/blogs" className="block w-full border-t border-solid border-[#E4EAF0] py-3 text-sm">
+                     {t('Blogs')}
+                  </Link>
 
                   <Link href="/prices" className="block w-full border-t border-solid border-[#E4EAF0] py-3 text-sm">
                      {t('Prices')}
+                  </Link>
+
+                  <Link href="/aboutUs" className="block w-full border-t border-solid border-[#E4EAF0] py-3 text-sm">
+                     {t('About us')}
+                  </Link>
+
+                  <Link href="/contactUs" className="block w-full border-t border-solid border-[#E4EAF0] py-3 text-sm">
+                     {t('Contact us')}
                   </Link>
 
                   <div className="mt-10">
