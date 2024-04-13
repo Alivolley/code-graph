@@ -128,5 +128,26 @@
         "Features": "Features",
         "Try free": "Try free"
     },
-    "blogs": {}
+    "blogs": {
+        "Our blogs": "Our blogs",
+        "Find our all blogs from here": "Find our all blogs from here",
+        "blogs description": "Our blogs are written from very research research and well known writers writers so that we can provide you the best blogs and articles articles for you to read them all along",
+        "Newest": "Newest",
+        "All articles": "All articles",
+        "Frontend blogs": "Frontend blogs",
+        "Backend blogs": "Backend blogs",
+        "UiUx blogs": "UiUx blogs",
+        "Graphic blogs": "Graphic blogs",
+        "Search topic": "Search topic",
+        "Read more": "Read more",
+        "Request": "Request",
+        "Consultation": "Consultation",
+        "Full name": "Full name",
+        "Phone number": "Phone number",
+        "Email": "Email",
+        "Message": "Message",
+        "Submit request": "Submit request",
+        "This filed is required": "This filed is required",
+        "Please enter a valid email": "Please enter a valid email"
+    }
 }

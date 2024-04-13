@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
 // MUI
@@ -8,6 +9,8 @@ import testPic from '@/assets/images/userPic.jpg';
 import BlogCartStyle from './blog-cart.style';
 
 function BlogCart() {
+   const t = useTranslations('blogs');
+
    return (
       <BlogCartStyle href="/" className="block rounded-[20px] p-[15px]">
          <div className="relative aspect-[1.3/1] w-full overflow-hidden rounded-2xl">
@@ -36,9 +39,9 @@ function BlogCart() {
 
             <Button
                className="text-base customMd:text-[18px]"
-               sx={{ color: '#FD8266', fontFamily: 'almaraiExtraBold', textDecoration: 'underline' }}
+               sx={{ color: '#FD8266', fontFamily: 'almaraiExtraBold' }}
             >
-               Read More...
+               {t('Read more')}...
             </Button>
          </div>
       </BlogCartStyle>

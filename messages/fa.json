@@ -128,5 +128,26 @@
         "Features": "قابلیت ها",
         "Try free": "تست رایگان"
     },
-    "blogs": {}
+    "blogs": {
+        "Our blogs": "مقاله های ما",
+        "Find our all blogs from here": "همه ی مقاله های ما را اینجا پیدا کنید",
+        "blogs description": "وبلاگ های ما بر اساس تحقیقات بسیار پژوهشی و نویسندگان معروف نوشته شده اند تا بتوانیم بهترین وبلاگ ها و مقالات را در اختیار شما قرار دهیم تا بتوانید آنها را در تمام مدت مطالعه کنید.",
+        "Newest": "جدیدترین",
+        "All articles": "همه ی مقالات",
+        "Frontend blogs": "مقاله های فرانت اند",
+        "Backend blogs": "مقاله های بک اند",
+        "UiUx blogs": "مقالات طراحی و تجربه ی کاربری",
+        "Graphic blogs": "مقالات گرافیک",
+        "Search topic": "جستجوی موضوع",
+        "Read more": "بیشتر بخوانید",
+        "Request": "درخواست",
+        "Consultation": "مشاوره",
+        "Full name": "نام کامل",
+        "Phone number": "شماره تماس",
+        "Email": "ایمیل",
+        "Message": "متن پیام",
+        "Submit request": "ارسال درخواست",
+        "This filed is required": "این فیلد اجباری است",
+        "Please enter a valid email": "لطفا یک ایمیل معتبر وارد کنید"
+    }
 }

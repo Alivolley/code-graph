@@ -15,6 +15,7 @@ import wheelSecond from '@/assets/icons/wheel2.svg';
 
 // Components
 import BlogCart from '@/components/pages/blogs/blog-cart/blog-cart';
+import Request from '@/components/templates/request/request';
 
 function Blogs() {
    const t = useTranslations('blogs');
@@ -67,17 +68,16 @@ function Blogs() {
             </div>
 
             <div className="relative mx-auto max-w-[1440px] px-5 pb-[50px] pt-[110px] customMd:px-[60px] customMd:pb-[70px] customMd:pt-[160px]">
-               <p className="text-center text-sm text-[#666666] customMd:text-base">OUR BLOGS</p>
+               <p className="text-center text-sm text-[#666666] customMd:text-base">{t('Our blogs')}</p>
                <p className="py-4 text-center font-almaraiExtraBold text-3xl text-[#333333] lg:py-0 lg:text-[40px] lg:leading-[64px]">
-                  Find our all blogs from here
+                  {t('Find our all blogs from here')}
                </p>
                <p className="mx-auto max-w-[756px] text-center text-sm text-[#666666] lg:mt-5 lg:text-base">
-                  our blogs are written from very research research and well known writers writers so that we can
-                  provide you the best blogs and articles articles for you to read them all along
+                  {t('blogs description')}
                </p>
             </div>
          </div>
-         <div className="relative mx-auto mt-[-34px] max-w-[1440px] px-5 customMd:px-[60px]">
+         <div className="relative mx-auto mb-[45px] mt-[-34px] max-w-[1440px] px-5 customMd:mb-[52px] customMd:px-[60px]">
             <form
                onSubmit={searchHandler}
                className="mx-auto flex h-[68px] max-w-[916px] items-center rounded-[60px] border border-solid border-[#E4EAF0] bg-white px-3"
@@ -88,17 +88,17 @@ function Blogs() {
                <input
                   type="text"
                   className="grow border-none bg-transparent px-2 py-3 font-almaraiRegular text-base outline-none placeholder:text-sm placeholder:text-[#7E8AAB]"
-                  placeholder="Search topic"
+                  placeholder={t('Search topic')}
                />
             </form>
             <div className="mt-[30px] flex items-center justify-center border-b border-solid border-[#E4EAF0]">
                <Tabs value={tabsValue} onChange={(e, newValue) => changeCategoryHandler(newValue)} variant="scrollable">
-                  <Tab label="جدیدترین ها" value="" />
-                  <Tab label="همه ی مقالات" value="all" />
-                  <Tab label="مقالات فرانت اند" value="frontend" />
-                  <Tab label="مقالات بک اند" value="backend" />
-                  <Tab label="مقالات طراحی و تجربه ی کاربری" value="uiux" />
-                  <Tab label="مقالات گرافیک" value="graphic" />
+                  <Tab label={t('All articles')} value="" />
+                  <Tab label={t('Newest')} value="newest" />
+                  <Tab label={t('Frontend blogs')} value="frontend" />
+                  <Tab label={t('Backend blogs')} value="backend" />
+                  <Tab label={t('UiUx blogs')} value="uiux" />
+                  <Tab label={t('Graphic blogs')} value="graphic" />
                </Tabs>
             </div>
 
@@ -151,6 +151,9 @@ function Blogs() {
                   }}
                />
             </div>
+         </div>
+         <div>
+            <Request />
          </div>
       </div>
    );

@@ -57,8 +57,8 @@ const getDesignTokens = (mode, direction, language) => ({
                '& .MuiOutlinedInput-root': {
                   ...(props?.size === 'small' && {
                      height: '45px',
+                     borderRadius: '47px',
                   }),
-                  borderRadius: '47px',
                },
             }),
          },
