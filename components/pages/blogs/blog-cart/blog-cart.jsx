@@ -12,7 +12,7 @@ function BlogCart() {
    const t = useTranslations('blogs');
 
    return (
-      <BlogCartStyle href="/" className="block rounded-[20px] p-[15px]">
+      <BlogCartStyle href="/blogs/blogDetail/some" className="block rounded-[20px] p-[15px]">
          <div className="relative aspect-[1.3/1] w-full overflow-hidden rounded-2xl">
             <Image src={testPic} alt="cover" fill className="rounded-2xl object-cover" />
          </div>
