@@ -151,5 +151,15 @@
         "Please enter a valid email": "Please enter a valid email",
         "Popular posts": "Popular posts",
         "See all": "See all"
+    },
+    "contact us": {
+        "lorem1": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi magnam architecto dolor cum in autem saepe natus quos ducimus obcaecati dignissimos perferendis",
+        "lorem2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do",
+        "Contact to": "Contact to",
+        "RoadGraph": "RoadGraph",
+        "Have a question ?": "Have a question ?",
+        "Email us": "Email us",
+        "Visit at any time": "Visit at any time",
+        "Address": "Kermanshah parvaz"
     }
 }

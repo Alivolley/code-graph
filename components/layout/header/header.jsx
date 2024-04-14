@@ -67,7 +67,7 @@ function Header() {
 
    return (
       <header
-         className={`fixed inset-x-0 top-0 z-10 p-5 transition-all duration-100 customMd:py-10 ${
+         className={`fixed inset-x-0 top-0 z-10 px-5 py-3 transition-all duration-100 customMd:py-10 ${
             hasBackGround ? 'bg-white customMd:py-3' : 'customMd:py-10'
          }`}
       >
@@ -330,6 +330,12 @@ function Header() {
 
          <MobileMenu open={showMobileMenu} onClose={() => setShowMobileMenu(false)} isUserLogin={isUserLogin} />
          <LogoutModal show={showLogoutModal} onClose={() => setShowLogoutModal(false)} />
+         <div
+            className="absolute inset-x-0 -bottom-2 h-2 transition-all duration-200"
+            style={{
+               background: hasBackGround ? 'linear-gradient(90deg, #FD8266 21.5%, #65A5FC 78.5%)' : 'transparent',
+            }}
+         />
       </header>
    );
 }
