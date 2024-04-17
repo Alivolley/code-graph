@@ -43,7 +43,8 @@
         "More": "More",
         "The": "The",
         "Value": "Value",
-        "We create for a business": "We create for a business"
+        "We create for a business": "We create for a business",
+        "Page not found": "Page not found"
     },
     "footer": {
         "Get started": "Get started",
@@ -181,5 +182,15 @@
         "Phone number": "Phone number",
         "Email": "Email",
         "Message": "Message"
+    },
+    "faqs": {
+        "lorem1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Egestas purus viverra accumsan in nisl nisi Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque In egestas erat imperdiet sed euismod  Morbi tristique senectus et netus Mattis pellentesque id nibh tortor i lectus proin Sapien faucibus et molestie ac feugiat sed lectus vestibulum Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget Dictum varius duis at consectetur lorem Nisi vitae ",
+        "Answer to": "Answer to",
+        "Your asked questions": "Your asked questions",
+        "Category of Faqs": "Category of Faqs",
+        "Graphic": "Graphic",
+        "UiUx": "UiUx",
+        "Website": "Website",
+        "All": "All"
     }
 }

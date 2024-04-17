@@ -161,7 +161,7 @@ function Footer() {
                                  <Grid item xs={6}>
                                     <div className="flex flex-col gap-5 text-xs">
                                        <Link
-                                          href="/"
+                                          href="/faqs"
                                           className="flex items-center gap-1 transition-all duration-150 hover:text-[#FD8266]"
                                        >
                                           <Image

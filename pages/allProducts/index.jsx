@@ -150,7 +150,11 @@ function AllProducts() {
                         boxShadow: '0px 11px 44px 23px #7E8AAB29',
                      }),
                   }}
-                  className="!h-[85px] !w-1/2 !border-e !border-solid !border-[#E4EAF0] customSm:!h-[113px] customSm:!flex-1"
+                  className={`!h-[85px] !w-1/2 customSm:!h-[113px] customSm:!flex-1 ${
+                     chosenCategory === ''
+                        ? '!rounded-lg !border !border-solid !border-[#EF6D33]'
+                        : '!border-e !border-solid !border-[#E4EAF0]'
+                  }`}
                   onClick={() => changeCategoryHandler('')}
                >
                   <Truck size="28" color="#d14d72" variant="TwoTone" />
@@ -164,7 +168,11 @@ function AllProducts() {
                         boxShadow: '0px 11px 44px 23px #7E8AAB29',
                      }),
                   }}
-                  className="!h-[85px] !w-1/2 !border-e !border-solid !border-[#E4EAF0] customSm:!h-[113px] customSm:!flex-1"
+                  className={`!h-[85px] !w-1/2 customSm:!h-[113px] customSm:!flex-1 ${
+                     chosenCategory === 'website'
+                        ? '!rounded-lg !border !border-solid !border-[#EF6D33]'
+                        : '!border-e !border-solid !border-[#E4EAF0]'
+                  }`}
                   onClick={() => changeCategoryHandler('website')}
                >
                   <User size="28" color="#d14d72" variant="TwoTone" />
@@ -178,7 +186,11 @@ function AllProducts() {
                         boxShadow: '0px 11px 44px 23px #7E8AAB29',
                      }),
                   }}
-                  className="!h-[85px] !w-1/2 !border-e !border-solid !border-[#E4EAF0] customSm:!h-[113px] customSm:!flex-1"
+                  className={`!h-[85px] !w-1/2 customSm:!h-[113px] customSm:!flex-1 ${
+                     chosenCategory === 'uiux'
+                        ? '!rounded-lg !border !border-solid !border-[#EF6D33]'
+                        : '!border-e !border-solid !border-[#E4EAF0]'
+                  }`}
                   onClick={() => changeCategoryHandler('uiux')}
                >
                   <ShoppingCart size="28" color="#d14d72" variant="TwoTone" />
@@ -192,7 +204,9 @@ function AllProducts() {
                         boxShadow: '0px 11px 44px 23px #7E8AAB29',
                      }),
                   }}
-                  className="!h-[85px] !w-1/2 customSm:!h-[113px] customSm:!flex-1"
+                  className={`!h-[85px] !w-1/2 customSm:!h-[113px] customSm:!flex-1 ${
+                     chosenCategory === 'graphic' ? '!rounded-lg !border !border-solid !border-[#EF6D33]' : ''
+                  }`}
                   onClick={() => changeCategoryHandler('graphic')}
                >
                   <DiscountShape size="28" color="#d14d72" variant="TwoTone" />

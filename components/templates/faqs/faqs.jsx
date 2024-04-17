@@ -38,7 +38,7 @@ function Faqs() {
                         >
                            <p className="relative py-3 text-xs leading-6 text-[#050F2C] customMd:text-base">
                               لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟
-                              <span className="absolute right-[-21px] top-[15px] size-3 rounded-full bg-[#FD8266]" />
+                              <span className="absolute start-[-21px] top-[15px] size-3 rounded-full bg-[#FD8266]" />
                            </p>
                         </AccordionSummary>
                         <AccordionDetails>
@@ -54,7 +54,7 @@ function Faqs() {
                         >
                            <p className="relative py-3 text-xs leading-6 text-[#050F2C] customMd:text-base">
                               لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟
-                              <span className="absolute right-[-21px] top-[15px] size-3 rounded-full bg-[#FD8266]" />
+                              <span className="absolute start-[-21px] top-[15px] size-3 rounded-full bg-[#FD8266]" />
                            </p>
                         </AccordionSummary>
                         <AccordionDetails>
@@ -70,7 +70,7 @@ function Faqs() {
                         >
                            <p className="relative py-3 text-xs leading-6 text-[#050F2C] customMd:text-base">
                               لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟
-                              <span className="absolute right-[-21px] top-[15px] size-3 rounded-full bg-[#FD8266]" />
+                              <span className="absolute start-[-21px] top-[15px] size-3 rounded-full bg-[#FD8266]" />
                            </p>
                         </AccordionSummary>
                         <AccordionDetails>
@@ -86,7 +86,7 @@ function Faqs() {
                         >
                            <p className="relative py-3 text-xs leading-6 text-[#050F2C] customMd:text-base">
                               لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟
-                              <span className="absolute right-[-21px] top-[15px] size-3 rounded-full bg-[#FD8266]" />
+                              <span className="absolute start-[-21px] top-[15px] size-3 rounded-full bg-[#FD8266]" />
                            </p>
                         </AccordionSummary>
                         <AccordionDetails>
@@ -102,7 +102,7 @@ function Faqs() {
                         >
                            <p className="relative py-3 text-xs leading-6 text-[#050F2C] customMd:text-base">
                               لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟
-                              <span className="absolute right-[-21px] top-[15px] size-3 rounded-full bg-[#FD8266]" />
+                              <span className="absolute start-[-21px] top-[15px] size-3 rounded-full bg-[#FD8266]" />
                            </p>
                         </AccordionSummary>
                         <AccordionDetails>
