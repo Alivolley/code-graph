@@ -71,6 +71,13 @@ function Header() {
             hasBackGround ? 'bg-white customMd:py-3' : 'customMd:py-10'
          }`}
       >
+         <div
+            className="absolute inset-x-0 -bottom-2 h-2 transition-all duration-200"
+            style={{
+               background: hasBackGround ? 'linear-gradient(90deg, #FD8266 21.5%, #65A5FC 78.5%)' : 'transparent',
+            }}
+         />
+
          <HeaderStyle className="mx-auto hidden max-w-[1440px] items-center justify-between customMd:flex customMd:px-[60px]">
             <div className="flex items-center gap-4 customLg:gap-9">
                <Link href="/">
@@ -330,12 +337,6 @@ function Header() {
 
          <MobileMenu open={showMobileMenu} onClose={() => setShowMobileMenu(false)} isUserLogin={isUserLogin} />
          <LogoutModal show={showLogoutModal} onClose={() => setShowLogoutModal(false)} />
-         <div
-            className="absolute inset-x-0 -bottom-2 h-2 transition-all duration-200"
-            style={{
-               background: hasBackGround ? 'linear-gradient(90deg, #FD8266 21.5%, #65A5FC 78.5%)' : 'transparent',
-            }}
-         />
       </header>
    );
 }

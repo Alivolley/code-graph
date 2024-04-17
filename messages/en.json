@@ -100,6 +100,7 @@
         "How a website": "How a website",
         "going to help you": "going to help you",
         "Answer to": "Answer to",
+        "Customers comments": "Customers comments",
         "Your frequently asked questions": "Your frequently asked questions"
     },
     "allProducts": {
@@ -161,5 +162,24 @@
         "Email us": "Email us",
         "Visit at any time": "Visit at any time",
         "Address": "Kermanshah parvaz"
+    },
+    "about us": {
+        "About us": "About us",
+        "RoadGraph": "RoadGraph",
+        "team": "team",
+        "Why": "Why",
+        "services": "services of",
+        "Counseling": "Counseling",
+        "Need": "Need",
+        "guidance?": "guidance?",
+        "Send counseling request": "Send counseling request",
+        "Request": "Request",
+        "Send request": "Send request",
+        "This filed is required": "This filed is required",
+        "Please enter a valid email": "Please enter a valid email",
+        "Full name": "Full name",
+        "Phone number": "Phone number",
+        "Email": "Email",
+        "Message": "Message"
     }
 }

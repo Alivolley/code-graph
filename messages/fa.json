@@ -100,6 +100,7 @@
         "How a website": "یک وبسایت",
         "going to help you": "چه کمکی به شما میکند",
         "Answer to": "پاسخ به",
+        "Customers comments": "نظرات مشتریان",
         "Your frequently asked questions": "سوالات پرتکرار شما"
     },
     "allProducts": {
@@ -161,5 +162,24 @@
         "Email us": "ایمیل کنید",
         "Visit at any time": "در هر زمان مراجعه کنید",
         "Address": "کرمانشاه شهرک پرواز"
+    },
+    "about us": {
+        "About us": "درباره ی ما",
+        "RoadGraph": "رود گراف",
+        "team": "تیم",
+        "Why": "چرا",
+        "services": "خدمات",
+        "Counseling": "مشاوره",
+        "Need": "به راهنمایی",
+        "guidance?": "نیاز دارید ؟",
+        "Send counseling request": "ارسال درخواست مشاوره",
+        "Request": "درخواست",
+        "Send request": "ارسال درخواست",
+        "This filed is required": "این فیلد اجباری است",
+        "Please enter a valid email": "لطفا یک ایمیل معتبر وارد کنید",
+        "Full name": "نام کامل",
+        "Phone number": "شماره تماس",
+        "Email": "ایمیل",
+        "Message": "متن پیام"
     }
 }
