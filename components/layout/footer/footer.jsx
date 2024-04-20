@@ -124,7 +124,7 @@ function Footer() {
                                           {t('Home')}
                                        </Link>
                                        <Link
-                                          href="/"
+                                          href="/aboutUs"
                                           className="flex items-center gap-1 transition-all duration-150 hover:text-[#FD8266]"
                                        >
                                           <Image
@@ -135,7 +135,7 @@ function Footer() {
                                           {t('About us')}
                                        </Link>
                                        <Link
-                                          href="/"
+                                          href="/categoryDetail/website"
                                           className="flex items-center gap-1 transition-all duration-150 hover:text-[#FD8266]"
                                        >
                                           <Image
@@ -146,7 +146,7 @@ function Footer() {
                                           {t('Services')}
                                        </Link>
                                        <Link
-                                          href="/"
+                                          href="/allProducts"
                                           className="flex items-center gap-1 transition-all duration-150 hover:text-[#FD8266]"
                                        >
                                           <Image
@@ -172,7 +172,7 @@ function Footer() {
                                           {t('FAQ')}
                                        </Link>
                                        <Link
-                                          href="/"
+                                          href="/prices"
                                           className="flex items-center gap-1 transition-all duration-150 hover:text-[#FD8266]"
                                        >
                                           <Image
@@ -183,7 +183,7 @@ function Footer() {
                                           {t('Prices')}
                                        </Link>
                                        <Link
-                                          href="/"
+                                          href="/contactUs"
                                           className="flex items-center gap-1 transition-all duration-150 hover:text-[#FD8266]"
                                        >
                                           <Image
@@ -191,7 +191,7 @@ function Footer() {
                                              alt="arrow"
                                              {...(locale === 'en' && { className: 'rotate-180' })}
                                           />
-                                          {t('Subcategories')}
+                                          {t('Contact us')}
                                        </Link>
                                     </div>
                                  </Grid>
@@ -206,7 +206,7 @@ function Footer() {
 
                            <div className="mt-[37px] flex max-w-[150px] flex-col gap-5 text-xs">
                               <Link
-                                 href="/"
+                                 href="/blogs/blogDetail/some"
                                  className="flex items-start gap-1 leading-[18px] transition-all duration-150 hover:text-[#FD8266]"
                               >
                                  <Image
@@ -220,7 +220,7 @@ function Footer() {
                                  </div>
                               </Link>
                               <Link
-                                 href="/"
+                                 href="/blogs/blogDetail/some"
                                  className="flex items-start gap-1 leading-[18px] transition-all duration-150 hover:text-[#FD8266]"
                               >
                                  <Image

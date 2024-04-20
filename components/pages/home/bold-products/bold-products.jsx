@@ -23,7 +23,7 @@ const categoryButtonStyle = {
    },
 };
 
-function BoldProducts() {
+function BoldProducts({ products }) {
    const [chosenCategory, setChosenCategory] = useState('graphic');
 
    const t = useTranslations('home');
@@ -98,10 +98,23 @@ function BoldProducts() {
             </div>
 
             <div className="mt-[30px] flex flex-nowrap items-center gap-5 overflow-auto">
-               <ProductCart className="w-[240px] customMd:flex-1" />
-               <ProductCart className="w-[240px] customMd:flex-1" />
-               <ProductCart className="w-[240px] customMd:flex-1" />
-               <ProductCart className="w-[240px] customMd:flex-1" />
+               {chosenCategory === 'graphic'
+                  ? products?.graphic?.map(item => (
+                       <ProductCart key={item?.id} className="w-[240px] customMd:flex-1" detail={item} />
+                    ))
+                  : chosenCategory === 'webDevelop'
+                    ? products?.website?.map(item => (
+                         <ProductCart key={item?.id} className="w-[240px] customMd:flex-1" detail={item} />
+                      ))
+                    : chosenCategory === 'reDesign'
+                      ? products?.redesign?.map(item => (
+                           <ProductCart key={item?.id} className="w-[240px] customMd:flex-1" detail={item} />
+                        ))
+                      : chosenCategory === 'uiux'
+                        ? products?.uiux?.map(item => (
+                             <ProductCart key={item?.id} className="w-[240px] customMd:flex-1" detail={item} />
+                          ))
+                        : null}
             </div>
 
             <Link href="/" className="mt-[50px] flex justify-center lg:mx-auto lg:w-fit">

@@ -60,7 +60,7 @@ function HomeBanner() {
                         </Button>
                      </Link>
 
-                     <Link href="/">
+                     <Link href="/aboutUs">
                         <Button
                            variant="contained"
                            className="!w-full lg:!w-[153px]"

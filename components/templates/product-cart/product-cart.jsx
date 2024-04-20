@@ -9,29 +9,33 @@ import { Button } from '@mui/material';
 import { ArrowLeft } from 'iconsax-react';
 
 // Assets
-import picSample from '@/assets/images/productSample.png';
 import ProductCartStyle from './product-cart.style';
 
-function ProductCart({ className }) {
+function ProductCart({ className, detail }) {
    const { locale } = useRouter();
    const t = useTranslations('home');
 
+   console.log(detail);
+
    return (
-      <ProductCartStyle href="/" className={`shrink-0 rounded-[20px] bg-white p-[14px] ${className}`}>
+      <ProductCartStyle
+         href={`/productDetail/${detail?.title}`}
+         className={`shrink-0 rounded-[20px] bg-white p-[14px] ${className}`}
+      >
          <div className="h-[175px] rounded-[18px] bg-[#fdebeb] px-[10px] pt-[10px] md:h-[200px]">
-            <p className="text-center text-xs font-bold text-[#284565]">فروشگاه کیف یلفان</p>
-            <div className="mt-3 h-[110px] w-full md:h-[135px]">
-               <Image src={picSample} alt="product" className="size-full" />
+            <p className="text-center text-xs font-bold text-[#284565]">{detail?.title}</p>
+            <div className="relative mt-3 h-[110px] w-full md:h-[135px]">
+               <Image src={detail?.cover} alt="product" fill className="rounded-2xl object-cover" />
             </div>
          </div>
          <p
             className="my-[15px] overflow-hidden text-base font-bold text-[#EA8C90] [-webkit-box-orient:vertical] [-webkit-line-clamp:1] [display:-webkit-box]"
             id="text"
          >
-            تولیدی کیف یلفان
+            {detail?.title}
          </p>
-         <p className="overflow-hidden text-xs leading-[20px] text-[#626E94] [-webkit-box-orient:vertical] [display:-webkit-box] [-webkit-line-clamp:3]">
-            آخرین روند مد را در وب سایت فروشگاه بج کشف کنید! لباس های شیک بخرید و بازی کمد لباس خود را ارتقا دهید!
+         <p className="min-h-[60px] overflow-hidden text-xs leading-[20px] text-[#626E94] [-webkit-box-orient:vertical] [display:-webkit-box] [-webkit-line-clamp:3]">
+            {detail?.short_description}
          </p>
          <div className="mt-4">
             <Button
