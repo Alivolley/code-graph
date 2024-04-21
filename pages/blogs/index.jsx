@@ -161,6 +161,9 @@ export async function getServerSideProps(context) {
    if (query?.page) {
       queryString += `&page=${query.page}`;
    }
+   if (query?.search) {
+      queryString += `&search=${query.search}`;
+   }
 
    const blogsList = await axiosInstance(queryString).then(res => res.data);
 
