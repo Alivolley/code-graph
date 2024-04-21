@@ -5,36 +5,37 @@ import Image from 'next/image';
 import { Button } from '@mui/material';
 
 // Assets
-import testPic from '@/assets/images/userPic.jpg';
 import BlogCartStyle from './blog-cart.style';
 
-function BlogCart() {
+function BlogCart({ detail }) {
    const t = useTranslations('blogs');
 
    return (
-      <BlogCartStyle href="/blogs/blogDetail/some" className="block rounded-[20px] p-[15px]">
+      <BlogCartStyle href={`/blogs/blogDetail/${detail?.title}`} className="block rounded-[20px] p-[15px]">
          <div className="relative aspect-[1.3/1] w-full overflow-hidden rounded-2xl">
-            <Image src={testPic} alt="cover" fill className="rounded-2xl object-cover" />
+            <Image src={detail?.cover} alt="cover" fill className="rounded-2xl object-cover" />
          </div>
 
          <div className="mt-5 customMd:mt-10">
             <div className="flex items-center gap-4">
                <p className="font-almaraiExtraBold text-xs text-[#333333]" id="text1">
-                  UiUx
+                  {detail?.category}
                </p>
                <p className="text-xs text-[#999999]" id="text2">
-                  10 March 2023
+                  {detail?.created_at}
                </p>
             </div>
             <p
-               className="my-[10px] font-almaraiExtraBold text-[18px] leading-7 text-[#333333] customMd:my-4 customMd:text-2xl"
+               className="my-[10px] line-clamp-2 h-[56px] font-almaraiExtraBold text-[18px] leading-7 text-[#333333] customMd:my-4 customMd:h-[64px] customMd:text-2xl"
                id="text3"
             >
-               How to Be a Dancer in 2023 with proper skills?
+               {detail?.title}
             </p>
-            <p className="mb-4 text-sm text-[#666666] customMd:text-base" id="text4">
-               Organically grow the holistic world view of disruptive innovation via workplace diversity and
-               empowerment. survival strategies to ensure proactive
+            <p
+               className="mb-4 line-clamp-3 h-[60px] text-sm text-[#666666] customMd:h-[72px] customMd:text-base"
+               id="text4"
+            >
+               {detail?.short_description}
             </p>
 
             <Button

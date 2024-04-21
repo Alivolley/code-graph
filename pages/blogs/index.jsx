@@ -16,8 +16,9 @@ import wheelSecond from '@/assets/icons/wheel2.svg';
 // Components
 import BlogCart from '@/components/pages/blogs/blog-cart/blog-cart';
 import Request from '@/components/templates/request/request';
+import axiosInstance from '@/configs/axiosInstance';
 
-function Blogs() {
+function Blogs({ blogsList }) {
    const t = useTranslations('blogs');
    const [tabsValue, setTabsValue] = useState('');
    const { push, query } = useRouter();
@@ -104,53 +105,37 @@ function Blogs() {
 
             <div className="mt-[30px]">
                <Grid container rowSpacing={{ xs: '15px', md: '20px' }} columnSpacing="5px">
-                  <Grid item xs={12} sm={6} md={4}>
-                     <BlogCart />
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={4}>
-                     <BlogCart />
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={4}>
-                     <BlogCart />
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={4}>
-                     <BlogCart />
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={4}>
-                     <BlogCart />
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={4}>
-                     <BlogCart />
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={4}>
-                     <BlogCart />
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={4}>
-                     <BlogCart />
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={4}>
-                     <BlogCart />
-                  </Grid>
+                  {blogsList?.total_objects ? (
+                     blogsList?.result?.map(item => (
+                        <Grid item xs={12} sm={6} md={4} key={item?.id}>
+                           <BlogCart detail={item} />
+                        </Grid>
+                     ))
+                  ) : (
+                     <p className="mx-auto py-20 text-center text-base customMd:text-2xl">{t('No blogs yet !!!')}</p>
+                  )}
                </Grid>
             </div>
 
-            <div className="mt-[55px] flex items-center justify-center">
-               <Pagination
-                  count={4}
-                  color="primary"
-                  onChange={changePageHandler}
-                  page={Number(query?.page) || 1}
-                  sx={{
-                     '& .MuiButtonBase-root': {
-                        border: '1px solid #E4EAF0',
-                        color: '#7E8AAB',
-                     },
-                     '& .Mui-selected': {
-                        color: 'white !important',
-                     },
-                  }}
-               />
-            </div>
+            {blogsList?.total_pages > 1 && (
+               <div className="mt-[55px] flex items-center justify-center">
+                  <Pagination
+                     count={blogsList?.total_pages}
+                     color="primary"
+                     onChange={changePageHandler}
+                     page={Number(query?.page) || 1}
+                     sx={{
+                        '& .MuiButtonBase-root': {
+                           border: '1px solid #E4EAF0',
+                           color: '#7E8AAB',
+                        },
+                        '& .Mui-selected': {
+                           color: 'white !important',
+                        },
+                     }}
+                  />
+               </div>
+            )}
          </div>
          <div>
             <Request />
@@ -161,11 +146,28 @@ function Blogs() {
 
 export default Blogs;
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
+   const { query } = context;
+
+   let queryString = `list-article/?lang=${context.locale}`;
+
+   if (query?.category) {
+      if (query?.category === 'newest') {
+         queryString += `&ordering=-created_at`;
+      } else {
+         queryString += `&category=${query.category}`;
+      }
+   }
+   if (query?.page) {
+      queryString += `&page=${query.page}`;
+   }
+
+   const blogsList = await axiosInstance(queryString).then(res => res.data);
+
    return {
       props: {
          messages: (await import(`@/messages/${context.locale}.json`)).default,
+         blogsList,
       },
-      revalidate: 3600,
    };
 }

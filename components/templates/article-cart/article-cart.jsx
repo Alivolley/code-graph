@@ -63,13 +63,10 @@ function ArticleCart() {
             </div>
          </div>
 
-         <p
-            className="my-[15px] overflow-hidden text-base font-bold text-[#65A5FC] [-webkit-box-orient:vertical] [-webkit-line-clamp:1] [display:-webkit-box]"
-            id="text"
-         >
+         <p className="my-[15px] line-clamp-1 text-base font-bold text-[#65A5FC]" id="text">
             یک سایت چگونه طراحی میشود
          </p>
-         <p className="overflow-hidden text-xs leading-[20px] text-[#626E94] [-webkit-box-orient:vertical] [display:-webkit-box] [-webkit-line-clamp:3]">
+         <p className="line-clamp-3 h-[60px] text-xs leading-[20px] text-[#626E94]">
             آخرین روند مد را در وب سایت فروشگاه بج کشف کنید! لباس های شیک بخرید و بازی کمد لباس خود را ارتقا دهید!
          </p>
          <div className="mt-4">

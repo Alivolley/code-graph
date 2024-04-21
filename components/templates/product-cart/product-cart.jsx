@@ -15,8 +15,6 @@ function ProductCart({ className, detail }) {
    const { locale } = useRouter();
    const t = useTranslations('home');
 
-   console.log(detail);
-
    return (
       <ProductCartStyle
          href={`/productDetail/${detail?.title}`}
@@ -28,15 +26,10 @@ function ProductCart({ className, detail }) {
                <Image src={detail?.cover} alt="product" fill className="rounded-2xl object-cover" />
             </div>
          </div>
-         <p
-            className="my-[15px] overflow-hidden text-base font-bold text-[#EA8C90] [-webkit-box-orient:vertical] [-webkit-line-clamp:1] [display:-webkit-box]"
-            id="text"
-         >
+         <p className="my-[15px] line-clamp-1 text-base font-bold text-[#EA8C90]" id="text">
             {detail?.title}
          </p>
-         <p className="min-h-[60px] overflow-hidden text-xs leading-[20px] text-[#626E94] [-webkit-box-orient:vertical] [display:-webkit-box] [-webkit-line-clamp:3]">
-            {detail?.short_description}
-         </p>
+         <p className="line-clamp-3 min-h-[60px] text-xs leading-[20px] text-[#626E94]">{detail?.short_description}</p>
          <div className="mt-4">
             <Button
                id="btn"
