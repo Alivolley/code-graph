@@ -1,3 +1,4 @@
+import toast from 'react-hot-toast';
 import { useForm } from 'react-hook-form';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/router';
@@ -15,14 +16,20 @@ import aboutUsLogo from '@/assets/images/aboutUsLogo.png';
 // Components
 import Comments from '@/components/pages/categoryDetail/comments/comments';
 
+// Apis
+import useSendTicket from '@/apis/contactUs/useSendTicket';
+
 function AboutUs() {
    const { locale } = useRouter();
    const t = useTranslations('about us');
+
+   const { trigger: sentTicketTrigger, isMutating: sendTicketIsMutating } = useSendTicket();
 
    const {
       register,
       handleSubmit,
       formState: { errors },
+      reset,
    } = useForm({
       defaultValues: {
          name: '',
@@ -34,7 +41,19 @@ function AboutUs() {
    });
 
    const formSubmit = data => {
-      console.log(data);
+      const newData = {
+         name: data?.name,
+         phone_number: data?.phoneNumber,
+         email: data?.email,
+         message: data?.text,
+      };
+
+      sentTicketTrigger(newData, {
+         onSuccess: () => {
+            reset();
+            toast.success(t('Message sent'));
+         },
+      });
    };
 
    return (
@@ -357,7 +376,7 @@ function AboutUs() {
                               backgroundColor: '#B46451',
                            },
                         }}
-                        //    loading={loginIsMutating}
+                        loading={sendTicketIsMutating}
                      >
                         {t('Send request')}
                      </LoadingButton>

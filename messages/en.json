@@ -153,7 +153,8 @@
         "Please enter a valid email": "Please enter a valid email",
         "Popular posts": "Popular posts",
         "See all": "See all",
-        "No blogs yet !!!": "No blogs yet !!!"
+        "No blogs yet !!!": "No blogs yet !!!",
+        "Message sent": "Message sent"
     },
     "contact us": {
         "lorem1": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi magnam architecto dolor cum in autem saepe natus quos ducimus obcaecati dignissimos perferendis",
@@ -182,7 +183,8 @@
         "Full name": "Full name",
         "Phone number": "Phone number",
         "Email": "Email",
-        "Message": "Message"
+        "Message": "Message",
+        "Message sent": "Message sent"
     },
     "faqs": {
         "lorem1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Egestas purus viverra accumsan in nisl nisi Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque In egestas erat imperdiet sed euismod  Morbi tristique senectus et netus Mattis pellentesque id nibh tortor i lectus proin Sapien faucibus et molestie ac feugiat sed lectus vestibulum Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget Dictum varius duis at consectetur lorem Nisi vitae ",

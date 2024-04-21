@@ -1,3 +1,4 @@
+import toast from 'react-hot-toast';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
@@ -10,14 +11,20 @@ import { LoadingButton } from '@mui/lab';
 // Assets
 import requestPic from '@/assets/images/requestPic.png';
 
+// Apis
+import useSendTicket from '@/apis/contactUs/useSendTicket';
+
 function Request() {
    const { locale } = useRouter();
    const t = useTranslations('blogs');
+
+   const { trigger: sentTicketTrigger, isMutating: sendTicketIsMutating } = useSendTicket();
 
    const {
       register,
       handleSubmit,
       formState: { errors },
+      reset,
    } = useForm({
       defaultValues: {
          name: '',
@@ -29,7 +36,19 @@ function Request() {
    });
 
    const formSubmit = data => {
-      console.log(data);
+      const newData = {
+         name: data?.name,
+         phone_number: data?.phoneNumber,
+         email: data?.email,
+         message: data?.text,
+      };
+
+      sentTicketTrigger(newData, {
+         onSuccess: () => {
+            reset();
+            toast.success(t('Message sent'));
+         },
+      });
    };
 
    return (
@@ -139,7 +158,7 @@ function Request() {
                                  backgroundColor: '#B46451',
                               },
                            }}
-                           //    loading={loginIsMutating}
+                           loading={sendTicketIsMutating}
                         >
                            {t('Submit request')}
                         </LoadingButton>
