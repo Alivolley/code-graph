@@ -102,7 +102,13 @@
         "going to help you": "going to help you",
         "Answer to": "Answer to",
         "Customers comments": "Customers comments",
-        "Your frequently asked questions": "Your frequently asked questions"
+        "Your frequently asked questions": "Your frequently asked questions",
+        "No projects yet !!!": "No projects yet !!!",
+        "No blogs yet !!!": "No blogs yet !!!",
+        "We value strong relationships and have seen their benefits to our business": "We value strong relationships and have seen their benefits to our business",
+        "Completed projects": "Completed projects",
+        "Show all": "Show all",
+        "Related articles": "Related articles"
     },
     "allProducts": {
         "Letter1": "Portfolio",
@@ -116,7 +122,8 @@
         "All": "All",
         "Website": "Website",
         "UiUx": "UiUx",
-        "Graphic": "Graphic"
+        "Graphic": "Graphic",
+        "No projects yet !!!": "No projects yet !!!"
     },
     "prices": {
         "Graphic": "Graphic",

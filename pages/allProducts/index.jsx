@@ -18,6 +18,7 @@ import bannerPic from '@/assets/images/allProductsPic.png';
 // Components
 import ProductCart from '@/components/templates/product-cart/product-cart';
 import Faqs from '@/components/templates/faqs/faqs';
+import axiosInstance from '@/configs/axiosInstance';
 
 const categoryButtonStyle = {
    display: 'flex',
@@ -29,7 +30,7 @@ const categoryButtonStyle = {
    },
 };
 
-function AllProducts() {
+function AllProducts({ projects }) {
    const [chosenCategory, setChosenCategory] = useState('');
    const t = useTranslations('allProducts');
    const { locale, push, query } = useRouter();
@@ -52,6 +53,12 @@ function AllProducts() {
          setValue('searchValue', query?.projectName);
       } else {
          setValue('searchValue', '');
+      }
+
+      if (query?.category) {
+         setChosenCategory(query?.category);
+      } else {
+         setChosenCategory('');
       }
    }, [query]);
 
@@ -215,42 +222,38 @@ function AllProducts() {
             </div>
 
             <div className="mt-10 flex flex-wrap justify-center gap-x-[20px] gap-y-[30px] customMd:mt-[74px] customMd:gap-x-[32px] customMd:gap-y-[45px] customMd:px-[43px]">
-               <ProductCart className="w-[240px] border border-solid border-[#E4EAF0] !bg-[#F5F8FC] customMd:w-[284px]" />
-               <ProductCart className="w-[240px] border border-solid border-[#E4EAF0] !bg-[#F5F8FC] customMd:w-[284px]" />
-               <ProductCart className="w-[240px] border border-solid border-[#E4EAF0] !bg-[#F5F8FC] customMd:w-[284px]" />
-               <ProductCart className="w-[240px] border border-solid border-[#E4EAF0] !bg-[#F5F8FC] customMd:w-[284px]" />
-               <ProductCart className="w-[240px] border border-solid border-[#E4EAF0] !bg-[#F5F8FC] customMd:w-[284px]" />
-               <ProductCart className="w-[240px] border border-solid border-[#E4EAF0] !bg-[#F5F8FC] customMd:w-[284px]" />
-               <ProductCart className="w-[240px] border border-solid border-[#E4EAF0] !bg-[#F5F8FC] customMd:w-[284px]" />
-               <ProductCart className="w-[240px] border border-solid border-[#E4EAF0] !bg-[#F5F8FC] customMd:w-[284px]" />
-               <ProductCart className="w-[240px] border border-solid border-[#E4EAF0] !bg-[#F5F8FC] customMd:w-[284px]" />
-               <ProductCart className="w-[240px] border border-solid border-[#E4EAF0] !bg-[#F5F8FC] customMd:w-[284px]" />
-               <ProductCart className="w-[240px] border border-solid border-[#E4EAF0] !bg-[#F5F8FC] customMd:w-[284px]" />
-               <ProductCart className="w-[240px] border border-solid border-[#E4EAF0] !bg-[#F5F8FC] customMd:w-[284px]" />
-               <ProductCart className="w-[240px] border border-solid border-[#E4EAF0] !bg-[#F5F8FC] customMd:w-[284px]" />
-               <ProductCart className="w-[240px] border border-solid border-[#E4EAF0] !bg-[#F5F8FC] customMd:w-[284px]" />
-               <ProductCart className="w-[240px] border border-solid border-[#E4EAF0] !bg-[#F5F8FC] customMd:w-[284px]" />
-               <ProductCart className="w-[240px] border border-solid border-[#E4EAF0] !bg-[#F5F8FC] customMd:w-[284px]" />
-               <ProductCart className="w-[240px] border border-solid border-[#E4EAF0] !bg-[#F5F8FC] customMd:w-[284px]" />
+               {projects?.total_objects ? (
+                  projects?.result?.map(item => (
+                     <ProductCart
+                        key={item?.id}
+                        className="w-[240px] border border-solid border-[#E4EAF0] !bg-[#F5F8FC] customMd:w-[284px]"
+                        detail={item}
+                     />
+                  ))
+               ) : (
+                  <p className="mx-auto py-20 text-center text-base customMd:text-2xl">{t('No projects yet !!!')}</p>
+               )}
             </div>
 
-            <div className="mt-10 flex items-center justify-center">
-               <Pagination
-                  count={4}
-                  color="primary"
-                  onChange={changePageHandler}
-                  page={Number(query?.page) || 1}
-                  sx={{
-                     '& .MuiButtonBase-root': {
-                        border: '1px solid #E4EAF0',
-                        color: '#7E8AAB',
-                     },
-                     '& .Mui-selected': {
-                        color: 'white !important',
-                     },
-                  }}
-               />
-            </div>
+            {projects?.total_pages > 1 && (
+               <div className="mt-10 flex items-center justify-center">
+                  <Pagination
+                     count={4}
+                     color="primary"
+                     onChange={changePageHandler}
+                     page={Number(query?.page) || 1}
+                     sx={{
+                        '& .MuiButtonBase-root': {
+                           border: '1px solid #E4EAF0',
+                           color: '#7E8AAB',
+                        },
+                        '& .Mui-selected': {
+                           color: 'white !important',
+                        },
+                     }}
+                  />
+               </div>
+            )}
          </div>
 
          <Faqs />
@@ -260,11 +263,27 @@ function AllProducts() {
 
 export default AllProducts;
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
+   const { query } = context;
+
+   let queryString = `list-project/?lang=${context.locale}`;
+
+   if (query?.category) {
+      queryString += `&category=${query.category}`;
+   }
+   if (query?.page) {
+      queryString += `&page=${query.page}`;
+   }
+   if (query?.projectName) {
+      queryString += `&search=${query.projectName}`;
+   }
+
+   const projects = await axiosInstance(queryString).then(res => res.data);
+
    return {
       props: {
          messages: (await import(`@/messages/${context.locale}.json`)).default,
+         projects,
       },
-      revalidate: 3600,
    };
 }

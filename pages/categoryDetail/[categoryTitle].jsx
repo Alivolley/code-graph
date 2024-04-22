@@ -22,11 +22,12 @@ import ProductCart from '@/components/templates/product-cart/product-cart';
 import ArticleCart from '@/components/templates/article-cart/article-cart';
 import Comments from '@/components/pages/categoryDetail/comments/comments';
 import Faqs from '@/components/templates/faqs/faqs';
+import axiosInstance from '@/configs/axiosInstance';
 
 // Data
 import selectCategory from '@/data/categories';
 
-function CategoryTitle({ categoryData }) {
+function CategoryTitle({ categoryData, projects, blogsList }) {
    const { locale } = useRouter();
    const t = useTranslations('categoryDetail');
 
@@ -159,20 +160,23 @@ function CategoryTitle({ categoryData }) {
          <div className="bg-[#F5F8FC]">
             <div className="mx-auto max-w-[1440px] px-5 pb-16 pt-[30px] customMd:px-[103px] customMd:py-[60px]">
                <p className="text-center text-xs text-[#3C4252] customMd:text-base">
-                  ما برای روابط قوی ارزش زیادی قائل هستیم و مزایای آنها را برای کسب و کارمان دیده ایم
+                  {t('We value strong relationships and have seen their benefits to our business')}
                </p>
                <h2 className="mx-auto mt-3 max-w-[830px] text-center font-almaraiExtraBold text-2xl leading-[42px] text-[#050F2C] customMd:text-[32px] customMd:leading-[56px]">
-                  پروژه های انجام شده
+                  {t('Completed projects')}
                </h2>
 
                <div className="mt-[50px] flex flex-nowrap items-center gap-5 overflow-auto">
-                  <ProductCart className="w-[240px] customMd:flex-1" />
-                  <ProductCart className="w-[240px] customMd:flex-1" />
-                  <ProductCart className="w-[240px] customMd:flex-1" />
-                  <ProductCart className="w-[240px] customMd:flex-1" />
+                  {projects?.total_objects ? (
+                     projects?.result?.map(item => (
+                        <ProductCart className="w-[240px] customMd:flex-1" key={item?.id} detail={item} />
+                     ))
+                  ) : (
+                     <p className="mx-auto py-20 text-center text-base customMd:text-2xl">{t('No projects yet !!!')}</p>
+                  )}
                </div>
 
-               <Link href="/" className="mt-[50px] flex justify-center lg:mx-auto lg:w-fit">
+               <Link href="/allProducts" className="mt-[50px] flex justify-center lg:mx-auto lg:w-fit">
                   <Button
                      color="customPink"
                      variant="contained"
@@ -187,7 +191,7 @@ function CategoryTitle({ categoryData }) {
                      }}
                      endIcon={<ArrowLeft size="20" {...(locale === 'en' && { className: 'rotate-180' })} />}
                   >
-                     {t('Get started')}
+                     {t('Show all')}
                   </Button>
                </Link>
             </div>
@@ -226,16 +230,18 @@ function CategoryTitle({ categoryData }) {
          <div className="bg-[#F5F8FC]">
             <div className="mx-auto max-w-[1440px] px-5 pb-16 pt-[30px] customMd:px-[103px] customMd:py-[50px]">
                <h2 className="text-center font-almaraiExtraBold text-2xl leading-[42px] text-[#050F2C] customMd:text-[32px] customMd:leading-[56px]">
-                  مقالات مرتبط
+                  {t('Related articles')}
                </h2>
 
                <div className="mt-[30px] flex flex-nowrap items-center gap-5 overflow-auto">
-                  <ArticleCart />
-                  <ArticleCart />
-                  <ArticleCart />
+                  {blogsList?.total_objects ? (
+                     blogsList?.result?.map(item => <ArticleCart key={item?.id} detail={item} />)
+                  ) : (
+                     <p className="mx-auto py-20 text-center text-base customMd:text-2xl">{t('No blogs yet !!!')}</p>
+                  )}
                </div>
 
-               <Link href="/" className="mt-[30px] flex justify-center lg:mx-auto lg:w-fit">
+               <Link href="/blogs" className="mt-[30px] flex justify-center lg:mx-auto lg:w-fit">
                   <Button
                      color="customPink"
                      variant="contained"
@@ -250,7 +256,7 @@ function CategoryTitle({ categoryData }) {
                      }}
                      endIcon={<ArrowLeft size="20" {...(locale === 'en' && { className: 'rotate-180' })} />}
                   >
-                     {t('Get started')}
+                     {t('Show all')}
                   </Button>
                </Link>
             </div>
@@ -290,10 +296,26 @@ export async function getStaticProps(context) {
       };
    }
 
+   const projects = await axiosInstance(
+      `list-project/?lang=${context.locale}&category=${context?.params?.categoryTitle}&page_size=4`
+   ).then(res => res.data);
+
+   let queryString = `list-article/?lang=${context.locale}&page_size=3`;
+
+   if (context?.params?.categoryTitle === 'website') {
+      queryString += `&category=frontend`;
+   } else {
+      queryString += `&category=${context?.params?.categoryTitle}`;
+   }
+
+   const blogsList = await axiosInstance(queryString).then(res => res.data);
+
    return {
       props: {
          categoryData,
          messages: (await import(`@/messages/${context.locale}.json`)).default,
+         projects,
+         blogsList,
       },
       revalidate: 3600,
    };

@@ -92,7 +92,7 @@ function Header() {
 
                      <div
                         id="dropdownBox"
-                        className="flex w-[263px] items-center justify-between rounded-lg border-t-4 border-solid border-[#65A5FC] bg-white px-5 py-7"
+                        className="flex w-[263px] justify-between rounded-lg border-t-4 border-solid border-[#65A5FC] bg-white px-5 py-7"
                      >
                         <div className="flex flex-col gap-6 text-xs text-[#626E94]">
                            <Link
@@ -102,25 +102,25 @@ function Header() {
                               <Calculator size="18" /> {t('Graphic')}
                            </Link>
                            <Link
-                              href="/categoryDetail/design"
-                              className="flex items-center gap-2 transition-all duration-200 hover:text-[#FD8266]"
-                           >
-                              <Calculator size="18" /> {t('Redesign')}
-                           </Link>
-                        </div>
-                        <div className="h-[73px] w-px bg-[#E4EAF0]" />
-                        <div className="flex flex-col gap-6 text-xs text-[#626E94]">
-                           <Link
                               href="/categoryDetail/uiux"
                               className="flex items-center gap-2 transition-all duration-200 hover:text-[#FD8266]"
                            >
                               <Calculator size="18" /> {t('UiUx')}
                            </Link>
+                        </div>
+                        <div className="h-[73px] w-px bg-[#E4EAF0]" />
+                        <div className="flex flex-col gap-6 text-xs text-[#626E94]">
                            <Link
                               href="/categoryDetail/website"
                               className="flex items-center gap-2 transition-all duration-200 hover:text-[#FD8266]"
                            >
                               <Calculator size="18" /> {t('Website')}
+                           </Link>
+                           <Link
+                              href="/categoryDetail/design"
+                              className="flex items-center gap-2 transition-all duration-200 hover:text-[#FD8266]"
+                           >
+                              <Calculator size="18" /> {t('Redesign')}
                            </Link>
                         </div>
                      </div>
@@ -144,7 +144,7 @@ function Header() {
                               <Calculator size="18" /> {t('All projects')}
                            </Link>
                            <Link
-                              href="/categoryDetail/graphic"
+                              href="/allProducts?category=graphic&page=1"
                               className="flex items-center gap-2 transition-all duration-200 hover:text-[#FD8266]"
                            >
                               <Calculator size="18" /> {t('Graphic')}
@@ -153,13 +153,13 @@ function Header() {
                         <div className="h-[73px] w-px bg-[#E4EAF0]" />
                         <div className="flex flex-col gap-6 text-xs text-[#626E94]">
                            <Link
-                              href="/categoryDetail/uiux"
+                              href="/allProducts?category=uiux&page=1"
                               className="flex items-center gap-2 transition-all duration-200 hover:text-[#FD8266]"
                            >
                               <Calculator size="18" /> {t('UiUx')}
                            </Link>
                            <Link
-                              href="/categoryDetail/website"
+                              href="/allProducts?category=website&page=1"
                               className="flex items-center gap-2 transition-all duration-200 hover:text-[#FD8266]"
                            >
                               <Calculator size="18" /> {t('Website')}

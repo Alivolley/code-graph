@@ -19,7 +19,7 @@ import axiosInstance from '@/configs/axiosInstance';
 import BlogCart from '@/components/pages/blogs/blog-cart/blog-cart';
 import BlogDetailStyle from './blogDetail.style';
 
-function BlogTitle({ blogDetail }) {
+function BlogTitle({ blogDetail, blogsList }) {
    const { locale } = useRouter();
    const t = useTranslations('blogs');
 
@@ -73,15 +73,11 @@ function BlogTitle({ blogDetail }) {
 
                <div className="mt-5 customMd:mt-[58px]">
                   <Grid container rowSpacing={{ xs: '15px', md: '20px' }} columnSpacing="5px">
-                     <Grid item xs={12} sm={6} md={4}>
-                        <BlogCart />
-                     </Grid>
-                     <Grid item xs={12} sm={6} md={4}>
-                        <BlogCart />
-                     </Grid>
-                     <Grid item xs={12} sm={6} md={4}>
-                        <BlogCart />
-                     </Grid>
+                     {blogsList?.result?.map(item => (
+                        <Grid item xs={12} sm={6} md={4} key={item?.id}>
+                           <BlogCart detail={item} />
+                        </Grid>
+                     ))}
                   </Grid>
                </div>
 
@@ -121,10 +117,15 @@ export async function getServerSideProps(context) {
       res => res.data
    );
 
+   const blogsList = await axiosInstance(`list-article/?lang=${context.locale}&ordering=-views&page_size=3`).then(
+      res => res.data
+   );
+
    return {
       props: {
          messages: (await import(`@/messages/${context.locale}.json`)).default,
          blogDetail,
+         blogsList,
       },
    };
 }

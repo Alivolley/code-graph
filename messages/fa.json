@@ -102,7 +102,13 @@
         "going to help you": "چه کمکی به شما میکند",
         "Answer to": "پاسخ به",
         "Customers comments": "نظرات مشتریان",
-        "Your frequently asked questions": "سوالات پرتکرار شما"
+        "Your frequently asked questions": "سوالات پرتکرار شما",
+        "No projects yet !!!": "پروژه ای نیست !!!",
+        "No blogs yet !!!": "مقاله ای نیست !!!",
+        "We value strong relationships and have seen their benefits to our business": "ما برای روابط قوی ارزش زیادی قائل هستیم و مزایای آنها را برای کسب و کارمان دیده ایم",
+        "Completed projects": "پروژه های انجام شده",
+        "Show all": "نمایش همه",
+        "Related articles": "مقالات مرتبط"
     },
     "allProducts": {
         "Letter1": "نمونه کارها",
@@ -116,7 +122,8 @@
         "All": "همه",
         "Website": "طراحی وبسایت",
         "UiUx": "طراحی رابط کاربری",
-        "Graphic": "گرافیک"
+        "Graphic": "گرافیک",
+        "No projects yet !!!": "پروژه ای نیست !!!"
     },
     "prices": {
         "Graphic": "گرافیک",
