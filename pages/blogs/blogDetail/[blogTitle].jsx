@@ -112,7 +112,7 @@ export default BlogTitle;
 
 export async function getStaticPaths() {
    return {
-      paths: [{ params: { blogTitle: '' } }],
+      paths: [{ params: { blogTitle: 'some' } }],
       fallback: 'blocking',
    };
 }
@@ -132,6 +132,6 @@ export async function getStaticProps(context) {
          blogDetail,
          blogsList,
       },
-      revalidate: 3600,
+      revalidate: 300,
    };
 }

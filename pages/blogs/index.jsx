@@ -23,8 +23,6 @@ function Blogs({ blogsList }) {
    const [tabsValue, setTabsValue] = useState('');
    const { push, query } = useRouter();
 
-   console.log(blogsList);
-
    const searchHandler = e => {
       e.preventDefault();
       const inputValue = e?.target?.[1]?.value?.trim();

@@ -409,6 +409,6 @@ export async function getStaticProps(context) {
       props: {
          messages: (await import(`@/messages/${context.locale}.json`)).default,
       },
-      revalidate: 3600,
+      revalidate: 300,
    };
 }

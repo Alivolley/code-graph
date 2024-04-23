@@ -97,7 +97,7 @@ export default ProductDetail;
 
 export async function getStaticPaths() {
    return {
-      paths: [{ params: { productTitle: '' } }],
+      paths: [{ params: { productTitle: 'some' } }],
       fallback: 'blocking',
    };
 }
@@ -112,6 +112,6 @@ export async function getStaticProps(context) {
          messages: (await import(`@/messages/${context.locale}.json`)).default,
          productData,
       },
-      revalidate: 3600,
+      revalidate: 300,
    };
 }

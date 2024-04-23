@@ -376,6 +376,6 @@ export async function getStaticProps(context) {
          projects,
          blogsList,
       },
-      revalidate: 3600,
+      revalidate: 300,
    };
 }

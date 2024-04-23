@@ -25,6 +25,6 @@ export async function getStaticProps(context) {
          messages: (await import(`@/messages/${context.locale}.json`)).default,
          products,
       },
-      revalidate: 3600,
+      revalidate: 300,
    };
 }
