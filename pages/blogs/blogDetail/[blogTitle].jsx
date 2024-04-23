@@ -110,12 +110,17 @@ function BlogTitle({ blogDetail, blogsList }) {
 
 export default BlogTitle;
 
-export async function getServerSideProps(context) {
-   const { query } = context;
+export async function getStaticPaths() {
+   return {
+      paths: [{ params: { blogTitle: '' } }],
+      fallback: 'blocking',
+   };
+}
 
-   const blogDetail = await axiosInstance(`get-article/?lang=${context.locale}&title=${query?.blogTitle}`).then(
-      res => res.data
-   );
+export async function getStaticProps(context) {
+   const blogDetail = await axiosInstance(
+      `get-article/?lang=${context.locale}&title=${context?.params?.blogTitle}`
+   ).then(res => res.data);
 
    const blogsList = await axiosInstance(`list-article/?lang=${context.locale}&ordering=-views&page_size=3`).then(
       res => res.data
@@ -127,5 +132,6 @@ export async function getServerSideProps(context) {
          blogDetail,
          blogsList,
       },
+      revalidate: 3600,
    };
 }

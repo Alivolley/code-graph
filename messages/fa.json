@@ -123,7 +123,9 @@
         "Website": "طراحی وبسایت",
         "UiUx": "طراحی رابط کاربری",
         "Graphic": "گرافیک",
-        "No projects yet !!!": "پروژه ای نیست !!!"
+        "No projects yet !!!": "پروژه ای نیست !!!",
+        "Visit project link": "لینک بازدید از پروژه",
+        "Some internal pages": "برخی از صفحات داخلی"
     },
     "prices": {
         "Graphic": "گرافیک",
