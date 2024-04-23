@@ -30,7 +30,7 @@ function BoldProducts({ products }) {
    const { locale } = useRouter();
 
    return (
-      <div className="bg-[#F5F8FC]">
+      <div className="bg-[#F5F8FC]" data-aos="zoom-out" data-aos-offset="400">
          <div className="mx-auto max-w-[1196px] px-5 pb-16 pt-[30px] customMd:px-[60px] customMd:py-[50px]">
             <p className="text-center text-xs text-[#3C4252] customMd:text-base">
                {t('Our goal at codegeraph is to meet the basic needs of any business that loves to grow')}
@@ -97,7 +97,7 @@ function BoldProducts({ products }) {
                </Button>
             </div>
 
-            <div className="mt-[30px] flex flex-nowrap items-center gap-5 overflow-auto">
+            <div className="mt-[30px] flex flex-nowrap items-center gap-5 overflow-auto customMd:overflow-hidden">
                {chosenCategory === 'graphic'
                   ? products?.graphic?.map(item => (
                        <ProductCart key={item?.id} className="w-[240px] customMd:flex-1" detail={item} />

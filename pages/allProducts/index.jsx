@@ -91,10 +91,10 @@ function AllProducts({ projects }) {
 
             <div className="relative mx-auto max-w-[1440px] px-5 pb-[67px] pt-[100px] customMd:px-[60px] customMd:pb-0 customMd:pt-[146px]">
                <div className="flex flex-col gap-[31px] lg:flex-row lg:gap-[51px]" dir="rtl">
-                  <div className="flex-1">
+                  <div className="flex-1" data-aos="fade-left">
                      <Image src={bannerPic} alt="banner" className="size-full" />
                   </div>
-                  <div className="flex-1 lg:mt-[45px]" dir={locale === 'en' ? 'ltr' : 'rtl'}>
+                  <div className="flex-1 lg:mt-[45px]" dir={locale === 'en' ? 'ltr' : 'rtl'} data-aos="fade-right">
                      <div className="text-center font-almaraiExtraBold lg:text-start">
                         <h1 className="text-[22px] text-[#FD8266] lg:text-[24px]">{t('Letter1')}</h1>
                         <h1 className="mt-4 text-[28px] leading-[45px] lg:text-[36px]">{t('Letter2')}</h1>
@@ -126,13 +126,21 @@ function AllProducts({ projects }) {
          </div>
 
          <div className="mx-auto max-w-[1440px] px-5 pb-[59px] pt-[53px] customMd:px-[60px]">
-            <p className="text-center text-[18px] text-[#050F2C]">{t('What is the subject of your search?')}</p>
-            <p className="mb-[20px] mt-[18px] text-center text-xs leading-[22px] text-[#626E94] customMd:text-sm">
+            <p className="text-center text-[18px] text-[#050F2C]" data-aos="fade-up" data-aos-offset="300">
+               {t('What is the subject of your search?')}
+            </p>
+            <p
+               className="mb-[20px] mt-[18px] text-center text-xs leading-[22px] text-[#626E94] customMd:text-sm"
+               data-aos="fade-up"
+               data-aos-offset="300"
+            >
                {t('Search for the topic you want or choose from the categories below')}
             </p>
             <form
                className="mx-auto flex h-[50px] max-w-[534px] items-center rounded-[60px] border border-solid border-[#E4EAF0] bg-[#F5F8FC] px-5"
                onSubmit={handleSubmit(searchHandler)}
+               data-aos="fade-up"
+               data-aos-offset="300"
             >
                <IconButton className="!shrink-0" type="submit">
                   <SearchNormal1 size="20" color="#7E8AAB" />
@@ -145,7 +153,11 @@ function AllProducts({ projects }) {
                />
             </form>
 
-            <p className="mt-[47px] flex h-12 items-center rounded-[47px] bg-[#FD8266] px-8 font-almaraiBold text-base text-white customMd:h-16 customMd:text-[20px]">
+            <p
+               className="mt-[47px] flex h-12 items-center rounded-[47px] bg-[#FD8266] px-8 font-almaraiBold text-base text-white customMd:h-16 customMd:text-[20px]"
+               data-aos="fade-up"
+               data-aos-offset="300"
+            >
                {t('Category of projects')}
             </p>
             <div className="mt-6 flex flex-wrap items-center border-b border-solid border-[#E4EAF0]">
@@ -163,6 +175,8 @@ function AllProducts({ projects }) {
                         : '!border-e !border-solid !border-[#E4EAF0]'
                   }`}
                   onClick={() => changeCategoryHandler('')}
+                  data-aos="zoom-in"
+                  data-aos-offset="300"
                >
                   <Truck size="28" color="#d14d72" variant="TwoTone" />
                   <p className="leading-[18px] text-[#050F2C]">{t('All')}</p>
@@ -181,6 +195,9 @@ function AllProducts({ projects }) {
                         : '!border-e !border-solid !border-[#E4EAF0]'
                   }`}
                   onClick={() => changeCategoryHandler('website')}
+                  data-aos="zoom-in"
+                  data-aos-offset="300"
+                  data-aos-delay="100"
                >
                   <User size="28" color="#d14d72" variant="TwoTone" />
                   <p className="leading-[18px] text-[#050F2C]">{t('Website')}</p>
@@ -199,6 +216,9 @@ function AllProducts({ projects }) {
                         : '!border-e !border-solid !border-[#E4EAF0]'
                   }`}
                   onClick={() => changeCategoryHandler('uiux')}
+                  data-aos="zoom-in"
+                  data-aos-offset="300"
+                  data-aos-delay="200"
                >
                   <ShoppingCart size="28" color="#d14d72" variant="TwoTone" />
                   <p className="leading-[18px] text-[#050F2C]">{t('UiUx')}</p>
@@ -215,6 +235,9 @@ function AllProducts({ projects }) {
                      chosenCategory === 'graphic' ? '!rounded-lg !border !border-solid !border-[#EF6D33]' : ''
                   }`}
                   onClick={() => changeCategoryHandler('graphic')}
+                  data-aos="zoom-in"
+                  data-aos-offset="300"
+                  data-aos-delay="300"
                >
                   <DiscountShape size="28" color="#d14d72" variant="TwoTone" />
                   <p className="leading-[18px] text-[#050F2C]">{t('Graphic')}</p>
@@ -231,7 +254,13 @@ function AllProducts({ projects }) {
                      />
                   ))
                ) : (
-                  <p className="mx-auto py-20 text-center text-base customMd:text-2xl">{t('No projects yet !!!')}</p>
+                  <p
+                     className="mx-auto py-20 text-center text-base customMd:text-2xl"
+                     data-aos="fade-up"
+                     data-aos-offset="300"
+                  >
+                     {t('No projects yet !!!')}
+                  </p>
                )}
             </div>
 

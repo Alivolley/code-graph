@@ -23,6 +23,8 @@ function Blogs({ blogsList }) {
    const [tabsValue, setTabsValue] = useState('');
    const { push, query } = useRouter();
 
+   console.log(blogsList);
+
    const searchHandler = e => {
       e.preventDefault();
       const inputValue = e?.target?.[1]?.value?.trim();
@@ -68,7 +70,10 @@ function Blogs({ blogsList }) {
                <Image src={wheelSecond} alt="wheel" />
             </div>
 
-            <div className="relative mx-auto max-w-[1440px] px-5 pb-[50px] pt-[110px] customMd:px-[60px] customMd:pb-[70px] customMd:pt-[160px]">
+            <div
+               className="relative mx-auto max-w-[1440px] px-5 pb-[50px] pt-[110px] customMd:px-[60px] customMd:pb-[70px] customMd:pt-[160px]"
+               data-aos="fade-up"
+            >
                <p className="text-center text-sm text-[#666666] customMd:text-base">{t('Our blogs')}</p>
                <p className="py-4 text-center font-almaraiExtraBold text-3xl text-[#333333] lg:py-0 lg:text-[40px] lg:leading-[64px]">
                   {t('Find our all blogs from here')}
@@ -82,6 +87,8 @@ function Blogs({ blogsList }) {
             <form
                onSubmit={searchHandler}
                className="mx-auto flex h-[68px] max-w-[916px] items-center rounded-[60px] border border-solid border-[#E4EAF0] bg-white px-3"
+               data-aos="fade-up"
+               data-aos-delay="150"
             >
                <IconButton type="submit">
                   <SearchNormal1 color="#7E8AAB" />
@@ -92,7 +99,12 @@ function Blogs({ blogsList }) {
                   placeholder={t('Search topic')}
                />
             </form>
-            <div className="mt-[30px] flex items-center justify-center border-b border-solid border-[#E4EAF0]">
+            <div
+               className="mt-[30px] flex items-center justify-center border-b border-solid border-[#E4EAF0]"
+               data-aos="fade-up"
+               data-aos-delay="300"
+               data-aos-offset="300"
+            >
                <Tabs value={tabsValue} onChange={(e, newValue) => changeCategoryHandler(newValue)} variant="scrollable">
                   <Tab label={t('All articles')} value="" />
                   <Tab label={t('Newest')} value="newest" />
@@ -107,12 +119,18 @@ function Blogs({ blogsList }) {
                <Grid container rowSpacing={{ xs: '15px', md: '20px' }} columnSpacing="5px">
                   {blogsList?.total_objects ? (
                      blogsList?.result?.map(item => (
-                        <Grid item xs={12} sm={6} md={4} key={item?.id}>
+                        <Grid item xs={12} sm={6} md={4} key={item?.id} data-aos="fade-up" data-aos-offset="300">
                            <BlogCart detail={item} />
                         </Grid>
                      ))
                   ) : (
-                     <p className="mx-auto py-20 text-center text-base customMd:text-2xl">{t('No blogs yet !!!')}</p>
+                     <p
+                        className="mx-auto py-20 text-center text-base customMd:text-2xl"
+                        data-aos="fade-up"
+                        data-aos-offset="300"
+                     >
+                        {t('No blogs yet !!!')}
+                     </p>
                   )}
                </Grid>
             </div>

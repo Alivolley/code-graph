@@ -25,7 +25,7 @@ function Login() {
 
    return (
       <div className="mx-auto flex max-w-[1440px] flex-col-reverse gap-4 px-5 py-[30px] customMd:max-h-screen customMd:flex-row customMd:p-[60px] customLg:gap-20">
-         <div className="grow">
+         <div className="grow" data-aos="fade-left">
             <Link href="/" className="my-3 hidden items-end gap-2 customMd:flex">
                <div className="h-[35px] w-[75px]">
                   <Image src={logo} alt="logo" className="size-full" />
@@ -66,7 +66,10 @@ function Login() {
                </LoadingButton>
             </div>
          </div>
-         <div className="shrink-0 overflow-hidden rounded-[25px] border border-solid border-[#E4EAF0] bg-[#f5f8fc] customMd:w-[500px] customLg:w-[740px]">
+         <div
+            className="shrink-0 overflow-hidden rounded-[25px] border border-solid border-[#E4EAF0] bg-[#f5f8fc] customMd:w-[500px] customLg:w-[740px]"
+            data-aos="fade-right"
+         >
             <Link href="/" className="my-3 flex flex-col items-center gap-2 customMd:hidden">
                <div className="h-[23px] w-[49px]">
                   <Image src={logo} alt="logo" className="size-full" />

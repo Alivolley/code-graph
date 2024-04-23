@@ -57,14 +57,20 @@ function Prices() {
             </div>
 
             <div className="relative mx-auto max-w-[1440px] px-5 pb-[187px] pt-[100px] customMd:px-[60px] customMd:pt-[152px] lg:pb-[370px]">
-               <p className="text-center font-almaraiExtraBold text-[28px] leading-[47px] lg:text-[34px] lg:leading-[63px]">
+               <p
+                  className="text-center font-almaraiExtraBold text-[28px] leading-[47px] lg:text-[34px] lg:leading-[63px]"
+                  data-aos="fade-up"
+               >
                   {t('Happy customers - energetic employees')}
                </p>
-               <p className="mx-auto mt-[6px] max-w-[543px] text-center text-sm leading-[27px] lg:text-base lg:leading-[32px]">
+               <p
+                  className="mx-auto mt-[6px] max-w-[543px] text-center text-sm leading-[27px] lg:text-base lg:leading-[32px]"
+                  data-aos="fade-up"
+               >
                   {t('We have designed so many plans that you can boost your business by choosing a suitable plan')}
                </p>
 
-               <div className="mt-5 lg:px-[43px]">
+               <div className="mt-5 lg:px-[43px]" data-aos="fade-up">
                   <div
                      className="flex h-[70px] flex-nowrap items-center gap-4 overflow-auto rounded-[100px]
              border-2 border-solid border-white bg-white px-4 py-[10px] customMd:h-[102px] customMd:p-4"
@@ -124,7 +130,11 @@ function Prices() {
                   </div>
                </div>
 
-               <div className="mt-[50px] flex flex-nowrap items-center gap-4 overflow-auto customMd:gap-6">
+               <div
+                  className="mt-[50px] flex flex-nowrap items-center gap-4 overflow-auto customMd:gap-6"
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+               >
                   <PriceCart className="w-[290px] customLg:flex-1" />
                   <PriceCart className="w-[290px] customLg:flex-1" />
                   <PriceCart className="w-[290px] customLg:flex-1" />
@@ -149,6 +159,8 @@ function Prices() {
                   <div
                      className="flex flex-col items-center justify-center gap-4 rounded-10 border border-solid border-[#E4EAF0]
                    py-[18px] customMd:flex-1 customMd:gap-5 customMd:rounded-none customMd:border-y-0 customMd:border-e-0 customMd:border-s"
+                     data-aos="zoom-out"
+                     data-aos-offset="400"
                   >
                      <div className="w-[51px] customMd:w-[65px]">
                         <Image src={grayMedal} alt="medal" className="size-full" />
@@ -164,6 +176,9 @@ function Prices() {
                   <div
                      className="flex flex-col items-center justify-center gap-4 rounded-10 border border-solid border-[#E4EAF0]
                    py-[18px] customMd:flex-1 customMd:gap-5 customMd:rounded-none customMd:border-y-0 customMd:border-e-0 customMd:border-s"
+                     data-aos="zoom-out"
+                     data-aos-delay="100"
+                     data-aos-offset="400"
                   >
                      <div className="w-[51px] customMd:w-[65px]">
                         <Image src={greenMedal} alt="medal" className="size-full" />
@@ -179,6 +194,9 @@ function Prices() {
                   <div
                      className="flex flex-col items-center justify-center gap-4 rounded-10 border border-solid border-[#E4EAF0]
                    py-[18px] customMd:flex-1 customMd:gap-5 customMd:rounded-none customMd:border-y-0 customMd:border-e-0 customMd:border-s"
+                     data-aos="zoom-out"
+                     data-aos-delay="200"
+                     data-aos-offset="400"
                   >
                      <div className="w-[51px] customMd:w-[65px]">
                         <Image src={purpleMedal} alt="medal" className="size-full" />
@@ -194,6 +212,9 @@ function Prices() {
                   <div
                      className="flex flex-col items-center justify-center gap-4 rounded-10 border border-solid border-[#E4EAF0]
                    py-[18px] customMd:flex-1 customMd:gap-5 customMd:rounded-none customMd:border-y-0 customMd:border-e-0 customMd:border-s"
+                     data-aos="zoom-out"
+                     data-aos-delay="300"
+                     data-aos-offset="400"
                   >
                      <div className="w-[51px] customMd:w-[65px]">
                         <Image src={yellowMedal} alt="medal" className="size-full" />
@@ -209,7 +230,7 @@ function Prices() {
                </div>
             </div>
 
-            <div>
+            <div data-aos="fade-up" data-aos-offset="300">
                <FeatureAccordion />
                <FeatureAccordion />
                <FeatureAccordion />

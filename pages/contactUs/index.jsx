@@ -37,12 +37,12 @@ function ContactUs() {
             <div className="relative mx-auto max-w-[1440px] px-5 pb-10 customMd:px-[60px] customMd:pb-0">
                <Grid container>
                   <Grid item xs={12} md={6}>
-                     <div className="mx-auto max-w-[556px] customMd:mx-0 customMd:mt-16">
+                     <div className="mx-auto max-w-[556px] customMd:mx-0 customMd:mt-16" data-aos="fade-left">
                         <Image src={contactUsPic} alt="uiux" className="size-full" />
                      </div>
                   </Grid>
                   <Grid item xs={12} md={6}>
-                     <div className="mt-10 customMd:mt-10" dir={locale === 'en' ? 'ltr' : 'rtl'}>
+                     <div className="mt-10 customMd:mt-10" dir={locale === 'en' ? 'ltr' : 'rtl'} data-aos="fade-right">
                         <div className="relative ps-[30px] font-almaraiExtraBold text-2xl leading-[46px] text-[#EF6D33] customMd:text-[40px] customMd:leading-[75px]">
                            <p className="text-[#65A5FC]">{t('Contact to')}</p>
                            <p>{t('RoadGraph')}</p>
@@ -92,7 +92,10 @@ function ContactUs() {
             </div>
          </div>
 
-         <div className="mx-auto max-w-[1440px] px-5 py-[27px] customMd:px-[60px] customMd:py-[74px]">
+         <div
+            className="mx-auto max-w-[1440px] px-5 py-[27px] customMd:px-[60px] customMd:py-[74px]"
+            data-aos="fade-up"
+         >
             <div
                className="mt-3 flex flex-nowrap items-center justify-between overflow-auto rounded-3xl border border-solid border-[#AAAEB280] px-[18px] py-7"
                style={{

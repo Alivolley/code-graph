@@ -23,7 +23,12 @@ function ValueDescription() {
       <ValueDescriptionStyle>
          <div className="mx-auto max-w-[1440px] px-5 pb-10 pt-[53px] customMd:px-[60px] customMd:pb-[65px]">
             <div className="mt-3 flex flex-col-reverse gap-10 lg:flex-row lg:gap-[76px]" dir="rtl">
-               <div className="lg:mt-[100px] lg:w-[637px] lg:px-[26px]" dir={locale === 'en' ? 'ltr' : 'rtl'}>
+               <div
+                  className="lg:mt-[100px] lg:w-[637px] lg:px-[26px]"
+                  dir={locale === 'en' ? 'ltr' : 'rtl'}
+                  data-aos="fade-left"
+                  data-aos-offset="400"
+               >
                   <div className="font-bold leading-[46px] lg:leading-[66px]">
                      <h3 className="relative ps-5 text-[24px] lg:ps-0 lg:text-[34px]">
                         {t('The')}{' '}
@@ -62,7 +67,7 @@ function ValueDescription() {
                   </div>
                </div>
 
-               <div className="h-full grow">
+               <div className="h-full grow" data-aos="fade-right" data-aos-offset="400">
                   <Image src={valuePic} alt="banner" className="size-full" />
                </div>
             </div>

@@ -24,8 +24,8 @@ function BlogTitle({ blogDetail, blogsList }) {
    const t = useTranslations('blogs');
 
    return (
-      <BlogDetailStyle>
-         <div className="relative mx-auto mt-[110px] max-w-[1440px] px-5 customMd:mt-[237px] customMd:px-[60px]">
+      <BlogDetailStyle data-aos="fade-up">
+         <div className="relative mx-auto mt-[110px] max-w-[1440px] px-5 customMd:mt-[208px] customMd:px-[60px]">
             <div className="flex items-center gap-[10px]">
                <p className="font-almaraiBold text-sm uppercase text-[#333333]">{blogDetail?.category}</p>
                <p className="text-sm text-[#999999]">{blogDetail?.created_at}</p>
@@ -74,7 +74,7 @@ function BlogTitle({ blogDetail, blogsList }) {
                <div className="mt-5 customMd:mt-[58px]">
                   <Grid container rowSpacing={{ xs: '15px', md: '20px' }} columnSpacing="5px">
                      {blogsList?.result?.map(item => (
-                        <Grid item xs={12} sm={6} md={4} key={item?.id}>
+                        <Grid item xs={12} sm={6} md={4} key={item?.id} data-aos="fade-up" data-aos-offset="400">
                            <BlogCart detail={item} />
                         </Grid>
                      ))}

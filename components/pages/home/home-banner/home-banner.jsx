@@ -24,10 +24,10 @@ function HomeBanner() {
       <div style={{ background: 'linear-gradient(80.33deg, #E6EBFA 7.96%, #F2F5FC 43.29%, #FFFFFF 98.56%)' }}>
          <div className="mx-auto max-w-[1440px] px-5 pb-10 pt-[91px] customMd:px-[60px] customMd:pt-[100px]">
             <div className="flex flex-col lg:flex-row" dir="rtl">
-               <div className="grow">
+               <div className="grow" data-aos="fade-left">
                   <Image src={bannerPic} alt="banner" className="size-full" />
                </div>
-               <div className="lg:mt-[70px] lg:w-[450px]" dir={locale === 'en' ? 'ltr' : 'rtl'}>
+               <div className="lg:mt-[70px] lg:w-[450px]" dir={locale === 'en' ? 'ltr' : 'rtl'} data-aos="fade-right">
                   <div className="text-center font-bold leading-[44px] lg:text-start lg:leading-[73px]">
                      <div className="flex items-center justify-center gap-3 lg:justify-start">
                         <h1 className="text-[28px] lg:text-[37px]">{t('Letter1')}</h1>
@@ -85,7 +85,10 @@ function HomeBanner() {
                </div>
             </div>
 
-            <div className="mt-3 flex flex-nowrap items-center justify-between overflow-auto rounded-3xl border border-solid border-[#AAAEB280] px-[18px] py-7">
+            <div
+               className="mt-3 flex flex-nowrap items-center justify-between overflow-auto rounded-3xl border border-solid border-[#AAAEB280] px-[18px] py-7"
+               data-aos="fade-up"
+            >
                <div className="flex min-w-[215px] max-w-[288px] flex-col items-center gap-[10px] px-[18px]">
                   <Image src={pic4} alt="introduce" />
                   <h3 className="font-almaraiBold text-lg">Online shop</h3>

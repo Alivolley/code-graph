@@ -22,6 +22,8 @@ function Faqs() {
                <div
                   dir={locale === 'en' ? 'ltr' : 'rtl'}
                   className="order-2 flex-1 customMd:order-1 customMd:mt-[36px]"
+                  data-aos="fade-left"
+                  data-aos-offset="400"
                >
                   <div className="relative ps-[30px] font-almaraiExtraBold text-2xl leading-[46px] text-[#EF6D33] customMd:text-[32px] customMd:leading-[60px]">
                      <p className="text-[#65A5FC]">{t('Answer to')}</p>
@@ -112,7 +114,7 @@ function Faqs() {
                      </Accordion>
                   </div>
                </div>
-               <div className="order-1 flex-1 customMd:order-2">
+               <div className="order-1 flex-1 customMd:order-2" data-aos="fade-right" data-aos-offset="400">
                   <Image src={faqPic} alt="faq" className="size-full customMd:h-auto customMd:w-full" />
                </div>
             </div>

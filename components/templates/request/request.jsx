@@ -55,7 +55,12 @@ function Request() {
       <div className="bg-[#F8F9FE]" dir="rtl">
          <div className="mx-auto max-w-[1440px] px-5 pb-[70px] pt-[24px] customMd:px-[60px] customMd:pb-[87px] customMd:pt-[83px]">
             <div className="flex flex-col gap-[50px] customMd:flex-row customMd:gap-[83px]">
-               <div dir={locale === 'en' ? 'ltr' : 'rtl'} className="order-2 flex-1 customMd:order-1">
+               <div
+                  dir={locale === 'en' ? 'ltr' : 'rtl'}
+                  className="order-2 flex-1 customMd:order-1"
+                  data-aos="fade-left"
+                  data-aos-offset="400"
+               >
                   <div className="relative ps-[30px] font-almaraiExtraBold text-2xl leading-[46px] text-[#EF6D33] customMd:text-[32px] customMd:leading-[60px]">
                      <p className="text-[#65A5FC]">{t('Request')}</p>
                      <p>{t('Consultation')}</p>
@@ -165,7 +170,11 @@ function Request() {
                      </div>
                   </form>
                </div>
-               <div className="order-1 flex-1 customMd:order-2 customMd:mt-8">
+               <div
+                  className="order-1 flex-1 customMd:order-2 customMd:mt-8"
+                  data-aos="fade-right"
+                  data-aos-offset="400"
+               >
                   <Image src={requestPic} alt="faq" className="size-full customMd:h-auto customMd:w-full" />
                </div>
             </div>

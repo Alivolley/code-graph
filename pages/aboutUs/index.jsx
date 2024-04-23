@@ -59,7 +59,10 @@ function AboutUs() {
    return (
       <div>
          <div style={{ background: 'linear-gradient(80.33deg, #E6EBFA 7.96%, #F2F5FC 43.29%, #FFFFFF 98.56%)' }}>
-            <div className="mx-auto max-w-[1440px] px-5 pb-10 pt-[130px] customMd:px-[60px] customMd:pt-[180px]">
+            <div
+               className="mx-auto max-w-[1440px] px-5 pb-10 pt-[130px] customMd:px-[60px] customMd:pt-[180px]"
+               data-aos="zoom-out-up"
+            >
                <Grid container rowSpacing={{ xs: '30px', md: 0 }}>
                   <Grid item xs={12} md={6} order={{ xs: 2, md: 1 }}>
                      <div className="relative ps-[30px] font-almaraiExtraBold">
@@ -93,6 +96,8 @@ function AboutUs() {
          <div
             className="mx-auto mt-5 flex max-w-[1440px] flex-col gap-3 px-5 pb-[10px] customMd:mt-[61px]
           customMd:flex-row customMd:items-start customMd:justify-between customMd:px-[60px] customMd:pb-[70px]"
+            data-aos="fade-up"
+            data-aos-offset="400"
          >
             <div>
                <p
@@ -122,7 +127,7 @@ function AboutUs() {
             </p>
          </div>
 
-         <div className="border-y border-solid border-[#E4EAF0] bg-[#fbfbfb] ">
+         <div className="border-y border-solid border-[#E4EAF0] bg-[#fbfbfb]" data-aos="fade-up" data-aos-offset="400">
             <div className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-center gap-5 px-5 py-8 customSm:gap-12 customMd:px-[60px] customMd:py-20 xl:gap-28">
                <div className="flex flex-col items-center gap-2.5">
                   <p className="font-almaraiBold customMd:text-5xl">+1k</p>
@@ -150,12 +155,17 @@ function AboutUs() {
             <div className="mx-auto max-w-[1440px] px-5 pb-10 pt-[18px] customMd:px-[60px] customMd:pb-[70px] customMd:pt-[50px]">
                <Grid container>
                   <Grid item xs={12} md={6}>
-                     <div className="mx-auto max-w-[650px] customMd:mx-0">
+                     <div className="mx-auto max-w-[650px] customMd:mx-0" data-aos="fade-left" data-aos-offset="400">
                         <Image src={aboutUsServicePic} alt="uiux" className="size-full" />
                      </div>
                   </Grid>
                   <Grid item xs={12} md={6}>
-                     <div className="mt-5" dir={locale === 'en' ? 'ltr' : 'rtl'}>
+                     <div
+                        className="mt-5"
+                        dir={locale === 'en' ? 'ltr' : 'rtl'}
+                        data-aos="fade-right"
+                        data-aos-offset="400"
+                     >
                         <div className="relative ps-[30px]">
                            <p className="text-xs text-[#626E94] customMd:text-sm">
                               لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟
@@ -199,7 +209,7 @@ function AboutUs() {
             </div>
          </div>
 
-         <div className="bg-[#F5F8FC]">
+         <div className="bg-[#F5F8FC]" data-aos="fade-up" data-aos-offset="400">
             <div
                className="mx-auto flex max-w-[1440px] flex-col gap-5 px-5 py-[34px]
           customMd:flex-row customMd:items-start customMd:justify-between customMd:px-[60px] customMd:py-[70px]"
@@ -252,13 +262,17 @@ function AboutUs() {
             </div>
          </div>
 
-         <div className="mx-auto max-w-[1440px] px-5 py-[46px] customMd:px-[60px]">
+         <div
+            className="mx-auto max-w-[1440px] px-5 py-[46px] customMd:px-[60px]"
+            data-aos="fade-up"
+            data-aos-offset="400"
+         >
             <Comments />
          </div>
 
          <div className="bg-[#F5F8FC]">
             <div className="mx-auto max-w-[1440px] px-5 py-[48px] customMd:pb-[45px] customMd:pt-[60px]">
-               <div className="flex flex-col items-center">
+               <div className="flex flex-col items-center" data-aos="zoom-out" data-aos-offset="400">
                   <div className="w-[144px] customMd:w-[413px]">
                      <Image src={aboutUsLogo} alt="logo" className="size-full" />
                   </div>
@@ -273,7 +287,7 @@ function AboutUs() {
 
                <form className="mx-auto mt-[30px] max-w-[1213px]" onSubmit={handleSubmit(formSubmit)}>
                   <Grid container rowSpacing="25px" spacing={{ md: '25px' }}>
-                     <Grid item xs={12} md={6}>
+                     <Grid item xs={12} md={6} data-aos="fade-left" data-aos-offset="300">
                         <TextField
                            fullWidth
                            label={t('Full name')}
@@ -290,7 +304,7 @@ function AboutUs() {
                         />
                      </Grid>
 
-                     <Grid item xs={12} md={6}>
+                     <Grid item xs={12} md={6} data-aos="fade-right" data-aos-offset="300">
                         <TextField
                            type="number"
                            sx={{
@@ -318,7 +332,7 @@ function AboutUs() {
                         />
                      </Grid>
 
-                     <Grid item xs={12} md={6}>
+                     <Grid item xs={12} md={6} data-aos="fade-left" data-aos-offset="300">
                         <TextField
                            fullWidth
                            label={t('Email')}
@@ -339,7 +353,7 @@ function AboutUs() {
                         />
                      </Grid>
 
-                     <Grid item xs={12} md={6}>
+                     <Grid item xs={12} md={6} data-aos="fade-right" data-aos-offset="300">
                         <TextField
                            fullWidth
                            multiline
@@ -358,7 +372,7 @@ function AboutUs() {
                      </Grid>
                   </Grid>
 
-                  <div className="mt-[50px] flex justify-center">
+                  <div className="mt-[50px] flex justify-center" data-aos="fade-up" data-aos-offset="200">
                      <LoadingButton
                         variant="contained"
                         type="submit"

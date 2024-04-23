@@ -40,7 +40,7 @@ function Footer() {
    };
    return (
       <FooterStyle>
-         <div id="back">
+         <div id="back" data-aos="fade-up" data-aos-offset="200">
             <div className="mx-auto flex max-w-[1440px] flex-col justify-between gap-9 px-5 py-12 customMd:flex-row customMd:items-center customMd:px-[60px] customMd:py-6">
                <p className="max-w-[542px] font-almaraiBold text-2xl leading-[46px] text-white customMd:text-3xl">
                   {t('Ready')}

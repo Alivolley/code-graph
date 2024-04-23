@@ -51,10 +51,10 @@ function Faqs() {
 
             <div className="relative mx-auto max-w-[1440px] px-5 pb-[67px] pt-[100px] customMd:px-[60px] customMd:pb-0 customMd:pt-[146px]">
                <div className="flex flex-col gap-[31px] lg:flex-row lg:gap-[51px]" dir="rtl">
-                  <div className="flex-1">
+                  <div className="flex-1" data-aos="fade-left">
                      <Image src={bannerPic} alt="banner" className="size-full" />
                   </div>
-                  <div className="flex-1 lg:mt-[45px]" dir={locale === 'en' ? 'ltr' : 'rtl'}>
+                  <div className="flex-1 lg:mt-[45px]" dir={locale === 'en' ? 'ltr' : 'rtl'} data-aos="fade-right">
                      <div className="relative ps-[30px]">
                         <p className="text-xs text-[#626E94] customMd:text-sm">
                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟
@@ -75,7 +75,11 @@ function Faqs() {
          </div>
 
          <div className="mx-auto max-w-[1440px] px-5 pb-[70px] pt-10 customMd:px-[60px]">
-            <p className="flex h-12 items-center rounded-[47px] bg-[#FD8266] px-8 font-almaraiBold text-base text-white customMd:h-16 customMd:text-[20px]">
+            <p
+               className="flex h-12 items-center rounded-[47px] bg-[#FD8266] px-8 font-almaraiBold text-base text-white customMd:h-16 customMd:text-[20px]"
+               data-aos="fade-up"
+               data-aos-offset="300"
+            >
                {t('Category of Faqs')}
             </p>
             <div className="mt-6 flex flex-wrap items-center border-b border-solid border-[#E4EAF0]">
@@ -93,6 +97,9 @@ function Faqs() {
                         : '!border-e !border-solid !border-[#E4EAF0]'
                   }`}
                   onClick={() => changeCategoryHandler('')}
+                  data-aos="zoom-in"
+                  data-aos-offset="400"
+                  data-aos-delay="100"
                >
                   <Truck size="28" color="#d14d72" variant="TwoTone" />
                   <p className="leading-[18px] text-[#050F2C]">{t('All')}</p>
@@ -111,6 +118,9 @@ function Faqs() {
                         : '!border-e !border-solid !border-[#E4EAF0]'
                   }`}
                   onClick={() => changeCategoryHandler('website')}
+                  data-aos="zoom-in"
+                  data-aos-offset="400"
+                  data-aos-delay="200"
                >
                   <User size="28" color="#d14d72" variant="TwoTone" />
                   <p className="leading-[18px] text-[#050F2C]">{t('Website')}</p>
@@ -129,6 +139,9 @@ function Faqs() {
                         : '!border-e !border-solid !border-[#E4EAF0]'
                   }`}
                   onClick={() => changeCategoryHandler('uiux')}
+                  data-aos="zoom-in"
+                  data-aos-offset="400"
+                  data-aos-delay="300"
                >
                   <ShoppingCart size="28" color="#d14d72" variant="TwoTone" />
                   <p className="leading-[18px] text-[#050F2C]">{t('UiUx')}</p>
@@ -145,6 +158,9 @@ function Faqs() {
                      chosenCategory === 'graphic' ? '!rounded-lg !border !border-solid !border-[#EF6D33]' : ''
                   }`}
                   onClick={() => changeCategoryHandler('graphic')}
+                  data-aos="zoom-in"
+                  data-aos-offset="400"
+                  data-aos-delay="400"
                >
                   <DiscountShape size="28" color="#d14d72" variant="TwoTone" />
                   <p className="leading-[18px] text-[#050F2C]">{t('Graphic')}</p>
@@ -152,7 +168,11 @@ function Faqs() {
             </div>
          </div>
 
-         <div className="mx-auto max-w-[1440px] px-5 pb-[70px] customMd:px-[60px] customMd:pb-[83px]">
+         <div
+            className="mx-auto max-w-[1440px] px-5 pb-[70px] customMd:px-[60px] customMd:pb-[83px]"
+            data-aos="fade-up"
+            data-aos-offset="300"
+         >
             <Accordion sx={{ backgroundColor: 'transparent', boxShadow: 'none' }}>
                <AccordionSummary
                   expandIcon={

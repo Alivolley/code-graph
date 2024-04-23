@@ -9,7 +9,7 @@ function PagesLayout({ children, dir, language }) {
    const { pathname } = useRouter();
 
    return (
-      <div dir={dir} className="font-almaraiRegular">
+      <div dir={dir} className="overflow-hidden font-almaraiRegular">
          <RtlProvider isRtl={language !== 'en'}>
             {pathname !== '/login' && <Header />}
 

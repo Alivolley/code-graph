@@ -19,6 +19,8 @@ function ArticleCart({ detail }) {
       <ArticleCartStyle
          href={`/blogs/blogDetail/${detail?.title}`}
          className="w-[325px] shrink-0 rounded-[20px] border border-solid border-[#E4EAF0] bg-white p-[14px] customMd:flex-1"
+         data-aos="fade-up"
+         data-aos-offset="300"
       >
          <div className="relative h-[200px] w-full">
             <Image src={detail?.cover} alt="product" className="rounded-[18px] object-cover" fill />
