@@ -85,7 +85,15 @@
         "Login to access your account": "برای دسترسی به حساب خود وارد شوید",
         "Email or username": "ایمیل یا نام کاربری",
         "Don't have any account ?": "حساب کاربری ندارید ؟",
-        "Forgot password": "فراموشی رمز عبور"
+        "Forgot password": "فراموشی رمز عبور",
+        "Remember your password ?": "رمز خود را به یاد دارید ؟",
+        "Recover password": "بازیابی رمز عبور",
+        "An authentication code will be sent to your email": "یک کد احراز هویت به ایمیل شما ارسال خواهد شد",
+        "Send code": "ارسال کد",
+        "Set password": "اعمال رمز عبور",
+        "Code": "کد",
+        "New password": "رمز عبور جدید",
+        "Confirm new password": "تکرار رمز عبور جدید"
     },
     "categoryDetail": {
         "lorem": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی",

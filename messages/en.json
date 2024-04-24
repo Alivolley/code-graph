@@ -85,7 +85,15 @@
         "Login to access your account": "Login to access your account",
         "Email or username": "Email or username",
         "Don't have any account ?": "Don't have any account ?",
-        "Forgot password": "Forgot password"
+        "Forgot password": "Forgot password",
+        "Remember your password ?": "Remember your password ?",
+        "Recover password": "Recover password",
+        "An authentication code will be sent to your email": "An authentication code will be sent to your email",
+        "Send code": "Send code",
+        "Set password": "Set password",
+        "Code": "Code",
+        "New password": "New password",
+        "Confirm new password": "Confirm new password"
     },
     "categoryDetail": {
         "lorem": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Egestas purus viverra accumsan in nisl nisi Arcu cursus vitae .",

@@ -25,7 +25,7 @@ function Login() {
 
    return (
       <div className="mx-auto flex max-w-[1440px] flex-col-reverse gap-4 px-5 py-[30px] customMd:max-h-screen customMd:flex-row customMd:p-[60px] customLg:gap-20">
-         <div className="grow" data-aos="fade-left">
+         <div className="grow">
             <Link href="/" className="my-3 hidden items-end gap-2 customMd:flex">
                <div className="h-[35px] w-[75px]">
                   <Image src={logo} alt="logo" className="size-full" />

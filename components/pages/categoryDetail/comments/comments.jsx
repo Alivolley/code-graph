@@ -18,9 +18,6 @@ import { ArrowLeft2, ArrowRight2 } from 'iconsax-react';
 import Image from 'next/image';
 import CommentsStyle from './comments.style';
 
-// Assets
-import userPic from '@/assets/images/userPic.jpg';
-
 const navigationStyle = {
    width: '50px',
    height: '50px',
@@ -89,7 +86,7 @@ function Comments() {
                   <div className="rounded-[20px] border border-solid border-[#E4EAF0] p-4 customMd:p-8">
                      <div className="flex items-center gap-4 customMd:gap-7">
                         <div className="size-[90px] shrink-0">
-                           <Image src={userPic} alt="user" className="size-full rounded-full" />
+                           <Image src="" alt="user" className="size-full rounded-full" />
                         </div>
                         <div className="flex flex-col gap-[10px]">
                            <p className="font-almaraiExtraBold text-[20px] leading-[32px] customMd:text-[22px]">

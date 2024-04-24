@@ -2,7 +2,6 @@
 /* eslint-disable react/no-danger-with-children */
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/router';
-import Image from 'next/image';
 import Link from 'next/link';
 
 // MUI
@@ -12,7 +11,6 @@ import { Button, Grid } from '@mui/material';
 import { ArrowLeft } from 'iconsax-react';
 
 // Assets
-import bannerTestPic from '@/assets/images/bannerTestPic.png';
 import axiosInstance from '@/configs/axiosInstance';
 
 // Components
@@ -33,9 +31,7 @@ function BlogTitle({ blogDetail, blogsList }) {
             <p className="mt-[30px] font-almaraiBold text-[24px] leading-[38px] text-[#333333] customMd:text-[40px] customMd:leading-[64px]">
                {blogDetail?.title}
             </p>
-            <div className="relative mt-7 aspect-[1.5/1] w-full customMd:mt-[51px] customMd:aspect-[2/1]">
-               <Image src={bannerTestPic} alt="banner" fill className="rounded-[20px] object-cover" />
-            </div>
+
             <div
                className="mt-5 text-base customMd:mt-[70px]"
                dangerouslySetInnerHTML={{ __html: blogDetail?.description }}

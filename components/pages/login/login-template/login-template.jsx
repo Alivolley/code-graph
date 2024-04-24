@@ -43,7 +43,7 @@ function LoginTemplate({ setChosenMethod, translator }) {
    };
 
    return (
-      <div className="mt-4 customMd:mt-[126px]">
+      <div className="mt-4 customMd:mt-[126px]" data-aos="fade-left">
          <h2 className="text-center font-almaraiExtraBold text-2xl customMd:text-start customMd:text-4xl">
             {translator('Login')}
          </h2>

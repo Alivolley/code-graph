@@ -50,7 +50,7 @@ function SignUpTemplate({ setChosenMethod, translator }) {
    };
 
    return (
-      <div className="mt-4 customMd:mt-[50px]">
+      <div className="mt-4 customMd:mt-[50px]" data-aos="fade-left">
          <h2 className="text-center font-almaraiExtraBold text-2xl customMd:text-start customMd:text-4xl">
             {translator('Sign up')}
          </h2>

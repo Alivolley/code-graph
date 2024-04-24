@@ -24,6 +24,9 @@ import HeaderStyle from './header.style';
 // Context
 import { useGlobalContext } from '@/context/store';
 
+// Apis
+import useGetUserInfo from '@/apis/userInfo/useGetUserInfo';
+
 function Header() {
    const [showMobileMenu, setShowMobileMenu] = useState(false);
    const [hasBackGround, setHasBackGround] = useState(false);
@@ -31,8 +34,11 @@ function Header() {
    const [profileDropDown, setProfileDropDown] = useState(false);
    const [showLogoutModal, setShowLogoutModal] = useState(false);
 
+   // eslint-disable-next-line no-unused-vars
+   const getUserInfo = useGetUserInfo(isUserLogin);
+
    const profileRef = useRef();
-   const { isLogin } = useGlobalContext();
+   const { isLogin, userInfo } = useGlobalContext();
    const t = useTranslations('header');
    const { locale, push, query, pathname, asPath } = useRouter();
 
@@ -97,13 +103,13 @@ function Header() {
                         <div className="flex flex-col gap-6 text-xs text-[#626E94]">
                            <Link
                               href="/categoryDetail/graphic"
-                              className="flex items-center gap-2 transition-all duration-200 hover:text-[#FD8266]"
+                              className="flex items-center gap-2 transition-all duration-200 hover:text-customPink"
                            >
                               <Calculator size="18" /> {t('Graphic')}
                            </Link>
                            <Link
                               href="/categoryDetail/uiux"
-                              className="flex items-center gap-2 transition-all duration-200 hover:text-[#FD8266]"
+                              className="flex items-center gap-2 transition-all duration-200 hover:text-customPink"
                            >
                               <Calculator size="18" /> {t('UiUx')}
                            </Link>
@@ -112,13 +118,13 @@ function Header() {
                         <div className="flex flex-col gap-6 text-xs text-[#626E94]">
                            <Link
                               href="/categoryDetail/website"
-                              className="flex items-center gap-2 transition-all duration-200 hover:text-[#FD8266]"
+                              className="flex items-center gap-2 transition-all duration-200 hover:text-customPink"
                            >
                               <Calculator size="18" /> {t('Website')}
                            </Link>
                            <Link
                               href="/categoryDetail/design"
-                              className="flex items-center gap-2 transition-all duration-200 hover:text-[#FD8266]"
+                              className="flex items-center gap-2 transition-all duration-200 hover:text-customPink"
                            >
                               <Calculator size="18" /> {t('Redesign')}
                            </Link>
@@ -139,13 +145,13 @@ function Header() {
                         <div className="flex flex-col gap-6 text-xs text-[#626E94]">
                            <Link
                               href="/allProducts"
-                              className="flex items-center gap-2 transition-all duration-200 hover:text-[#FD8266]"
+                              className="flex items-center gap-2 transition-all duration-200 hover:text-customPink"
                            >
                               <Calculator size="18" /> {t('All projects')}
                            </Link>
                            <Link
                               href="/allProducts?category=graphic&page=1"
-                              className="flex items-center gap-2 transition-all duration-200 hover:text-[#FD8266]"
+                              className="flex items-center gap-2 transition-all duration-200 hover:text-customPink"
                            >
                               <Calculator size="18" /> {t('Graphic')}
                            </Link>
@@ -154,13 +160,13 @@ function Header() {
                         <div className="flex flex-col gap-6 text-xs text-[#626E94]">
                            <Link
                               href="/allProducts?category=uiux&page=1"
-                              className="flex items-center gap-2 transition-all duration-200 hover:text-[#FD8266]"
+                              className="flex items-center gap-2 transition-all duration-200 hover:text-customPink"
                            >
                               <Calculator size="18" /> {t('UiUx')}
                            </Link>
                            <Link
                               href="/allProducts?category=website&page=1"
-                              className="flex items-center gap-2 transition-all duration-200 hover:text-[#FD8266]"
+                              className="flex items-center gap-2 transition-all duration-200 hover:text-customPink"
                            >
                               <Calculator size="18" /> {t('Website')}
                            </Link>
@@ -219,14 +225,13 @@ function Header() {
                   <>
                      <div
                         className="flex h-[45px] min-w-[184px] cursor-pointer items-center justify-center
-                         gap-[5px] rounded-[57px] bg-[#FD8266] px-3 text-white transition-all duration-200"
+                         gap-[5px] rounded-[57px] bg-customPink px-3 text-white transition-all duration-200"
                         ref={profileRef}
                         onMouseEnter={() => setProfileDropDown(true)}
                         onMouseLeave={() => setProfileDropDown(false)}
                      >
                         <Profile size="20" />
-                        {/* {userInfo?.name || userInfo?.phone_number} */}
-                        علی ازقندی
+                        {userInfo?.name || userInfo?.email}
                         <ArrowDown2
                            size="18"
                            className={`!transition-all !duration-200 ${profileDropDown ? 'rotate-180' : ''}`}
@@ -260,7 +265,7 @@ function Header() {
                                  <div className="flex min-w-[148px] flex-col">
                                     <Link
                                        href="/profile/information"
-                                       className="flex h-10 items-center gap-3 bg-[#FD8266] px-3 text-xs text-white transition-all duration-150 hover:bg-[#B46451]"
+                                       className="flex h-10 items-center gap-3 bg-customPink px-3 text-xs text-white transition-all duration-150 hover:bg-[#B46451]"
                                        onClick={() => setProfileDropDown(false)}
                                     >
                                        <UserEdit size="15" variant="Broken" />
@@ -269,7 +274,7 @@ function Header() {
 
                                     <Button
                                        className="!flex !h-11 !items-center !justify-start !gap-3 !border-t !border-solid
-                                        !border-[#E4EAF0] !bg-[#FD8266] !px-3 !text-xs !text-white hover:!bg-[#B46451]"
+                                        !border-[#E4EAF0] !bg-customPink !px-3 !text-xs !text-white hover:!bg-[#B46451]"
                                        onClick={() => setShowLogoutModal(true)}
                                     >
                                        <LogoutCurve size="15" variant="Broken" />

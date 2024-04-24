@@ -5,11 +5,14 @@ import { createContext, useContext, useState } from 'react';
 const GlobalContext = createContext();
 
 export function GlobalContextProvider({ children }) {
-   const isDefaultLogin = Boolean(Cookies.get('roadGraph_isLogin'));
+   const isLoginDefault = Boolean(Cookies.get('roadGraph_isLogin'));
 
-   const [isLogin, setIsLogin] = useState(isDefaultLogin || false);
+   const [isLogin, setIsLogin] = useState(isLoginDefault || false);
+   const [userInfo, setUserInfo] = useState({});
 
-   return <GlobalContext.Provider value={{ isLogin, setIsLogin }}>{children}</GlobalContext.Provider>;
+   return (
+      <GlobalContext.Provider value={{ isLogin, setIsLogin, userInfo, setUserInfo }}>{children}</GlobalContext.Provider>
+   );
 }
 
 export const useGlobalContext = () => useContext(GlobalContext);
