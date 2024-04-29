@@ -97,7 +97,7 @@ export default ProductDetail;
 
 export async function getStaticPaths() {
    return {
-      paths: [{ params: { productTitle: 'some' } }],
+      paths: [{ params: { productTitle: 'yalfan' } }],
       fallback: 'blocking',
    };
 }

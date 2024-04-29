@@ -108,7 +108,7 @@ export default BlogTitle;
 
 export async function getStaticPaths() {
    return {
-      paths: [{ params: { blogTitle: 'some' } }],
+      paths: [{ params: { blogTitle: 'Website design cost in 1403' } }],
       fallback: 'blocking',
    };
 }
