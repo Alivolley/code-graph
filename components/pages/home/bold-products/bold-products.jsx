@@ -33,10 +33,10 @@ function BoldProducts({ products }) {
       <div className="bg-[#F5F8FC]" data-aos="zoom-out" data-aos-offset="400">
          <div className="mx-auto max-w-[1196px] px-5 pb-16 pt-[30px] customMd:px-[60px] customMd:py-[50px]">
             <p className="text-center text-xs text-[#3C4252] customMd:text-base">
-               {t('Our goal at codegeraph is to meet the basic needs of any business that loves to grow')}
+               {t('Our goal at roadGraph is to meet the basic needs of any business that loves to grow')}
             </p>
             <h2 className="mx-auto mt-6 max-w-[830px] text-center font-almaraiExtraBold text-2xl leading-[42px] text-[#050F2C] customMd:text-[32px] customMd:leading-[56px]">
-               {t('Every need you have for a business, codegeraph will take it')}
+               {t('Every need you have for a business, roadGraph will take it')}
             </h2>
 
             <div
@@ -117,7 +117,7 @@ function BoldProducts({ products }) {
                         : null}
             </div>
 
-            <Link href="/" className="mt-[50px] flex justify-center lg:mx-auto lg:w-fit">
+            <Link href="/allProducts" className="mt-[50px] flex justify-center lg:mx-auto lg:w-fit">
                <Button
                   color="customPink"
                   variant="contained"
@@ -132,7 +132,7 @@ function BoldProducts({ products }) {
                   }}
                   endIcon={<ArrowLeft size="20" {...(locale === 'en' && { className: 'rotate-180' })} />}
                >
-                  {t('Get started')}
+                  {t('All projects')}
                </Button>
             </Link>
          </div>

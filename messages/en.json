@@ -31,11 +31,12 @@
         "lorem4": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
         "Get started": "Get started",
         "About us": "About us",
+        "Contact us": "Contact us",
         "Why": "Why",
         "RoadGraph": "RoadGraph",
         "is the first choice of online businesses": "is the first choice of online businesses ?",
-        "Our goal at codegeraph is to meet the basic needs of any business that loves to grow": "Our goal at codegeraph is to meet the basic needs of any business that loves to grow",
-        "Every need you have for a business, codegeraph will take it": "Every need you have for a business, codegeraph will take it",
+        "Our goal at roadGraph is to meet the basic needs of any business that loves to grow": "Our goal at roadGraph is to meet the basic needs of any business that loves to grow",
+        "Every need you have for a business, roadGraph will take it": "Every need you have for a business, roadGraph will take it",
         "Graphic": "Graphic",
         "Web design": "Web design",
         "Redesign": "Redesign",
@@ -44,7 +45,14 @@
         "The": "The",
         "Value": "Value",
         "We create for a business": "We create for a business",
-        "Page not found": "Page not found"
+        "Page not found": "Page not found",
+        "home banner 1": "As a programming team with experience in various fields such as web design and development, graphic design, and user interface and user experience (UI/UX) design, we stand by a large number of businesses. Using diverse experiences and modern tools, we are looking for innovative and attractive solutions for various projects.",
+        "why roadGraph explain": "We are composed of highly experienced and creative forces that have been able to be recognized as one of the leading teams in the online industry by using unique and technical abilities. From designing dynamic and attractive websites to creating a unique user experience, we are always looking for solutions that can help improve our clients' businesses.",
+        "Projects": "Projects",
+        "value description title": "We help you achieve greater success by creating unique user experiences and adding real value to your business.",
+        "value description text": "By designing websites that are not only attractive and easy to use for users, but also allow you to have better marketing and experience more sustainable growth.",
+        "Services": "Services",
+        "All projects": "All projects"
     },
     "footer": {
         "Get started": "Get started",
@@ -63,7 +71,8 @@
         "Newsletter": "Newsletter",
         "Enter your email": "Enter your email",
         "Newsletter description": "Subscribe to our newsletter and unlock a world of exclusive benefits. Be the first to know about our latest products, special promotions, and exciting updates. Join our community of like-minded individuals who share a passion for [your niche/industry].",
-        "Rights": "© 2023 All rights reserved"
+        "Rights": "© 2023 All rights reserved",
+        "footer explain 1": "We, the Road Graph team, with more than 3 years of experience in the fields of web design and development, graphic design and user experience (UI/UX), are ready to work with you as your ideal partner in creating an online presence"
     },
     "login": {
         "Road": "Road",
@@ -116,7 +125,8 @@
         "We value strong relationships and have seen their benefits to our business": "We value strong relationships and have seen their benefits to our business",
         "Completed projects": "Completed projects",
         "Show all": "Show all",
-        "Related articles": "Related articles"
+        "Related articles": "Related articles",
+        "No comments": "No comments"
     },
     "allProducts": {
         "Letter1": "Portfolio",

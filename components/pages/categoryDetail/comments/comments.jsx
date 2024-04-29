@@ -28,8 +28,7 @@ const navigationStyle = {
    ':hover': { backgroundColor: '#F5F8FC', color: 'black', borderColor: '#F3F3F3' },
 };
 
-function Comments() {
-   const array = [0, 1, 2, 3, 4, 5, 6, 7];
+function Comments({ detail }) {
    const swiperRef = useRef(null);
    const { locale } = useRouter();
    const t = useTranslations('categoryDetail');
@@ -81,28 +80,30 @@ function Comments() {
                },
             }}
          >
-            {array?.map(item => (
-               <SwiperSlide key={item}>
-                  <div className="rounded-[20px] border border-solid border-[#E4EAF0] p-4 customMd:p-8">
-                     <div className="flex items-center gap-4 customMd:gap-7">
-                        <div className="size-[90px] shrink-0">
-                           <Image src="" alt="user" className="size-full rounded-full" />
+            {detail?.length ? (
+               detail?.map(item => (
+                  <SwiperSlide key={item?.id}>
+                     <div className="rounded-[20px] border border-solid border-[#E4EAF0] p-4 customMd:p-8">
+                        <div className="flex items-center gap-4 customMd:gap-7">
+                           <div className="relative size-[90px] shrink-0">
+                              <Image src={item?.cover} alt="cover" className="rounded-full" fill />
+                           </div>
+                           <div className="flex flex-col gap-[10px]">
+                              <p className="font-almaraiExtraBold text-[20px] leading-[32px] customMd:text-[22px]">
+                                 {item?.customer_name}
+                              </p>
+                              <p className="text-xs text-[#626E94]">{item?.title}</p>
+                           </div>
                         </div>
-                        <div className="flex flex-col gap-[10px]">
-                           <p className="font-almaraiExtraBold text-[20px] leading-[32px] customMd:text-[22px]">
-                              شایان ازقندی
-                           </p>
-                           <p className="text-xs text-[#626E94]">مدیر تولیدی یلفان</p>
-                        </div>
+                        <p className="mt-[21px] line-clamp-6 h-[162px] font-almaraiBold text-xs leading-[27px] text-[#576071]">
+                           {item?.text}
+                        </p>
                      </div>
-                     <p className="mt-[21px] font-almaraiBold text-xs leading-[27px] text-[#576071]">
-                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
-                        چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی
-                        مورد نیاز و کاربردهای
-                     </p>
-                  </div>
-               </SwiperSlide>
-            ))}
+                  </SwiperSlide>
+               ))
+            ) : (
+               <p className="text-center font-almaraiBold text-xl customMd:text-2xl">{t('No comments')}</p>
+            )}
          </Swiper>
       </CommentsStyle>
    );

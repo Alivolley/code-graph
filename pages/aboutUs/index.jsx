@@ -15,11 +15,12 @@ import aboutUsLogo from '@/assets/images/aboutUsLogo.png';
 
 // Components
 import Comments from '@/components/pages/categoryDetail/comments/comments';
+import axiosInstance from '@/configs/axiosInstance';
 
 // Apis
 import useSendTicket from '@/apis/contactUs/useSendTicket';
 
-function AboutUs() {
+function AboutUs({ comments }) {
    const { locale } = useRouter();
    const t = useTranslations('about us');
 
@@ -56,6 +57,8 @@ function AboutUs() {
       });
    };
 
+   console.log(comments);
+
    return (
       <div>
          <div style={{ background: 'linear-gradient(80.33deg, #E6EBFA 7.96%, #F2F5FC 43.29%, #FFFFFF 98.56%)' }}>
@@ -72,7 +75,7 @@ function AboutUs() {
 
                         <p className="text-[26px] leading-[43px] customMd:mt-4 customMd:text-[46px] customMd:leading-[77px]">
                            <span className="text-[#65A5FC]">{t('team')} </span>
-                           <span className="text-[#FD8266]">{t('RoadGraph')}</span>
+                           <span className="text-customPink">{t('RoadGraph')}</span>
                         </p>
                         <p className="absolute inset-y-2 start-0 w-2 bg-[#65A5FC]" />
                      </div>
@@ -102,7 +105,7 @@ function AboutUs() {
             <div>
                <p
                   className="mb-2 flex size-[34px] items-center justify-center rounded-full
-                border-[2px] border-solid border-[#EF6D33] text-xl text-[#ef6e339c] customMd:mb-7 customMd:size-[49px] customMd:text-2xl"
+                border-2 border-solid border-[#EF6D33] text-xl text-[#ef6e339c] customMd:mb-7 customMd:size-[49px] customMd:text-2xl"
                >
                   !
                </p>
@@ -113,7 +116,7 @@ function AboutUs() {
 
                   <p className="flex flex-nowrap items-center gap-1 text-[26px] leading-[43px] customMd:mt-4 customMd:text-[46px] customMd:leading-[77px]">
                      <span className="text-[#65A5FC]">{t('team')}</span>
-                     <span className="whitespace-nowrap text-[#FD8266]">{t('RoadGraph')}</span>
+                     <span className="whitespace-nowrap text-customPink">{t('RoadGraph')}</span>
                   </p>
                   <p className="absolute inset-y-2 start-0 w-2 bg-[#65A5FC]" />
                </div>
@@ -172,7 +175,7 @@ function AboutUs() {
                            </p>
                            <p className="flex flex-nowrap items-center gap-1 font-almaraiExtraBold text-2xl leading-[46px] customMd:mt-4 customMd:text-[40px] customMd:leading-[75px]">
                               <span className="text-[#65A5FC]">{t('services')}</span>
-                              <span className="whitespace-nowrap text-[#FD8266]">{t('RoadGraph')}</span>
+                              <span className="whitespace-nowrap text-customPink">{t('RoadGraph')}</span>
                            </p>
 
                            <p className="absolute -top-1 bottom-2 start-0 w-2 bg-[#65A5FC]" />
@@ -185,19 +188,19 @@ function AboutUs() {
 
                         <div className="mt-6 space-y-5">
                            <div className="flex items-center gap-[11px] customMd:gap-6">
-                              <div className="size-[35px] shrink-0 rounded-full border-[2px] border-solid border-[#FD8266] bg-[#F1DEDA] customMd:size-[52px]" />
-                              <p className="text-xs text-[#FD8266] customMd:text-sm">
+                              <div className="size-[35px] shrink-0 rounded-full border-2 border-solid border-customPink bg-[#F1DEDA] customMd:size-[52px]" />
+                              <p className="text-xs text-customPink customMd:text-sm">
                                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟
                               </p>
                            </div>
                            <div className="flex items-center gap-[11px] customMd:gap-6">
-                              <div className="size-[35px] shrink-0 rounded-full border-[2px] border-solid border-[#65A5FC] bg-[#DAE3F1] customMd:size-[52px]" />
+                              <div className="size-[35px] shrink-0 rounded-full border-2 border-solid border-[#65A5FC] bg-[#DAE3F1] customMd:size-[52px]" />
                               <p className="text-xs text-[#65A5FC] customMd:text-sm">
                                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟
                               </p>
                            </div>
                            <div className="flex items-center gap-[11px] customMd:gap-6">
-                              <div className="size-[35px] shrink-0 rounded-full border-[2px] border-solid border-[#9DAF84] bg-[#E7F1DA] customMd:size-[52px]" />
+                              <div className="size-[35px] shrink-0 rounded-full border-2 border-solid border-[#9DAF84] bg-[#E7F1DA] customMd:size-[52px]" />
                               <p className="text-xs text-[#9DAF84] customMd:text-sm">
                                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟
                               </p>
@@ -217,7 +220,7 @@ function AboutUs() {
                <div>
                   <p
                      className="mb-2 flex size-[34px] items-center justify-center rounded-xl
-                border-[2px] border-solid border-[#EF6D33] text-xl text-[#ef6e339c] customMd:mb-7 customMd:size-[49px] customMd:text-2xl"
+                border-2 border-solid border-[#EF6D33] text-xl text-[#ef6e339c] customMd:mb-7 customMd:size-[49px] customMd:text-2xl"
                   >
                      24
                   </p>
@@ -228,7 +231,7 @@ function AboutUs() {
 
                      <p className="flex flex-nowrap items-center gap-1 text-[26px] leading-[43px] customMd:mt-4 customMd:text-[46px] customMd:leading-[77px]">
                         <span className="text-[#65A5FC]">{t('Need')}</span>
-                        <span className="whitespace-nowrap text-[#FD8266]">{t('guidance?')}</span>
+                        <span className="whitespace-nowrap text-customPink">{t('guidance?')}</span>
                      </p>
                      <p className="absolute inset-y-2 start-0 w-2 bg-[#65A5FC]" />
                   </div>
@@ -267,7 +270,7 @@ function AboutUs() {
             data-aos="fade-up"
             data-aos-offset="400"
          >
-            <Comments />
+            <Comments detail={comments} />
          </div>
 
          <div className="bg-[#F5F8FC]">
@@ -281,7 +284,7 @@ function AboutUs() {
                   </p>
                   <p className="flex flex-nowrap items-center gap-1 font-almaraiExtraBold text-[26px] leading-[55px] customMd:mt-4 customMd:text-[32px]">
                      <span className="text-[#65A5FC]">{t('Request')}</span>
-                     <span className="whitespace-nowrap text-[#FD8266]">{t('Counseling')}</span>
+                     <span className="whitespace-nowrap text-customPink">{t('Counseling')}</span>
                   </p>
                </div>
 
@@ -405,9 +408,12 @@ function AboutUs() {
 export default AboutUs;
 
 export async function getStaticProps(context) {
+   const comments = await axiosInstance(`accounts/customer-comments/?random_comments=True`).then(res => res.data);
+
    return {
       props: {
          messages: (await import(`@/messages/${context.locale}.json`)).default,
+         comments,
       },
       revalidate: 300,
    };

@@ -31,17 +31,19 @@ function HomeBanner() {
                   <div className="text-center font-bold leading-[44px] lg:text-start lg:leading-[73px]">
                      <div className="flex items-center justify-center gap-3 lg:justify-start">
                         <h1 className="text-[28px] lg:text-[37px]">{t('Letter1')}</h1>
-                        <h1 className="font-almaraiExtraBold text-[28px] text-[#FD8266] lg:text-5xl">{t('Letter2')}</h1>
+                        <h1 className="font-almaraiExtraBold text-[28px] text-customPink lg:text-5xl">
+                           {t('Letter2')}
+                        </h1>
                         <h1 className="text-[28px] lg:text-[37px]">{t('Letter3')}</h1>
-                        <h1 className="text-[28px] text-[#FD8266] lg:text-[37px]">{t('comma')}</h1>
+                        <h1 className="text-[28px] text-customPink lg:text-[37px]">{t('comma')}</h1>
                      </div>
                      <h1 className="text-[28px] lg:text-[37px]">{t("powered by our life's work")}</h1>
                   </div>
                   <p className="mt-6 text-center text-base leading-[26px] text-[#576071] lg:text-start lg:leading-[34px]">
-                     {t('lorem')}
+                     {t('home banner 1')}
                   </p>
                   <div className="mt-6 flex flex-col gap-5 lg:flex-row lg:items-center lg:gap-[10px]">
-                     <Link href="/">
+                     <Link href="/contactUs">
                         <Button
                            color="customPink"
                            variant="contained"
@@ -56,7 +58,7 @@ function HomeBanner() {
                            }}
                            endIcon={<ArrowLeft size="20" {...(locale === 'en' && { className: 'rotate-180' })} />}
                         >
-                           {t('Get started')}
+                           {t('Contact us')}
                         </Button>
                      </Link>
 
@@ -90,25 +92,33 @@ function HomeBanner() {
                data-aos="fade-up"
             >
                <div className="flex min-w-[215px] max-w-[288px] flex-col items-center gap-[10px] px-[18px]">
-                  <Image src={pic4} alt="introduce" />
+                  <div className="size-16">
+                     <Image src={pic4} alt="introduce" className="size-full" />
+                  </div>
                   <h3 className="font-almaraiBold text-lg">Online shop</h3>
                   <p className="text-center text-sm text-[#6F778A]">{t('lorem2')}</p>
                </div>
 
                <div className="flex min-w-[215px] max-w-[288px] flex-col items-center gap-[10px] px-[18px]">
-                  <Image src={pic3} alt="introduce" />
+                  <div className="size-16">
+                     <Image src={pic3} alt="introduce" className="size-full" />
+                  </div>
                   <h3 className="font-almaraiBold text-lg">HRM</h3>
                   <p className="text-center text-sm text-[#6F778A]">{t('lorem2')}</p>
                </div>
 
                <div className="flex min-w-[215px] max-w-[288px] flex-col items-center gap-[10px] px-[18px]">
-                  <Image src={pic2} alt="introduce" />
+                  <div className="size-16">
+                     <Image src={pic2} alt="introduce" className="size-full" />
+                  </div>
                   <h3 className="font-almaraiBold text-lg">CRM</h3>
                   <p className="text-center text-sm text-[#6F778A]">{t('lorem2')}</p>
                </div>
 
                <div className="flex min-w-[215px] max-w-[288px] flex-col items-center gap-[10px] px-[18px]">
-                  <Image src={pic1} alt="introduce" />
+                  <div className="size-16">
+                     <Image src={pic1} alt="introduce" className="size-full" />
+                  </div>
                   <h3 className="font-almaraiBold text-lg">Accounting</h3>
                   <p className="text-center text-sm text-[#6F778A]">{t('lorem2')}</p>
                </div>

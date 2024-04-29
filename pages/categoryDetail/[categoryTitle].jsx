@@ -27,17 +27,17 @@ import axiosInstance from '@/configs/axiosInstance';
 // Data
 import selectCategory from '@/data/categories';
 
-function CategoryTitle({ categoryData, projects, blogsList }) {
+function CategoryTitle({ categoryData, projects, blogsList, comments }) {
    const { locale } = useRouter();
    const t = useTranslations('categoryDetail');
 
    return (
       <div>
          <div className="relative bg-[#F8F9FE]">
-            <div className="absolute left-0 top-[315px] z-[0] hidden xl:block">
+            <div className="absolute left-0 top-[315px] z-0 hidden xl:block">
                <Image src={wheelFirst} alt="wheel" />
             </div>
-            <div className="absolute bottom-0 right-0 z-[0] hidden xl:block">
+            <div className="absolute bottom-0 right-0 z-0 hidden xl:block">
                <Image src={wheelSecond} alt="wheel" />
             </div>
 
@@ -50,7 +50,7 @@ function CategoryTitle({ categoryData, projects, blogsList }) {
                      <p className="text-center font-almaraiExtraBold text-2xl leading-[40px] lg:text-start lg:text-[36px]">
                         {t(categoryData?.bannerFirstLetter)}
                      </p>
-                     <p className="mt-3 text-center font-almaraiExtraBold text-2xl text-[#FD8266] lg:text-start lg:text-[36px] lg:leading-[75px]">
+                     <p className="mt-3 text-center font-almaraiExtraBold text-2xl text-customPink lg:text-start lg:text-[36px] lg:leading-[75px]">
                         {t(categoryData?.bannerSecondLetter)}
                      </p>
                   </div>
@@ -323,7 +323,7 @@ function CategoryTitle({ categoryData, projects, blogsList }) {
                data-aos="fade-up"
                data-aos-offset="400"
             >
-               <Comments />
+               <Comments detail={comments} />
             </div>
          </div>
 
@@ -369,12 +369,17 @@ export async function getStaticProps(context) {
 
    const blogsList = await axiosInstance(queryString).then(res => res.data);
 
+   const comments = await axiosInstance(`accounts/customer-comments/?category=${context?.params?.categoryTitle}`).then(
+      res => res.data
+   );
+
    return {
       props: {
          categoryData,
          messages: (await import(`@/messages/${context.locale}.json`)).default,
          projects,
          blogsList,
+         comments,
       },
       revalidate: 300,
    };

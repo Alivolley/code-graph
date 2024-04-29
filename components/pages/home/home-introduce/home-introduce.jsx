@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { Button } from '@mui/material';
 
 // Icons
-import { ArrowLeft, DocumentText } from 'iconsax-react';
+import { ArrowLeft, Driver } from 'iconsax-react';
 
 // Assets
 import introducePic from '@/assets/images/introducePic.png';
@@ -36,12 +36,14 @@ function HomeIntroduce() {
                            {t('RoadGraph')}
                         </span>{' '}
                         {t('is the first choice of online businesses')}
-                        <p className="absolute inset-y-2 start-0 w-2 bg-[#FD8266] lg:start-[-30px]" />
+                        <p className="absolute inset-y-2 start-0 w-2 bg-customPink lg:start-[-30px]" />
                      </h3>
                   </div>
-                  <p className="mt-6 text-base leading-[30px] text-[#626E94] lg:leading-[34px]">{t('lorem3')}</p>
+                  <p className="mt-6 text-base leading-[30px] text-[#626E94] lg:leading-[34px]">
+                     {t('why roadGraph explain')}
+                  </p>
                   <div className="mt-7 flex flex-col gap-5 lg:mt-[52px] lg:flex-row lg:items-center lg:gap-[10px]">
-                     <Link href="/">
+                     <Link href="/contactUs">
                         <Button
                            color="customPink"
                            variant="contained"
@@ -76,9 +78,9 @@ function HomeIntroduce() {
                                  backgroundColor: '#DDE4FB',
                               },
                            }}
-                           startIcon={<DocumentText size="20" />}
+                           startIcon={<Driver size="20" />}
                         >
-                           {t('About us')}
+                           {t('Projects')}
                         </Button>
                      </Link>
                   </div>

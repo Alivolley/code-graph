@@ -7,7 +7,8 @@ import Link from 'next/link';
 import { Button, Grid, IconButton } from '@mui/material';
 
 // Icons
-import { ArrowLeft, Google, Instagram, Whatsapp, Youtube } from 'iconsax-react';
+import { ArrowLeft, Instagram } from 'iconsax-react';
+import { FaTelegramPlane } from 'react-icons/fa';
 
 // Assets
 import headerLogo from '@/assets/images/headerLogo.png';
@@ -15,6 +16,9 @@ import emailIcon from '@/assets/icons/emailIconFooter.svg';
 import footerLine from '@/assets/icons/footerLine.svg';
 import footerArrow from '@/assets/icons/footerArrow.svg';
 import FooterStyle from './footer.style';
+
+// Apis
+import useGetBlogs from '@/apis/footer/useGetBlogs';
 
 const socialButtonsStyles = {
    color: 'white',
@@ -34,10 +38,13 @@ function Footer() {
    const { locale } = useRouter();
    const t = useTranslations('footer');
 
+   const { data: blogsData } = useGetBlogs();
+
    const sendEmail = e => {
       e?.preventDefault();
       console.log(e?.target?.[0]?.value);
    };
+
    return (
       <FooterStyle>
          <div id="back" data-aos="fade-up" data-aos-offset="200">
@@ -76,28 +83,20 @@ function Footer() {
                         <Link href="/" className="block h-[51px] w-[110px] customMd:h-[31px] customMd:w-[67px]">
                            <Image src={headerLogo} alt="footer logo" className="size-full" />
                         </Link>
-                        <p className="mt-4 text-xs leading-[30px]">{t('lorem1')}</p>
+                        <p className="mt-4 text-xs leading-[30px]">{t('footer explain 1')}</p>
                         <div className="mt-5 flex items-center gap-5">
-                           <Link href="/">
+                           {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
+                           <a href="https://t.me/Roadgraph" target="_blank" rel="noreferrer">
                               <IconButton sx={socialButtonsStyles}>
                                  <Instagram size="15" />
                               </IconButton>
-                           </Link>
-                           <Link href="/">
+                           </a>
+                           {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
+                           <a href="https://t.me/Roadgraph" target="_blank" rel="noreferrer">
                               <IconButton sx={socialButtonsStyles}>
-                                 <Youtube size="15" variant="Bold" />
+                                 <FaTelegramPlane fontSize="15px" />
                               </IconButton>
-                           </Link>
-                           <Link href="/">
-                              <IconButton sx={socialButtonsStyles}>
-                                 <Whatsapp size="15" variant="Bold" />
-                              </IconButton>
-                           </Link>
-                           <Link href="/">
-                              <IconButton sx={socialButtonsStyles}>
-                                 <Google size="15" variant="Bold" />
-                              </IconButton>
-                           </Link>
+                           </a>
                         </div>
                      </div>
                   </Grid>
@@ -114,7 +113,7 @@ function Footer() {
                                     <div className="flex flex-col gap-5 text-xs">
                                        <Link
                                           href="/"
-                                          className="flex items-center gap-1 transition-all duration-150 hover:text-[#FD8266]"
+                                          className="flex items-center gap-1 transition-all duration-150 hover:text-customPink"
                                        >
                                           <Image
                                              src={footerArrow}
@@ -125,7 +124,7 @@ function Footer() {
                                        </Link>
                                        <Link
                                           href="/aboutUs"
-                                          className="flex items-center gap-1 transition-all duration-150 hover:text-[#FD8266]"
+                                          className="flex items-center gap-1 transition-all duration-150 hover:text-customPink"
                                        >
                                           <Image
                                              src={footerArrow}
@@ -136,7 +135,7 @@ function Footer() {
                                        </Link>
                                        <Link
                                           href="/categoryDetail/website"
-                                          className="flex items-center gap-1 transition-all duration-150 hover:text-[#FD8266]"
+                                          className="flex items-center gap-1 transition-all duration-150 hover:text-customPink"
                                        >
                                           <Image
                                              src={footerArrow}
@@ -147,7 +146,7 @@ function Footer() {
                                        </Link>
                                        <Link
                                           href="/allProducts"
-                                          className="flex items-center gap-1 transition-all duration-150 hover:text-[#FD8266]"
+                                          className="flex items-center gap-1 transition-all duration-150 hover:text-customPink"
                                        >
                                           <Image
                                              src={footerArrow}
@@ -162,7 +161,7 @@ function Footer() {
                                     <div className="flex flex-col gap-5 text-xs">
                                        <Link
                                           href="/faqs"
-                                          className="flex items-center gap-1 transition-all duration-150 hover:text-[#FD8266]"
+                                          className="flex items-center gap-1 transition-all duration-150 hover:text-customPink"
                                        >
                                           <Image
                                              src={footerArrow}
@@ -173,7 +172,7 @@ function Footer() {
                                        </Link>
                                        <Link
                                           href="/prices"
-                                          className="flex items-center gap-1 transition-all duration-150 hover:text-[#FD8266]"
+                                          className="flex items-center gap-1 transition-all duration-150 hover:text-customPink"
                                        >
                                           <Image
                                              src={footerArrow}
@@ -184,7 +183,7 @@ function Footer() {
                                        </Link>
                                        <Link
                                           href="/contactUs"
-                                          className="flex items-center gap-1 transition-all duration-150 hover:text-[#FD8266]"
+                                          className="flex items-center gap-1 transition-all duration-150 hover:text-customPink"
                                        >
                                           <Image
                                              src={footerArrow}
@@ -205,34 +204,23 @@ function Footer() {
                            </p>
 
                            <div className="mt-[37px] flex max-w-[150px] flex-col gap-5 text-xs">
-                              <Link
-                                 href="/blogs/blogDetail/some"
-                                 className="flex items-start gap-1 leading-[18px] transition-all duration-150 hover:text-[#FD8266]"
-                              >
-                                 <Image
-                                    src={footerArrow}
-                                    alt="arrow"
-                                    {...(locale === 'en' && { className: 'rotate-180' })}
-                                 />
-                                 <div>
-                                    <p>{t('Lorem2')}</p>
-                                    <p className="text-10 text-[#626E94]">8 Nov, 2021</p>
-                                 </div>
-                              </Link>
-                              <Link
-                                 href="/blogs/blogDetail/some"
-                                 className="flex items-start gap-1 leading-[18px] transition-all duration-150 hover:text-[#FD8266]"
-                              >
-                                 <Image
-                                    src={footerArrow}
-                                    alt="arrow"
-                                    {...(locale === 'en' && { className: 'rotate-180' })}
-                                 />
-                                 <div>
-                                    <p>{t('Lorem2')}</p>
-                                    <p className="text-10 text-[#626E94]">8 Nov, 2021</p>
-                                 </div>
-                              </Link>
+                              {blogsData?.result?.map(item => (
+                                 <Link
+                                    href={`/blogs/blogDetail/${item?.title}`}
+                                    className="flex items-start gap-1 leading-[18px] transition-all duration-150 hover:text-customPink"
+                                    key={item?.id}
+                                 >
+                                    <Image
+                                       src={footerArrow}
+                                       alt="arrow"
+                                       {...(locale === 'en' && { className: 'rotate-180' })}
+                                    />
+                                    <div>
+                                       <p className="line-clamp-2 h-9">{item?.title}</p>
+                                       <p className="text-10 text-[#626E94]">{item?.created_at}</p>
+                                    </div>
+                                 </Link>
+                              ))}
                            </div>
                         </Grid>
                      </Grid>

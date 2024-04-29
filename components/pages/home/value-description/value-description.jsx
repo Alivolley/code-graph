@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { Button } from '@mui/material';
 
 // Icons
-import { ArrowLeft } from 'iconsax-react';
+import { Convert3DCube } from 'iconsax-react';
 
 // Assets
 import valuePic from '@/assets/images/valuePic.png';
@@ -36,14 +36,14 @@ function ValueDescription() {
                            {t('Value')}
                         </span>{' '}
                         <p>{t('We create for a business')}</p>
-                        <p className="absolute inset-y-2 start-0 w-2 bg-[#FD8266] lg:start-[-30px]" />
+                        <p className="absolute inset-y-2 start-0 w-2 bg-customPink lg:start-[-30px]" />
                      </h3>
                   </div>
                   <p className="mt-2 text-base font-bold leading-[30px] text-[#626E94] lg:text-[18px] lg:leading-[34px]">
-                     {t('lorem4')}
+                     {t('value description title')}
                   </p>
                   <p className="mt-2 text-sm leading-[30px] text-[#626E94] lg:text-base lg:leading-[34px]">
-                     {t('lorem')}
+                     {t('value description text')}
                   </p>
                   <div className="mt-10 flex flex-col gap-5 lg:mt-[27px] lg:flex-row lg:items-center lg:gap-[10px]">
                      <Link href="/">
@@ -59,9 +59,9 @@ function ValueDescription() {
                                  backgroundColor: '#B46451',
                               },
                            }}
-                           endIcon={<ArrowLeft size="20" {...(locale === 'en' && { className: 'rotate-180' })} />}
+                           endIcon={<Convert3DCube size="20" {...(locale === 'en' && { className: 'rotate-180' })} />}
                         >
-                           {t('Get started')}
+                           {t('Services')}
                         </Button>
                      </Link>
                   </div>
