@@ -5,6 +5,11 @@ import Image from 'next/image';
 // MUI
 import { Grid } from '@mui/material';
 
+// Icons
+import { PiInstagramLogo } from 'react-icons/pi';
+import { FiPhoneCall } from 'react-icons/fi';
+import { LiaTelegram } from 'react-icons/lia';
+
 // Assets
 import contactUsPic from '@/assets/images/contactUsPic.png';
 import pic1 from '@/assets/icons/accounting.svg';
@@ -13,9 +18,6 @@ import pic3 from '@/assets/icons/HR.svg';
 import pic4 from '@/assets/icons/store.svg';
 import wheelFirst from '@/assets/icons/wheel1.svg';
 import wheelSecond from '@/assets/icons/wheel2.svg';
-import contactUsPhone from '@/assets/icons/contactUsPhone.svg';
-import contactUsLocation from '@/assets/icons/contactUsLocation.svg';
-import contactUsEmail from '@/assets/icons/contactUsEmail.svg';
 
 // Components
 import Request from '@/components/templates/request/request';
@@ -27,10 +29,10 @@ function ContactUs() {
    return (
       <div>
          <div className="relative bg-[#F5F8FC] pt-[91px] customMd:pt-[158px]" dir="rtl">
-            <div className="absolute left-0 top-[315px] z-[0] hidden xl:block">
+            <div className="absolute left-0 top-[315px] z-0 hidden xl:block">
                <Image src={wheelFirst} alt="wheel" />
             </div>
-            <div className="absolute bottom-0 right-0 z-[0] hidden xl:block">
+            <div className="absolute bottom-0 right-0 z-0 hidden xl:block">
                <Image src={wheelSecond} alt="wheel" />
             </div>
 
@@ -49,42 +51,46 @@ function ContactUs() {
                            <p className="absolute inset-y-2 start-0 w-2 bg-[#65A5FC]" />
                         </div>
                         <p className="mt-[18px] text-sm leading-[32px] text-[#576071] customMd:text-base customMd:leading-[45px]">
-                           {t('lorem1')}
+                           {t('contact us text 1')}
                         </p>
                         <div className="mt-[33px] space-y-[17px] customMd:space-y-[30px]">
-                           <div className="flex items-center gap-5">
+                           <a href="tel:09383935719" className="flex w-fit items-center gap-5">
                               <div className="flex size-[50px] items-center justify-center rounded-full bg-white customMd:size-[68px]">
-                                 <div className="size-[25px] customMd:size-[34px]">
-                                    <Image src={contactUsPhone} alt="icon" className="size-full" />
-                                 </div>
+                                 <FiPhoneCall color="#65A5FC" className="text-[25px] customMd:text-[34px]" />
                               </div>
                               <div className="space-y-[10px]">
                                  <p className="font-almaraiBold text-[#626E94]">{t('Have a question ?')}</p>
                                  <p className="text-sm text-[#8F95AA]">09383935719</p>
                               </div>
-                           </div>
-                           <div className="flex items-center gap-5">
+                           </a>
+                           <a
+                              href="https://t.me/Roadgraph"
+                              target="_blank"
+                              rel="noreferrer"
+                              className="flex w-fit items-center gap-5"
+                           >
                               <div className="flex size-[50px] items-center justify-center rounded-full bg-white customMd:size-[68px]">
-                                 <div className="size-[25px] customMd:size-[34px]">
-                                    <Image src={contactUsEmail} alt="icon" className="size-full" />
-                                 </div>
+                                 <LiaTelegram color="#65A5FC" className="text-[25px] customMd:text-[34px]" />
                               </div>
                               <div className="space-y-[10px]">
-                                 <p className="font-almaraiBold text-[#626E94]">{t('Email us')}</p>
-                                 <p className="text-sm text-[#8F95AA]">Info@whitecollar.com</p>
+                                 <p className="font-almaraiBold text-[#626E94]">{t('Join')}</p>
+                                 <p className="text-sm text-[#8F95AA]">Telegram chanel</p>
                               </div>
-                           </div>
-                           <div className="flex items-center gap-5">
+                           </a>
+                           <a
+                              href="https://t.me/Roadgraph"
+                              target="_blank"
+                              rel="noreferrer"
+                              className="flex w-fit items-center gap-5"
+                           >
                               <div className="flex size-[50px] items-center justify-center rounded-full bg-white customMd:size-[68px]">
-                                 <div className="size-[25px] customMd:size-[34px]">
-                                    <Image src={contactUsLocation} alt="icon" className="size-full" />
-                                 </div>
+                                 <PiInstagramLogo color="#65A5FC" className="text-[25px] customMd:text-[34px]" />
                               </div>
                               <div className="space-y-[10px]">
-                                 <p className="font-almaraiBold text-[#626E94]">{t('Visit at any time')}</p>
-                                 <p className="text-sm text-[#8F95AA]">{t('Address')}</p>
+                                 <p className="font-almaraiBold text-[#626E94]">{t('Follow us')}</p>
+                                 <p className="text-sm text-[#8F95AA]">Instagram page</p>
                               </div>
-                           </div>
+                           </a>
                         </div>
                      </div>
                   </Grid>

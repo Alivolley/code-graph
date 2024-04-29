@@ -49,14 +49,16 @@ function Comments({ detail }) {
       <CommentsStyle>
          <div className="mb-[44px] flex items-center justify-center customMd:justify-between">
             <p className="font-almaraiExtraBold text-[28px] customMd:text-[32px]">{t('Customers comments')}</p>
-            <div className="hidden items-center gap-5 customMd:flex">
-               <IconButton sx={navigationStyle} onClick={navigatePrev}>
-                  <ArrowRight2 size="30" {...(locale === 'en' && { className: 'rotate-180' })} />
-               </IconButton>
-               <IconButton sx={navigationStyle} onClick={navigateNext}>
-                  <ArrowLeft2 size="30" {...(locale === 'en' && { className: 'rotate-180' })} />
-               </IconButton>
-            </div>
+            {detail?.length ? (
+               <div className="hidden items-center gap-5 customMd:flex">
+                  <IconButton sx={navigationStyle} onClick={navigatePrev}>
+                     <ArrowRight2 size="30" {...(locale === 'en' && { className: 'rotate-180' })} />
+                  </IconButton>
+                  <IconButton sx={navigationStyle} onClick={navigateNext}>
+                     <ArrowLeft2 size="30" {...(locale === 'en' && { className: 'rotate-180' })} />
+                  </IconButton>
+               </div>
+            ) : null}
          </div>
          <Swiper
             pagination={{ clickable: true }}

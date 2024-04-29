@@ -20,6 +20,7 @@ import yellowMedal from '@/assets/images/yellowMedal.png';
 import PriceCart from '@/components/pages/prices/price-cart/price-cart';
 import FeatureAccordion from '@/components/pages/prices/feature-accordion/feature-accordion';
 import Faqs from '@/components/templates/faqs/faqs';
+import axiosInstance from '@/configs/axiosInstance';
 
 const categoryButtonStyle = {
    borderRadius: '100px',
@@ -41,7 +42,7 @@ const featureButtonStyle = {
    },
 };
 
-function Prices() {
+function Prices({ questions }) {
    const [chosenCategory, setChosenCategory] = useState('graphic');
 
    const t = useTranslations('prices');
@@ -49,10 +50,10 @@ function Prices() {
    return (
       <div>
          <div className="relative max-h-[548px] bg-[#E7ECFF] customMd:max-h-[778px]">
-            <div className="absolute left-0 top-[185px] z-[0] hidden xl:block">
+            <div className="absolute left-0 top-[185px] z-0 hidden xl:block">
                <Image src={wheelFirst} alt="wheel" />
             </div>
-            <div className="absolute bottom-0 right-0 z-[0] hidden xl:block">
+            <div className="absolute bottom-0 right-0 z-0 hidden xl:block">
                <Image src={wheelSecond} alt="wheel" />
             </div>
 
@@ -240,7 +241,7 @@ function Prices() {
             </div>
          </div>
 
-         <Faqs />
+         <Faqs detail={questions} />
       </div>
    );
 }
@@ -248,9 +249,12 @@ function Prices() {
 export default Prices;
 
 export async function getStaticProps(context) {
+   const questions = await axiosInstance(`accounts/questions/?random_faq=true`).then(res => res.data);
+
    return {
       props: {
          messages: (await import(`@/messages/${context.locale}.json`)).default,
+         questions,
       },
    };
 }

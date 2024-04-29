@@ -52,10 +52,10 @@ function Footer() {
                <p className="max-w-[542px] font-almaraiBold text-2xl leading-[46px] text-white customMd:text-3xl">
                   {t('Ready')}
                </p>
-               <Link href="/">
+               <Link href="/aboutUs#reqForm">
                   <Button
                      variant="contained"
-                     className="!w-full customMd:!w-[174px]"
+                     className="!w-full customMd:!w-[190px]"
                      sx={{
                         height: 52,
                         borderRadius: 57,
@@ -69,7 +69,7 @@ function Footer() {
                      }}
                      endIcon={<ArrowLeft size="20" {...(locale === 'en' && { className: 'rotate-180' })} />}
                   >
-                     {t('Get started')}
+                     {t('Counseling request')}
                   </Button>
                </Link>
             </div>

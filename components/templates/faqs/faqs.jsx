@@ -1,17 +1,18 @@
+import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 
 // MUI
-import { Accordion, AccordionDetails, AccordionSummary } from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary, Button } from '@mui/material';
 
 // Icons
-import { ArrowDown2 } from 'iconsax-react';
+import { ArrowDown2, ArrowLeft } from 'iconsax-react';
 
 // Assets
 import faqPic from '@/assets/images/faqPic.png';
 
-function Faqs() {
+function Faqs({ detail }) {
    const { locale } = useRouter();
    const t = useTranslations('categoryDetail');
 
@@ -32,87 +33,45 @@ function Faqs() {
                   </div>
 
                   <div className="mt-[43px]">
-                     <Accordion sx={{ backgroundColor: 'transparent', boxShadow: 'none' }}>
-                        <AccordionSummary
-                           expandIcon={
-                              <ArrowDown2 size="19" color="#d14d72" className="rounded-sm bg-white p-1 customMd:p-3" />
-                           }
-                        >
-                           <p className="relative py-3 text-xs leading-6 text-[#050F2C] customMd:text-base">
-                              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟
-                              <span className="absolute start-[-21px] top-[15px] size-3 rounded-full bg-[#FD8266]" />
-                           </p>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit
-                           amet blandit leo lobortis eget.
-                        </AccordionDetails>
-                     </Accordion>
-                     <Accordion sx={{ backgroundColor: 'transparent', boxShadow: 'none' }}>
-                        <AccordionSummary
-                           expandIcon={
-                              <ArrowDown2 size="19" color="#d14d72" className="rounded-sm bg-white p-1 customMd:p-3" />
-                           }
-                        >
-                           <p className="relative py-3 text-xs leading-6 text-[#050F2C] customMd:text-base">
-                              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟
-                              <span className="absolute start-[-21px] top-[15px] size-3 rounded-full bg-[#FD8266]" />
-                           </p>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit
-                           amet blandit leo lobortis eget.
-                        </AccordionDetails>
-                     </Accordion>
-                     <Accordion sx={{ backgroundColor: 'transparent', boxShadow: 'none' }}>
-                        <AccordionSummary
-                           expandIcon={
-                              <ArrowDown2 size="19" color="#d14d72" className="rounded-sm bg-white p-1 customMd:p-3" />
-                           }
-                        >
-                           <p className="relative py-3 text-xs leading-6 text-[#050F2C] customMd:text-base">
-                              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟
-                              <span className="absolute start-[-21px] top-[15px] size-3 rounded-full bg-[#FD8266]" />
-                           </p>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit
-                           amet blandit leo lobortis eget.
-                        </AccordionDetails>
-                     </Accordion>
-                     <Accordion sx={{ backgroundColor: 'transparent', boxShadow: 'none' }}>
-                        <AccordionSummary
-                           expandIcon={
-                              <ArrowDown2 size="19" color="#d14d72" className="rounded-sm bg-white p-1 customMd:p-3" />
-                           }
-                        >
-                           <p className="relative py-3 text-xs leading-6 text-[#050F2C] customMd:text-base">
-                              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟
-                              <span className="absolute start-[-21px] top-[15px] size-3 rounded-full bg-[#FD8266]" />
-                           </p>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit
-                           amet blandit leo lobortis eget.
-                        </AccordionDetails>
-                     </Accordion>
-                     <Accordion sx={{ backgroundColor: 'transparent', boxShadow: 'none' }}>
-                        <AccordionSummary
-                           expandIcon={
-                              <ArrowDown2 size="19" color="#d14d72" className="rounded-sm bg-white p-1 customMd:p-3" />
-                           }
-                        >
-                           <p className="relative py-3 text-xs leading-6 text-[#050F2C] customMd:text-base">
-                              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟
-                              <span className="absolute start-[-21px] top-[15px] size-3 rounded-full bg-[#FD8266]" />
-                           </p>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit
-                           amet blandit leo lobortis eget.
-                        </AccordionDetails>
-                     </Accordion>
+                     {detail?.map(item => (
+                        <Accordion sx={{ backgroundColor: 'transparent', boxShadow: 'none' }} key={item?.id}>
+                           <AccordionSummary
+                              expandIcon={
+                                 <ArrowDown2
+                                    size="19"
+                                    color="#d14d72"
+                                    className="rounded-sm bg-white p-1 customMd:p-3"
+                                 />
+                              }
+                           >
+                              <p className="relative py-3 text-xs leading-6 text-[#050F2C] customMd:text-base">
+                                 {item?.question}
+                                 <span className="absolute start-[-21px] top-[15px] size-3 rounded-full bg-customPink" />
+                              </p>
+                           </AccordionSummary>
+                           <AccordionDetails>{item?.answer}</AccordionDetails>
+                        </Accordion>
+                     ))}
                   </div>
+
+                  <Link href="/faqs" className="mt-10 block">
+                     <Button
+                        color="customPink"
+                        variant="contained"
+                        className="!w-full lg:!w-[202px]"
+                        sx={{
+                           height: 50,
+                           borderRadius: 57,
+                           fontSize: 16,
+                           ':hover': {
+                              backgroundColor: '#B46451',
+                           },
+                        }}
+                        endIcon={<ArrowLeft size="20" {...(locale === 'en' && { className: 'rotate-180' })} />}
+                     >
+                        {t('See all')}
+                     </Button>
+                  </Link>
                </div>
                <div className="order-1 flex-1 customMd:order-2" data-aos="fade-right" data-aos-offset="400">
                   <Image src={faqPic} alt="faq" className="size-full customMd:h-auto customMd:w-full" />

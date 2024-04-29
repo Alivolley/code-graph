@@ -4,10 +4,10 @@ import axiosInstance from '@/configs/axiosInstance';
 // Context
 import { useGlobalContext } from '@/context/store';
 
-const useResetPassword = () => {
+const useLoginGoogle = () => {
    const { setIsLogin } = useGlobalContext();
 
-   return useSWRMutation('accounts/recovery-password/', (url, data) =>
+   return useSWRMutation('accounts/login-with-google/', (url, data) =>
       axiosInstance.post(url, data.arg).then(res => {
          Cookies.set('roadGraph_accessToken', res?.data?.access, { expires: 365 });
          Cookies.set('roadGraph_refreshToken', res?.data?.refresh, { expires: 365 });
@@ -17,4 +17,4 @@ const useResetPassword = () => {
    );
 };
 
-export default useResetPassword;
+export default useLoginGoogle;

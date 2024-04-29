@@ -57,8 +57,6 @@ function AboutUs({ comments }) {
       });
    };
 
-   console.log(comments);
-
    return (
       <div>
          <div style={{ background: 'linear-gradient(80.33deg, #E6EBFA 7.96%, #F2F5FC 43.29%, #FFFFFF 98.56%)' }}>
@@ -82,9 +80,7 @@ function AboutUs({ comments }) {
                   </Grid>
                   <Grid item xs={12} md={6} order={{ xs: 3, md: 2 }}>
                      <p className="text-sm leading-[31px] text-[#434F74] customMd:text-[18px] customMd:leading-[43px]">
-                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
-                        چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی
-                        مورد نیاز و کاربردهای
+                        {t('text 1')}
                      </p>
                   </Grid>
                   <Grid item xs={12} order={{ xs: 1, md: 3 }}>
@@ -123,10 +119,7 @@ function AboutUs({ comments }) {
             </div>
 
             <p className="max-w-[762px] text-sm leading-[31px] text-[#434F74] customMd:text-[18px] customMd:leading-[43px]">
-               لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و
-               متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای
-               لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و
-               متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای
+               {t('text 2')}
             </p>
          </div>
 
@@ -170,9 +163,7 @@ function AboutUs({ comments }) {
                         data-aos-offset="400"
                      >
                         <div className="relative ps-[30px]">
-                           <p className="text-xs text-[#626E94] customMd:text-sm">
-                              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟
-                           </p>
+                           <p className="text-xs text-[#626E94] customMd:text-sm">{t('text 3')}</p>
                            <p className="flex flex-nowrap items-center gap-1 font-almaraiExtraBold text-2xl leading-[46px] customMd:mt-4 customMd:text-[40px] customMd:leading-[75px]">
                               <span className="text-[#65A5FC]">{t('services')}</span>
                               <span className="whitespace-nowrap text-customPink">{t('RoadGraph')}</span>
@@ -181,29 +172,21 @@ function AboutUs({ comments }) {
                            <p className="absolute -top-1 bottom-2 start-0 w-2 bg-[#65A5FC]" />
                         </div>
                         <p className="mt-[18px] text-sm leading-[32px] text-[#576071] customMd:text-base customMd:leading-[45px]">
-                           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
-                           چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی
-                           مورد نیاز و کاربردهای
+                           {t('text 4')}
                         </p>
 
                         <div className="mt-6 space-y-5">
                            <div className="flex items-center gap-[11px] customMd:gap-6">
                               <div className="size-[35px] shrink-0 rounded-full border-2 border-solid border-customPink bg-[#F1DEDA] customMd:size-[52px]" />
-                              <p className="text-xs text-customPink customMd:text-sm">
-                                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟
-                              </p>
+                              <p className="text-xs text-customPink customMd:text-sm">{t('text 5')}</p>
                            </div>
                            <div className="flex items-center gap-[11px] customMd:gap-6">
                               <div className="size-[35px] shrink-0 rounded-full border-2 border-solid border-[#65A5FC] bg-[#DAE3F1] customMd:size-[52px]" />
-                              <p className="text-xs text-[#65A5FC] customMd:text-sm">
-                                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟
-                              </p>
+                              <p className="text-xs text-[#65A5FC] customMd:text-sm">{t('text 6')}</p>
                            </div>
                            <div className="flex items-center gap-[11px] customMd:gap-6">
                               <div className="size-[35px] shrink-0 rounded-full border-2 border-solid border-[#9DAF84] bg-[#E7F1DA] customMd:size-[52px]" />
-                              <p className="text-xs text-[#9DAF84] customMd:text-sm">
-                                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟
-                              </p>
+                              <p className="text-xs text-[#9DAF84] customMd:text-sm">{t('text 7')}</p>
                            </div>
                         </div>
                      </div>
@@ -239,28 +222,26 @@ function AboutUs({ comments }) {
 
                <div className="max-w-[762px] space-y-5 customMd:space-y-[60px]">
                   <p className="text-sm leading-[31px] text-[#434F74] customMd:text-[18px] customMd:leading-[43px]">
-                     لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها
-                     و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
-                     کاربردهای لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
-                     است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی
-                     مورد نیاز و کاربردهای
+                     {t('text 8')}
                   </p>
-                  <Button
-                     color="customPink"
-                     variant="contained"
-                     className="w-full customMd:w-auto"
-                     sx={{
-                        height: 60,
-                        borderRadius: 57,
-                        fontSize: 18,
-                        paddingX: '38px',
-                        ':hover': {
-                           backgroundColor: '#B46451',
-                        },
-                     }}
-                  >
-                     {t('Send counseling request')}
-                  </Button>
+                  <a href="#reqForm" className="block w-fit">
+                     <Button
+                        color="customPink"
+                        variant="contained"
+                        className="w-full customMd:w-auto"
+                        sx={{
+                           height: 60,
+                           borderRadius: 57,
+                           fontSize: 18,
+                           paddingX: '38px',
+                           ':hover': {
+                              backgroundColor: '#B46451',
+                           },
+                        }}
+                     >
+                        {t('Send counseling request')}
+                     </Button>
+                  </a>
                </div>
             </div>
          </div>
@@ -273,14 +254,14 @@ function AboutUs({ comments }) {
             <Comments detail={comments} />
          </div>
 
-         <div className="bg-[#F5F8FC]">
+         <div className="bg-[#F5F8FC]" id="reqForm">
             <div className="mx-auto max-w-[1440px] px-5 py-[48px] customMd:pb-[45px] customMd:pt-[60px]">
                <div className="flex flex-col items-center" data-aos="zoom-out" data-aos-offset="400">
                   <div className="w-[144px] customMd:w-[413px]">
                      <Image src={aboutUsLogo} alt="logo" className="size-full" />
                   </div>
                   <p className="mt-[28px] text-center text-sm text-[#626E94] customMd:mt-[34px] customMd:text-base">
-                     لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟
+                     {t('text 9')}
                   </p>
                   <p className="flex flex-nowrap items-center gap-1 font-almaraiExtraBold text-[26px] leading-[55px] customMd:mt-4 customMd:text-[32px]">
                      <span className="text-[#65A5FC]">{t('Request')}</span>
@@ -290,7 +271,7 @@ function AboutUs({ comments }) {
 
                <form className="mx-auto mt-[30px] max-w-[1213px]" onSubmit={handleSubmit(formSubmit)}>
                   <Grid container rowSpacing="25px" spacing={{ md: '25px' }}>
-                     <Grid item xs={12} md={6} data-aos="fade-left" data-aos-offset="300">
+                     <Grid item xs={12} md={6} data-aos="fade-left" data-aos-offset="100">
                         <TextField
                            fullWidth
                            label={t('Full name')}
@@ -307,7 +288,7 @@ function AboutUs({ comments }) {
                         />
                      </Grid>
 
-                     <Grid item xs={12} md={6} data-aos="fade-right" data-aos-offset="300">
+                     <Grid item xs={12} md={6} data-aos="fade-right" data-aos-offset="100">
                         <TextField
                            type="number"
                            sx={{
@@ -335,7 +316,7 @@ function AboutUs({ comments }) {
                         />
                      </Grid>
 
-                     <Grid item xs={12} md={6} data-aos="fade-left" data-aos-offset="300">
+                     <Grid item xs={12} md={6} data-aos="fade-left" data-aos-offset="100">
                         <TextField
                            fullWidth
                            label={t('Email')}
@@ -356,7 +337,7 @@ function AboutUs({ comments }) {
                         />
                      </Grid>
 
-                     <Grid item xs={12} md={6} data-aos="fade-right" data-aos-offset="300">
+                     <Grid item xs={12} md={6} data-aos="fade-right" data-aos-offset="100">
                         <TextField
                            fullWidth
                            multiline
@@ -375,7 +356,7 @@ function AboutUs({ comments }) {
                      </Grid>
                   </Grid>
 
-                  <div className="mt-[50px] flex justify-center" data-aos="fade-up" data-aos-offset="200">
+                  <div className="mt-[50px] flex justify-center" data-aos="fade-up" data-aos-offset="100">
                      <LoadingButton
                         variant="contained"
                         type="submit"

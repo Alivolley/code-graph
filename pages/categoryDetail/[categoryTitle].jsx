@@ -27,7 +27,7 @@ import axiosInstance from '@/configs/axiosInstance';
 // Data
 import selectCategory from '@/data/categories';
 
-function CategoryTitle({ categoryData, projects, blogsList, comments }) {
+function CategoryTitle({ categoryData, projects, blogsList, comments, questions }) {
    const { locale } = useRouter();
    const t = useTranslations('categoryDetail');
 
@@ -327,7 +327,7 @@ function CategoryTitle({ categoryData, projects, blogsList, comments }) {
             </div>
          </div>
 
-         <Faqs />
+         <Faqs detail={questions} />
       </div>
    );
 }
@@ -373,6 +373,8 @@ export async function getStaticProps(context) {
       res => res.data
    );
 
+   const questions = await axiosInstance(`accounts/questions/?random_faq=true`).then(res => res.data);
+
    return {
       props: {
          categoryData,
@@ -380,6 +382,7 @@ export async function getStaticProps(context) {
          projects,
          blogsList,
          comments,
+         questions,
       },
       revalidate: 300,
    };

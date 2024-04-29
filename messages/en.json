@@ -72,7 +72,8 @@
         "Enter your email": "Enter your email",
         "Newsletter description": "Subscribe to our newsletter and unlock a world of exclusive benefits. Be the first to know about our latest products, special promotions, and exciting updates. Join our community of like-minded individuals who share a passion for [your niche/industry].",
         "Rights": "© 2023 All rights reserved",
-        "footer explain 1": "We, the Road Graph team, with more than 3 years of experience in the fields of web design and development, graphic design and user experience (UI/UX), are ready to work with you as your ideal partner in creating an online presence"
+        "footer explain 1": "We, the Road Graph team, with more than 3 years of experience in the fields of web design and development, graphic design and user experience (UI/UX), are ready to work with you as your ideal partner in creating an online presence",
+        "Counseling request": "Counseling request"
     },
     "login": {
         "Road": "Road",
@@ -126,7 +127,8 @@
         "Completed projects": "Completed projects",
         "Show all": "Show all",
         "Related articles": "Related articles",
-        "No comments": "No comments"
+        "No comments": "No comments",
+        "See all": "See all"
     },
     "allProducts": {
         "Letter1": "Portfolio",
@@ -143,7 +145,8 @@
         "Graphic": "Graphic",
         "No projects yet !!!": "No projects yet !!!",
         "Visit project link": "Visit project link",
-        "Some internal pages": "Some internal pages"
+        "Some internal pages": "Some internal pages",
+        "text 1": "You can find a collection of premium and creative portfolios on this page that include amazing website design, graphic design with unique features, and distinctive user experiences (UI/UX). All these portfolios have been created using modern technologies and creative designs and are ready for display."
     },
     "prices": {
         "Graphic": "Graphic",
@@ -191,7 +194,10 @@
         "Have a question ?": "Have a question ?",
         "Email us": "Email us",
         "Visit at any time": "Visit at any time",
-        "Address": "Kermanshah parvaz"
+        "Address": "Kermanshah parvaz",
+        "Join": "Join",
+        "Follow us": "Follow us",
+        "contact us text 1": "According to your needs and goals, we are ready to help you turn your ideas into reality and achieve greater success"
     },
     "about us": {
         "About us": "About us",
@@ -211,7 +217,16 @@
         "Phone number": "Phone number",
         "Email": "Email",
         "Message": "Message",
-        "Message sent": "Message sent"
+        "Message sent": "Message sent",
+        "text 1": "At RoadGraph team, we are proud to work with big brands. With a team full of experience and creativity, we seek to create brands that are not only visually appealing, but also provide users with excellent user experience and high performance.",
+        "text 2": "Our effort to provide quality services tailored to the tastes of our customers distinguishes us from other teams. Also, our team has high experience and expertise in the field of design and development and is always looking for innovative solutions to improve our customers' services and projects. is. The trust our customers place in us is a testament to the strength and credibility of the Rood Graf team, and we are proud to be able to help promote the success and growth of their businesses.",
+        "text 3": "A wide range of design and development services",
+        "text 4": "Our services include designing and developing dynamic and responsive websites, professional graphic design for logos, branding and promotional materials, and user experience (UX) and user interface (UI) optimization to improve the efficiency and appeal of websites.",
+        "text 5": "Design and development of all kinds of corporate, advertising, store, news and...",
+        "text 6": "Designing logos and branding, designing brochures and graphic advertising images and...",
+        "text 7": "uiux design for websites with a focus on ease of use and visual appeal",
+        "text 8": "If you need advice and guidance in web design and development, graphic design or user experience and user interface (UI/UX), our team is ready to help. With our experience and expertise, we will guide you to choose the best solutions for your projects and achieve more success. Take advantage of our free consultation and we will help you achieve your goals.",
+        "text 9": "Send us your information and we will contact you"
     },
     "faqs": {
         "lorem1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Egestas purus viverra accumsan in nisl nisi Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque In egestas erat imperdiet sed euismod  Morbi tristique senectus et netus Mattis pellentesque id nibh tortor i lectus proin Sapien faucibus et molestie ac feugiat sed lectus vestibulum Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget Dictum varius duis at consectetur lorem Nisi vitae ",
@@ -221,6 +236,9 @@
         "Graphic": "Graphic",
         "UiUx": "UiUx",
         "Website": "Website",
-        "All": "All"
+        "All": "All",
+        "No question yet !!!": "No question yet !!!",
+        "text 1": "You can find answers to your questions here",
+        "text 2": "In the FAQ section, we have answered the most common and frequently asked questions of our customers to help you learn more about our services and products. If you have a question that is not answered in this section, contact us and we will help you as soon as possible. We are always ready to answer your questions and we will be very happy to communicate with you."
     }
 }

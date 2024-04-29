@@ -61,10 +61,10 @@ function Blogs({ blogsList }) {
    return (
       <div>
          <div className="relative bg-[#E7ECFF]">
-            <div className="absolute bottom-0 left-0 z-[0] hidden xl:block">
+            <div className="absolute bottom-0 left-0 z-0 hidden xl:block">
                <Image src={wheelFirst} alt="wheel" />
             </div>
-            <div className="absolute bottom-0 right-0 z-[0] hidden xl:block">
+            <div className="absolute bottom-0 right-0 z-0 hidden xl:block">
                <Image src={wheelSecond} alt="wheel" />
             </div>
 

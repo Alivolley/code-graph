@@ -30,7 +30,7 @@ const categoryButtonStyle = {
    },
 };
 
-function AllProducts({ projects }) {
+function AllProducts({ projects, questions }) {
    const [chosenCategory, setChosenCategory] = useState('');
    const t = useTranslations('allProducts');
    const { locale, push, query } = useRouter();
@@ -85,7 +85,7 @@ function AllProducts({ projects }) {
    return (
       <div>
          <div className="relative bg-[#F8F9FE]">
-            <div className="absolute bottom-0 left-0 z-[0] hidden xl:block">
+            <div className="absolute bottom-0 left-0 z-0 hidden xl:block">
                <Image src={wheelFirst} alt="wheel" />
             </div>
 
@@ -96,13 +96,13 @@ function AllProducts({ projects }) {
                   </div>
                   <div className="flex-1 lg:mt-[45px]" dir={locale === 'en' ? 'ltr' : 'rtl'} data-aos="fade-right">
                      <div className="text-center font-almaraiExtraBold lg:text-start">
-                        <h1 className="text-[22px] text-[#FD8266] lg:text-[24px]">{t('Letter1')}</h1>
+                        <h1 className="text-[22px] text-customPink lg:text-[24px]">{t('Letter1')}</h1>
                         <h1 className="mt-4 text-[28px] leading-[45px] lg:text-[36px]">{t('Letter2')}</h1>
                      </div>
                      <p className="mt-6 text-center text-sm leading-[27px] text-[#576071] lg:text-start lg:text-base lg:leading-[40px]">
-                        {t('lorem')}
+                        {t('text 1')}
                      </p>
-                     <Link href="/" className="mt-6 block lg:w-fit">
+                     <Link href="/aboutUs#reqForm" className="mt-6 block lg:w-fit">
                         <Button
                            color="customPink"
                            variant="contained"
@@ -154,13 +154,17 @@ function AllProducts({ projects }) {
             </form>
 
             <p
-               className="mt-[47px] flex h-12 items-center rounded-[47px] bg-[#FD8266] px-8 font-almaraiBold text-base text-white customMd:h-16 customMd:text-[20px]"
+               className="mt-[47px] flex h-12 items-center rounded-[47px] bg-customPink px-8 font-almaraiBold text-base text-white customMd:h-16 customMd:text-[20px]"
                data-aos="fade-up"
                data-aos-offset="300"
             >
                {t('Category of projects')}
             </p>
-            <div className="mt-6 flex flex-wrap items-center border-b border-solid border-[#E4EAF0]">
+            <div
+               className="mt-6 flex flex-wrap items-center border-b border-solid border-[#E4EAF0]"
+               data-aos="fade-up"
+               data-aos-offset="400"
+            >
                <Button
                   sx={{
                      ...categoryButtonStyle,
@@ -175,8 +179,6 @@ function AllProducts({ projects }) {
                         : '!border-e !border-solid !border-[#E4EAF0]'
                   }`}
                   onClick={() => changeCategoryHandler('')}
-                  data-aos="zoom-in"
-                  data-aos-offset="300"
                >
                   <Truck size="28" color="#d14d72" variant="TwoTone" />
                   <p className="leading-[18px] text-[#050F2C]">{t('All')}</p>
@@ -195,9 +197,6 @@ function AllProducts({ projects }) {
                         : '!border-e !border-solid !border-[#E4EAF0]'
                   }`}
                   onClick={() => changeCategoryHandler('website')}
-                  data-aos="zoom-in"
-                  data-aos-offset="300"
-                  data-aos-delay="100"
                >
                   <User size="28" color="#d14d72" variant="TwoTone" />
                   <p className="leading-[18px] text-[#050F2C]">{t('Website')}</p>
@@ -216,9 +215,6 @@ function AllProducts({ projects }) {
                         : '!border-e !border-solid !border-[#E4EAF0]'
                   }`}
                   onClick={() => changeCategoryHandler('uiux')}
-                  data-aos="zoom-in"
-                  data-aos-offset="300"
-                  data-aos-delay="200"
                >
                   <ShoppingCart size="28" color="#d14d72" variant="TwoTone" />
                   <p className="leading-[18px] text-[#050F2C]">{t('UiUx')}</p>
@@ -235,9 +231,6 @@ function AllProducts({ projects }) {
                      chosenCategory === 'graphic' ? '!rounded-lg !border !border-solid !border-[#EF6D33]' : ''
                   }`}
                   onClick={() => changeCategoryHandler('graphic')}
-                  data-aos="zoom-in"
-                  data-aos-offset="300"
-                  data-aos-delay="300"
                >
                   <DiscountShape size="28" color="#d14d72" variant="TwoTone" />
                   <p className="leading-[18px] text-[#050F2C]">{t('Graphic')}</p>
@@ -285,7 +278,7 @@ function AllProducts({ projects }) {
             )}
          </div>
 
-         <Faqs />
+         <Faqs detail={questions} />
       </div>
    );
 }
@@ -308,11 +301,13 @@ export async function getServerSideProps(context) {
    }
 
    const projects = await axiosInstance(queryString).then(res => res.data);
+   const questions = await axiosInstance(`accounts/questions/?random_faq=true`).then(res => res.data);
 
    return {
       props: {
          messages: (await import(`@/messages/${context.locale}.json`)).default,
          projects,
+         questions,
       },
    };
 }

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
@@ -16,6 +16,7 @@ import wheelSecond from '@/assets/icons/wheel2.svg';
 
 // Components
 import Request from '@/components/templates/request/request';
+import axiosInstance from '@/configs/axiosInstance';
 
 const categoryButtonStyle = {
    display: 'flex',
@@ -27,25 +28,38 @@ const categoryButtonStyle = {
    },
 };
 
-function Faqs() {
+function Faqs({ questions }) {
    const [chosenCategory, setChosenCategory] = useState('');
 
    const t = useTranslations('faqs');
-   const { locale } = useRouter();
+   const { locale, push, query } = useRouter();
+
+   useEffect(() => {
+      if (query?.category) {
+         setChosenCategory(query?.category);
+      } else {
+         setChosenCategory('');
+      }
+   }, [query]);
 
    const changeCategoryHandler = cat => {
       if (cat !== chosenCategory) {
          setChosenCategory(cat);
+         if (cat === '') {
+            push(`/faqs`, undefined, { scroll: false });
+         } else if (cat) {
+            push(`/faqs?category=${cat}`, undefined, { scroll: false });
+         }
       }
    };
 
    return (
       <div>
          <div className="relative bg-[#F8F9FE]">
-            <div className="absolute left-0 top-[180px] z-[0] hidden xl:block">
+            <div className="absolute left-0 top-[180px] z-0 hidden xl:block">
                <Image src={wheelFirst} alt="wheel" />
             </div>
-            <div className="absolute bottom-0 right-0 z-[0] hidden xl:block">
+            <div className="absolute bottom-0 right-0 z-0 hidden xl:block">
                <Image src={wheelSecond} alt="wheel" />
             </div>
 
@@ -56,18 +70,16 @@ function Faqs() {
                   </div>
                   <div className="flex-1 lg:mt-[45px]" dir={locale === 'en' ? 'ltr' : 'rtl'} data-aos="fade-right">
                      <div className="relative ps-[30px]">
-                        <p className="text-xs text-[#626E94] customMd:text-sm">
-                           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟
-                        </p>
+                        <p className="text-xs text-[#626E94] customMd:text-sm">{t('text 1')}</p>
                         <p className="flex flex-wrap items-center gap-1 font-almaraiExtraBold text-2xl leading-[46px] customMd:mt-4 customMd:text-[40px] customMd:leading-[75px]">
                            <span className="whitespace-nowrap text-[#65A5FC]">{t('Answer to')}</span>
-                           <span className="text-[#FD8266]">{t('Your asked questions')}</span>
+                           <span className="text-customPink">{t('Your asked questions')}</span>
                         </p>
 
                         <p className="absolute -top-1 bottom-2 start-0 w-2 bg-[#65A5FC]" />
                      </div>
                      <p className="mt-6 text-center text-sm leading-[27px] text-[#576071] lg:text-start lg:text-base lg:leading-[40px]">
-                        {t('lorem1')}
+                        {t('text 2')}
                      </p>
                   </div>
                </div>
@@ -76,13 +88,17 @@ function Faqs() {
 
          <div className="mx-auto max-w-[1440px] px-5 pb-[70px] pt-10 customMd:px-[60px]">
             <p
-               className="flex h-12 items-center rounded-[47px] bg-[#FD8266] px-8 font-almaraiBold text-base text-white customMd:h-16 customMd:text-[20px]"
+               className="flex h-12 items-center rounded-[47px] bg-customPink px-8 font-almaraiBold text-base text-white customMd:h-16 customMd:text-[20px]"
                data-aos="fade-up"
                data-aos-offset="300"
             >
                {t('Category of Faqs')}
             </p>
-            <div className="mt-6 flex flex-wrap items-center border-b border-solid border-[#E4EAF0]">
+            <div
+               className="mt-6 flex flex-wrap items-center border-b border-solid border-[#E4EAF0]"
+               data-aos="fade-up"
+               data-aos-offset="400"
+            >
                <Button
                   sx={{
                      ...categoryButtonStyle,
@@ -97,9 +113,6 @@ function Faqs() {
                         : '!border-e !border-solid !border-[#E4EAF0]'
                   }`}
                   onClick={() => changeCategoryHandler('')}
-                  data-aos="zoom-in"
-                  data-aos-offset="400"
-                  data-aos-delay="100"
                >
                   <Truck size="28" color="#d14d72" variant="TwoTone" />
                   <p className="leading-[18px] text-[#050F2C]">{t('All')}</p>
@@ -118,9 +131,6 @@ function Faqs() {
                         : '!border-e !border-solid !border-[#E4EAF0]'
                   }`}
                   onClick={() => changeCategoryHandler('website')}
-                  data-aos="zoom-in"
-                  data-aos-offset="400"
-                  data-aos-delay="200"
                >
                   <User size="28" color="#d14d72" variant="TwoTone" />
                   <p className="leading-[18px] text-[#050F2C]">{t('Website')}</p>
@@ -139,9 +149,6 @@ function Faqs() {
                         : '!border-e !border-solid !border-[#E4EAF0]'
                   }`}
                   onClick={() => changeCategoryHandler('uiux')}
-                  data-aos="zoom-in"
-                  data-aos-offset="400"
-                  data-aos-delay="300"
                >
                   <ShoppingCart size="28" color="#d14d72" variant="TwoTone" />
                   <p className="leading-[18px] text-[#050F2C]">{t('UiUx')}</p>
@@ -158,9 +165,6 @@ function Faqs() {
                      chosenCategory === 'graphic' ? '!rounded-lg !border !border-solid !border-[#EF6D33]' : ''
                   }`}
                   onClick={() => changeCategoryHandler('graphic')}
-                  data-aos="zoom-in"
-                  data-aos-offset="400"
-                  data-aos-delay="400"
                >
                   <DiscountShape size="28" color="#d14d72" variant="TwoTone" />
                   <p className="leading-[18px] text-[#050F2C]">{t('Graphic')}</p>
@@ -173,86 +177,25 @@ function Faqs() {
             data-aos="fade-up"
             data-aos-offset="300"
          >
-            <Accordion sx={{ backgroundColor: 'transparent', boxShadow: 'none' }}>
-               <AccordionSummary
-                  expandIcon={
-                     <ArrowDown2 size="19" color="#d14d72" className="rounded-sm bg-[#F5F8FC] p-1 customMd:p-3" />
-                  }
-               >
-                  <p className="relative py-3 text-xs leading-6 text-[#050F2C] customMd:text-base">
-                     لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟
-                     <span className="absolute start-[-21px] top-[15px] size-3 rounded-full bg-[#FD8266]" />
-                  </p>
-               </AccordionSummary>
-               <AccordionDetails>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet
-                  blandit leo lobortis eget.
-               </AccordionDetails>
-            </Accordion>
-            <Accordion sx={{ backgroundColor: 'transparent', boxShadow: 'none' }}>
-               <AccordionSummary
-                  expandIcon={
-                     <ArrowDown2 size="19" color="#d14d72" className="rounded-sm bg-[#F5F8FC] p-1 customMd:p-3" />
-                  }
-               >
-                  <p className="relative py-3 text-xs leading-6 text-[#050F2C] customMd:text-base">
-                     لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟
-                     <span className="absolute start-[-21px] top-[15px] size-3 rounded-full bg-[#FD8266]" />
-                  </p>
-               </AccordionSummary>
-               <AccordionDetails>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet
-                  blandit leo lobortis eget.
-               </AccordionDetails>
-            </Accordion>
-            <Accordion sx={{ backgroundColor: 'transparent', boxShadow: 'none' }}>
-               <AccordionSummary
-                  expandIcon={
-                     <ArrowDown2 size="19" color="#d14d72" className="rounded-sm bg-[#F5F8FC] p-1 customMd:p-3" />
-                  }
-               >
-                  <p className="relative py-3 text-xs leading-6 text-[#050F2C] customMd:text-base">
-                     لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟
-                     <span className="absolute start-[-21px] top-[15px] size-3 rounded-full bg-[#FD8266]" />
-                  </p>
-               </AccordionSummary>
-               <AccordionDetails>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet
-                  blandit leo lobortis eget.
-               </AccordionDetails>
-            </Accordion>
-            <Accordion sx={{ backgroundColor: 'transparent', boxShadow: 'none' }}>
-               <AccordionSummary
-                  expandIcon={
-                     <ArrowDown2 size="19" color="#d14d72" className="rounded-sm bg-[#F5F8FC] p-1 customMd:p-3" />
-                  }
-               >
-                  <p className="relative py-3 text-xs leading-6 text-[#050F2C] customMd:text-base">
-                     لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟
-                     <span className="absolute start-[-21px] top-[15px] size-3 rounded-full bg-[#FD8266]" />
-                  </p>
-               </AccordionSummary>
-               <AccordionDetails>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet
-                  blandit leo lobortis eget.
-               </AccordionDetails>
-            </Accordion>
-            <Accordion sx={{ backgroundColor: 'transparent', boxShadow: 'none' }}>
-               <AccordionSummary
-                  expandIcon={
-                     <ArrowDown2 size="19" color="#d14d72" className="rounded-sm bg-[#F5F8FC] p-1 customMd:p-3" />
-                  }
-               >
-                  <p className="relative py-3 text-xs leading-6 text-[#050F2C] customMd:text-base">
-                     لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟
-                     <span className="absolute start-[-21px] top-[15px] size-3 rounded-full bg-[#FD8266]" />
-                  </p>
-               </AccordionSummary>
-               <AccordionDetails>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet
-                  blandit leo lobortis eget.
-               </AccordionDetails>
-            </Accordion>
+            {questions?.length ? (
+               questions?.map(item => (
+                  <Accordion sx={{ backgroundColor: 'transparent', boxShadow: 'none' }} key={item?.id}>
+                     <AccordionSummary
+                        expandIcon={
+                           <ArrowDown2 size="19" color="#d14d72" className="rounded-sm bg-[#F5F8FC] p-1 customMd:p-3" />
+                        }
+                     >
+                        <p className="relative py-3 text-xs leading-6 text-[#050F2C] customMd:text-base">
+                           {item?.question}
+                           <span className="absolute start-[-21px] top-[15px] size-3 rounded-full bg-customPink" />
+                        </p>
+                     </AccordionSummary>
+                     <AccordionDetails>{item?.answer}</AccordionDetails>
+                  </Accordion>
+               ))
+            ) : (
+               <p className="mx-auto py-20 text-center text-base customMd:text-2xl">{t('No question yet !!!')}</p>
+            )}
          </div>
 
          <Request />
@@ -262,11 +205,21 @@ function Faqs() {
 
 export default Faqs;
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
+   const { query } = context;
+
+   let queryString = `accounts/questions/?lang=${context.locale}`;
+
+   if (query?.category) {
+      queryString += `&category=${query.category}`;
+   }
+
+   const questions = await axiosInstance(queryString).then(res => res.data);
+
    return {
       props: {
          messages: (await import(`@/messages/${context.locale}.json`)).default,
+         questions,
       },
-      revalidate: 300,
    };
 }
