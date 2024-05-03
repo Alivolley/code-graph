@@ -78,7 +78,7 @@ function ContactUs() {
                               </div>
                            </a>
                            <a
-                              href="https://t.me/Roadgraph"
+                              href="https://www.instagram.com/roadgraph_studio?igsh=ZGUzMzM3NWJiOQ=="
                               target="_blank"
                               rel="noreferrer"
                               className="flex w-fit items-center gap-5"

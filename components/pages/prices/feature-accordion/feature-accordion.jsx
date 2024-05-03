@@ -38,25 +38,25 @@ function FeatureAccordion() {
 
                      <div className="grid grow grid-cols-2 customMd:flex">
                         <div
-                           className="flex items-center justify-center border-[2px] border-solid border-[#FC742B] bg-[#FC742B1A] py-[30px]
+                           className="flex items-center justify-center border-2 border-solid border-[#FC742B] bg-[#FC742B1A] py-[30px]
                          text-center customMd:flex-1 customMd:border-y-0 customMd:border-e-0 customMd:border-s customMd:border-[#E4EAF0] customMd:bg-transparent"
                         >
                            <FaCheck color="#44BF34" fontSize="20px" />
                         </div>
                         <div
-                           className="flex items-center justify-center border-[2px] border-solid border-[#050F2C] bg-[#050F2C1A] py-[30px]
+                           className="flex items-center justify-center border-2 border-solid border-[#050F2C] bg-[#050F2C1A] py-[30px]
                          text-center customMd:flex-1 customMd:border-y-0 customMd:border-e-0 customMd:border-s customMd:border-[#E4EAF0] customMd:bg-transparent"
                         >
                            <FaCheck color="#44BF34" fontSize="20px" />
                         </div>
                         <div
-                           className="flex items-center justify-center border-[2px] border-solid border-[#06986E] bg-[#06986E1A] py-[30px]
+                           className="flex items-center justify-center border-2 border-solid border-[#06986E] bg-[#06986E1A] py-[30px]
                          text-center customMd:flex-1 customMd:border-y-0 customMd:border-e-0 customMd:border-s customMd:border-[#E4EAF0] customMd:bg-transparent"
                         >
                            <FaCheck color="#44BF34" fontSize="20px" />
                         </div>
                         <div
-                           className="flex items-center justify-center border-[2px] border-solid border-[#E71D36] bg-[#E71D361A] py-[30px]
+                           className="flex items-center justify-center border-2 border-solid border-[#E71D36] bg-[#E71D361A] py-[30px]
                          text-center customMd:flex-1 customMd:border-y-0 customMd:border-e-0 customMd:border-s customMd:border-[#E4EAF0] customMd:bg-transparent"
                         >
                            <IoCloseCircle color="#EF6D33" fontSize="20px" />
@@ -73,25 +73,25 @@ function FeatureAccordion() {
 
                      <div className="grid grow grid-cols-2 customMd:flex">
                         <div
-                           className="flex items-center justify-center border-[2px] border-solid border-[#FC742B] bg-[#FC742B1A] py-[30px]
+                           className="flex items-center justify-center border-2 border-solid border-[#FC742B] bg-[#FC742B1A] py-[30px]
                          text-center customMd:flex-1 customMd:border-y-0 customMd:border-e-0 customMd:border-s customMd:border-[#E4EAF0] customMd:bg-transparent"
                         >
                            <FaCheck color="#44BF34" fontSize="20px" />
                         </div>
                         <div
-                           className="flex items-center justify-center border-[2px] border-solid border-[#050F2C] bg-[#050F2C1A] py-[30px]
+                           className="flex items-center justify-center border-2 border-solid border-[#050F2C] bg-[#050F2C1A] py-[30px]
                          text-center customMd:flex-1 customMd:border-y-0 customMd:border-e-0 customMd:border-s customMd:border-[#E4EAF0] customMd:bg-transparent"
                         >
                            <FaCheck color="#44BF34" fontSize="20px" />
                         </div>
                         <div
-                           className="flex items-center justify-center border-[2px] border-solid border-[#06986E] bg-[#06986E1A] py-[30px]
+                           className="flex items-center justify-center border-2 border-solid border-[#06986E] bg-[#06986E1A] py-[30px]
                          text-center customMd:flex-1 customMd:border-y-0 customMd:border-e-0 customMd:border-s customMd:border-[#E4EAF0] customMd:bg-transparent"
                         >
                            <FaCheck color="#44BF34" fontSize="20px" />
                         </div>
                         <div
-                           className="flex items-center justify-center border-[2px] border-solid border-[#E71D36] bg-[#E71D361A] py-[30px]
+                           className="flex items-center justify-center border-2 border-solid border-[#E71D36] bg-[#E71D361A] py-[30px]
                          text-center customMd:flex-1 customMd:border-y-0 customMd:border-e-0 customMd:border-s customMd:border-[#E4EAF0] customMd:bg-transparent"
                         >
                            <IoCloseCircle color="#EF6D33" fontSize="20px" />
@@ -108,25 +108,25 @@ function FeatureAccordion() {
 
                      <div className="grid grow grid-cols-2 customMd:flex">
                         <div
-                           className="flex items-center justify-center border-[2px] border-solid border-[#FC742B] bg-[#FC742B1A] py-[30px]
+                           className="flex items-center justify-center border-2 border-solid border-[#FC742B] bg-[#FC742B1A] py-[30px]
                          text-center customMd:flex-1 customMd:border-y-0 customMd:border-e-0 customMd:border-s customMd:border-[#E4EAF0] customMd:bg-transparent"
                         >
                            <FaCheck color="#44BF34" fontSize="20px" />
                         </div>
                         <div
-                           className="flex items-center justify-center border-[2px] border-solid border-[#050F2C] bg-[#050F2C1A] py-[30px]
+                           className="flex items-center justify-center border-2 border-solid border-[#050F2C] bg-[#050F2C1A] py-[30px]
                          text-center customMd:flex-1 customMd:border-y-0 customMd:border-e-0 customMd:border-s customMd:border-[#E4EAF0] customMd:bg-transparent"
                         >
                            <FaCheck color="#44BF34" fontSize="20px" />
                         </div>
                         <div
-                           className="flex items-center justify-center border-[2px] border-solid border-[#06986E] bg-[#06986E1A] py-[30px]
+                           className="flex items-center justify-center border-2 border-solid border-[#06986E] bg-[#06986E1A] py-[30px]
                          text-center customMd:flex-1 customMd:border-y-0 customMd:border-e-0 customMd:border-s customMd:border-[#E4EAF0] customMd:bg-transparent"
                         >
                            <FaCheck color="#44BF34" fontSize="20px" />
                         </div>
                         <div
-                           className="flex items-center justify-center border-[2px] border-solid border-[#E71D36] bg-[#E71D361A] py-[30px]
+                           className="flex items-center justify-center border-2 border-solid border-[#E71D36] bg-[#E71D361A] py-[30px]
                          text-center customMd:flex-1 customMd:border-y-0 customMd:border-e-0 customMd:border-s customMd:border-[#E4EAF0] customMd:bg-transparent"
                         >
                            <IoCloseCircle color="#EF6D33" fontSize="20px" />
@@ -143,25 +143,25 @@ function FeatureAccordion() {
 
                      <div className="grid grow grid-cols-2 customMd:flex">
                         <div
-                           className="flex items-center justify-center border-[2px] border-solid border-[#FC742B] bg-[#FC742B1A] py-[30px]
+                           className="flex items-center justify-center border-2 border-solid border-[#FC742B] bg-[#FC742B1A] py-[30px]
                          text-center customMd:flex-1 customMd:border-y-0 customMd:border-e-0 customMd:border-s customMd:border-[#E4EAF0] customMd:bg-transparent"
                         >
                            <FaCheck color="#44BF34" fontSize="20px" />
                         </div>
                         <div
-                           className="flex items-center justify-center border-[2px] border-solid border-[#050F2C] bg-[#050F2C1A] py-[30px]
+                           className="flex items-center justify-center border-2 border-solid border-[#050F2C] bg-[#050F2C1A] py-[30px]
                          text-center customMd:flex-1 customMd:border-y-0 customMd:border-e-0 customMd:border-s customMd:border-[#E4EAF0] customMd:bg-transparent"
                         >
                            <FaCheck color="#44BF34" fontSize="20px" />
                         </div>
                         <div
-                           className="flex items-center justify-center border-[2px] border-solid border-[#06986E] bg-[#06986E1A] py-[30px]
+                           className="flex items-center justify-center border-2 border-solid border-[#06986E] bg-[#06986E1A] py-[30px]
                          text-center customMd:flex-1 customMd:border-y-0 customMd:border-e-0 customMd:border-s customMd:border-[#E4EAF0] customMd:bg-transparent"
                         >
                            <FaCheck color="#44BF34" fontSize="20px" />
                         </div>
                         <div
-                           className="flex items-center justify-center border-[2px] border-solid border-[#E71D36] bg-[#E71D361A] py-[30px]
+                           className="flex items-center justify-center border-2 border-solid border-[#E71D36] bg-[#E71D361A] py-[30px]
                          text-center customMd:flex-1 customMd:border-y-0 customMd:border-e-0 customMd:border-s customMd:border-[#E4EAF0] customMd:bg-transparent"
                         >
                            <IoCloseCircle color="#EF6D33" fontSize="20px" />

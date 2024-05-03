@@ -11,7 +11,7 @@ import { ArrowLeft } from 'iconsax-react';
 // Assets
 import ProductCartStyle from './product-cart.style';
 
-function ProductCart({ className, detail }) {
+function ProductCart({ className, detail, index }) {
    const { locale } = useRouter();
    const t = useTranslations('home');
 
@@ -19,8 +19,9 @@ function ProductCart({ className, detail }) {
       <ProductCartStyle
          href={`/productDetail/${detail?.title}`}
          className={`shrink-0 rounded-[20px] bg-white p-[14px] ${className}`}
-         data-aos="fade-up"
-         data-aos-offset="300"
+         data-aos="fade-right"
+         data-aos-duration="650"
+         data-aos-delay={(index + 1) * 200}
       >
          <div className="h-[175px] rounded-[18px] bg-[#fdebeb] px-[10px] pt-[10px] md:h-[200px]">
             <p className="text-center text-xs font-bold text-[#284565]">{detail?.title}</p>

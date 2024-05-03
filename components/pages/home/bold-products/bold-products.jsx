@@ -30,18 +30,29 @@ function BoldProducts({ products }) {
    const { locale } = useRouter();
 
    return (
-      <div className="bg-[#F5F8FC]" data-aos="zoom-out" data-aos-offset="400">
-         <div className="mx-auto max-w-[1196px] px-5 pb-16 pt-[30px] customMd:px-[60px] customMd:py-[50px]">
-            <p className="text-center text-xs text-[#3C4252] customMd:text-base">
+      <div className="bg-[#F5F8FC]">
+         <div className="mx-auto max-w-[1196px] px-5 py-[30px] customMd:px-[60px] customMd:py-[50px]">
+            <p
+               className="text-center text-xs text-[#3C4252] customMd:text-base"
+               data-aos="zoom-in"
+               data-aos-duration="650"
+            >
                {t('Our goal at roadGraph is to meet the basic needs of any business that loves to grow')}
             </p>
-            <h2 className="mx-auto mt-6 max-w-[830px] text-center font-almaraiExtraBold text-2xl leading-[42px] text-[#050F2C] customMd:text-[32px] customMd:leading-[56px]">
+            <h2
+               className="mx-auto mt-3 max-w-[830px] text-center font-almaraiExtraBold text-2xl leading-[42px] text-[#050F2C] customMd:text-[32px] customMd:leading-[56px]"
+               data-aos="zoom-in"
+               data-aos-duration="650"
+               data-aos-delay="250"
+            >
                {t('Every need you have for a business, roadGraph will take it')}
             </h2>
 
             <div
-               className="mt-9 flex h-[70px] flex-nowrap items-center gap-4 overflow-auto rounded-[100px]
-             border-2 border-solid border-white bg-white px-4 py-[10px] customMd:h-[102px] customMd:p-4"
+               className="mt-9 flex h-[70px] flex-nowrap items-center gap-4 rounded-[100px] border-2
+             border-solid border-white bg-white px-4 py-[10px] max-customMd:overflow-auto customMd:h-[102px] customMd:p-4"
+               data-aos="zoom-in"
+               data-aos-duration="650"
             >
                <Button
                   startIcon={<Calculator size="24" />}
@@ -99,8 +110,8 @@ function BoldProducts({ products }) {
 
             <div className="mt-[30px] flex flex-nowrap items-center gap-5 overflow-auto customMd:overflow-hidden">
                {chosenCategory === 'graphic'
-                  ? products?.graphic?.map(item => (
-                       <ProductCart key={item?.id} className="w-[240px] customMd:flex-1" detail={item} />
+                  ? products?.graphic?.map((item, index) => (
+                       <ProductCart key={item?.id} className="w-[240px] customMd:flex-1" detail={item} index={index} />
                     ))
                   : chosenCategory === 'webDevelop'
                     ? products?.website?.map(item => (
@@ -131,6 +142,8 @@ function BoldProducts({ products }) {
                      },
                   }}
                   endIcon={<ArrowLeft size="20" {...(locale === 'en' && { className: 'rotate-180' })} />}
+                  data-aos="zoom-in"
+                  data-aos-duration="650"
                >
                   {t('All projects')}
                </Button>

@@ -22,8 +22,8 @@ import useGetBlogs from '@/apis/footer/useGetBlogs';
 
 const socialButtonsStyles = {
    color: 'white',
-   width: 35,
-   height: 35,
+   width: 45,
+   height: 45,
    backgroundColor: '#65A5FC',
    border: '1px solid',
    transition: 'all 0.2s',
@@ -47,12 +47,15 @@ function Footer() {
 
    return (
       <FooterStyle>
-         <div id="back" data-aos="fade-up" data-aos-offset="200">
+         <div id="back">
             <div className="mx-auto flex max-w-[1440px] flex-col justify-between gap-9 px-5 py-12 customMd:flex-row customMd:items-center customMd:px-[60px] customMd:py-6">
-               <p className="max-w-[542px] font-almaraiBold text-2xl leading-[46px] text-white customMd:text-3xl">
+               <p
+                  className="max-w-[542px] font-almaraiBold text-2xl leading-[46px] text-white customMd:text-3xl"
+                  data-aos="fade-up"
+               >
                   {t('Ready')}
                </p>
-               <Link href="/aboutUs#reqForm">
+               <Link href="/aboutUs#reqForm" data-aos="zoom-in" data-aos-delay="200">
                   <Button
                      variant="contained"
                      className="!w-full customMd:!w-[190px]"
@@ -79,22 +82,26 @@ function Footer() {
             <div className="mx-auto max-w-[1440px] px-5 py-10 customMd:px-[60px] customMd:pb-8 customMd:pt-[78px]">
                <Grid container spacing={{ md: 5, lg: 0 }}>
                   <Grid item xs={12} md={3.5}>
-                     <div className="mb-[75px] customMd:mb-0 customMd:max-w-[306px]">
+                     <div className="mb-[75px] customMd:mb-0 customMd:max-w-[306px]" data-aos="fade-right">
                         <Link href="/" className="block h-[51px] w-[110px] customMd:h-[31px] customMd:w-[67px]">
                            <Image src={headerLogo} alt="footer logo" className="size-full" />
                         </Link>
                         <p className="mt-4 text-xs leading-[30px]">{t('footer explain 1')}</p>
                         <div className="mt-5 flex items-center gap-5">
                            {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
-                           <a href="https://t.me/Roadgraph" target="_blank" rel="noreferrer">
+                           <a
+                              href="https://www.instagram.com/roadgraph_studio?igsh=ZGUzMzM3NWJiOQ=="
+                              target="_blank"
+                              rel="noreferrer"
+                           >
                               <IconButton sx={socialButtonsStyles}>
-                                 <Instagram size="15" />
+                                 <Instagram size="20px" />
                               </IconButton>
                            </a>
                            {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
                            <a href="https://t.me/Roadgraph" target="_blank" rel="noreferrer">
                               <IconButton sx={socialButtonsStyles}>
-                                 <FaTelegramPlane fontSize="15px" />
+                                 <FaTelegramPlane fontSize="20px" />
                               </IconButton>
                            </a>
                         </div>
@@ -103,7 +110,7 @@ function Footer() {
                   <Grid item xs={12} md={4.5}>
                      <Grid container rowSpacing={{ xs: 4.5, sm: 0 }}>
                         <Grid item xs={12} sm={7}>
-                           <div>
+                           <div data-aos="fade-right" data-aos-delay="200">
                               <p className="relative text-xl font-bold">
                                  {t('Quick links')}
                                  <Image src={footerLine} alt="line" className="absolute bottom-[-12px] start-0" />
@@ -197,7 +204,7 @@ function Footer() {
                               </Grid>
                            </div>
                         </Grid>
-                        <Grid item xs={12} sm={5}>
+                        <Grid item xs={12} sm={5} data-aos="fade-right" data-aos-delay="400">
                            <p className="relative text-xl font-bold">
                               {t('Blog')}
                               <Image src={footerLine} alt="line" className="absolute bottom-[-12px] start-0" />
@@ -226,7 +233,7 @@ function Footer() {
                      </Grid>
                   </Grid>
                   <Grid item xs={12} md={4}>
-                     <div className="mt-[83px] customMd:mt-0">
+                     <div className="mt-[83px] customMd:mt-0" data-aos="fade-right" data-aos-delay="600">
                         <p className="mb-6 text-2xl font-bold customMd:text-base">{t('Newsletter')}</p>
                         <form className="flex h-12 items-center rounded bg-white px-4" onSubmit={sendEmail}>
                            <input
@@ -239,12 +246,12 @@ function Footer() {
                            </IconButton>
                         </form>
 
-                        <p className="mt-3 text-sm leading-[30px]">{t('Newsletter description')}</p>
+                        <p className="mt-3 text-xs leading-[30px]">{t('Newsletter description')}</p>
                      </div>
                   </Grid>
                </Grid>
 
-               <p className="mt-[103px] text-center text-xs customMd:mt-[62px]">{t('Rights')}</p>
+               <p className="mt-[62px] text-center text-xs">{t('Rights')}</p>
             </div>
          </div>
       </FooterStyle>

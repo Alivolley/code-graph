@@ -55,7 +55,7 @@ function CategoryTitle({ categoryData, projects, blogsList, comments, questions 
                      </p>
                   </div>
 
-                  <div className="order-1 mt-[53px] px-5 lg:order-2 lg:px-0 customXl:max-w-[620px] customXl:shrink-0">
+                  <div className="order-1 mt-[53px] px-5 customMd:w-full lg:order-2 lg:px-0 customXl:max-w-[620px] customXl:shrink-0">
                      <Image src={categoryData?.bannerPic} alt="uiux" className="size-full" />
                   </div>
 
@@ -87,7 +87,7 @@ function CategoryTitle({ categoryData, projects, blogsList, comments, questions 
             </div>
          </div>
          <div
-            className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-center gap-5 px-5 py-8 customSm:gap-12 customMd:px-[60px] customMd:py-20 xl:gap-28"
+            className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-center gap-5 px-5 py-8 customSm:gap-12 customMd:p-[60px] xl:gap-28"
             data-aos="fade-up"
             data-aos-offset="300"
          >

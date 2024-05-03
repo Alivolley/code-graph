@@ -24,6 +24,7 @@ export default function App({ Component, pageProps }) {
             <meta name="description" content="Your website description here" />
             <meta name="keywords" content="comma, separated, keywords" />
             <meta name="author" content={locale === 'fa' ? 'رود گراف' : 'Road graph'} />
+            <link rel="icon" href="/favicon.png" />
          </Head>
          <AppLayout>
             <Component {...pageProps} />

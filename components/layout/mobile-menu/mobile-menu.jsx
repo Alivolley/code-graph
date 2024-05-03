@@ -19,13 +19,15 @@ import MobileMenuStyle from './mobile-menu.style';
 
 function MobileMenu({ open, onClose, isUserLogin }) {
    const [showLogoutModal, setShowLogoutModal] = useState(false);
+   const [profileExpand, setProfileExpand] = useState(false);
+   const [servicesExpand, setServicesExpand] = useState(false);
 
    const { locale } = useRouter();
 
    const t = useTranslations('header');
 
    return (
-      <Drawer anchor="left" open={open} onClose={onClose} dir={locale === 'en' ? 'ltr' : 'rtl'}>
+      <Drawer anchor="right" open={open} onClose={onClose} dir={locale === 'en' ? 'ltr' : 'rtl'}>
          <MobileMenuStyle className="w-[300px]">
             <div className="flex items-start justify-between">
                <Link href="/" className="p-5">
@@ -40,12 +42,13 @@ function MobileMenu({ open, onClose, isUserLogin }) {
             <div className="px-5">
                <div className="border-t border-solid border-[#BFC4D5] pt-5">
                   {isUserLogin && (
-                     <Accordion sx={{ boxShadow: 'none' }}>
+                     <Accordion sx={{ boxShadow: 'none' }} expanded={profileExpand}>
                         <AccordionSummary
-                           expandIcon={<ArrowDown2 size="18" />}
+                           expandIcon={<ArrowDown2 size="18" {...(profileExpand && { color: '#FD8266' })} />}
                            sx={{ padding: '0 !important', fontSize: '14px' }}
+                           onClick={() => setProfileExpand(prev => !prev)}
                         >
-                           {t('Profile')}
+                           <p {...(profileExpand && { className: 'text-customPink' })}>{t('Profile')}</p>
                         </AccordionSummary>
                         <AccordionDetails>
                            <div className="-mt-4 flex flex-col items-start">
@@ -68,12 +71,13 @@ function MobileMenu({ open, onClose, isUserLogin }) {
                         </AccordionDetails>
                      </Accordion>
                   )}
-                  <Accordion sx={{ boxShadow: 'none' }}>
+                  <Accordion sx={{ boxShadow: 'none' }} expanded={servicesExpand}>
                      <AccordionSummary
-                        expandIcon={<ArrowDown2 size="18" />}
+                        expandIcon={<ArrowDown2 size="18" {...(servicesExpand && { color: '#FD8266' })} />}
                         sx={{ padding: '0 !important', fontSize: '14px' }}
+                        onClick={() => setServicesExpand(prev => !prev)}
                      >
-                        {t('Services')}
+                        <p {...(servicesExpand && { className: 'text-customPink' })}>{t('Services')}</p>
                      </AccordionSummary>
                      <AccordionDetails>
                         <div className="-mt-4 flex flex-col items-start">
@@ -98,56 +102,20 @@ function MobileMenu({ open, onClose, isUserLogin }) {
                               <Calculator size="16" color="#626E94" />
                               {t('Website')}
                            </Link>
-                           <Link
-                              href="/categoryDetail/design"
-                              className="flex w-full items-center gap-1 border-b border-solid border-[#E4EAF0] py-3 text-xs"
-                           >
+                           <Link href="/categoryDetail/design" className="flex w-full items-center gap-1 py-3 text-xs">
                               <Calculator size="16" color="#626E94" />
                               {t('Redesign')}
                            </Link>
                         </div>
                      </AccordionDetails>
                   </Accordion>
-                  <Accordion sx={{ boxShadow: 'none' }}>
-                     <AccordionSummary
-                        expandIcon={<ArrowDown2 size="18" />}
-                        sx={{ padding: '0 !important', fontSize: '14px' }}
-                     >
-                        {t('Projects')}
-                     </AccordionSummary>
-                     <AccordionDetails>
-                        <div className="-mt-4 flex flex-col items-start">
-                           <Link
-                              href="/allProducts"
-                              className="flex w-full items-center gap-1 border-b border-solid border-[#E4EAF0] py-3 text-xs"
-                           >
-                              <Calculator size="16" color="#626E94" />
-                              {t('All projects')}
-                           </Link>
-                           <Link
-                              href="/allProducts?category=graphic&page=1"
-                              className="flex w-full items-center gap-1 border-b border-solid border-[#E4EAF0] py-3 text-xs"
-                           >
-                              <Calculator size="16" color="#626E94" />
-                              {t('Graphic')}
-                           </Link>
-                           <Link
-                              href="/allProducts?category=uiux&page=1"
-                              className="flex w-full items-center gap-1 border-b border-solid border-[#E4EAF0] py-3 text-xs"
-                           >
-                              <Calculator size="16" color="#626E94" />
-                              {t('UiUx')}
-                           </Link>
-                           <Link
-                              href="/allProducts?category=website&page=1"
-                              className="flex w-full items-center gap-1 border-b border-solid border-[#E4EAF0] py-3 text-xs"
-                           >
-                              <Calculator size="16" color="#626E94" />
-                              {t('Website')}
-                           </Link>
-                        </div>
-                     </AccordionDetails>
-                  </Accordion>
+
+                  <Link
+                     href="/allProducts"
+                     className="block w-full border-t border-solid border-[#E4EAF0] py-3 text-sm"
+                  >
+                     {t('Projects')}
+                  </Link>
 
                   <Link href="/blogs" className="block w-full border-t border-solid border-[#E4EAF0] py-3 text-sm">
                      {t('Blogs')}

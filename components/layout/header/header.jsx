@@ -132,47 +132,12 @@ function Header() {
                      </div>
                   </div>
 
-                  <div id="dropdownWrapper">
-                     <div className="flex cursor-pointer items-center gap-2 text-[#3A3E4D] transition-all duration-150 hover:text-[#65A5FC]">
-                        <p className="text-xs customLg:text-sm">{t('Projects')}</p>
-                        <ArrowDown2 size="15" id="dropdownArrow" />
-                     </div>
-
-                     <div
-                        id="dropdownBox"
-                        className="flex w-[263px] items-center justify-between rounded-lg border-t-4 border-solid border-[#65A5FC] bg-white px-5 py-7"
-                     >
-                        <div className="flex flex-col gap-6 text-xs text-[#626E94]">
-                           <Link
-                              href="/allProducts"
-                              className="flex items-center gap-2 transition-all duration-200 hover:text-customPink"
-                           >
-                              <Calculator size="18" /> {t('All projects')}
-                           </Link>
-                           <Link
-                              href="/allProducts?category=graphic&page=1"
-                              className="flex items-center gap-2 transition-all duration-200 hover:text-customPink"
-                           >
-                              <Calculator size="18" /> {t('Graphic')}
-                           </Link>
-                        </div>
-                        <div className="h-[73px] w-px bg-[#E4EAF0]" />
-                        <div className="flex flex-col gap-6 text-xs text-[#626E94]">
-                           <Link
-                              href="/allProducts?category=uiux&page=1"
-                              className="flex items-center gap-2 transition-all duration-200 hover:text-customPink"
-                           >
-                              <Calculator size="18" /> {t('UiUx')}
-                           </Link>
-                           <Link
-                              href="/allProducts?category=website&page=1"
-                              className="flex items-center gap-2 transition-all duration-200 hover:text-customPink"
-                           >
-                              <Calculator size="18" /> {t('Website')}
-                           </Link>
-                        </div>
-                     </div>
-                  </div>
+                  <Link
+                     href="/allProducts"
+                     className="flex cursor-pointer items-center gap-2 text-[#3A3E4D] transition-all duration-150 hover:text-[#65A5FC]"
+                  >
+                     <p className="text-xs customLg:text-sm">{t('Projects')}</p>
+                  </Link>
 
                   <Link
                      href="/blogs"

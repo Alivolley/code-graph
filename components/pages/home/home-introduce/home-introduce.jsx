@@ -20,30 +20,37 @@ function HomeIntroduce() {
    const t = useTranslations('home');
 
    return (
-      <HomeIntroduceStyle>
+      <HomeIntroduceStyle data-aos="zoom-in" data-aos-duration="650">
          <div className="mx-auto max-w-[1440px] px-5 pb-10 customMd:px-[60px] customMd:pb-[65px] customMd:pt-[53px]">
-            <div className="mt-3 flex flex-col-reverse gap-10 lg:flex-row lg:gap-[76px]" dir="rtl">
-               <div
-                  className="lg:mt-[100px] lg:w-[637px] lg:px-[26px]"
-                  dir={locale === 'en' ? 'ltr' : 'rtl'}
-                  data-aos="fade-left"
-                  data-aos-offset="400"
-               >
+            <div className="mt-3 flex flex-col-reverse gap-10 lg:flex-row lg:gap-0" dir="rtl">
+               <div className="lg:mt-[130px] lg:w-[637px] lg:px-[26px]" dir={locale === 'en' ? 'ltr' : 'rtl'}>
                   <div className="font-bold leading-[46px] lg:leading-[66px]">
                      <h3 className="relative ps-5 text-[24px] lg:ps-0 lg:text-[34px]">
-                        {t('Why')}{' '}
-                        <span className="font-almaraiExtraBold text-[28px] text-[#65A5FC] lg:text-[48px]">
-                           {t('RoadGraph')}
-                        </span>{' '}
-                        {t('is the first choice of online businesses')}
-                        <p className="absolute inset-y-2 start-0 w-2 bg-customPink lg:start-[-30px]" />
+                        <p data-aos="fade-left" data-aos-delay="350" data-aos-duration="650">
+                           <span>{t('Why')} </span>
+                           <span className="font-almaraiExtraBold text-[28px] text-[#65A5FC] lg:text-[48px]">
+                              {t('RoadGraph')}
+                           </span>
+                           <span> {t('is the first choice of online businesses')}</span>
+                        </p>
+                        <p
+                           className="absolute inset-y-2 start-0 w-2 bg-customPink lg:start-[-30px]"
+                           data-aos="fade-left"
+                           data-aos-duration="650"
+                           data-aos-delay="150"
+                        />
                      </h3>
                   </div>
-                  <p className="mt-6 text-base leading-[30px] text-[#626E94] lg:leading-[34px]">
+                  <p
+                     className="mt-6 text-base leading-[30px] text-[#626E94] lg:leading-[34px]"
+                     data-aos="fade-left"
+                     data-aos-delay="450"
+                     data-aos-duration="650"
+                  >
                      {t('why roadGraph explain')}
                   </p>
-                  <div className="mt-7 flex flex-col gap-5 lg:mt-[52px] lg:flex-row lg:items-center lg:gap-[10px]">
-                     <Link href="/contactUs">
+                  <div className="mt-7 flex flex-col gap-5 lg:mt-5 lg:flex-row lg:items-center lg:gap-[10px]">
+                     <Link href="/contactUs" data-aos="zoom-in" data-aos-delay="750" data-aos-offset="-100">
                         <Button
                            color="customPink"
                            variant="contained"
@@ -62,7 +69,7 @@ function HomeIntroduce() {
                         </Button>
                      </Link>
 
-                     <Link href="/aboutUs">
+                     <Link href="/aboutUs" data-aos="zoom-in" data-aos-delay="950" data-aos-offset="-100">
                         <Button
                            variant="contained"
                            className="!w-full lg:!w-[176px]"
@@ -86,7 +93,7 @@ function HomeIntroduce() {
                   </div>
                </div>
 
-               <div className="h-full grow" data-aos="fade-right" data-aos-offset="400">
+               <div className="h-full grow" data-aos="zoom-in" data-aos-offset="300" data-aos-duration="850">
                   <Image src={introducePic} alt="banner" className="size-full" />
                </div>
             </div>
