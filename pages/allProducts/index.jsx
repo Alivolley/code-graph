@@ -24,9 +24,13 @@ const categoryButtonStyle = {
    display: 'flex',
    flexDirection: 'column',
    gap: '8px',
+   transition: 'all 0.1s !important',
+   '*': { transition: 'all 0.1s !important' },
+   p: { color: '#050F2C' },
+   '#icon': { color: '#d14d72' },
    ':hover': {
-      backgroundColor: 'white',
-      boxShadow: '0px 11px 44px 23px #7E8AAB29',
+      p: { color: '#65A5FC' },
+      '#icon': { color: '#65A5FC' },
    },
 };
 
@@ -95,7 +99,7 @@ function AllProducts({ projects, questions }) {
                      <Image src={bannerPic} alt="banner" className="size-full" />
                   </div>
                   <div className="flex-1 lg:mt-[45px]" dir={locale === 'en' ? 'ltr' : 'rtl'} data-aos="fade-right">
-                     <div className="text-center font-almaraiExtraBold lg:text-start">
+                     <div className="text-center font-almaraiExtraBold800 lg:text-start">
                         <h1 className="text-[22px] text-customPink lg:text-[24px]">{t('Letter1')}</h1>
                         <h1 className="mt-4 text-[28px] leading-[45px] lg:text-[36px]">{t('Letter2')}</h1>
                      </div>
@@ -147,14 +151,14 @@ function AllProducts({ projects, questions }) {
                </IconButton>
                <input
                   type="text"
-                  className="h-full grow border-none bg-transparent font-almaraiRegular outline-none placeholder:text-[#7E8AAB]"
+                  className="h-full grow border-none bg-transparent font-almaraiRegular400 outline-none placeholder:text-[#7E8AAB]"
                   placeholder={t('Search topic')}
                   {...register('searchValue', { required: { value: true } })}
                />
             </form>
 
             <p
-               className="mt-[47px] flex h-12 items-center rounded-[47px] bg-customPink px-8 font-almaraiBold text-base text-white customMd:h-16 customMd:text-[20px]"
+               className="mt-[47px] flex h-12 items-center rounded-[47px] bg-customPink px-8 font-almaraiBold700 text-base text-white customMd:h-16 customMd:text-[20px]"
                data-aos="fade-up"
                data-aos-offset="300"
             >
@@ -180,8 +184,8 @@ function AllProducts({ projects, questions }) {
                   }`}
                   onClick={() => changeCategoryHandler('')}
                >
-                  <Truck size="28" color="#d14d72" variant="TwoTone" />
-                  <p className="leading-[18px] text-[#050F2C]">{t('All')}</p>
+                  <Truck size="28" variant="TwoTone" id="icon" />
+                  <p className="leading-[18px]">{t('All')}</p>
                </Button>
                <Button
                   sx={{
@@ -198,8 +202,8 @@ function AllProducts({ projects, questions }) {
                   }`}
                   onClick={() => changeCategoryHandler('website')}
                >
-                  <User size="28" color="#d14d72" variant="TwoTone" />
-                  <p className="leading-[18px] text-[#050F2C]">{t('Website')}</p>
+                  <User size="28" variant="TwoTone" id="icon" />
+                  <p className="leading-[18px]">{t('Website')}</p>
                </Button>
                <Button
                   sx={{
@@ -216,8 +220,8 @@ function AllProducts({ projects, questions }) {
                   }`}
                   onClick={() => changeCategoryHandler('uiux')}
                >
-                  <ShoppingCart size="28" color="#d14d72" variant="TwoTone" />
-                  <p className="leading-[18px] text-[#050F2C]">{t('UiUx')}</p>
+                  <ShoppingCart size="28" variant="TwoTone" id="icon" />
+                  <p className="leading-[18px]">{t('UiUx')}</p>
                </Button>
                <Button
                   sx={{
@@ -232,18 +236,19 @@ function AllProducts({ projects, questions }) {
                   }`}
                   onClick={() => changeCategoryHandler('graphic')}
                >
-                  <DiscountShape size="28" color="#d14d72" variant="TwoTone" />
-                  <p className="leading-[18px] text-[#050F2C]">{t('Graphic')}</p>
+                  <DiscountShape size="28" variant="TwoTone" id="icon" />
+                  <p className="leading-[18px]">{t('Graphic')}</p>
                </Button>
             </div>
 
             <div className="mt-10 flex flex-wrap justify-center gap-x-[20px] gap-y-[30px] customMd:mt-[74px] customMd:gap-x-[32px] customMd:gap-y-[45px] customMd:px-[43px]">
                {projects?.total_objects ? (
-                  projects?.result?.map(item => (
+                  projects?.result?.map((item, index) => (
                      <ProductCart
                         key={item?.id}
                         className="w-[240px] border border-solid border-[#E4EAF0] !bg-[#F5F8FC] customMd:w-[284px]"
                         detail={item}
+                        index={index}
                      />
                   ))
                ) : (
@@ -286,7 +291,9 @@ function AllProducts({ projects, questions }) {
 export default AllProducts;
 
 export async function getServerSideProps(context) {
-   const { query } = context;
+   const { query, req } = context;
+
+   const accessToken = req?.cookies?.roadGraph_accessToken;
 
    let queryString = `list-project/?lang=${context.locale}`;
 
@@ -300,8 +307,21 @@ export async function getServerSideProps(context) {
       queryString += `&search=${query.projectName}`;
    }
 
-   const projects = await axiosInstance(queryString).then(res => res.data);
-   const questions = await axiosInstance(`accounts/questions/?random_faq=true`).then(res => res.data);
+   const projects = await axiosInstance(queryString, {
+      ...(accessToken && {
+         headers: {
+            Authorization: `Bearer ${accessToken}`,
+         },
+      }),
+   }).then(res => res.data);
+
+   const questions = await axiosInstance(`accounts/questions/?random_faq=true`, {
+      ...(accessToken && {
+         headers: {
+            Authorization: `Bearer ${accessToken}`,
+         },
+      }),
+   }).then(res => res.data);
 
    return {
       props: {

@@ -45,7 +45,7 @@ function ContactUs() {
                   </Grid>
                   <Grid item xs={12} md={6}>
                      <div className="mt-10 customMd:mt-10" dir={locale === 'en' ? 'ltr' : 'rtl'} data-aos="fade-right">
-                        <div className="relative ps-[30px] font-almaraiExtraBold text-2xl leading-[46px] text-[#EF6D33] customMd:text-[40px] customMd:leading-[75px]">
+                        <div className="relative ps-[30px] font-almaraiExtraBold800 text-2xl leading-[46px] text-[#EF6D33] customMd:text-[40px] customMd:leading-[75px]">
                            <p className="text-[#65A5FC]">{t('Contact to')}</p>
                            <p>{t('RoadGraph')}</p>
                            <p className="absolute inset-y-2 start-0 w-2 bg-[#65A5FC]" />
@@ -59,7 +59,7 @@ function ContactUs() {
                                  <FiPhoneCall color="#65A5FC" className="text-[25px] customMd:text-[34px]" />
                               </div>
                               <div className="space-y-[10px]">
-                                 <p className="font-almaraiBold text-[#626E94]">{t('Have a question ?')}</p>
+                                 <p className="font-almaraiBold700 text-[#626E94]">{t('Have a question ?')}</p>
                                  <p className="text-sm text-[#8F95AA]">09383935719</p>
                               </div>
                            </a>
@@ -73,7 +73,7 @@ function ContactUs() {
                                  <LiaTelegram color="#65A5FC" className="text-[25px] customMd:text-[34px]" />
                               </div>
                               <div className="space-y-[10px]">
-                                 <p className="font-almaraiBold text-[#626E94]">{t('Join')}</p>
+                                 <p className="font-almaraiBold700 text-[#626E94]">{t('Join')}</p>
                                  <p className="text-sm text-[#8F95AA]">Telegram chanel</p>
                               </div>
                            </a>
@@ -87,7 +87,7 @@ function ContactUs() {
                                  <PiInstagramLogo color="#65A5FC" className="text-[25px] customMd:text-[34px]" />
                               </div>
                               <div className="space-y-[10px]">
-                                 <p className="font-almaraiBold text-[#626E94]">{t('Follow us')}</p>
+                                 <p className="font-almaraiBold700 text-[#626E94]">{t('Follow us')}</p>
                                  <p className="text-sm text-[#8F95AA]">Instagram page</p>
                               </div>
                            </a>
@@ -111,25 +111,25 @@ function ContactUs() {
             >
                <div className="flex min-w-[215px] max-w-[288px] flex-col items-center gap-[10px] px-[18px]">
                   <Image src={pic4} alt="introduce" />
-                  <h3 className="font-almaraiBold text-lg">Online shop</h3>
+                  <h3 className="font-almaraiBold700 text-lg">Online shop</h3>
                   <p className="text-center text-sm text-[#6F778A]">{t('lorem2')}</p>
                </div>
 
                <div className="flex min-w-[215px] max-w-[288px] flex-col items-center gap-[10px] px-[18px]">
                   <Image src={pic3} alt="introduce" />
-                  <h3 className="font-almaraiBold text-lg">HRM</h3>
+                  <h3 className="font-almaraiBold700 text-lg">HRM</h3>
                   <p className="text-center text-sm text-[#6F778A]">{t('lorem2')}</p>
                </div>
 
                <div className="flex min-w-[215px] max-w-[288px] flex-col items-center gap-[10px] px-[18px]">
                   <Image src={pic2} alt="introduce" />
-                  <h3 className="font-almaraiBold text-lg">CRM</h3>
+                  <h3 className="font-almaraiBold700 text-lg">CRM</h3>
                   <p className="text-center text-sm text-[#6F778A]">{t('lorem2')}</p>
                </div>
 
                <div className="flex min-w-[215px] max-w-[288px] flex-col items-center gap-[10px] px-[18px]">
                   <Image src={pic1} alt="introduce" />
-                  <h3 className="font-almaraiBold text-lg">Accounting</h3>
+                  <h3 className="font-almaraiBold700 text-lg">Accounting</h3>
                   <p className="text-center text-sm text-[#6F778A]">{t('lorem2')}</p>
                </div>
             </div>

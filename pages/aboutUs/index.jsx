@@ -66,7 +66,7 @@ function AboutUs({ comments }) {
             >
                <Grid container rowSpacing={{ xs: '30px', md: 0 }}>
                   <Grid item xs={12} md={6} order={{ xs: 2, md: 1 }}>
-                     <div className="relative ps-[30px] font-almaraiExtraBold">
+                     <div className="relative ps-[30px] font-almaraiExtraBold800">
                         <p className="text-xl leading-[43px] text-[#626E94] customMd:text-[35px] customMd:leading-[40px]">
                            {t('About us')}
                         </p>
@@ -105,7 +105,7 @@ function AboutUs({ comments }) {
                >
                   !
                </p>
-               <div className="relative ps-[30px] font-almaraiExtraBold">
+               <div className="relative ps-[30px] font-almaraiExtraBold800">
                   <p className="text-xl leading-[43px] text-[#626E94] customMd:text-[35px] customMd:leading-[40px]">
                      {t('Why')}
                   </p>
@@ -124,24 +124,27 @@ function AboutUs({ comments }) {
          </div>
 
          <div className="border-y border-solid border-[#E4EAF0] bg-[#fbfbfb]" data-aos="fade-up" data-aos-offset="400">
-            <div className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-center gap-5 px-5 py-8 customSm:gap-12 customMd:px-[60px] customMd:py-20 xl:gap-28">
+            <div
+               className="flex max-w-[1440px] items-center gap-5 overflow-auto whitespace-nowrap px-5
+             py-8 customSm:gap-12 customMd:mx-auto customMd:justify-center customMd:px-[60px] customMd:py-20 xl:gap-28"
+            >
                <div className="flex flex-col items-center gap-2.5">
-                  <p className="font-almaraiBold customMd:text-5xl">+1k</p>
+                  <p className="font-almaraiBold700 customMd:text-5xl">+1k</p>
                   <p className="text-xs text-[#576071] customMd:text-sm">courses</p>
                </div>
                <div className="h-6 w-[2px] bg-[#ebdfc9]" />
                <div className="flex flex-col items-center gap-2.5">
-                  <p className="font-almaraiBold customMd:text-5xl">+2M</p>
+                  <p className="font-almaraiBold700 customMd:text-5xl">+2M</p>
                   <p className="text-xs text-[#576071] customMd:text-sm">Learners</p>
                </div>
                <div className="h-6 w-[2px] bg-[#ebdfc9]" />
                <div className="flex flex-col items-center gap-2.5">
-                  <p className="font-almaraiBold customMd:text-5xl">30M</p>
+                  <p className="font-almaraiBold700 customMd:text-5xl">30M</p>
                   <p className="text-xs text-[#576071] customMd:text-sm">Enrollments</p>
                </div>
                <div className="h-6 w-[2px] bg-[#ebdfc9]" />
                <div className="flex flex-col items-center gap-2.5">
-                  <p className="font-almaraiBold customMd:text-5xl">4.5</p>
+                  <p className="font-almaraiBold700 customMd:text-5xl">4.5</p>
                   <p className="text-xs text-[#576071] customMd:text-sm">80K Reviews</p>
                </div>
             </div>
@@ -164,7 +167,10 @@ function AboutUs({ comments }) {
                      >
                         <div className="relative ps-[30px]">
                            <p className="text-xs text-[#626E94] customMd:text-sm">{t('text 3')}</p>
-                           <p className="flex flex-nowrap items-center gap-1 font-almaraiExtraBold text-2xl leading-[46px] customMd:mt-4 customMd:text-[40px] customMd:leading-[75px]">
+                           <p
+                              className="flex flex-nowrap items-center gap-1 font-almaraiExtraBold800 text-2xl leading-[46px]
+                            customMd:mt-4 customMd:text-[40px] customMd:leading-[75px]"
+                           >
                               <span className="text-[#65A5FC]">{t('services')}</span>
                               <span className="whitespace-nowrap text-customPink">{t('RoadGraph')}</span>
                            </p>
@@ -207,7 +213,7 @@ function AboutUs({ comments }) {
                   >
                      24
                   </p>
-                  <div className="relative ps-[30px] font-almaraiExtraBold">
+                  <div className="relative ps-[30px] font-almaraiExtraBold800">
                      <p className="text-xl leading-[43px] text-[#626E94] customMd:text-[35px] customMd:leading-[40px]">
                         {t('Counseling')}
                      </p>
@@ -263,7 +269,7 @@ function AboutUs({ comments }) {
                   <p className="mt-[28px] text-center text-sm text-[#626E94] customMd:mt-[34px] customMd:text-base">
                      {t('text 9')}
                   </p>
-                  <p className="flex flex-nowrap items-center gap-1 font-almaraiExtraBold text-[26px] leading-[55px] customMd:mt-4 customMd:text-[32px]">
+                  <p className="flex flex-nowrap items-center gap-1 font-almaraiExtraBold800 text-[26px] leading-[55px] customMd:mt-4 customMd:text-[32px]">
                      <span className="text-[#65A5FC]">{t('Request')}</span>
                      <span className="whitespace-nowrap text-customPink">{t('Counseling')}</span>
                   </p>
@@ -367,7 +373,7 @@ function AboutUs({ comments }) {
                            borderRadius: 47,
                            fontSize: 16,
                            color: 'white',
-                           fontFamily: 'almaraiBold',
+                           fontFamily: 'almaraiBold700',
                            paddingX: '69px',
                            backgroundColor: '#FD8266',
                            ':hover': {

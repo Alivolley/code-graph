@@ -13,7 +13,7 @@ export default function Custom404() {
             <Image src={pic} alt="pic" className="size-full" />
          </div>
 
-         <p className="mt-10 text-center font-almaraiExtraBold text-3xl text-[#FD8266] customMd:text-6xl">
+         <p className="mt-10 text-center font-almaraiExtraBold800 text-3xl text-customPink customMd:text-6xl">
             {t('Page not found')} ...
          </p>
       </div>

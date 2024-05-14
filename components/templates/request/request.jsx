@@ -61,7 +61,7 @@ function Request() {
                   data-aos="fade-left"
                   data-aos-offset="400"
                >
-                  <div className="relative ps-[30px] font-almaraiExtraBold text-2xl leading-[46px] text-[#EF6D33] customMd:text-[32px] customMd:leading-[60px]">
+                  <div className="relative ps-[30px] font-almaraiExtraBold800 text-2xl leading-[46px] text-[#EF6D33] customMd:text-[32px] customMd:leading-[60px]">
                      <p className="text-[#65A5FC]">{t('Request')}</p>
                      <p>{t('Consultation')}</p>
                      <p className="absolute inset-y-2 start-0 w-2 bg-[#65A5FC]" />
@@ -156,7 +156,7 @@ function Request() {
                               borderRadius: 47,
                               fontSize: 16,
                               color: 'white',
-                              fontFamily: 'almaraiBold',
+                              fontFamily: 'almaraiBold700',
                               paddingX: '69px',
                               backgroundColor: '#FD8266',
                               ':hover': {

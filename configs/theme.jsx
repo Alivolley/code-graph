@@ -2,7 +2,7 @@ const getDesignTokens = (mode, direction, language) => ({
    direction,
 
    typography: {
-      fontFamily: 'almaraiRegular',
+      fontFamily: 'almaraiRegular400',
    },
 
    palette: {
@@ -38,7 +38,7 @@ const getDesignTokens = (mode, direction, language) => ({
       MuiDialog: {
          styleOverrides: {
             root: {
-               fontFamily: 'almaraiRegular',
+               fontFamily: 'almaraiRegular400',
             },
          },
       },
@@ -46,7 +46,7 @@ const getDesignTokens = (mode, direction, language) => ({
       MuiDrawer: {
          styleOverrides: {
             root: {
-               fontFamily: 'almaraiRegular',
+               fontFamily: 'almaraiRegular400',
             },
          },
       },

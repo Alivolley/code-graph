@@ -37,15 +37,16 @@ function BoldProducts({ products }) {
                data-aos="zoom-in"
                data-aos-duration="650"
             >
-               {t('Our goal at roadGraph is to meet the basic needs of any business that loves to grow')}
+               {t('bold product title 1')}
             </p>
             <h2
-               className="mx-auto mt-3 max-w-[830px] text-center font-almaraiExtraBold text-2xl leading-[42px] text-[#050F2C] customMd:text-[32px] customMd:leading-[56px]"
+               className="mx-auto mt-3 max-w-[830px] text-center font-almaraiExtraBold800 text-2xl leading-[42px]
+                text-[#050F2C] customMd:text-[32px] customMd:leading-[56px]"
                data-aos="zoom-in"
                data-aos-duration="650"
                data-aos-delay="250"
             >
-               {t('Every need you have for a business, roadGraph will take it')}
+               {t('bold product title 2')}
             </h2>
 
             <div
@@ -114,21 +115,41 @@ function BoldProducts({ products }) {
                        <ProductCart key={item?.id} className="w-[240px] customMd:flex-1" detail={item} index={index} />
                     ))
                   : chosenCategory === 'webDevelop'
-                    ? products?.website?.map(item => (
-                         <ProductCart key={item?.id} className="w-[240px] customMd:flex-1" detail={item} />
+                    ? products?.website?.map((item, index) => (
+                         <ProductCart
+                            key={item?.id}
+                            className="w-[240px] customMd:flex-1"
+                            detail={item}
+                            index={index}
+                         />
                       ))
                     : chosenCategory === 'reDesign'
-                      ? products?.redesign?.map(item => (
-                           <ProductCart key={item?.id} className="w-[240px] customMd:flex-1" detail={item} />
+                      ? products?.redesign?.map((item, index) => (
+                           <ProductCart
+                              key={item?.id}
+                              className="w-[240px] customMd:flex-1"
+                              detail={item}
+                              index={index}
+                           />
                         ))
                       : chosenCategory === 'uiux'
-                        ? products?.uiux?.map(item => (
-                             <ProductCart key={item?.id} className="w-[240px] customMd:flex-1" detail={item} />
+                        ? products?.uiux?.map((item, index) => (
+                             <ProductCart
+                                key={item?.id}
+                                className="w-[240px] customMd:flex-1"
+                                detail={item}
+                                index={index}
+                             />
                           ))
                         : null}
             </div>
 
-            <Link href="/allProducts" className="mt-[50px] flex justify-center lg:mx-auto lg:w-fit">
+            <Link
+               href="/allProducts"
+               className="mt-[50px] flex justify-center lg:mx-auto lg:w-fit"
+               data-aos="zoom-in"
+               data-aos-duration="650"
+            >
                <Button
                   color="customPink"
                   variant="contained"
@@ -142,8 +163,6 @@ function BoldProducts({ products }) {
                      },
                   }}
                   endIcon={<ArrowLeft size="20" {...(locale === 'en' && { className: 'rotate-180' })} />}
-                  data-aos="zoom-in"
-                  data-aos-duration="650"
                >
                   {t('All projects')}
                </Button>

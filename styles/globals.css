@@ -4,18 +4,23 @@
 
 @layer {
    @font-face {
-      font-family: 'almaraiRegular';
-      src: url('../assets/fonts/Almarai-Regular.ttf') format('truetype');
+      font-family: 'almaraiLight200';
+      src: url('../assets/fonts/Almarai-Light200.ttf') format('truetype');
    }
 
    @font-face {
-      font-family: 'almaraiBold';
-      src: url('../assets/fonts/Almarai-Bold.ttf') format('truetype');
+      font-family: 'almaraiRegular400';
+      src: url('../assets/fonts/Almarai-Regular400.ttf') format('truetype');
    }
 
    @font-face {
-      font-family: 'almaraiExtraBold';
-      src: url('../assets/fonts/Almarai-ExtraBold.ttf') format('truetype');
+      font-family: 'almaraiBold700';
+      src: url('../assets/fonts/Almarai-Bold700.ttf') format('truetype');
+   }
+
+   @font-face {
+      font-family: 'almaraiExtraBold800';
+      src: url('../assets/fonts/Almarai-ExtraBold800.ttf') format('truetype');
    }
 
    html {

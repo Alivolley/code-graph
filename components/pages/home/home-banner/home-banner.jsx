@@ -29,11 +29,11 @@ function HomeBanner() {
                </div>
                <div className="lg:mt-[70px] lg:w-[450px]" dir={locale === 'en' ? 'ltr' : 'rtl'}>
                   <div
-                     className="text-center font-bold leading-[44px] lg:text-start lg:leading-[73px]"
+                     className="text-center font-almaraiBold700 leading-[44px] lg:text-start lg:leading-[73px]"
                      data-aos="fade-right"
                      data-aos-duration="650"
                   >
-                     <h1 className="font-almaraiExtraBold text-[28px] text-customPink lg:text-5xl">
+                     <h1 className="font-almaraiExtraBold800 text-[28px] text-customPink lg:text-5xl">
                         {t('home banner title line 1')}
                      </h1>
                      <h1 className="text-[28px] lg:mt-4 lg:text-[37px] lg:leading-[48px]">
@@ -108,7 +108,7 @@ function HomeBanner() {
                   <div className="size-16">
                      <Image src={pic4} alt="introduce" className="size-full" />
                   </div>
-                  <h3 className="text-center font-almaraiBold text-lg">{t('box 1 title')}</h3>
+                  <h3 className="text-center font-almaraiBold700 text-lg">{t('box 1 title')}</h3>
                   <p className="text-center text-xs text-[#6F778A]">{t('box 1 text')}</p>
                </div>
 
@@ -121,21 +121,8 @@ function HomeBanner() {
                   <div className="size-16">
                      <Image src={pic3} alt="introduce" className="size-full" />
                   </div>
-                  <h3 className="text-center font-almaraiBold text-lg">{t('box 2 title')}</h3>
+                  <h3 className="text-center font-almaraiBold700 text-lg">{t('box 2 title')}</h3>
                   <p className="text-center text-xs text-[#6F778A]">{t('box 2 text')}</p>
-               </div>
-
-               <div
-                  className="flex min-w-[215px] max-w-[288px] flex-col items-center gap-[10px] px-2 xl:px-[18px]"
-                  data-aos="fade-right"
-                  data-aos-duration="650"
-                  data-aos-delay="400"
-               >
-                  <div className="size-16">
-                     <Image src={pic3} alt="introduce" className="size-full" />
-                  </div>
-                  <h3 className="text-center font-almaraiBold text-lg">{t('box 3 title')}</h3>
-                  <p className="text-center text-xs text-[#6F778A]">{t('box 3 text')}</p>
                </div>
 
                <div
@@ -145,10 +132,10 @@ function HomeBanner() {
                   data-aos-delay="600"
                >
                   <div className="size-16">
-                     <Image src={pic2} alt="introduce" className="size-full" />
+                     <Image src={pic3} alt="introduce" className="size-full" />
                   </div>
-                  <h3 className="text-center font-almaraiBold text-lg">{t('box 4 title')}</h3>
-                  <p className="text-center text-xs text-[#6F778A]">{t('box 4 text')}</p>
+                  <h3 className="text-center font-almaraiBold700 text-lg">{t('box 3 title')}</h3>
+                  <p className="text-center text-xs text-[#6F778A]">{t('box 3 text')}</p>
                </div>
 
                <div
@@ -158,9 +145,22 @@ function HomeBanner() {
                   data-aos-delay="800"
                >
                   <div className="size-16">
+                     <Image src={pic2} alt="introduce" className="size-full" />
+                  </div>
+                  <h3 className="text-center font-almaraiBold700 text-lg">{t('box 4 title')}</h3>
+                  <p className="text-center text-xs text-[#6F778A]">{t('box 4 text')}</p>
+               </div>
+
+               <div
+                  className="flex min-w-[215px] max-w-[288px] flex-col items-center gap-[10px] px-2 xl:px-[18px]"
+                  data-aos="fade-right"
+                  data-aos-duration="650"
+                  data-aos-delay="1000"
+               >
+                  <div className="size-16">
                      <Image src={pic1} alt="introduce" className="size-full" />
                   </div>
-                  <h3 className="text-center font-almaraiBold text-lg">{t('box 5 title')}</h3>
+                  <h3 className="text-center font-almaraiBold700 text-lg">{t('box 5 title')}</h3>
                   <p className="text-center text-xs text-[#6F778A]">{t('box 5 text')}</p>
                </div>
             </div>

@@ -36,7 +36,7 @@ const categoryButtonStyle = {
 const featureButtonStyle = {
    width: '105px',
    borderRadius: '51px',
-   fontFamily: 'almaraiBold',
+   fontFamily: 'almaraiBold700',
    ':hover': {
       backgroundColor: '#E5EFFD',
    },
@@ -59,7 +59,7 @@ function Prices({ questions }) {
 
             <div className="relative mx-auto max-w-[1440px] px-5 pb-[187px] pt-[100px] customMd:px-[60px] customMd:pt-[152px] lg:pb-[370px]">
                <p
-                  className="text-center font-almaraiExtraBold text-[28px] leading-[47px] lg:text-[34px] lg:leading-[63px]"
+                  className="text-center font-almaraiExtraBold800 text-[28px] leading-[47px] lg:text-[34px] lg:leading-[63px]"
                   data-aos="fade-up"
                >
                   {t('Happy customers - energetic employees')}
@@ -145,14 +145,14 @@ function Prices({ questions }) {
          </div>
          <p
             className="mx-auto max-w-[1440px] bg-[#f5f8fc] px-5 pb-[46px] pt-[331px] text-center
-          font-almaraiExtraBold text-[28px] leading-[40px] text-[#65A5FC] customMd:px-[60px] customMd:pb-[70px] customMd:pt-[302px] customMd:text-[32px]"
+          font-almaraiExtraBold800 text-[28px] leading-[40px] text-[#65A5FC] customMd:px-[60px] customMd:pb-[70px] customMd:pt-[302px] customMd:text-[32px]"
          >
             {t('Explore the top features')}
          </p>
 
          <div className="mx-auto mb-20 max-w-[1440px] px-5 customMd:px-[60px]">
             <div className="mt-[64px] flex flex-col rounded-t-10 border-solid border-[#E4EAF0] customMd:h-[276px] customMd:flex-row customMd:border">
-               <div className="order-2 flex items-center justify-center py-10 font-almaraiBold text-[32px] text-[#050F2C] customMd:order-1 customMd:w-[250px] customLg:w-[520px]">
+               <div className="order-2 flex items-center justify-center py-10 font-almaraiBold700 text-[32px] text-[#050F2C] customMd:order-1 customMd:w-[250px] customLg:w-[520px]">
                   {t('Features')}
                </div>
 

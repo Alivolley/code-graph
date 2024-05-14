@@ -166,6 +166,13 @@ function Header() {
                   >
                      <p className="text-xs customLg:text-sm">{t('Contact us')}</p>
                   </Link>
+
+                  <Link
+                     href="/faqs"
+                     className="flex cursor-pointer items-center gap-2 text-[#3A3E4D] transition-all duration-150 hover:text-[#65A5FC]"
+                  >
+                     <p className="text-xs customLg:text-sm">{t('Faqs')}</p>
+                  </Link>
                </div>
             </div>
             <div className="flex items-center gap-4">
@@ -176,7 +183,7 @@ function Header() {
                      color: '#FD8266',
                      width: 45,
                      height: 45,
-                     fontFamily: 'almaraiBold',
+                     fontFamily: 'almaraiBold700',
                      ':hover': {
                         color: '#65A5FC',
                         borderColor: '#65A5FC',
@@ -228,19 +235,30 @@ function Header() {
                                  }}
                               >
                                  <div className="flex min-w-[148px] flex-col">
-                                    <Link
+                                    {/* <Link
                                        href="/profile/information"
                                        className="flex h-10 items-center gap-3 bg-customPink px-3 text-xs text-white transition-all duration-150 hover:bg-[#B46451]"
                                        onClick={() => setProfileDropDown(false)}
                                     >
                                        <UserEdit size="15" variant="Broken" />
                                        {t('Account info')}
-                                    </Link>
+                                    </Link> */}
 
                                     <Button
-                                       className="!flex !h-11 !items-center !justify-start !gap-3 !border-t !border-solid
-                                        !border-[#E4EAF0] !bg-customPink !px-3 !text-xs !text-white hover:!bg-[#B46451]"
                                        onClick={() => setShowLogoutModal(true)}
+                                       sx={{
+                                          display: 'flex',
+                                          justifyContent: 'start',
+                                          alignItems: 'center',
+                                          height: '44px',
+                                          gap: '12px',
+                                          // borderTop: '1px solid #E4EAF0',
+                                          backgroundColor: '#FD8266',
+                                          paddingX: '12px',
+                                          fontSize: '12px',
+                                          color: 'white',
+                                          ':hover': { backgroundColor: '#B46451' },
+                                       }}
                                     >
                                        <LogoutCurve size="15" variant="Broken" />
                                        {t('Logout')}
@@ -282,7 +300,7 @@ function Header() {
                      color: '#FD8266',
                      width: 33,
                      height: 33,
-                     fontFamily: 'almaraiBold',
+                     fontFamily: 'almaraiBold700',
                   }}
                   onClick={changeLanguage}
                >

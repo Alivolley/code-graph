@@ -48,7 +48,13 @@ function Comments({ detail }) {
    return (
       <CommentsStyle>
          <div className="mb-[44px] flex items-center justify-center customMd:justify-between">
-            <p className="font-almaraiExtraBold text-[28px] customMd:text-[32px]">{t('Customers comments')}</p>
+            <p
+               className="font-almaraiExtraBold800 text-[28px] customMd:text-[32px]"
+               data-aos="zoom-in"
+               data-aos-duration="650"
+            >
+               {t('Customers comments')}
+            </p>
             {detail?.length ? (
                <div className="hidden items-center gap-5 customMd:flex">
                   <IconButton sx={navigationStyle} onClick={navigatePrev}>
@@ -91,20 +97,20 @@ function Comments({ detail }) {
                               <Image src={item?.cover} alt="cover" className="rounded-full" fill />
                            </div>
                            <div className="flex flex-col gap-[10px]">
-                              <p className="font-almaraiExtraBold text-[20px] leading-[32px] customMd:text-[22px]">
+                              <p className="font-almaraiExtraBold800 text-[20px] leading-[32px] customMd:text-[22px]">
                                  {item?.customer_name}
                               </p>
                               <p className="text-xs text-[#626E94]">{item?.title}</p>
                            </div>
                         </div>
-                        <p className="mt-[21px] line-clamp-6 h-[162px] font-almaraiBold text-xs leading-[27px] text-[#576071]">
+                        <p className="mt-[21px] line-clamp-6 h-[162px] font-almaraiBold700 text-xs leading-[27px] text-[#576071]">
                            {item?.text}
                         </p>
                      </div>
                   </SwiperSlide>
                ))
             ) : (
-               <p className="text-center font-almaraiBold text-xl customMd:text-2xl">{t('No comments')}</p>
+               <p className="text-center font-almaraiBold700 text-xl customMd:text-2xl">{t('No comments')}</p>
             )}
          </Swiper>
       </CommentsStyle>

@@ -28,9 +28,10 @@ module.exports = {
          },
 
          fontFamily: {
-            almaraiRegular: 'almaraiRegular',
-            almaraiBold: 'almaraiBold',
-            almaraiExtraBold: 'almaraiExtraBold',
+            almaraiLight200: 'almaraiLight200',
+            almaraiRegular400: 'almaraiRegular400',
+            almaraiBold700: 'almaraiBold700',
+            almaraiExtraBold800: 'almaraiExtraBold800',
          },
          borderRadius: {
             10: '10px',

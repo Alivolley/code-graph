@@ -11,7 +11,7 @@ import { ArrowLeft, Calendar, Eye, Hashtag, Profile } from 'iconsax-react';
 // Assets
 import ArticleCartStyle from './article-cart.style';
 
-function ArticleCart({ detail }) {
+function ArticleCart({ detail, index }) {
    const { locale } = useRouter();
    const t = useTranslations('home');
 
@@ -19,8 +19,9 @@ function ArticleCart({ detail }) {
       <ArticleCartStyle
          href={`/blogs/blogDetail/${detail?.title}`}
          className="w-[325px] shrink-0 rounded-[20px] border border-solid border-[#E4EAF0] bg-white p-[14px] customMd:flex-1"
-         data-aos="fade-up"
-         data-aos-offset="300"
+         data-aos="fade-right"
+         data-aos-duration="650"
+         data-aos-delay={(index + 1) * 200}
       >
          <div className="relative h-[200px] w-full">
             <Image src={detail?.cover} alt="product" className="rounded-[18px] object-cover" fill />
@@ -56,7 +57,7 @@ function ArticleCart({ detail }) {
             </div>
          </div>
 
-         <p className="my-[15px] line-clamp-1 text-base font-bold text-[#65A5FC]" id="text">
+         <p className="my-[15px] line-clamp-1 font-almaraiBold700 text-base text-[#65A5FC]" id="text">
             {detail?.title}
          </p>
          <p className="line-clamp-3 h-[60px] text-xs leading-[20px] text-[#626E94]">{detail?.short_description}</p>

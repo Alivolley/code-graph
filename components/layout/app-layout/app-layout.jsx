@@ -61,7 +61,11 @@ function AppLayout({ children }) {
             <Toaster
                position={locale === 'en' ? 'top-left' : 'top-right'}
                toastOptions={{
-                  style: { fontFamily: 'almaraiRegular', fontSize: '14px', direction: locale === 'en' ? 'ltr' : 'rtl' },
+                  style: {
+                     fontFamily: 'almaraiRegular400',
+                     fontSize: '14px',
+                     direction: locale === 'en' ? 'ltr' : 'rtl',
+                  },
                   duration: 4000,
                }}
             >

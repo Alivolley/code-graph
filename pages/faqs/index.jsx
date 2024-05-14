@@ -71,7 +71,7 @@ function Faqs({ questions }) {
                   <div className="flex-1 lg:mt-[45px]" dir={locale === 'en' ? 'ltr' : 'rtl'} data-aos="fade-right">
                      <div className="relative ps-[30px]">
                         <p className="text-xs text-[#626E94] customMd:text-sm">{t('text 1')}</p>
-                        <p className="flex flex-wrap items-center gap-1 font-almaraiExtraBold text-2xl leading-[46px] customMd:mt-4 customMd:text-[40px] customMd:leading-[75px]">
+                        <p className="flex flex-wrap items-center gap-1 font-almaraiExtraBold800 text-2xl leading-[46px] customMd:mt-4 customMd:text-[40px] customMd:leading-[75px]">
                            <span className="whitespace-nowrap text-[#65A5FC]">{t('Answer to')}</span>
                            <span className="text-customPink">{t('Your asked questions')}</span>
                         </p>
@@ -88,7 +88,7 @@ function Faqs({ questions }) {
 
          <div className="mx-auto max-w-[1440px] px-5 pb-[70px] pt-10 customMd:px-[60px]">
             <p
-               className="flex h-12 items-center rounded-[47px] bg-customPink px-8 font-almaraiBold text-base text-white customMd:h-16 customMd:text-[20px]"
+               className="flex h-12 items-center rounded-[47px] bg-customPink px-8 font-almaraiBold700 text-base text-white customMd:h-16 customMd:text-[20px]"
                data-aos="fade-up"
                data-aos-offset="300"
             >

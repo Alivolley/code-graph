@@ -18,7 +18,7 @@ function BlogCart({ detail }) {
 
          <div className="mt-5 customMd:mt-10">
             <div className="flex items-center gap-4">
-               <p className="font-almaraiExtraBold text-xs text-[#333333]" id="text1">
+               <p className="font-almaraiExtraBold800 text-xs text-[#333333]" id="text1">
                   {detail?.category}
                </p>
                <p className="text-xs text-[#999999]" id="text2">
@@ -26,7 +26,8 @@ function BlogCart({ detail }) {
                </p>
             </div>
             <p
-               className="my-[10px] line-clamp-2 h-[56px] font-almaraiExtraBold text-[18px] leading-7 text-[#333333] customMd:my-4 customMd:h-[64px] customMd:text-2xl"
+               className="my-[10px] line-clamp-2 h-[56px] font-almaraiExtraBold800 text-[18px] leading-7
+                text-[#333333] customMd:my-4 customMd:h-[64px] customMd:text-2xl"
                id="text3"
             >
                {detail?.title}
@@ -40,7 +41,7 @@ function BlogCart({ detail }) {
 
             <Button
                className="text-base customMd:text-[18px]"
-               sx={{ color: '#FD8266', fontFamily: 'almaraiExtraBold' }}
+               sx={{ color: '#FD8266', fontFamily: 'almaraiExtraBold800' }}
             >
                {t('Read more')}...
             </Button>

@@ -24,13 +24,13 @@ function FeatureAccordion() {
                }}
                onClick={() => setIsExpanded(prev => !prev)}
             >
-               <p className="font-almaraiBold text-xs text-[#626E94] customMd:text-xl">Lorem ipsum dolor sit abet</p>
+               <p className="font-almaraiBold700 text-xs text-[#626E94] customMd:text-xl">Lorem ipsum dolor sit abet</p>
             </AccordionSummary>
             <AccordionDetails sx={{ padding: 0 }}>
                <div>
                   <div className="flex flex-col border-x border-solid border-[#e4eaf0] customMd:flex-row">
                      <div
-                        className="flex items-center justify-center py-[30px] font-almaraiBold text-[#7E8AAB] customMd:w-[250px]
+                        className="flex items-center justify-center py-[30px] font-almaraiBold700 text-[#7E8AAB] customMd:w-[250px]
                    customMd:justify-start customMd:ps-[41px] customMd:text-xl customLg:w-[520px]"
                      >
                         has this feature or not
@@ -65,7 +65,7 @@ function FeatureAccordion() {
                   </div>
                   <div className="flex flex-col border-x border-solid border-[#e4eaf0] customMd:flex-row">
                      <div
-                        className="flex items-center justify-center py-[30px] font-almaraiBold text-[#7E8AAB] customMd:w-[250px]
+                        className="flex items-center justify-center py-[30px] font-almaraiBold700 text-[#7E8AAB] customMd:w-[250px]
                    customMd:justify-start customMd:ps-[41px] customMd:text-xl customLg:w-[520px]"
                      >
                         has this feature or not
@@ -100,7 +100,7 @@ function FeatureAccordion() {
                   </div>
                   <div className="flex flex-col border-x border-solid border-[#e4eaf0] customMd:flex-row">
                      <div
-                        className="flex items-center justify-center py-[30px] font-almaraiBold text-[#7E8AAB] customMd:w-[250px]
+                        className="flex items-center justify-center py-[30px] font-almaraiBold700 text-[#7E8AAB] customMd:w-[250px]
                    customMd:justify-start customMd:ps-[41px] customMd:text-xl customLg:w-[520px]"
                      >
                         has this feature or not
@@ -135,7 +135,7 @@ function FeatureAccordion() {
                   </div>
                   <div className="flex flex-col border-x border-solid border-[#e4eaf0] customMd:flex-row">
                      <div
-                        className="flex items-center justify-center py-[30px] font-almaraiBold text-[#7E8AAB] customMd:w-[250px]
+                        className="flex items-center justify-center py-[30px] font-almaraiBold700 text-[#7E8AAB] customMd:w-[250px]
                    customMd:justify-start customMd:ps-[41px] customMd:text-xl customLg:w-[520px]"
                      >
                         has this feature or not

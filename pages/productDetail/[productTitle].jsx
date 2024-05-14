@@ -12,7 +12,7 @@ function ProductDetail({ productData }) {
    return (
       <div className="relative mx-auto mt-[125px] max-w-[1440px] px-5 pb-[105px] customMd:mt-[180px] customMd:px-[60px] customMd:pb-[70px]">
          <p
-            className="font-almaraiExtraBold text-[38px] leading-[42px] text-[#626E94] customMd:text-[42px] customMd:leading-[47px]"
+            className="font-almaraiExtraBold800 text-[38px] leading-[42px] text-[#626E94] customMd:text-[42px] customMd:leading-[47px]"
             data-aos="fade-up"
          >
             {productData?.title}
@@ -60,7 +60,7 @@ function ProductDetail({ productData }) {
                }}
                className={`size-7 bg-[#626E94] ${locale === 'en' ? 'rotate-180' : ''}`}
             />
-            <p className="text-center font-almaraiExtraBold text-[28px] leading-[31px] text-[#626E94] customMd:text-[42px] customMd:leading-[47px]">
+            <p className="text-center font-almaraiExtraBold800 text-[28px] leading-[31px] text-[#626E94] customMd:text-[42px] customMd:leading-[47px]">
                {t('Some internal pages')}
             </p>
          </div>
@@ -82,7 +82,7 @@ function ProductDetail({ productData }) {
          </div>
 
          <div className="mt-[100px] customMd:mt-[121px]" data-aos="fade-up" data-aos-offset="300">
-            <p className="text-center font-almaraiExtraBold text-[32px] leading-[36px] text-[#626E94] customMd:text-[48px] customMd:leading-[54px]">
+            <p className="text-center font-almaraiExtraBold800 text-[32px] leading-[36px] text-[#626E94] customMd:text-[48px] customMd:leading-[54px]">
                {productData?.title}
             </p>
             <p className="mt-[30px] text-center text-[14px] leading-[52px] text-[#7683AD] customMd:text-[28px] customMd:leading-[60px]">
@@ -95,23 +95,23 @@ function ProductDetail({ productData }) {
 
 export default ProductDetail;
 
-export async function getStaticPaths() {
-   return {
-      paths: [{ params: { productTitle: 'yalfan' } }],
-      fallback: 'blocking',
-   };
-}
+export async function getServerSideProps(context) {
+   const { query, req } = context;
 
-export async function getStaticProps(context) {
-   const productData = await axiosInstance(
-      `get-project/?lang=${context.locale}&title=${context?.params?.productTitle}`
-   ).then(res => res.data);
+   const accessToken = req?.cookies?.roadGraph_accessToken;
+
+   const productData = await axiosInstance(`get-project/?lang=${context.locale}&title=${query?.productTitle}`, {
+      ...(accessToken && {
+         headers: {
+            Authorization: `Bearer ${accessToken}`,
+         },
+      }),
+   }).then(res => res.data);
 
    return {
       props: {
          messages: (await import(`@/messages/${context.locale}.json`)).default,
          productData,
       },
-      revalidate: 300,
    };
 }

@@ -25,10 +25,10 @@ function BlogTitle({ blogDetail, blogsList }) {
       <BlogDetailStyle data-aos="fade-up">
          <div className="relative mx-auto mt-[110px] max-w-[1440px] px-5 customMd:mt-[208px] customMd:px-[60px]">
             <div className="flex items-center gap-[10px]">
-               <p className="font-almaraiBold text-sm uppercase text-[#333333]">{blogDetail?.category}</p>
+               <p className="font-almaraiBold700 text-sm uppercase text-[#333333]">{blogDetail?.category}</p>
                <p className="text-sm text-[#999999]">{blogDetail?.created_at}</p>
             </div>
-            <p className="mt-[30px] font-almaraiBold text-[24px] leading-[38px] text-[#333333] customMd:text-[40px] customMd:leading-[64px]">
+            <p className="mt-[30px] font-almaraiBold700 text-[24px] leading-[38px] text-[#333333] customMd:text-[40px] customMd:leading-[64px]">
                {blogDetail?.title}
             </p>
 
@@ -41,7 +41,7 @@ function BlogTitle({ blogDetail, blogsList }) {
          <div className="mt-10 bg-[#F5F8FC] customMd:mt-[76px]">
             <div className="relative mx-auto max-w-[1440px] px-5 py-[30px] customMd:p-[60px]">
                <div className="flex items-center justify-center customMd:justify-between">
-                  <p className="font-almaraiBold text-2xl leading-[64px] text-[#333333] customMd:text-[48px]">
+                  <p className="font-almaraiBold700 text-2xl leading-[64px] text-[#333333] customMd:text-[48px]">
                      {t('Popular posts')}
                   </p>
                   <Link href="/blogs" className="hidden customMd:block">
@@ -51,7 +51,7 @@ function BlogTitle({ blogDetail, blogsList }) {
                            height: 52,
                            width: 222,
                            borderRadius: 57,
-                           fontFamily: 'almaraiBold',
+                           fontFamily: 'almaraiBold700',
                            fontSize: 16,
                            color: 'white',
                            backgroundColor: '#65A5FC',
@@ -84,7 +84,7 @@ function BlogTitle({ blogDetail, blogsList }) {
                      sx={{
                         height: 52,
                         borderRadius: 57,
-                        fontFamily: 'almaraiBold',
+                        fontFamily: 'almaraiBold700',
                         fontSize: 14,
                         color: 'white',
                         backgroundColor: '#65A5FC',
@@ -106,21 +106,26 @@ function BlogTitle({ blogDetail, blogsList }) {
 
 export default BlogTitle;
 
-export async function getStaticPaths() {
-   return {
-      paths: [{ params: { blogTitle: 'Website design cost in 1403' } }],
-      fallback: 'blocking',
-   };
-}
+export async function getServerSideProps(context) {
+   const { query, req } = context;
 
-export async function getStaticProps(context) {
-   const blogDetail = await axiosInstance(
-      `get-article/?lang=${context.locale}&title=${context?.params?.blogTitle}`
-   ).then(res => res.data);
+   const accessToken = req?.cookies?.roadGraph_accessToken;
 
-   const blogsList = await axiosInstance(`list-article/?lang=${context.locale}&ordering=-views&page_size=3`).then(
-      res => res.data
-   );
+   const blogDetail = await axiosInstance(`get-article/?lang=${context.locale}&title=${query?.blogTitle}`, {
+      ...(accessToken && {
+         headers: {
+            Authorization: `Bearer ${accessToken}`,
+         },
+      }),
+   }).then(res => res.data);
+
+   const blogsList = await axiosInstance(`list-article/?lang=${context.locale}&ordering=-views&page_size=3`, {
+      ...(accessToken && {
+         headers: {
+            Authorization: `Bearer ${accessToken}`,
+         },
+      }),
+   }).then(res => res.data);
 
    return {
       props: {
@@ -128,6 +133,5 @@ export async function getStaticProps(context) {
          blogDetail,
          blogsList,
       },
-      revalidate: 300,
    };
 }

@@ -50,7 +50,7 @@ function Footer() {
          <div id="back">
             <div className="mx-auto flex max-w-[1440px] flex-col justify-between gap-9 px-5 py-12 customMd:flex-row customMd:items-center customMd:px-[60px] customMd:py-6">
                <p
-                  className="max-w-[542px] font-almaraiBold text-2xl leading-[46px] text-white customMd:text-3xl"
+                  className="max-w-[542px] font-almaraiBold700 text-2xl leading-[46px] text-white customMd:text-3xl"
                   data-aos="fade-up"
                >
                   {t('Ready')}
@@ -111,7 +111,7 @@ function Footer() {
                      <Grid container rowSpacing={{ xs: 4.5, sm: 0 }}>
                         <Grid item xs={12} sm={7}>
                            <div data-aos="fade-right" data-aos-delay="200">
-                              <p className="relative text-xl font-bold">
+                              <p className="relative font-almaraiBold700 text-xl">
                                  {t('Quick links')}
                                  <Image src={footerLine} alt="line" className="absolute bottom-[-12px] start-0" />
                               </p>
@@ -205,7 +205,7 @@ function Footer() {
                            </div>
                         </Grid>
                         <Grid item xs={12} sm={5} data-aos="fade-right" data-aos-delay="400">
-                           <p className="relative text-xl font-bold">
+                           <p className="relative font-almaraiBold700 text-xl">
                               {t('Blog')}
                               <Image src={footerLine} alt="line" className="absolute bottom-[-12px] start-0" />
                            </p>
@@ -234,11 +234,11 @@ function Footer() {
                   </Grid>
                   <Grid item xs={12} md={4}>
                      <div className="mt-[83px] customMd:mt-0" data-aos="fade-right" data-aos-delay="600">
-                        <p className="mb-6 text-2xl font-bold customMd:text-base">{t('Newsletter')}</p>
+                        <p className="mb-6 font-almaraiBold700 text-2xl customMd:text-base">{t('Newsletter')}</p>
                         <form className="flex h-12 items-center rounded bg-white px-4" onSubmit={sendEmail}>
                            <input
                               type="text"
-                              className="h-full grow border-none bg-transparent font-almaraiRegular text-sm outline-none placeholder:text-xs placeholder:text-black"
+                              className="h-full grow border-none bg-transparent font-almaraiRegular400 text-sm outline-none placeholder:text-xs placeholder:text-black"
                               placeholder={t('Enter your email')}
                            />
                            <IconButton type="submit" size="small" sx={{ ':hover': { backgroundColor: '#EBF3FF' } }}>

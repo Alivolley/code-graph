@@ -73,7 +73,7 @@ function Blogs({ blogsList }) {
                data-aos="fade-up"
             >
                <p className="text-center text-sm text-[#666666] customMd:text-base">{t('Our blogs')}</p>
-               <p className="py-4 text-center font-almaraiExtraBold text-3xl text-[#333333] lg:py-0 lg:text-[40px] lg:leading-[64px]">
+               <p className="py-4 text-center font-almaraiExtraBold800 text-3xl text-[#333333] lg:py-0 lg:text-[40px] lg:leading-[64px]">
                   {t('Find our all blogs from here')}
                </p>
                <p className="mx-auto max-w-[756px] text-center text-sm text-[#666666] lg:mt-5 lg:text-base">
@@ -93,7 +93,7 @@ function Blogs({ blogsList }) {
                </IconButton>
                <input
                   type="text"
-                  className="grow border-none bg-transparent px-2 py-3 font-almaraiRegular text-base outline-none placeholder:text-sm placeholder:text-[#7E8AAB]"
+                  className="grow border-none bg-transparent px-2 py-3 font-almaraiRegular400 text-base outline-none placeholder:text-sm placeholder:text-[#7E8AAB]"
                   placeholder={t('Search topic')}
                />
             </form>
@@ -163,7 +163,9 @@ function Blogs({ blogsList }) {
 export default Blogs;
 
 export async function getServerSideProps(context) {
-   const { query } = context;
+   const { query, req } = context;
+
+   const accessToken = req?.cookies?.roadGraph_accessToken;
 
    let queryString = `list-article/?lang=${context.locale}`;
 
@@ -181,7 +183,13 @@ export async function getServerSideProps(context) {
       queryString += `&search=${query.search}`;
    }
 
-   const blogsList = await axiosInstance(queryString).then(res => res.data);
+   const blogsList = await axiosInstance(queryString, {
+      ...(accessToken && {
+         headers: {
+            Authorization: `Bearer ${accessToken}`,
+         },
+      }),
+   }).then(res => res.data);
 
    return {
       props: {

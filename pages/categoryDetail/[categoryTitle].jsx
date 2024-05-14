@@ -42,29 +42,47 @@ function CategoryTitle({ categoryData, projects, blogsList, comments, questions 
             </div>
 
             <div
-               className="relative mx-auto max-w-[1440px] px-5 pb-[67px] pt-[91px] customMd:px-[60px] customMd:pt-[158px] lg:pb-0"
+               className="relative mx-auto max-w-[1440px] px-5 pb-[67px] pt-[60px] customMd:px-[60px] customMd:pt-[158px] lg:pb-0"
                data-aos="fade-up"
             >
                <div className="flex flex-col lg:flex-row">
-                  <div className="order-2 mt-9 grow lg:order-1 lg:mt-0 lg:min-w-[345px] customXl:shrink-0">
-                     <p className="text-center font-almaraiExtraBold text-2xl leading-[40px] lg:text-start lg:text-[36px]">
+                  <div
+                     className="order-2 mt-9 grow lg:order-1 lg:mt-0 lg:min-w-[345px] customXl:shrink-0"
+                     data-aos="fade-left"
+                     data-aos-duration="650"
+                  >
+                     <p
+                        className="text-center font-almaraiExtraBold800 text-2xl leading-[40px] lg:text-start lg:text-[36px]"
+                        style={{ WebkitTextStroke: '1px' }}
+                     >
                         {t(categoryData?.bannerFirstLetter)}
                      </p>
-                     <p className="mt-3 text-center font-almaraiExtraBold text-2xl text-customPink lg:text-start lg:text-[36px] lg:leading-[75px]">
+                     <p
+                        className="mt-3 text-center font-almaraiExtraBold800 text-2xl text-customPink lg:text-start lg:text-[36px] lg:leading-[75px]"
+                        style={{ WebkitTextStroke: '1px' }}
+                     >
                         {t(categoryData?.bannerSecondLetter)}
                      </p>
                   </div>
 
-                  <div className="order-1 mt-[53px] px-5 customMd:w-full lg:order-2 lg:px-0 customXl:max-w-[620px] customXl:shrink-0">
+                  <div
+                     className="order-1 mt-[53px] px-5 customMd:w-full lg:order-2 lg:px-0 customXl:max-w-[620px] customXl:shrink-0"
+                     data-aos="zoom-in"
+                     data-aos-duration="650"
+                  >
                      <Image src={categoryData?.bannerPic} alt="uiux" className="size-full" />
                   </div>
 
                   <div className={`order-3 mt-[30px] grow lg:mt-0 lg:max-w-[319px] ${locale === 'en' ? 'ps-4' : ''}`}>
-                     <p className="text-sm leading-[29px] text-[#576071] lg:text-black">
+                     <p
+                        className="text-sm leading-[29px] text-[#576071] lg:text-black"
+                        data-aos="fade-right"
+                        data-aos-duration="650"
+                     >
                         {t(categoryData?.bannerDescription)}
                      </p>
 
-                     <Link href="/" className="mt-6 block">
+                     <Link href="/" className="mt-6 block" data-aos="zoom-in" data-aos-delay="350">
                         <Button
                            color="customPink"
                            variant="contained"
@@ -87,27 +105,41 @@ function CategoryTitle({ categoryData, projects, blogsList, comments, questions 
             </div>
          </div>
          <div
-            className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-center gap-5 px-5 py-8 customSm:gap-12 customMd:p-[60px] xl:gap-28"
-            data-aos="fade-up"
-            data-aos-offset="300"
+            className="flex max-w-[1440px] items-center gap-5 overflow-auto whitespace-nowrap px-5 py-8
+             customSm:gap-12 customMd:mx-auto customMd:justify-center customMd:p-[60px] xl:gap-28"
          >
-            <div className="flex flex-col items-center gap-2.5">
-               <p className="font-almaraiBold customMd:text-5xl">+1k</p>
+            <div className="flex flex-col items-center gap-2.5" data-aos="fade-right" data-aos-duration="650">
+               <p className="font-almaraiBold700 customMd:text-5xl">+1k</p>
                <p className="text-xs text-[#576071] customMd:text-sm">courses</p>
             </div>
             <div className="h-6 w-[2px] bg-[#ebdfc9]" />
-            <div className="flex flex-col items-center gap-2.5">
-               <p className="font-almaraiBold customMd:text-5xl">+2M</p>
+            <div
+               className="flex flex-col items-center gap-2.5"
+               data-aos="fade-right"
+               data-aos-duration="650"
+               data-aos-delay="250"
+            >
+               <p className="font-almaraiBold700 customMd:text-5xl">+2M</p>
                <p className="text-xs text-[#576071] customMd:text-sm">Learners</p>
             </div>
             <div className="h-6 w-[2px] bg-[#ebdfc9]" />
-            <div className="flex flex-col items-center gap-2.5">
-               <p className="font-almaraiBold customMd:text-5xl">30M</p>
+            <div
+               className="flex flex-col items-center gap-2.5"
+               data-aos="fade-right"
+               data-aos-duration="650"
+               data-aos-delay="500"
+            >
+               <p className="font-almaraiBold700 customMd:text-5xl">30M</p>
                <p className="text-xs text-[#576071] customMd:text-sm">Enrollments</p>
             </div>
             <div className="h-6 w-[2px] bg-[#ebdfc9]" />
-            <div className="flex flex-col items-center gap-2.5">
-               <p className="font-almaraiBold customMd:text-5xl">4.5</p>
+            <div
+               className="flex flex-col items-center gap-2.5"
+               data-aos="fade-right"
+               data-aos-duration="650"
+               data-aos-delay="750"
+            >
+               <p className="font-almaraiBold700 customMd:text-5xl">4.5</p>
                <p className="text-xs text-[#576071] customMd:text-sm">80K Reviews</p>
             </div>
          </div>
@@ -116,23 +148,38 @@ function CategoryTitle({ categoryData, projects, blogsList, comments, questions 
             <div className="mx-auto max-w-[1440px] px-5 pb-10 customMd:px-[60px] customMd:pb-0">
                <Grid container>
                   <Grid item xs={12} md={6}>
-                     <div className="mx-auto max-w-[556px] customMd:mx-0" data-aos="fade-left" data-aos-offset="500">
+                     <div
+                        className="mx-auto mt-7 max-w-[556px] customMd:mx-0 customMd:mt-14"
+                        data-aos="zoom-in"
+                        data-aos-offset="300"
+                        data-aos-duration="850"
+                     >
                         <Image src={categoryData?.introducePic} alt="uiux" className="size-full" />
                      </div>
                   </Grid>
                   <Grid item xs={12} md={6}>
-                     <div
-                        className="mt-10 customMd:mt-20"
-                        dir={locale === 'en' ? 'ltr' : 'rtl'}
-                        data-aos="fade-right"
-                        data-aos-offset="500"
-                     >
-                        <div className="relative ps-[30px] font-almaraiExtraBold text-2xl leading-[46px] text-[#EF6D33] customMd:text-[40px] customMd:leading-[75px]">
-                           <p>{t(categoryData?.introduceFirstLetter)}</p>
-                           <p>{t(categoryData?.introduceSecondLetter)}</p>
-                           <p className="absolute inset-y-2 start-0 w-2 bg-[#65A5FC]" />
+                     <div className="mt-7 customMd:mt-20" dir={locale === 'en' ? 'ltr' : 'rtl'}>
+                        <div
+                           className="relative ps-[30px] font-almaraiExtraBold800 text-2xl leading-[46px] text-[#EF6D33] customMd:text-[40px] customMd:leading-[75px]"
+                           data-aos="fade-right"
+                           data-aos-delay="350"
+                           data-aos-duration="650"
+                        >
+                           <p style={{ WebkitTextStroke: '1px' }}>{t(categoryData?.introduceFirstLetter)}</p>
+                           <p style={{ WebkitTextStroke: '1px' }}>{t(categoryData?.introduceSecondLetter)}</p>
+                           <p
+                              className="absolute inset-y-2 start-0 w-2 bg-[#65A5FC]"
+                              data-aos="fade-right"
+                              data-aos-duration="650"
+                              data-aos-delay="200"
+                           />
                         </div>
-                        <p className="mt-[18px] text-sm leading-[32px] text-[#576071] customMd:text-base customMd:leading-[45px]">
+                        <p
+                           className="mt-[18px] text-sm leading-[32px] text-[#576071] customMd:text-base customMd:leading-[45px]"
+                           data-aos="fade-right"
+                           data-aos-delay="450"
+                           data-aos-duration="650"
+                        >
                            {t(categoryData?.introduceDescription)}
                         </p>
                      </div>
@@ -141,33 +188,61 @@ function CategoryTitle({ categoryData, projects, blogsList, comments, questions 
             </div>
          </div>
 
-         <div
-            className="mx-auto max-w-[1440px] px-5 py-[27px] customMd:px-[60px] customMd:py-[74px]"
-            data-aos="fade-up"
-            data-aos-offset="400"
-         >
-            <div className="mt-3 flex flex-nowrap items-center justify-between overflow-auto rounded-3xl">
-               <div className="flex min-w-[215px] max-w-[288px] flex-col items-center gap-[10px] px-[18px]">
-                  <Image src={pic4} alt="introduce" />
-                  <h3 className="font-almaraiBold text-lg">Online shop</h3>
+         <div className="mx-auto max-w-[1440px] px-5 py-[27px] customMd:px-[60px] customMd:py-[74px]">
+            <div
+               className="mt-3 flex flex-nowrap items-center justify-between overflow-auto rounded-3xl xl:overflow-visible"
+               data-aos="zoom-in"
+               data-aos-duration="650"
+            >
+               <div
+                  className="flex min-w-[215px] max-w-[288px] flex-col items-center gap-[10px] px-[18px]"
+                  data-aos="fade-right"
+                  data-aos-duration="650"
+                  data-aos-delay="200"
+               >
+                  <div className="size-16">
+                     <Image src={pic4} alt="introduce" className="size-full" />
+                  </div>
+                  <h3 className="text-center font-almaraiBold700 text-lg">Online shop</h3>
                   <p className="text-center text-sm text-[#6F778A]">{t('lorem2')}</p>
                </div>
 
-               <div className="flex min-w-[215px] max-w-[288px] flex-col items-center gap-[10px] px-[18px]">
-                  <Image src={pic3} alt="introduce" />
-                  <h3 className="font-almaraiBold text-lg">HRM</h3>
+               <div
+                  className="flex min-w-[215px] max-w-[288px] flex-col items-center gap-[10px] px-[18px]"
+                  data-aos="fade-right"
+                  data-aos-duration="650"
+                  data-aos-delay="400"
+               >
+                  <div className="size-16">
+                     <Image src={pic3} alt="introduce" className="size-full" />
+                  </div>
+                  <h3 className="text-center font-almaraiBold700 text-lg">HRM</h3>
                   <p className="text-center text-sm text-[#6F778A]">{t('lorem2')}</p>
                </div>
 
-               <div className="flex min-w-[215px] max-w-[288px] flex-col items-center gap-[10px] px-[18px]">
-                  <Image src={pic2} alt="introduce" />
-                  <h3 className="font-almaraiBold text-lg">CRM</h3>
+               <div
+                  className="flex min-w-[215px] max-w-[288px] flex-col items-center gap-[10px] px-[18px]"
+                  data-aos="fade-right"
+                  data-aos-duration="650"
+                  data-aos-delay="600"
+               >
+                  <div className="size-16">
+                     <Image src={pic2} alt="introduce" className="size-full" />
+                  </div>
+                  <h3 className="text-center font-almaraiBold700 text-lg">CRM</h3>
                   <p className="text-center text-sm text-[#6F778A]">{t('lorem2')}</p>
                </div>
 
-               <div className="flex min-w-[215px] max-w-[288px] flex-col items-center gap-[10px] px-[18px]">
-                  <Image src={pic1} alt="introduce" />
-                  <h3 className="font-almaraiBold text-lg">Accounting</h3>
+               <div
+                  className="flex min-w-[215px] max-w-[288px] flex-col items-center gap-[10px] px-[18px]"
+                  data-aos="fade-right"
+                  data-aos-duration="650"
+                  data-aos-delay="800"
+               >
+                  <div className="size-16">
+                     <Image src={pic1} alt="introduce" className="size-full" />
+                  </div>
+                  <h3 className="text-center font-almaraiBold700 text-lg">Accounting</h3>
                   <p className="text-center text-sm text-[#6F778A]">{t('lorem2')}</p>
                </div>
             </div>
@@ -177,40 +252,36 @@ function CategoryTitle({ categoryData, projects, blogsList, comments, questions 
             <div className="mx-auto max-w-[1440px] px-5 pb-16 pt-[30px] customMd:px-[103px] customMd:py-[60px]">
                <p
                   className="text-center text-xs text-[#3C4252] customMd:text-base"
-                  data-aos="fade-up"
-                  data-aos-offset="300"
+                  data-aos="zoom-in"
+                  data-aos-duration="650"
                >
                   {t('We value strong relationships and have seen their benefits to our business')}
                </p>
                <h2
-                  className="mx-auto mt-3 max-w-[830px] text-center font-almaraiExtraBold text-2xl leading-[42px] text-[#050F2C] customMd:text-[32px] customMd:leading-[56px]"
-                  data-aos="fade-up"
-                  data-aos-offset="300"
+                  className="mx-auto mt-3 max-w-[830px] text-center font-almaraiExtraBold800 text-2xl leading-[42px]
+                   text-[#050F2C] customMd:text-[32px] customMd:leading-[56px]"
+                  data-aos="zoom-in"
+                  data-aos-duration="650"
+                  data-aos-delay="250"
                >
                   {t('Completed projects')}
                </h2>
 
                <div className="mt-[50px] flex flex-nowrap items-center gap-5 overflow-auto customMd:overflow-hidden">
                   {projects?.total_objects ? (
-                     projects?.result?.map(item => (
-                        <ProductCart className="w-[240px] customMd:flex-1" key={item?.id} detail={item} />
+                     projects?.result?.map((item, index) => (
+                        <ProductCart className="w-[240px] customMd:flex-1" key={item?.id} detail={item} index={index} />
                      ))
                   ) : (
-                     <p
-                        className="mx-auto py-20 text-center text-base customMd:text-2xl"
-                        data-aos="fade-up"
-                        data-aos-offset="300"
-                     >
-                        {t('No projects yet !!!')}
-                     </p>
+                     <p className="mx-auto py-20 text-center text-base customMd:text-2xl">{t('No projects yet !!!')}</p>
                   )}
                </div>
 
                <Link
                   href="/allProducts"
                   className="mt-[50px] flex justify-center lg:mx-auto lg:w-fit"
-                  data-aos="fade-up"
-                  data-aos-offset="200"
+                  data-aos="zoom-in"
+                  data-aos-duration="650"
                >
                   <Button
                      color="customPink"
@@ -236,20 +307,35 @@ function CategoryTitle({ categoryData, projects, blogsList, comments, questions 
             <div className="mx-auto mt-[30px] max-w-[1440px] px-5 pb-10 customMd:mt-20 customMd:px-[60px] customMd:pb-0">
                <Grid container>
                   <Grid item xs={12} md={6} order={{ xs: 2, md: 1 }}>
-                     <div
-                        className="mt-10"
-                        dir={locale === 'en' ? 'ltr' : 'rtl'}
-                        data-aos="fade-left"
-                        data-aos-offset="300"
-                     >
-                        <div className="relative ps-[30px] font-almaraiExtraBold text-2xl leading-[46px] text-[#EF6D33] customMd:text-[40px] customMd:leading-[75px]">
-                           <p className="text-[#65A5FC]">تفاوت</p>
-                           <p className="text-xl leading-[46px] customMd:text-[34px] customMd:leading-[75px]">
+                     <div className="mt-10" dir={locale === 'en' ? 'ltr' : 'rtl'}>
+                        <div
+                           className="relative ps-[30px] font-almaraiExtraBold800 text-2xl leading-[46px] text-[#EF6D33] customMd:text-[40px] customMd:leading-[75px]"
+                           data-aos="fade-left"
+                           data-aos-delay="350"
+                           data-aos-duration="650"
+                        >
+                           <p className="text-[#65A5FC]" style={{ WebkitTextStroke: '1px' }}>
+                              تفاوت
+                           </p>
+                           <p
+                              className="text-xl leading-[46px] customMd:text-[34px] customMd:leading-[75px]"
+                              style={{ WebkitTextStroke: '1px' }}
+                           >
                               ما برای یک کسب و کار ایجاد می کنیم
                            </p>
-                           <p className="absolute inset-y-2 start-0 w-2 bg-[#65A5FC]" />
+                           <p
+                              className="absolute inset-y-2 start-0 w-2 bg-[#65A5FC]"
+                              data-aos="fade-left"
+                              data-aos-duration="650"
+                              data-aos-delay="200"
+                           />
                         </div>
-                        <p className="mt-[18px] text-sm leading-[32px] text-[#576071] customMd:text-base customMd:leading-[45px]">
+                        <p
+                           className="mt-[18px] text-sm leading-[32px] text-[#576071] customMd:text-base customMd:leading-[45px]"
+                           data-aos="fade-left"
+                           data-aos-delay="400"
+                           data-aos-duration="650"
+                        >
                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
                            چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی
                            مورد نیاز و کاربردهای لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
@@ -259,7 +345,12 @@ function CategoryTitle({ categoryData, projects, blogsList, comments, questions 
                      </div>
                   </Grid>
                   <Grid item xs={12} md={6} order={{ xs: 1, md: 2 }}>
-                     <div className="mx-auto max-w-[530px]" data-aos="fade-right" data-aos-offset="300">
+                     <div
+                        className="mx-auto max-w-[530px]"
+                        data-aos="zoom-in"
+                        data-aos-offset="300"
+                        data-aos-duration="850"
+                     >
                         <Image src={categoryData?.introduce2Pic} alt="uiux" className="size-full" />
                      </div>
                   </Grid>
@@ -268,34 +359,28 @@ function CategoryTitle({ categoryData, projects, blogsList, comments, questions 
          </div>
 
          <div className="bg-[#F5F8FC]">
-            <div className="mx-auto max-w-[1440px] px-5 pb-16 pt-[30px] customMd:px-[103px] customMd:py-[50px]">
+            <div className="mx-auto max-w-[1440px] px-5 py-[30px] customMd:px-[103px] customMd:py-[50px]">
                <h2
-                  className="text-center font-almaraiExtraBold text-2xl leading-[42px] text-[#050F2C] customMd:text-[32px] customMd:leading-[56px]"
-                  data-aos="fade-up"
-                  data-aos-offset="300"
+                  className="text-center font-almaraiExtraBold800 text-2xl leading-[42px] text-[#050F2C] customMd:text-[32px] customMd:leading-[56px]"
+                  data-aos="zoom-in"
+                  data-aos-duration="650"
                >
                   {t('Related articles')}
                </h2>
 
                <div className="mt-[30px] flex flex-nowrap items-center gap-5 overflow-auto customMd:overflow-hidden">
                   {blogsList?.total_objects ? (
-                     blogsList?.result?.map(item => <ArticleCart key={item?.id} detail={item} />)
+                     blogsList?.result?.map((item, index) => <ArticleCart key={item?.id} detail={item} index={index} />)
                   ) : (
-                     <p
-                        className="mx-auto py-20 text-center text-base customMd:text-2xl"
-                        data-aos="fade-up"
-                        data-aos-offset="300"
-                     >
-                        {t('No blogs yet !!!')}
-                     </p>
+                     <p className="mx-auto py-20 text-center text-base customMd:text-2xl">{t('No blogs yet !!!')}</p>
                   )}
                </div>
 
                <Link
                   href="/blogs"
                   className="mt-[30px] flex justify-center lg:mx-auto lg:w-fit"
-                  data-aos="fade-up"
-                  data-aos-offset="200"
+                  data-aos="zoom-in"
+                  data-aos-duration="650"
                >
                   <Button
                      color="customPink"
@@ -318,11 +403,7 @@ function CategoryTitle({ categoryData, projects, blogsList, comments, questions 
          </div>
 
          <div className="bg-white">
-            <div
-               className="mx-auto max-w-[1440px] px-5 py-[46px] customMd:px-[60px]"
-               data-aos="fade-up"
-               data-aos-offset="400"
-            >
+            <div className="mx-auto max-w-[1440px] px-5 py-[46px] customMd:px-[60px]">
                <Comments detail={comments} />
             </div>
          </div>

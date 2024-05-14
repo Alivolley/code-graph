@@ -22,7 +22,7 @@ function LogoutModal({ show, onClose }) {
    return (
       <Dialog open={show} onClose={onClose} dir={locale === 'en' ? 'ltr' : 'rtl'}>
          <div className="flex flex-col gap-3 bg-white px-10 py-5">
-            <p className="text-center text-base font-bold">{t('Are you sure about logging out ?')}</p>
+            <p className="text-center font-almaraiBold700 text-base">{t('Are you sure about logging out ?')}</p>
 
             <div className="mt-5 flex items-center gap-3">
                <Button
