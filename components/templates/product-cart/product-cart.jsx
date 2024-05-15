@@ -10,6 +10,7 @@ import { ArrowLeft } from 'iconsax-react';
 
 // Assets
 import ProductCartStyle from './product-cart.style';
+import noImage from '@/assets/images/noImage.jpg';
 
 function ProductCart({ className, detail, index }) {
    const { locale } = useRouter();
@@ -26,7 +27,7 @@ function ProductCart({ className, detail, index }) {
          <div className="h-[175px] rounded-[18px] bg-[#fdebeb] px-[10px] pt-[10px] md:h-[200px]">
             <p className="text-center font-almaraiBold700 text-xs text-[#284565]">{detail?.title}</p>
             <div className="relative mt-3 h-[110px] w-full md:h-[135px]">
-               <Image src={detail?.cover} alt="product" fill className="rounded-2xl object-cover" />
+               <Image src={detail?.cover || noImage} alt="product" fill className="rounded-2xl object-cover" />
             </div>
          </div>
          <p className="my-[15px] line-clamp-1 text-base font-bold text-[#EA8C90]" id="text">

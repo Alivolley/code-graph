@@ -22,12 +22,12 @@ function MobileMenu({ open, onClose, isUserLogin }) {
    const [profileExpand, setProfileExpand] = useState(false);
    const [servicesExpand, setServicesExpand] = useState(false);
 
-   const { locale } = useRouter();
+   const { locale, pathname } = useRouter();
 
    const t = useTranslations('header');
 
    return (
-      <Drawer anchor="right" open={open} onClose={onClose} dir={locale === 'en' ? 'ltr' : 'rtl'}>
+      <Drawer anchor="left" open={open} onClose={onClose} dir={locale === 'en' ? 'ltr' : 'rtl'}>
          <MobileMenuStyle className="w-[300px]">
             <div className="flex items-start justify-between">
                <Link href="/" className="p-5">
@@ -112,28 +112,55 @@ function MobileMenu({ open, onClose, isUserLogin }) {
 
                   <Link
                      href="/allProducts"
-                     className="block w-full border-t border-solid border-[#E4EAF0] py-3 text-sm"
+                     className={`block w-full border-t border-solid border-[#E4EAF0] py-3 text-sm  ${
+                        pathname.startsWith('/allProducts') ? 'text-[#65A5FC]' : ''
+                     }`}
                   >
                      {t('Projects')}
                   </Link>
 
-                  <Link href="/blogs" className="block w-full border-t border-solid border-[#E4EAF0] py-3 text-sm">
+                  <Link
+                     href="/blogs"
+                     className={`block w-full border-t border-solid border-[#E4EAF0] py-3 text-sm  ${
+                        pathname.startsWith('/blogs') ? 'text-[#65A5FC]' : ''
+                     }`}
+                  >
                      {t('Blogs')}
                   </Link>
 
-                  <Link href="/prices" className="block w-full border-t border-solid border-[#E4EAF0] py-3 text-sm">
+                  <Link
+                     href="/prices"
+                     className={`block w-full border-t border-solid border-[#E4EAF0] py-3 text-sm  ${
+                        pathname.startsWith('/prices') ? 'text-[#65A5FC]' : ''
+                     }`}
+                  >
                      {t('Prices')}
                   </Link>
 
-                  <Link href="/aboutUs" className="block w-full border-t border-solid border-[#E4EAF0] py-3 text-sm">
+                  <Link
+                     href="/aboutUs"
+                     className={`block w-full border-t border-solid border-[#E4EAF0] py-3 text-sm  ${
+                        pathname.startsWith('/aboutUs') ? 'text-[#65A5FC]' : ''
+                     }`}
+                  >
                      {t('About us')}
                   </Link>
 
-                  <Link href="/contactUs" className="block w-full border-t border-solid border-[#E4EAF0] py-3 text-sm">
+                  <Link
+                     href="/contactUs"
+                     className={`block w-full border-t border-solid border-[#E4EAF0] py-3 text-sm  ${
+                        pathname.startsWith('/contactUs') ? 'text-[#65A5FC]' : ''
+                     }`}
+                  >
                      {t('Contact us')}
                   </Link>
 
-                  <Link href="/faqs" className="block w-full border-t border-solid border-[#E4EAF0] py-3 text-sm">
+                  <Link
+                     href="/faqs"
+                     className={`block w-full border-t border-solid border-[#E4EAF0] py-3 text-sm  ${
+                        pathname.startsWith('/faqs') ? 'text-[#65A5FC]' : ''
+                     }`}
+                  >
                      {t('Faqs')}
                   </Link>
 

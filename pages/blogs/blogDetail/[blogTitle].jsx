@@ -21,9 +21,11 @@ function BlogTitle({ blogDetail, blogsList }) {
    const { locale } = useRouter();
    const t = useTranslations('blogs');
 
+   console.log(blogDetail);
+
    return (
       <BlogDetailStyle data-aos="fade-up">
-         <div className="relative mx-auto mt-[110px] max-w-[1440px] px-5 customMd:mt-[208px] customMd:px-[60px]">
+         <div className="relative mx-auto mt-[110px] max-w-[1440px] px-5 customMd:mt-[148px] customMd:px-[60px]">
             <div className="flex items-center gap-[10px]">
                <p className="font-almaraiBold700 text-sm uppercase text-[#333333]">{blogDetail?.category}</p>
                <p className="text-sm text-[#999999]">{blogDetail?.created_at}</p>
@@ -33,7 +35,7 @@ function BlogTitle({ blogDetail, blogsList }) {
             </p>
 
             <div
-               className="mt-5 text-base customMd:mt-[70px]"
+               className="mt-5 text-base customMd:mt-10"
                dangerouslySetInnerHTML={{ __html: blogDetail?.description }}
                id="content"
             />
@@ -41,7 +43,7 @@ function BlogTitle({ blogDetail, blogsList }) {
          <div className="mt-10 bg-[#F5F8FC] customMd:mt-[76px]">
             <div className="relative mx-auto max-w-[1440px] px-5 py-[30px] customMd:p-[60px]">
                <div className="flex items-center justify-center customMd:justify-between">
-                  <p className="font-almaraiBold700 text-2xl leading-[64px] text-[#333333] customMd:text-[48px]">
+                  <p className="font-almaraiBold700 text-2xl leading-[64px] text-[#333333] customMd:text-[36px]">
                      {t('Popular posts')}
                   </p>
                   <Link href="/blogs" className="hidden customMd:block">
@@ -69,9 +71,9 @@ function BlogTitle({ blogDetail, blogsList }) {
 
                <div className="mt-5 customMd:mt-[58px]">
                   <Grid container rowSpacing={{ xs: '15px', md: '20px' }} columnSpacing="5px">
-                     {blogsList?.result?.map(item => (
-                        <Grid item xs={12} sm={6} md={4} key={item?.id} data-aos="fade-up" data-aos-offset="400">
-                           <BlogCart detail={item} />
+                     {blogsList?.result?.map((item, index) => (
+                        <Grid item xs={12} sm={6} md={4} key={item?.id}>
+                           <BlogCart detail={item} index={index} />
                         </Grid>
                      ))}
                   </Grid>

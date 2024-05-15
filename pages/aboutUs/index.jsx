@@ -72,8 +72,12 @@ function AboutUs({ comments }) {
                         </p>
 
                         <p className="text-[26px] leading-[43px] customMd:mt-4 customMd:text-[46px] customMd:leading-[77px]">
-                           <span className="text-[#65A5FC]">{t('team')} </span>
-                           <span className="text-customPink">{t('RoadGraph')}</span>
+                           <span className="text-[#65A5FC]" style={{ WebkitTextStroke: '1px' }}>
+                              {t('team')}{' '}
+                           </span>
+                           <span className="font-almaraiBold700 text-customPink" style={{ WebkitTextStroke: '1px' }}>
+                              {t('RoadGraph')}
+                           </span>
                         </p>
                         <p className="absolute inset-y-2 start-0 w-2 bg-[#65A5FC]" />
                      </div>
@@ -106,19 +110,29 @@ function AboutUs({ comments }) {
                   !
                </p>
                <div className="relative ps-[30px] font-almaraiExtraBold800">
-                  <p className="text-xl leading-[43px] text-[#626E94] customMd:text-[35px] customMd:leading-[40px]">
+                  <p
+                     className="text-xl leading-[43px] text-[#626E94] customMd:text-[35px] customMd:leading-[40px]"
+                     style={{ WebkitTextStroke: '1px' }}
+                  >
                      {t('Why')}
                   </p>
 
-                  <p className="flex flex-nowrap items-center gap-1 text-[26px] leading-[43px] customMd:mt-4 customMd:text-[46px] customMd:leading-[77px]">
-                     <span className="text-[#65A5FC]">{t('team')}</span>
-                     <span className="whitespace-nowrap text-customPink">{t('RoadGraph')}</span>
+                  <p className="flex flex-nowrap items-center gap-1 text-[26px] leading-[43px] customMd:mt-4 customMd:gap-4 customMd:text-[46px] customMd:leading-[77px]">
+                     <span className="text-[#65A5FC]" style={{ WebkitTextStroke: '1px' }}>
+                        {t('team')}
+                     </span>
+                     <span
+                        className="whitespace-nowrap font-almaraiBold700 text-customPink"
+                        style={{ WebkitTextStroke: '1px' }}
+                     >
+                        {t('RoadGraph')}
+                     </span>
                   </p>
                   <p className="absolute inset-y-2 start-0 w-2 bg-[#65A5FC]" />
                </div>
             </div>
 
-            <p className="max-w-[762px] text-sm leading-[31px] text-[#434F74] customMd:text-[18px] customMd:leading-[43px]">
+            <p className="max-w-[762px] text-sm leading-[31px] text-[#434F74] customMd:text-justify customMd:text-[18px] customMd:leading-[43px]">
                {t('text 2')}
             </p>
          </div>
@@ -169,19 +183,26 @@ function AboutUs({ comments }) {
                            <p className="text-xs text-[#626E94] customMd:text-sm">{t('text 3')}</p>
                            <p
                               className="flex flex-nowrap items-center gap-1 font-almaraiExtraBold800 text-2xl leading-[46px]
-                            customMd:mt-4 customMd:text-[40px] customMd:leading-[75px]"
+                            customMd:text-[40px] customMd:leading-[75px]"
                            >
-                              <span className="text-[#65A5FC]">{t('services')}</span>
-                              <span className="whitespace-nowrap text-customPink">{t('RoadGraph')}</span>
+                              <span className="text-[#65A5FC]" style={{ WebkitTextStroke: '1px' }}>
+                                 {t('services')}
+                              </span>
+                              <span
+                                 className="whitespace-nowrap font-almaraiBold700 text-customPink"
+                                 style={{ WebkitTextStroke: '1px' }}
+                              >
+                                 {t('RoadGraph')}
+                              </span>
                            </p>
 
-                           <p className="absolute -top-1 bottom-2 start-0 w-2 bg-[#65A5FC]" />
+                           <p className="absolute -top-1 bottom-4 start-0 w-2 bg-[#65A5FC]" />
                         </div>
-                        <p className="mt-[18px] text-sm leading-[32px] text-[#576071] customMd:text-base customMd:leading-[45px]">
+                        <p className="mt-3 text-sm leading-[32px] text-[#576071] customMd:text-base customMd:leading-[45px]">
                            {t('text 4')}
                         </p>
 
-                        <div className="mt-6 space-y-5">
+                        <div className="mt-3 space-y-4">
                            <div className="flex items-center gap-[11px] customMd:gap-6">
                               <div className="size-[35px] shrink-0 rounded-full border-2 border-solid border-customPink bg-[#F1DEDA] customMd:size-[52px]" />
                               <p className="text-xs text-customPink customMd:text-sm">{t('text 5')}</p>
@@ -214,13 +235,23 @@ function AboutUs({ comments }) {
                      24
                   </p>
                   <div className="relative ps-[30px] font-almaraiExtraBold800">
-                     <p className="text-xl leading-[43px] text-[#626E94] customMd:text-[35px] customMd:leading-[40px]">
+                     <p
+                        className="text-xl leading-[43px] text-[#626E94] customMd:text-[35px] customMd:leading-[40px]"
+                        style={{ WebkitTextStroke: '1px' }}
+                     >
                         {t('Counseling')}
                      </p>
 
                      <p className="flex flex-nowrap items-center gap-1 text-[26px] leading-[43px] customMd:mt-4 customMd:text-[46px] customMd:leading-[77px]">
-                        <span className="text-[#65A5FC]">{t('Need')}</span>
-                        <span className="whitespace-nowrap text-customPink">{t('guidance?')}</span>
+                        <span className="text-[#65A5FC]" style={{ WebkitTextStroke: '1px' }}>
+                           {t('Need')}
+                        </span>
+                        <span
+                           className="whitespace-nowrap font-almaraiBold700 text-customPink"
+                           style={{ WebkitTextStroke: '1px' }}
+                        >
+                           {t('guidance?')}
+                        </span>
                      </p>
                      <p className="absolute inset-y-2 start-0 w-2 bg-[#65A5FC]" />
                   </div>
@@ -230,11 +261,11 @@ function AboutUs({ comments }) {
                   <p className="text-sm leading-[31px] text-[#434F74] customMd:text-[18px] customMd:leading-[43px]">
                      {t('text 8')}
                   </p>
-                  <a href="#reqForm" className="block w-fit">
+                  <a href="#reqForm" className="block customMd:w-fit">
                      <Button
                         color="customPink"
                         variant="contained"
-                        className="w-full customMd:w-auto"
+                        className="max-customMd:!w-full"
                         sx={{
                            height: 60,
                            borderRadius: 57,
@@ -263,15 +294,22 @@ function AboutUs({ comments }) {
          <div className="bg-[#F5F8FC]" id="reqForm">
             <div className="mx-auto max-w-[1440px] px-5 py-[48px] customMd:pb-[45px] customMd:pt-[60px]">
                <div className="flex flex-col items-center" data-aos="zoom-out" data-aos-offset="400">
-                  <div className="w-[144px] customMd:w-[413px]">
+                  <div className="w-[310px] customMd:w-[413px]">
                      <Image src={aboutUsLogo} alt="logo" className="size-full" />
                   </div>
                   <p className="mt-[28px] text-center text-sm text-[#626E94] customMd:mt-[34px] customMd:text-base">
                      {t('text 9')}
                   </p>
                   <p className="flex flex-nowrap items-center gap-1 font-almaraiExtraBold800 text-[26px] leading-[55px] customMd:mt-4 customMd:text-[32px]">
-                     <span className="text-[#65A5FC]">{t('Request')}</span>
-                     <span className="whitespace-nowrap text-customPink">{t('Counseling')}</span>
+                     <span className="text-[#65A5FC]" style={{ WebkitTextStroke: '1px' }}>
+                        {t('Request')}
+                     </span>
+                     <span
+                        className="whitespace-nowrap font-almaraiBold700 text-customPink"
+                        style={{ WebkitTextStroke: '1px' }}
+                     >
+                        {t('Counseling')}
+                     </span>
                   </p>
                </div>
 
@@ -287,10 +325,13 @@ function AboutUs({ comments }) {
                                  message: t('This filed is required'),
                               },
                            })}
-                           InputLabelProps={{ sx: { fontSize: 14 } }}
+                           InputLabelProps={{ sx: { fontSize: 14, color: '#9CA0AE' } }}
                            error={!!errors?.name}
                            helperText={errors?.name?.message}
-                           sx={{ backgroundColor: 'white' }}
+                           sx={{
+                              backgroundColor: 'white',
+                              '.MuiOutlinedInput-notchedOutline': { borderColor: '#BDCEDE' },
+                           }}
                         />
                      </Grid>
 
@@ -298,6 +339,7 @@ function AboutUs({ comments }) {
                         <TextField
                            type="number"
                            sx={{
+                              '.MuiOutlinedInput-notchedOutline': { borderColor: '#BDCEDE' },
                               backgroundColor: 'white',
                               input: {
                                  MozAppearance: 'textfield',
@@ -316,7 +358,7 @@ function AboutUs({ comments }) {
                                  message: t('This filed is required'),
                               },
                            })}
-                           InputLabelProps={{ sx: { fontSize: 14 } }}
+                           InputLabelProps={{ sx: { fontSize: 14, color: '#9CA0AE' } }}
                            error={!!errors?.phoneNumber}
                            helperText={errors?.phoneNumber?.message}
                         />
@@ -336,8 +378,11 @@ function AboutUs({ comments }) {
                                  message: t('Please enter a valid email'),
                               },
                            })}
-                           InputLabelProps={{ sx: { fontSize: 14 } }}
-                           sx={{ backgroundColor: 'white' }}
+                           InputLabelProps={{ sx: { fontSize: 14, color: '#9CA0AE' } }}
+                           sx={{
+                              backgroundColor: 'white',
+                              '.MuiOutlinedInput-notchedOutline': { borderColor: '#BDCEDE' },
+                           }}
                            error={!!errors?.email}
                            helperText={errors?.email?.message}
                         />
@@ -354,8 +399,11 @@ function AboutUs({ comments }) {
                                  message: t('This filed is required'),
                               },
                            })}
-                           InputLabelProps={{ sx: { fontSize: 14 } }}
-                           sx={{ backgroundColor: 'white' }}
+                           InputLabelProps={{ sx: { fontSize: 14, color: '#9CA0AE' } }}
+                           sx={{
+                              backgroundColor: 'white',
+                              '.MuiOutlinedInput-notchedOutline': { borderColor: '#BDCEDE' },
+                           }}
                            error={!!errors?.text}
                            helperText={errors?.text?.message}
                         />

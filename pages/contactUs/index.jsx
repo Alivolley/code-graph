@@ -28,7 +28,7 @@ function ContactUs() {
 
    return (
       <div>
-         <div className="relative bg-[#F5F8FC] pt-[91px] customMd:pt-[158px]" dir="rtl">
+         <div className="relative bg-[#F5F8FC] pt-[91px] customMd:pt-[120px]" dir="rtl">
             <div className="absolute left-0 top-[315px] z-0 hidden xl:block">
                <Image src={wheelFirst} alt="wheel" />
             </div>
@@ -45,12 +45,28 @@ function ContactUs() {
                   </Grid>
                   <Grid item xs={12} md={6}>
                      <div className="mt-10 customMd:mt-10" dir={locale === 'en' ? 'ltr' : 'rtl'} data-aos="fade-right">
-                        <div className="relative ps-[30px] font-almaraiExtraBold800 text-2xl leading-[46px] text-[#EF6D33] customMd:text-[40px] customMd:leading-[75px]">
-                           <p className="text-[#65A5FC]">{t('Contact to')}</p>
-                           <p>{t('RoadGraph')}</p>
-                           <p className="absolute inset-y-2 start-0 w-2 bg-[#65A5FC]" />
+                        <div className="relative ps-[30px]">
+                           <p className="text-xs text-[#626E94]">
+                              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟
+                           </p>
+
+                           <div className="mt-2 flex items-center gap-3 text-2xl leading-[46px] customMd:text-[40px] customMd:leading-[75px]">
+                              <p
+                                 className="whitespace-nowrap font-almaraiExtraBold800 text-[#65A5FC]"
+                                 style={{ WebkitTextStroke: '1px' }}
+                              >
+                                 {t('Contact to')}
+                              </p>
+                              <p
+                                 className="whitespace-nowrap font-almaraiBold700 text-[#EF6D33]"
+                                 style={{ WebkitTextStroke: '1px' }}
+                              >
+                                 {t('RoadGraph')}
+                              </p>
+                           </div>
+                           <p className="absolute -top-2 bottom-1 start-0 w-2 bg-[#65A5FC]" />
                         </div>
-                        <p className="mt-[18px] text-sm leading-[32px] text-[#576071] customMd:text-base customMd:leading-[45px]">
+                        <p className="mt-[18px] text-sm leading-[32px] text-[#576071] customMd:text-base customMd:leading-[33px]">
                            {t('contact us text 1')}
                         </p>
                         <div className="mt-[33px] space-y-[17px] customMd:space-y-[30px]">

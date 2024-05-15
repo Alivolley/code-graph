@@ -10,6 +10,7 @@ import { ArrowLeft, Calendar, Eye, Hashtag, Profile } from 'iconsax-react';
 
 // Assets
 import ArticleCartStyle from './article-cart.style';
+import noImage from '@/assets/images/noImage.jpg';
 
 function ArticleCart({ detail, index }) {
    const { locale } = useRouter();
@@ -24,7 +25,7 @@ function ArticleCart({ detail, index }) {
          data-aos-delay={(index + 1) * 200}
       >
          <div className="relative h-[200px] w-full">
-            <Image src={detail?.cover} alt="product" className="rounded-[18px] object-cover" fill />
+            <Image src={detail?.cover || noImage} alt="product" className="rounded-[18px] object-cover" fill />
          </div>
 
          <div className="mt-4 flex items-center justify-between text-[8.5px] text-[#626E94]">

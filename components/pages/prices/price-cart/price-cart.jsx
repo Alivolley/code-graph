@@ -9,25 +9,28 @@ import { Button } from '@mui/material';
 import yellowMedal from '@/assets/images/yellowMedal.png';
 import checkGreen from '@/assets/icons/checkGreen.svg';
 
-function PriceCart({ className }) {
+function PriceCart({ className, index }) {
    const { locale } = useRouter();
    const t = useTranslations('prices');
 
    return (
       <div
          style={{ boxShadow: '-4px 20px 36.8px 0px #6666660F' }}
-         className={`shrink-0 rounded-10 bg-white p-[15px] customMd:px-[47px] customMd:py-[30px] ${className}`}
+         className={`shrink-0 rounded-10 bg-white p-7 customMd:px-[47px] customMd:py-[30px] ${className}`}
+         data-aos="fade-right"
+         data-aos-duration="650"
+         data-aos-delay={(index + 1) * 200}
       >
          <p className="flex h-[51px] items-center justify-center rounded-2xl bg-[#F5F8FC] font-almaraiBold700 text-xl text-[#050F2C]">
             Ultimate
          </p>
-         <div className="mt-[15px] flex flex-row items-center gap-3 customMd:mt-5 customMd:flex-col">
-            <div className="h-[56px] w-[50px]">
+         <div className="mt-[15px] flex flex-row items-center gap-2 max-customMd:justify-center customMd:mt-5 customMd:flex-col customMd:gap-3">
+            <div className="h-[52px] w-[46px] shrink-0 customMd:h-[56px] customMd:w-[50px]">
                <Image src={yellowMedal} className="size-full" alt="medal" />
             </div>
-            <div className="flex items-end gap-3 leading-[61px]">
-               <p className="font-almaraiExtraBold800 text-[35px] customMd:text-[45px]">{(5200).toLocaleString()}</p>
-               <p className="font-almaraiBold700 text-[28px] text-[#7E8AAB] customMd:text-[30px]">
+            <div className="flex items-end gap-2 leading-[61px]">
+               <p className="font-almaraiExtraBold800 text-[32px] customMd:text-[45px]">{(5200).toLocaleString()}</p>
+               <p className="font-almaraiBold700 text-[24px] text-[#7E8AAB] customMd:text-[30px]">
                   {locale === 'en' ? 'US$' : 'تومان'}
                </p>
             </div>

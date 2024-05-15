@@ -76,7 +76,7 @@ function Blogs({ blogsList }) {
                <p className="py-4 text-center font-almaraiExtraBold800 text-3xl text-[#333333] lg:py-0 lg:text-[40px] lg:leading-[64px]">
                   {t('Find our all blogs from here')}
                </p>
-               <p className="mx-auto max-w-[756px] text-center text-sm text-[#666666] lg:mt-5 lg:text-base">
+               <p className="mx-auto max-w-[756px] text-center text-xs leading-[22px] text-[#666666] lg:mt-5 lg:text-base lg:leading-8">
                   {t('blogs description')}
                </p>
             </div>
@@ -93,16 +93,11 @@ function Blogs({ blogsList }) {
                </IconButton>
                <input
                   type="text"
-                  className="grow border-none bg-transparent px-2 py-3 font-almaraiRegular400 text-base outline-none placeholder:text-sm placeholder:text-[#7E8AAB]"
+                  className="grow border-none bg-transparent px-2 py-3 font-almaraiRegular400 text-base outline-none placeholder:text-xs placeholder:text-[#7E8AAB]"
                   placeholder={t('Search topic')}
                />
             </form>
-            <div
-               className="mt-[30px] flex items-center justify-center border-b border-solid border-[#E4EAF0]"
-               data-aos="fade-up"
-               data-aos-delay="300"
-               data-aos-offset="300"
-            >
+            <div className="mt-[25px] flex items-center justify-center border-b border-solid border-[#E4EAF0]">
                <Tabs value={tabsValue} onChange={(e, newValue) => changeCategoryHandler(newValue)} variant="scrollable">
                   <Tab label={t('All articles')} value="" />
                   <Tab label={t('Newest')} value="newest" />
@@ -113,12 +108,12 @@ function Blogs({ blogsList }) {
                </Tabs>
             </div>
 
-            <div className="mt-[30px]">
+            <div className="mt-[20px]">
                <Grid container rowSpacing={{ xs: '15px', md: '20px' }} columnSpacing="5px">
                   {blogsList?.total_objects ? (
-                     blogsList?.result?.map(item => (
-                        <Grid item xs={12} sm={6} md={4} key={item?.id} data-aos="fade-up" data-aos-offset="300">
-                           <BlogCart detail={item} />
+                     blogsList?.result?.map((item, index) => (
+                        <Grid item xs={12} sm={6} md={4} key={item?.id}>
+                           <BlogCart detail={item} index={index} />
                         </Grid>
                      ))
                   ) : (

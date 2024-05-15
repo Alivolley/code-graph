@@ -1,12 +1,15 @@
 import { useState } from 'react';
+import Image from 'next/image';
 
 // MUI
 import { Accordion, AccordionDetails, AccordionSummary, useMediaQuery } from '@mui/material';
 
 // Icons
 import { ArrowDown2 } from 'iconsax-react';
-import { FaCheck } from 'react-icons/fa6';
 import { IoCloseCircle } from 'react-icons/io5';
+
+// Assets
+import checkGreen from '@/assets/icons/checkGreen.svg';
 
 function FeatureAccordion() {
    const [isExpanded, setIsExpanded] = useState(false);
@@ -41,25 +44,31 @@ function FeatureAccordion() {
                            className="flex items-center justify-center border-2 border-solid border-[#FC742B] bg-[#FC742B1A] py-[30px]
                          text-center customMd:flex-1 customMd:border-y-0 customMd:border-e-0 customMd:border-s customMd:border-[#E4EAF0] customMd:bg-transparent"
                         >
-                           <FaCheck color="#44BF34" fontSize="20px" />
+                           <div>
+                              <Image src={checkGreen} alt="check" />
+                           </div>
                         </div>
                         <div
                            className="flex items-center justify-center border-2 border-solid border-[#050F2C] bg-[#050F2C1A] py-[30px]
                          text-center customMd:flex-1 customMd:border-y-0 customMd:border-e-0 customMd:border-s customMd:border-[#E4EAF0] customMd:bg-transparent"
                         >
-                           <FaCheck color="#44BF34" fontSize="20px" />
+                           <div>
+                              <Image src={checkGreen} alt="check" />
+                           </div>
                         </div>
                         <div
                            className="flex items-center justify-center border-2 border-solid border-[#06986E] bg-[#06986E1A] py-[30px]
                          text-center customMd:flex-1 customMd:border-y-0 customMd:border-e-0 customMd:border-s customMd:border-[#E4EAF0] customMd:bg-transparent"
                         >
-                           <FaCheck color="#44BF34" fontSize="20px" />
+                           <div>
+                              <Image src={checkGreen} alt="check" />
+                           </div>
                         </div>
                         <div
                            className="flex items-center justify-center border-2 border-solid border-[#E71D36] bg-[#E71D361A] py-[30px]
                          text-center customMd:flex-1 customMd:border-y-0 customMd:border-e-0 customMd:border-s customMd:border-[#E4EAF0] customMd:bg-transparent"
                         >
-                           <IoCloseCircle color="#EF6D33" fontSize="20px" />
+                           <IoCloseCircle color="#EF6D33" fontSize="25px" />
                         </div>
                      </div>
                   </div>
@@ -76,25 +85,31 @@ function FeatureAccordion() {
                            className="flex items-center justify-center border-2 border-solid border-[#FC742B] bg-[#FC742B1A] py-[30px]
                          text-center customMd:flex-1 customMd:border-y-0 customMd:border-e-0 customMd:border-s customMd:border-[#E4EAF0] customMd:bg-transparent"
                         >
-                           <FaCheck color="#44BF34" fontSize="20px" />
+                           <div>
+                              <Image src={checkGreen} alt="check" />
+                           </div>
                         </div>
                         <div
                            className="flex items-center justify-center border-2 border-solid border-[#050F2C] bg-[#050F2C1A] py-[30px]
                          text-center customMd:flex-1 customMd:border-y-0 customMd:border-e-0 customMd:border-s customMd:border-[#E4EAF0] customMd:bg-transparent"
                         >
-                           <FaCheck color="#44BF34" fontSize="20px" />
+                           <div>
+                              <Image src={checkGreen} alt="check" />
+                           </div>
                         </div>
                         <div
                            className="flex items-center justify-center border-2 border-solid border-[#06986E] bg-[#06986E1A] py-[30px]
                          text-center customMd:flex-1 customMd:border-y-0 customMd:border-e-0 customMd:border-s customMd:border-[#E4EAF0] customMd:bg-transparent"
                         >
-                           <FaCheck color="#44BF34" fontSize="20px" />
+                           <div>
+                              <Image src={checkGreen} alt="check" />
+                           </div>
                         </div>
                         <div
                            className="flex items-center justify-center border-2 border-solid border-[#E71D36] bg-[#E71D361A] py-[30px]
                          text-center customMd:flex-1 customMd:border-y-0 customMd:border-e-0 customMd:border-s customMd:border-[#E4EAF0] customMd:bg-transparent"
                         >
-                           <IoCloseCircle color="#EF6D33" fontSize="20px" />
+                           <IoCloseCircle color="#EF6D33" fontSize="25px" />
                         </div>
                      </div>
                   </div>
@@ -111,25 +126,31 @@ function FeatureAccordion() {
                            className="flex items-center justify-center border-2 border-solid border-[#FC742B] bg-[#FC742B1A] py-[30px]
                          text-center customMd:flex-1 customMd:border-y-0 customMd:border-e-0 customMd:border-s customMd:border-[#E4EAF0] customMd:bg-transparent"
                         >
-                           <FaCheck color="#44BF34" fontSize="20px" />
+                           <div>
+                              <Image src={checkGreen} alt="check" />
+                           </div>
                         </div>
                         <div
                            className="flex items-center justify-center border-2 border-solid border-[#050F2C] bg-[#050F2C1A] py-[30px]
                          text-center customMd:flex-1 customMd:border-y-0 customMd:border-e-0 customMd:border-s customMd:border-[#E4EAF0] customMd:bg-transparent"
                         >
-                           <FaCheck color="#44BF34" fontSize="20px" />
+                           <div>
+                              <Image src={checkGreen} alt="check" />
+                           </div>
                         </div>
                         <div
                            className="flex items-center justify-center border-2 border-solid border-[#06986E] bg-[#06986E1A] py-[30px]
                          text-center customMd:flex-1 customMd:border-y-0 customMd:border-e-0 customMd:border-s customMd:border-[#E4EAF0] customMd:bg-transparent"
                         >
-                           <FaCheck color="#44BF34" fontSize="20px" />
+                           <div>
+                              <Image src={checkGreen} alt="check" />
+                           </div>
                         </div>
                         <div
                            className="flex items-center justify-center border-2 border-solid border-[#E71D36] bg-[#E71D361A] py-[30px]
                          text-center customMd:flex-1 customMd:border-y-0 customMd:border-e-0 customMd:border-s customMd:border-[#E4EAF0] customMd:bg-transparent"
                         >
-                           <IoCloseCircle color="#EF6D33" fontSize="20px" />
+                           <IoCloseCircle color="#EF6D33" fontSize="25px" />
                         </div>
                      </div>
                   </div>
@@ -146,25 +167,31 @@ function FeatureAccordion() {
                            className="flex items-center justify-center border-2 border-solid border-[#FC742B] bg-[#FC742B1A] py-[30px]
                          text-center customMd:flex-1 customMd:border-y-0 customMd:border-e-0 customMd:border-s customMd:border-[#E4EAF0] customMd:bg-transparent"
                         >
-                           <FaCheck color="#44BF34" fontSize="20px" />
+                           <div>
+                              <Image src={checkGreen} alt="check" />
+                           </div>
                         </div>
                         <div
                            className="flex items-center justify-center border-2 border-solid border-[#050F2C] bg-[#050F2C1A] py-[30px]
                          text-center customMd:flex-1 customMd:border-y-0 customMd:border-e-0 customMd:border-s customMd:border-[#E4EAF0] customMd:bg-transparent"
                         >
-                           <FaCheck color="#44BF34" fontSize="20px" />
+                           <div>
+                              <Image src={checkGreen} alt="check" />
+                           </div>
                         </div>
                         <div
                            className="flex items-center justify-center border-2 border-solid border-[#06986E] bg-[#06986E1A] py-[30px]
                          text-center customMd:flex-1 customMd:border-y-0 customMd:border-e-0 customMd:border-s customMd:border-[#E4EAF0] customMd:bg-transparent"
                         >
-                           <FaCheck color="#44BF34" fontSize="20px" />
+                           <div>
+                              <Image src={checkGreen} alt="check" />
+                           </div>
                         </div>
                         <div
                            className="flex items-center justify-center border-2 border-solid border-[#E71D36] bg-[#E71D361A] py-[30px]
                          text-center customMd:flex-1 customMd:border-y-0 customMd:border-e-0 customMd:border-s customMd:border-[#E4EAF0] customMd:bg-transparent"
                         >
-                           <IoCloseCircle color="#EF6D33" fontSize="20px" />
+                           <IoCloseCircle color="#EF6D33" fontSize="25px" />
                         </div>
                      </div>
                   </div>

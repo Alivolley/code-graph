@@ -6,14 +6,21 @@ import { Button } from '@mui/material';
 
 // Assets
 import BlogCartStyle from './blog-cart.style';
+import noImage from '@/assets/images/noImage.jpg';
 
-function BlogCart({ detail }) {
+function BlogCart({ detail, index }) {
    const t = useTranslations('blogs');
 
    return (
-      <BlogCartStyle href={`/blogs/blogDetail/${detail?.title}`} className="block rounded-[20px] p-[15px]">
+      <BlogCartStyle
+         href={`/blogs/blogDetail/${detail?.title}`}
+         className="block rounded-[20px] p-[15px]"
+         data-aos="fade-right"
+         data-aos-duration="650"
+         data-aos-delay={(index + 1) * 200}
+      >
          <div className="relative aspect-[1.3/1] w-full overflow-hidden rounded-2xl">
-            <Image src={detail?.cover} alt="cover" fill className="rounded-2xl object-cover" />
+            <Image src={detail?.cover || noImage} alt="cover" fill className="rounded-2xl object-cover" />
          </div>
 
          <div className="mt-5 customMd:mt-10">

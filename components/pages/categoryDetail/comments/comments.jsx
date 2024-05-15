@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/router';
 import { useRef } from 'react';
+import Image from 'next/image';
 
 // Swiper
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -14,8 +15,10 @@ import { IconButton } from '@mui/material';
 // Icons
 import { ArrowLeft2, ArrowRight2 } from 'iconsax-react';
 
+// Assets
+import noImage from '@/assets/images/noImage.jpg';
+
 // Components
-import Image from 'next/image';
 import CommentsStyle from './comments.style';
 
 const navigationStyle = {
@@ -94,7 +97,7 @@ function Comments({ detail }) {
                      <div className="rounded-[20px] border border-solid border-[#E4EAF0] p-4 customMd:p-8">
                         <div className="flex items-center gap-4 customMd:gap-7">
                            <div className="relative size-[90px] shrink-0">
-                              <Image src={item?.cover} alt="cover" className="rounded-full" fill />
+                              <Image src={item?.cover || noImage} alt="cover" className="rounded-full" fill />
                            </div>
                            <div className="flex flex-col gap-[10px]">
                               <p className="font-almaraiExtraBold800 text-[20px] leading-[32px] customMd:text-[22px]">

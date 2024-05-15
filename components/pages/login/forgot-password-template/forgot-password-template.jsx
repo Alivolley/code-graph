@@ -87,10 +87,12 @@ function ForgotPasswordTemplate({ setChosenMethod, translator }) {
                      message: translator('Please enter a valid email'),
                   },
                })}
-               InputLabelProps={{ sx: { fontSize: 14 } }}
+               InputLabelProps={{ sx: { fontSize: 14, color: '#8A97BF' } }}
                error={!!errors?.email}
                helperText={errors?.email?.message}
                disabled={sendCodeIsMutating || resetPasswordIsMutating || recoveryStep === 2}
+               sx={{ '.MuiOutlinedInput-notchedOutline': { borderColor: '#BDCEDE' } }}
+               inputProps={{ className: '!text-sm !text-[#8A97BF]' }}
             />
 
             {recoveryStep === 2 && (
@@ -101,6 +103,7 @@ function ForgotPasswordTemplate({ setChosenMethod, translator }) {
                      label={translator('Code')}
                      type="number"
                      sx={{
+                        '.MuiOutlinedInput-notchedOutline': { borderColor: '#BDCEDE' },
                         input: {
                            MozAppearance: 'textfield',
                            appearance: 'textfield',
@@ -116,10 +119,11 @@ function ForgotPasswordTemplate({ setChosenMethod, translator }) {
                            message: translator('This filed is required'),
                         },
                      })}
-                     InputLabelProps={{ sx: { fontSize: 14 } }}
+                     InputLabelProps={{ sx: { fontSize: 14, color: '#8A97BF' } }}
                      error={!!errors?.code}
                      helperText={errors?.code?.message}
                      disabled={resetPasswordIsMutating}
+                     inputProps={{ className: '!text-sm !text-[#8A97BF]' }}
                   />
 
                   <TextField
@@ -138,10 +142,11 @@ function ForgotPasswordTemplate({ setChosenMethod, translator }) {
                            message: translator('Password must be greater than 8 character'),
                         },
                      })}
-                     InputLabelProps={{ sx: { fontSize: 14 } }}
+                     InputLabelProps={{ sx: { fontSize: 14, color: '#8A97BF' } }}
                      error={!!errors?.password}
                      helperText={errors?.password?.message}
                      InputProps={{
+                        className: '!text-sm !text-[#8A97BF]',
                         endAdornment: (
                            <InputAdornment position="end">
                               <IconButton onClick={() => setShowPassword(prev => !prev)}>
@@ -155,6 +160,7 @@ function ForgotPasswordTemplate({ setChosenMethod, translator }) {
                         ),
                      }}
                      disabled={resetPasswordIsMutating}
+                     sx={{ '.MuiOutlinedInput-notchedOutline': { borderColor: '#BDCEDE' } }}
                   />
 
                   <TextField
@@ -169,10 +175,11 @@ function ForgotPasswordTemplate({ setChosenMethod, translator }) {
                         },
                         validate: value => value === passwordValue || translator('Passwords are not match'),
                      })}
-                     InputLabelProps={{ sx: { fontSize: 14 } }}
+                     InputLabelProps={{ sx: { fontSize: 14, color: '#8A97BF' } }}
                      error={!!errors?.confirmPassword}
                      helperText={errors?.confirmPassword?.message}
                      InputProps={{
+                        className: '!text-sm !text-[#8A97BF]',
                         endAdornment: (
                            <InputAdornment position="end">
                               <IconButton onClick={() => setShowPassword(prev => !prev)}>
@@ -186,6 +193,7 @@ function ForgotPasswordTemplate({ setChosenMethod, translator }) {
                         ),
                      }}
                      disabled={resetPasswordIsMutating}
+                     sx={{ '.MuiOutlinedInput-notchedOutline': { borderColor: '#BDCEDE' } }}
                   />
                </>
             )}

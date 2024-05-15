@@ -57,7 +57,7 @@ function Login() {
                <div className="h-[35px] w-[75px]">
                   <Image src={logo} alt="logo" className="size-full" />
                </div>
-               <p className="text-[32px] font-extrabold">
+               <p className="font-almaraiExtraBold800 text-[32px]">
                   <span className="text-[#fd8266]">{t('Road')}</span>
                   <span className="text-[#65a5fc]">{t('Graph')}</span>
                </p>

@@ -69,10 +69,12 @@ function SignUpTemplate({ setChosenMethod, translator }) {
                      message: translator('This filed is required'),
                   },
                })}
-               InputLabelProps={{ sx: { fontSize: 14 } }}
+               InputLabelProps={{ sx: { fontSize: 14, color: '#8A97BF' } }}
                error={!!errors?.username}
                helperText={errors?.username?.message}
                disabled={signUpIsMutating}
+               sx={{ '.MuiOutlinedInput-notchedOutline': { borderColor: '#BDCEDE' } }}
+               inputProps={{ className: '!text-sm !text-[#8A97BF]' }}
             />
             <TextField
                fullWidth
@@ -88,10 +90,12 @@ function SignUpTemplate({ setChosenMethod, translator }) {
                      message: translator('Please enter a valid email'),
                   },
                })}
-               InputLabelProps={{ sx: { fontSize: 14 } }}
+               InputLabelProps={{ sx: { fontSize: 14, color: '#8A97BF' } }}
                error={!!errors?.email}
                helperText={errors?.email?.message}
                disabled={signUpIsMutating}
+               sx={{ '.MuiOutlinedInput-notchedOutline': { borderColor: '#BDCEDE' } }}
+               inputProps={{ className: '!text-sm !text-[#8A97BF]' }}
             />
 
             <TextField
@@ -110,10 +114,11 @@ function SignUpTemplate({ setChosenMethod, translator }) {
                      message: translator('Password must be greater than 8 character'),
                   },
                })}
-               InputLabelProps={{ sx: { fontSize: 14 } }}
+               InputLabelProps={{ sx: { fontSize: 14, color: '#8A97BF' } }}
                error={!!errors?.password}
                helperText={errors?.password?.message}
                InputProps={{
+                  className: '!text-sm !text-[#8A97BF]',
                   endAdornment: (
                      <InputAdornment position="end">
                         <IconButton onClick={() => setShowPassword(prev => !prev)}>
@@ -127,6 +132,7 @@ function SignUpTemplate({ setChosenMethod, translator }) {
                   ),
                }}
                disabled={signUpIsMutating}
+               sx={{ '.MuiOutlinedInput-notchedOutline': { borderColor: '#BDCEDE' } }}
             />
 
             <TextField
@@ -141,10 +147,11 @@ function SignUpTemplate({ setChosenMethod, translator }) {
                   },
                   validate: value => value === passwordValue || translator('Passwords are not match'),
                })}
-               InputLabelProps={{ sx: { fontSize: 14 } }}
+               InputLabelProps={{ sx: { fontSize: 14, color: '#8A97BF' } }}
                error={!!errors?.confirmPassword}
                helperText={errors?.confirmPassword?.message}
                InputProps={{
+                  className: '!text-sm !text-[#8A97BF]',
                   endAdornment: (
                      <InputAdornment position="end">
                         <IconButton onClick={() => setShowPassword(prev => !prev)}>
@@ -158,6 +165,7 @@ function SignUpTemplate({ setChosenMethod, translator }) {
                   ),
                }}
                disabled={signUpIsMutating}
+               sx={{ '.MuiOutlinedInput-notchedOutline': { borderColor: '#BDCEDE' } }}
             />
 
             <LoadingButton

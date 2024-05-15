@@ -91,7 +91,12 @@ function Header() {
                </Link>
                <div className="flex items-center gap-3 customLg:gap-6">
                   <div id="dropdownWrapper">
-                     <div className="flex cursor-pointer items-center gap-2 text-[#3A3E4D] transition-all duration-150 hover:text-[#65A5FC]">
+                     <div
+                        className={`flex cursor-pointer items-center gap-2 transition-all duration-150 ${
+                           pathname.startsWith('/categoryDetail') ? 'text-[#65A5FC]' : 'text-[#3A3E4D]'
+                        }`}
+                        id="dropdownTitle"
+                     >
                         <p className="text-xs customLg:text-sm">{t('Services')}</p>
                         <ArrowDown2 size="15" id="dropdownArrow" />
                      </div>
@@ -134,42 +139,54 @@ function Header() {
 
                   <Link
                      href="/allProducts"
-                     className="flex cursor-pointer items-center gap-2 text-[#3A3E4D] transition-all duration-150 hover:text-[#65A5FC]"
+                     className={`flex cursor-pointer items-center gap-2 text-[#3A3E4D] transition-all duration-150 hover:text-[#65A5FC] ${
+                        pathname.startsWith('/allProducts') ? 'text-[#65A5FC]' : 'text-[#3A3E4D]'
+                     }`}
                   >
                      <p className="text-xs customLg:text-sm">{t('Projects')}</p>
                   </Link>
 
                   <Link
                      href="/blogs"
-                     className="flex cursor-pointer items-center gap-2 text-[#3A3E4D] transition-all duration-150 hover:text-[#65A5FC]"
+                     className={`flex cursor-pointer items-center gap-2 text-[#3A3E4D] transition-all duration-150 hover:text-[#65A5FC] ${
+                        pathname.startsWith('/blogs') ? 'text-[#65A5FC]' : 'text-[#3A3E4D]'
+                     }`}
                   >
                      <p className="text-xs customLg:text-sm">{t('Blogs')}</p>
                   </Link>
 
                   <Link
                      href="/prices"
-                     className="flex cursor-pointer items-center gap-2 text-[#3A3E4D] transition-all duration-150 hover:text-[#65A5FC]"
+                     className={`flex cursor-pointer items-center gap-2 text-[#3A3E4D] transition-all duration-150 hover:text-[#65A5FC] ${
+                        pathname.startsWith('/prices') ? 'text-[#65A5FC]' : 'text-[#3A3E4D]'
+                     }`}
                   >
                      <p className="text-xs customLg:text-sm">{t('Prices')}</p>
                   </Link>
 
                   <Link
                      href="/aboutUs"
-                     className="flex cursor-pointer items-center gap-2 text-[#3A3E4D] transition-all duration-150 hover:text-[#65A5FC]"
+                     className={`flex cursor-pointer items-center gap-2 text-[#3A3E4D] transition-all duration-150 hover:text-[#65A5FC] ${
+                        pathname.startsWith('/aboutUs') ? 'text-[#65A5FC]' : 'text-[#3A3E4D]'
+                     }`}
                   >
                      <p className="text-xs customLg:text-sm">{t('About us')}</p>
                   </Link>
 
                   <Link
                      href="/contactUs"
-                     className="flex cursor-pointer items-center gap-2 text-[#3A3E4D] transition-all duration-150 hover:text-[#65A5FC]"
+                     className={`flex cursor-pointer items-center gap-2 text-[#3A3E4D] transition-all duration-150 hover:text-[#65A5FC] ${
+                        pathname.startsWith('/contactUs') ? 'text-[#65A5FC]' : 'text-[#3A3E4D]'
+                     }`}
                   >
                      <p className="text-xs customLg:text-sm">{t('Contact us')}</p>
                   </Link>
 
                   <Link
                      href="/faqs"
-                     className="flex cursor-pointer items-center gap-2 text-[#3A3E4D] transition-all duration-150 hover:text-[#65A5FC]"
+                     className={`flex cursor-pointer items-center gap-2 transition-all duration-150 hover:text-[#65A5FC] ${
+                        pathname.startsWith('/faqs') ? 'text-[#65A5FC]' : 'text-[#3A3E4D]'
+                     }`}
                   >
                      <p className="text-xs customLg:text-sm">{t('Faqs')}</p>
                   </Link>
@@ -292,6 +309,16 @@ function Header() {
          </HeaderStyle>
 
          <div className="flex items-center justify-between customMd:hidden">
+            <div className="flex items-center gap-3">
+               <IconButton onClick={() => setShowMobileMenu(true)}>
+                  <Image src={menuSvg} alt="menu" />
+               </IconButton>
+
+               <Link href="/" className="h-[35px] w-[76px]">
+                  <Image src={headerLogo} alt="header logo" className="size-full" />
+               </Link>
+            </div>
+
             <div className="flex items-center gap-2">
                <IconButton
                   sx={{
@@ -310,16 +337,6 @@ function Header() {
                <Link href="/login" className="flex items-center justify-center">
                   <ProfileCircle size="35" color="#FD8266" />
                </Link>
-            </div>
-
-            <div className="flex items-center gap-3">
-               <Link href="/" className="h-[35px] w-[76px]">
-                  <Image src={headerLogo} alt="header logo" className="size-full" />
-               </Link>
-
-               <IconButton onClick={() => setShowMobileMenu(true)}>
-                  <Image src={menuSvg} alt="menu" />
-               </IconButton>
             </div>
          </div>
 

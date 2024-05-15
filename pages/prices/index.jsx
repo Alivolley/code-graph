@@ -131,24 +131,19 @@ function Prices({ questions }) {
                   </div>
                </div>
 
-               <div
-                  className="mt-[50px] flex flex-nowrap items-center gap-4 overflow-auto customMd:gap-6"
-                  data-aos="fade-up"
-                  data-aos-delay="400"
-               >
-                  <PriceCart className="w-[290px] customLg:flex-1" />
-                  <PriceCart className="w-[290px] customLg:flex-1" />
-                  <PriceCart className="w-[290px] customLg:flex-1" />
-                  <PriceCart className="w-[290px] customLg:flex-1" />
+               <div className="mt-[50px] flex flex-nowrap items-center gap-4 overflow-auto customMd:gap-6">
+                  <PriceCart className="w-[268px] customLg:flex-1" index={0} />
+                  <PriceCart className="w-[268px] customLg:flex-1" index={1} />
+                  <PriceCart className="w-[268px] customLg:flex-1" index={2} />
+                  <PriceCart className="w-[268px] customLg:flex-1" index={3} />
                </div>
             </div>
          </div>
-         <p
-            className="mx-auto max-w-[1440px] bg-[#f5f8fc] px-5 pb-[46px] pt-[331px] text-center
-          font-almaraiExtraBold800 text-[28px] leading-[40px] text-[#65A5FC] customMd:px-[60px] customMd:pb-[70px] customMd:pt-[302px] customMd:text-[32px]"
-         >
-            {t('Explore the top features')}
-         </p>
+         <div className="bg-[#f5f8fc] px-5 pb-[46px] pt-[331px] customMd:px-[60px] customMd:pb-[70px] customMd:pt-[302px]">
+            <p className="mx-auto max-w-[1440px] text-center font-almaraiExtraBold800 text-[28px] leading-[40px] text-[#65A5FC] customMd:text-[32px]">
+               {t('Explore the top features')}
+            </p>
+         </div>
 
          <div className="mx-auto mb-20 max-w-[1440px] px-5 customMd:px-[60px]">
             <div className="mt-[64px] flex flex-col rounded-t-10 border-solid border-[#E4EAF0] customMd:h-[276px] customMd:flex-row customMd:border">

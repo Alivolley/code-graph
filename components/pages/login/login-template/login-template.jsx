@@ -62,10 +62,12 @@ function LoginTemplate({ setChosenMethod, translator }) {
                      message: translator('This filed is required'),
                   },
                })}
-               InputLabelProps={{ sx: { fontSize: 14 } }}
+               InputLabelProps={{ sx: { fontSize: 14, color: '#8A97BF' } }}
                error={!!errors?.usernameOrEmail}
                helperText={errors?.usernameOrEmail?.message}
                disabled={loginIsMutating}
+               sx={{ '.MuiOutlinedInput-notchedOutline': { borderColor: '#BDCEDE' } }}
+               inputProps={{ className: '!text-sm !text-[#8A97BF]' }}
             />
 
             <TextField
@@ -79,10 +81,11 @@ function LoginTemplate({ setChosenMethod, translator }) {
                      message: translator('This filed is required'),
                   },
                })}
-               InputLabelProps={{ sx: { fontSize: 14 } }}
+               InputLabelProps={{ sx: { fontSize: 14, color: '#8A97BF' } }}
                error={!!errors?.password}
                helperText={errors?.password?.message}
                InputProps={{
+                  className: '!text-sm !text-[#8A97BF]',
                   endAdornment: (
                      <InputAdornment position="end">
                         <IconButton onClick={() => setShowPassword(prev => !prev)}>
@@ -96,6 +99,7 @@ function LoginTemplate({ setChosenMethod, translator }) {
                   ),
                }}
                disabled={loginIsMutating}
+               sx={{ '.MuiOutlinedInput-notchedOutline': { borderColor: '#BDCEDE' } }}
             />
 
             <div className="!mt-4">

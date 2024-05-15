@@ -22,9 +22,13 @@ const categoryButtonStyle = {
    display: 'flex',
    flexDirection: 'column',
    gap: '8px',
+   transition: 'all 0.1s !important',
+   '*': { transition: 'all 0.1s !important' },
+   p: { color: '#050F2C' },
+   '#icon': { color: '#d14d72' },
    ':hover': {
-      backgroundColor: 'white',
-      boxShadow: '0px 11px 44px 23px #7E8AAB29',
+      p: { color: '#65A5FC' },
+      '#icon': { color: '#65A5FC' },
    },
 };
 
@@ -71,9 +75,16 @@ function Faqs({ questions }) {
                   <div className="flex-1 lg:mt-[45px]" dir={locale === 'en' ? 'ltr' : 'rtl'} data-aos="fade-right">
                      <div className="relative ps-[30px]">
                         <p className="text-xs text-[#626E94] customMd:text-sm">{t('text 1')}</p>
-                        <p className="flex flex-wrap items-center gap-1 font-almaraiExtraBold800 text-2xl leading-[46px] customMd:mt-4 customMd:text-[40px] customMd:leading-[75px]">
-                           <span className="whitespace-nowrap text-[#65A5FC]">{t('Answer to')}</span>
-                           <span className="text-customPink">{t('Your asked questions')}</span>
+                        <p className="flex flex-wrap items-center gap-1 text-2xl leading-[46px] customMd:mt-4 customMd:text-[40px] customMd:leading-[75px]">
+                           <span
+                              className="whitespace-nowrap font-almaraiExtraBold800 text-[#65A5FC]"
+                              style={{ WebkitTextStroke: '1px' }}
+                           >
+                              {t('Answer to')}
+                           </span>
+                           <span className="font-almaraiBold700 text-customPink" style={{ WebkitTextStroke: '1px' }}>
+                              {t('Your asked questions')}
+                           </span>
                         </p>
 
                         <p className="absolute -top-1 bottom-2 start-0 w-2 bg-[#65A5FC]" />
@@ -88,7 +99,7 @@ function Faqs({ questions }) {
 
          <div className="mx-auto max-w-[1440px] px-5 pb-[70px] pt-10 customMd:px-[60px]">
             <p
-               className="flex h-12 items-center rounded-[47px] bg-customPink px-8 font-almaraiBold700 text-base text-white customMd:h-16 customMd:text-[20px]"
+               className="flex h-12 items-center rounded-sm bg-customPink px-8 font-almaraiBold700 text-base text-white customMd:h-16 customMd:text-[20px]"
                data-aos="fade-up"
                data-aos-offset="300"
             >
@@ -114,8 +125,8 @@ function Faqs({ questions }) {
                   }`}
                   onClick={() => changeCategoryHandler('')}
                >
-                  <Truck size="28" color="#d14d72" variant="TwoTone" />
-                  <p className="leading-[18px] text-[#050F2C]">{t('All')}</p>
+                  <Truck size="28" id="icon" variant="TwoTone" />
+                  <p className="leading-[18px]">{t('All')}</p>
                </Button>
                <Button
                   sx={{
@@ -132,8 +143,8 @@ function Faqs({ questions }) {
                   }`}
                   onClick={() => changeCategoryHandler('website')}
                >
-                  <User size="28" color="#d14d72" variant="TwoTone" />
-                  <p className="leading-[18px] text-[#050F2C]">{t('Website')}</p>
+                  <User size="28" id="icon" variant="TwoTone" />
+                  <p className="leading-[18px]">{t('Website')}</p>
                </Button>
                <Button
                   sx={{
@@ -150,8 +161,8 @@ function Faqs({ questions }) {
                   }`}
                   onClick={() => changeCategoryHandler('uiux')}
                >
-                  <ShoppingCart size="28" color="#d14d72" variant="TwoTone" />
-                  <p className="leading-[18px] text-[#050F2C]">{t('UiUx')}</p>
+                  <ShoppingCart size="28" id="icon" variant="TwoTone" />
+                  <p className="leading-[18px]">{t('UiUx')}</p>
                </Button>
                <Button
                   sx={{
@@ -166,8 +177,8 @@ function Faqs({ questions }) {
                   }`}
                   onClick={() => changeCategoryHandler('graphic')}
                >
-                  <DiscountShape size="28" color="#d14d72" variant="TwoTone" />
-                  <p className="leading-[18px] text-[#050F2C]">{t('Graphic')}</p>
+                  <DiscountShape size="28" id="icon" variant="TwoTone" />
+                  <p className="leading-[18px]">{t('Graphic')}</p>
                </Button>
             </div>
          </div>

@@ -4,6 +4,10 @@ const HeaderStyle = styled.div(() => ({
    '& #dropdownWrapper': {
       position: 'relative',
 
+      '&:hover #dropdownTitle': {
+         color: '#65A5FC',
+      },
+
       '&:hover #dropdownBox': {
          opacity: 1,
          visibility: 'visible',
