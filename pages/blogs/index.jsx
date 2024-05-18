@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
@@ -21,7 +22,7 @@ import axiosInstance from '@/configs/axiosInstance';
 function Blogs({ blogsList }) {
    const t = useTranslations('blogs');
    const [tabsValue, setTabsValue] = useState('');
-   const { push, query } = useRouter();
+   const { push, query, locale } = useRouter();
 
    const searchHandler = e => {
       e.preventDefault();
@@ -60,6 +61,9 @@ function Blogs({ blogsList }) {
 
    return (
       <div>
+         <Head>
+            <title>{locale === 'fa' ? 'رودگراف - مقالات' : 'RoadGraph-blogs'}</title>
+         </Head>
          <div className="relative bg-[#E7ECFF]">
             <div className="absolute bottom-0 left-0 z-0 hidden xl:block">
                <Image src={wheelFirst} alt="wheel" />
@@ -71,6 +75,7 @@ function Blogs({ blogsList }) {
             <div
                className="relative mx-auto max-w-[1440px] px-5 pb-[50px] pt-[110px] customMd:px-[60px] customMd:pb-[70px] customMd:pt-[160px]"
                data-aos="fade-up"
+               data-aos-duration="650"
             >
                <p className="text-center text-sm text-[#666666] customMd:text-base">{t('Our blogs')}</p>
                <p className="py-4 text-center font-almaraiExtraBold800 text-3xl text-[#333333] lg:py-0 lg:text-[40px] lg:leading-[64px]">
@@ -87,6 +92,7 @@ function Blogs({ blogsList }) {
                className="mx-auto flex h-[68px] max-w-[916px] items-center rounded-[60px] border border-solid border-[#E4EAF0] bg-white px-3"
                data-aos="fade-up"
                data-aos-delay="150"
+               data-aos-duration="650"
             >
                <IconButton type="submit">
                   <SearchNormal1 color="#7E8AAB" />
@@ -97,7 +103,12 @@ function Blogs({ blogsList }) {
                   placeholder={t('Search topic')}
                />
             </form>
-            <div className="mt-[25px] flex items-center justify-center border-b border-solid border-[#E4EAF0]">
+            <div
+               className="mt-[25px] flex items-center justify-center border-b border-solid border-[#E4EAF0]"
+               data-aos="fade-up"
+               data-aos-delay="350"
+               data-aos-duration="650"
+            >
                <Tabs value={tabsValue} onChange={(e, newValue) => changeCategoryHandler(newValue)} variant="scrollable">
                   <Tab label={t('All articles')} value="" />
                   <Tab label={t('Newest')} value="newest" />
@@ -120,7 +131,7 @@ function Blogs({ blogsList }) {
                      <p
                         className="mx-auto py-20 text-center text-base customMd:text-2xl"
                         data-aos="fade-up"
-                        data-aos-offset="300"
+                        data-aos-duration="650"
                      >
                         {t('No blogs yet !!!')}
                      </p>

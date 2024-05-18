@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
@@ -24,7 +25,7 @@ import useLoginGoogle from '@/apis/auth/useLoginGoogle';
 function Login() {
    const [chosenMethod, setChosenMethod] = useState('login');
    const t = useTranslations('login');
-   const { back } = useRouter();
+   const { back, locale } = useRouter();
 
    const { trigger: loginTrigger, isMutating: loginIsMutating } = useLoginGoogle();
 
@@ -52,6 +53,9 @@ function Login() {
 
    return (
       <div className="mx-auto flex max-w-[1440px] flex-col-reverse gap-4 px-5 py-[30px] customMd:max-h-screen customMd:flex-row customMd:p-[60px] customLg:gap-20">
+         <Head>
+            <title>{locale === 'fa' ? 'رودگراف - ورور / ثبت نام' : 'RoadGraph-login / signUp'}</title>
+         </Head>
          <div className="grow">
             <Link href="/" className="my-3 hidden w-fit items-end gap-2 customMd:flex">
                <div className="h-[35px] w-[75px]">

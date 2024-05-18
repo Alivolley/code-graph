@@ -63,7 +63,7 @@ function Request() {
                         data-aos-delay="350"
                         data-aos-duration="650"
                      >
-                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟
+                        {t('request text 1')}
                      </p>
                      <div
                         className="mt-4 flex items-center gap-1 font-almaraiExtraBold800 text-2xl leading-[46px] customMd:text-[32px] customMd:leading-[60px]"
@@ -86,13 +86,7 @@ function Request() {
                      />
                   </div>
 
-                  <form
-                     className="mt-[30px] space-y-6"
-                     onSubmit={handleSubmit(formSubmit)}
-                     data-aos="fade-left"
-                     data-aos-delay="600"
-                     data-aos-duration="650"
-                  >
+                  <form className="mt-[30px] space-y-6" onSubmit={handleSubmit(formSubmit)}>
                      <TextField
                         fullWidth
                         label={t('Full name')}
@@ -109,6 +103,9 @@ function Request() {
                            backgroundColor: 'white',
                            '.MuiOutlinedInput-notchedOutline': { borderColor: '#BDCEDE' },
                         }}
+                        data-aos="fade-left"
+                        data-aos-delay="400"
+                        data-aos-duration="650"
                      />
 
                      <TextField
@@ -136,6 +133,9 @@ function Request() {
                         InputLabelProps={{ sx: { fontSize: 14, color: '#9CA0AE' } }}
                         error={!!errors?.phoneNumber}
                         helperText={errors?.phoneNumber?.message}
+                        data-aos="fade-left"
+                        data-aos-delay="500"
+                        data-aos-duration="650"
                      />
 
                      <TextField
@@ -158,6 +158,9 @@ function Request() {
                         }}
                         error={!!errors?.email}
                         helperText={errors?.email?.message}
+                        data-aos="fade-left"
+                        data-aos-delay="600"
+                        data-aos-duration="650"
                      />
 
                      <TextField
@@ -178,9 +181,18 @@ function Request() {
                         }}
                         error={!!errors?.text}
                         helperText={errors?.text?.message}
+                        data-aos="fade-left"
+                        data-aos-delay="700"
+                        data-aos-duration="650"
                      />
 
-                     <div className="!mt-[45px]">
+                     <div
+                        className="!mt-[45px]"
+                        data-aos="fade-left"
+                        data-aos-delay="800"
+                        data-aos-duration="650"
+                        data-aos-offset="-100"
+                     >
                         <LoadingButton
                            variant="contained"
                            type="submit"

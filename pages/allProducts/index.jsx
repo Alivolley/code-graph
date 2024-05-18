@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
@@ -88,6 +89,9 @@ function AllProducts({ projects, questions }) {
 
    return (
       <div>
+         <Head>
+            <title>{locale === 'fa' ? 'رودگراف - پروژه ها' : 'RoadGraph-projects'}</title>
+         </Head>
          <div className="relative bg-[#F8F9FE]">
             <div className="absolute bottom-0 left-0 z-0 hidden xl:block">
                <Image src={wheelFirst} alt="wheel" />

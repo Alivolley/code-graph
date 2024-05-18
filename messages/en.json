@@ -142,6 +142,7 @@
         "Show all": "Show all",
         "Related articles": "Related articles",
         "No comments": "No comments",
+        "faqs text 1": "Do you have a question about designing an online platform for your business?",
         "See all": "See all"
     },
     "allProducts": {
@@ -168,8 +169,8 @@
         "Redesign": "Redesign",
         "UiUx": "UiUx",
         "Try it": "Try it",
-        "Happy customers - energetic employees": "Happy customers - energetic employees",
-        "We have designed so many plans that you can boost your business by choosing a suitable plan": "We have designed so many plans that you can boost your business by choosing a suitable plan",
+        "prices title 1": "Designing a professional online platform with the best price",
+        "prices title 2": "Our experts have provided a variety of designs in a wide price range for business owners with different tastes and needs",
         "Explore the top features": "Explore the top features",
         "Features": "Features",
         "Try free": "Try free"
@@ -198,7 +199,8 @@
         "Popular posts": "Popular posts",
         "See all": "See all",
         "No blogs yet !!!": "No blogs yet !!!",
-        "Message sent": "Message sent"
+        "Message sent": "Message sent",
+        "request text 1": "If you still need more information for your order, our experts are ready to advise you"
     },
     "contact us": {
         "lorem1": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi magnam architecto dolor cum in autem saepe natus quos ducimus obcaecati dignissimos perferendis",
@@ -211,7 +213,19 @@
         "Address": "Kermanshah parvaz",
         "Join": "Join",
         "Follow us": "Follow us",
-        "contact us text 1": "According to your needs and goals, we are ready to help you turn your ideas into reality and achieve greater success"
+        "Join our network": "Join our network",
+        "contact us title 1": "Do you need advice and guidance to start your business?",
+        "contact us text 1": "According to your needs and goals, we are ready to help you turn your ideas into reality and achieve greater success",
+        "box 1 title": "Web design",
+        "box 1 text": "Website design requires careful coordination between the front-end and back-end, which provides a great user experience.",
+        "box 2 title": "UIUX Design",
+        "box 2 text": "Your website acts as an online display of your brand, providing visitors with a unique user experience.",
+        "box 3 title": "Design 2d /3d",
+        "box 3 text": "We provide 2D and 3D design services in our group. Write me a short sentence of 20 complete words to introduce this service to the customer",
+        "box 4 title": "Branding",
+        "box 4 text": "In our group, with creative ideas and smart strategy, we will turn your brand into an attractive and unique story.",
+        "box 5 title": "Ready platform design",
+        "box 5 text": "With our ready-made platforms, small and large businesses can facilitate their startup and growth quickly, efficiently and effectively."
     },
     "about us": {
         "About us": "About us",

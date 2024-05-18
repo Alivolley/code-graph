@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { useTranslations } from 'next-intl';
@@ -59,6 +60,10 @@ function Faqs({ questions }) {
 
    return (
       <div>
+         <Head>
+            <title>{locale === 'fa' ? 'رودگراف - سوالات پرتکرار' : 'RoadGraph-faqs'}</title>
+         </Head>
+
          <div className="relative bg-[#F8F9FE]">
             <div className="absolute left-0 top-[180px] z-0 hidden xl:block">
                <Image src={wheelFirst} alt="wheel" />
@@ -69,13 +74,23 @@ function Faqs({ questions }) {
 
             <div className="relative mx-auto max-w-[1440px] px-5 pb-[67px] pt-[100px] customMd:px-[60px] customMd:pb-0 customMd:pt-[146px]">
                <div className="flex flex-col gap-[31px] lg:flex-row lg:gap-[51px]" dir="rtl">
-                  <div className="flex-1" data-aos="fade-left">
+                  <div className="flex-1" data-aos="zoom-in" data-aos-duration="650">
                      <Image src={bannerPic} alt="banner" className="size-full" />
                   </div>
-                  <div className="flex-1 lg:mt-[45px]" dir={locale === 'en' ? 'ltr' : 'rtl'} data-aos="fade-right">
+                  <div className="flex-1 lg:mt-[45px]" dir={locale === 'en' ? 'ltr' : 'rtl'}>
                      <div className="relative ps-[30px]">
-                        <p className="text-xs text-[#626E94] customMd:text-sm">{t('text 1')}</p>
-                        <p className="flex flex-wrap items-center gap-1 text-2xl leading-[46px] customMd:mt-4 customMd:text-[40px] customMd:leading-[75px]">
+                        <p
+                           className="text-xs text-[#626E94] customMd:text-sm"
+                           data-aos="fade-right"
+                           data-aos-duration="650"
+                        >
+                           {t('text 1')}
+                        </p>
+                        <p
+                           className="flex flex-wrap items-center gap-1 text-2xl leading-[46px] customMd:mt-4 customMd:text-[40px] customMd:leading-[75px]"
+                           data-aos="fade-right"
+                           data-aos-duration="650"
+                        >
                            <span
                               className="whitespace-nowrap font-almaraiExtraBold800 text-[#65A5FC]"
                               style={{ WebkitTextStroke: '1px' }}
@@ -87,9 +102,19 @@ function Faqs({ questions }) {
                            </span>
                         </p>
 
-                        <p className="absolute -top-1 bottom-2 start-0 w-2 bg-[#65A5FC]" />
+                        <p
+                           className="absolute -top-1 bottom-2 start-0 w-2 bg-[#65A5FC]"
+                           data-aos="fade-left"
+                           data-aos-duration="650"
+                           data-aos-delay="150"
+                        />
                      </div>
-                     <p className="mt-6 text-center text-sm leading-[27px] text-[#576071] lg:text-start lg:text-base lg:leading-[40px]">
+                     <p
+                        className="mt-6 text-center text-sm leading-[27px] text-[#576071] lg:text-start lg:text-base lg:leading-[40px]"
+                        data-aos="fade-right"
+                        data-aos-duration="650"
+                        data-aos-delay="300"
+                     >
                         {t('text 2')}
                      </p>
                   </div>
@@ -101,6 +126,7 @@ function Faqs({ questions }) {
             <p
                className="flex h-12 items-center rounded-sm bg-customPink px-8 font-almaraiBold700 text-base text-white customMd:h-16 customMd:text-[20px]"
                data-aos="fade-up"
+               data-aos-duration="650"
                data-aos-offset="300"
             >
                {t('Category of Faqs')}
@@ -108,7 +134,8 @@ function Faqs({ questions }) {
             <div
                className="mt-6 flex flex-wrap items-center border-b border-solid border-[#E4EAF0]"
                data-aos="fade-up"
-               data-aos-offset="400"
+               data-aos-duration="650"
+               data-aos-offset="300"
             >
                <Button
                   sx={{
@@ -186,7 +213,8 @@ function Faqs({ questions }) {
          <div
             className="mx-auto max-w-[1440px] px-5 pb-[70px] customMd:px-[60px] customMd:pb-[83px]"
             data-aos="fade-up"
-            data-aos-offset="300"
+            data-aos-offset="100"
+            data-aos-duration="650"
          >
             {questions?.length ? (
                questions?.map(item => (

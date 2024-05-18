@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
@@ -33,6 +34,9 @@ function CategoryTitle({ categoryData, projects, blogsList, comments, questions 
 
    return (
       <div>
+         <Head>
+            <title>{locale === 'fa' ? 'رودگراف - خدمات' : 'RoadGraph-services'}</title>
+         </Head>
          <div className="relative bg-[#F8F9FE]">
             <div className="absolute left-0 top-[315px] z-0 hidden xl:block">
                <Image src={wheelFirst} alt="wheel" />

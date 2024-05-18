@@ -19,7 +19,7 @@ function BlogCart({ detail, index }) {
          data-aos-duration="650"
          data-aos-delay={(index + 1) * 200}
       >
-         <div className="relative aspect-[1.3/1] w-full overflow-hidden rounded-2xl">
+         <div className="relative aspect-[2.2/1] w-full overflow-hidden rounded-2xl">
             <Image src={detail?.cover || noImage} alt="cover" fill className="rounded-2xl object-cover" />
          </div>
 

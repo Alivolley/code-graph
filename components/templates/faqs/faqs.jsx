@@ -31,7 +31,7 @@ function Faqs({ detail }) {
                         data-aos-delay="350"
                         data-aos-duration="650"
                      >
-                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟
+                        {t('faqs text 1')}
                      </p>
                      <div
                         className="mt-4 flex items-center gap-1 font-almaraiExtraBold800 text-2xl leading-[46px] customMd:text-[32px] customMd:leading-[60px]"

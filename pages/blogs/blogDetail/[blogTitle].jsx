@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import Head from 'next/head';
 
 // MUI
 import { Button, Grid } from '@mui/material';
@@ -25,6 +26,9 @@ function BlogTitle({ blogDetail, blogsList }) {
 
    return (
       <BlogDetailStyle data-aos="fade-up">
+         <Head>
+            <title>{locale === 'fa' ? 'رودگراف - مقاله' : 'RoadGraph-blog'}</title>
+         </Head>
          <div className="relative mx-auto mt-[110px] max-w-[1440px] px-5 customMd:mt-[148px] customMd:px-[60px]">
             <div className="flex items-center gap-[10px]">
                <p className="font-almaraiBold700 text-sm uppercase text-[#333333]">{blogDetail?.category}</p>

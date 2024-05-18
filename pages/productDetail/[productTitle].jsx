@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useTranslations } from 'next-intl';
 
@@ -11,6 +12,9 @@ function ProductDetail({ productData }) {
 
    return (
       <div className="relative mx-auto mt-[125px] max-w-[1440px] px-5 pb-[105px] customMd:mt-[180px] customMd:px-[60px] customMd:pb-[70px]">
+         <Head>
+            <title>{locale === 'fa' ? 'رودگراف - جزییات پروژه' : 'RoadGraph-project detail'}</title>
+         </Head>
          <p
             className="font-almaraiExtraBold800 text-[38px] leading-[42px] text-[#626E94] customMd:text-[42px] customMd:leading-[47px]"
             data-aos="fade-up"

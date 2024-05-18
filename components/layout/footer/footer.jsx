@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
@@ -9,6 +10,7 @@ import { Button, Grid, IconButton } from '@mui/material';
 // Icons
 import { ArrowLeft, Instagram } from 'iconsax-react';
 import { FaTelegramPlane } from 'react-icons/fa';
+import { FaLinkedin } from 'react-icons/fa6';
 
 // Assets
 import headerLogo from '@/assets/images/headerLogo.png';
@@ -88,7 +90,6 @@ function Footer() {
                         </Link>
                         <p className="mt-4 text-xs leading-[30px]">{t('footer explain 1')}</p>
                         <div className="mt-5 flex items-center gap-5">
-                           {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
                            <a
                               href="https://www.instagram.com/roadgraph_studio?igsh=ZGUzMzM3NWJiOQ=="
                               target="_blank"
@@ -98,10 +99,18 @@ function Footer() {
                                  <Instagram size="20px" />
                               </IconButton>
                            </a>
-                           {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
                            <a href="https://t.me/Roadgraph" target="_blank" rel="noreferrer">
                               <IconButton sx={socialButtonsStyles}>
                                  <FaTelegramPlane fontSize="20px" />
+                              </IconButton>
+                           </a>
+                           <a
+                              href="https://www.linkedin.com/in/roadgraph-studio-80526030a"
+                              target="_blank"
+                              rel="noreferrer"
+                           >
+                              <IconButton sx={socialButtonsStyles}>
+                                 <FaLinkedin fontSize="20px" />
                               </IconButton>
                            </a>
                         </div>

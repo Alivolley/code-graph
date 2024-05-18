@@ -24,11 +24,8 @@ function ProductCart({ className, detail, index }) {
          data-aos-duration="650"
          data-aos-delay={(index + 1) * 200}
       >
-         <div className="h-[175px] rounded-[18px] bg-[#fdebeb] px-[10px] pt-[10px] md:h-[200px]">
-            <p className="text-center font-almaraiBold700 text-xs text-[#284565]">{detail?.title}</p>
-            <div className="relative mt-3 h-[110px] w-full md:h-[135px]">
-               <Image src={detail?.cover || noImage} alt="product" fill className="rounded-2xl object-cover" />
-            </div>
+         <div className="relative h-[175px] w-full md:h-[200px]">
+            <Image src={detail?.cover || noImage} alt="product" fill className="rounded-[18px] object-cover" />
          </div>
          <p className="my-[15px] line-clamp-1 text-base font-bold text-[#EA8C90]" id="text">
             {detail?.title}
