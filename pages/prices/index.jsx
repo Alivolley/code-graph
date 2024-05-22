@@ -7,9 +7,6 @@ import Image from 'next/image';
 // MUI
 import { Button } from '@mui/material';
 
-// Icons
-import { Calculator, CallCalling, Shop, UserOctagon } from 'iconsax-react';
-
 // Assets
 import wheelFirst from '@/assets/icons/wheel4.svg';
 import wheelSecond from '@/assets/icons/wheel2.svg';
@@ -44,8 +41,8 @@ const featureButtonStyle = {
    },
 };
 
-function Prices({ questions }) {
-   const [chosenCategory, setChosenCategory] = useState('graphic');
+function Prices({ questions, categories }) {
+   const [chosenCategory, setChosenCategory] = useState(categories?.[0]?.title || '');
 
    const t = useTranslations('prices');
    const { locale } = useRouter();
@@ -86,58 +83,30 @@ function Prices({ questions }) {
                      className="flex h-[70px] flex-nowrap items-center gap-4 overflow-auto rounded-[100px]
              border-2 border-solid border-white bg-white px-4 py-[10px] customMd:h-[102px] customMd:p-4"
                   >
-                     <Button
-                        startIcon={<Calculator size="24" />}
-                        variant="contained"
-                        className="!px-[46px] !text-[16px] md:!flex-1 md:!px-0 md:!text-[20px]"
-                        sx={{
-                           ...categoryButtonStyle,
-                           color: chosenCategory === 'graphic' ? '#fff' : '#626E94',
-                           backgroundColor: chosenCategory === 'graphic' ? '#65A6FC' : '#F5F8FC',
-                        }}
-                        onClick={() => setChosenCategory('graphic')}
-                     >
-                        {t('Graphic')}
-                     </Button>
-                     <Button
-                        startIcon={<UserOctagon size="24" />}
-                        variant="contained"
-                        className="!px-[46px] !text-[16px] md:!flex-1 md:!px-0 md:!text-[20px]"
-                        sx={{
-                           ...categoryButtonStyle,
-                           color: chosenCategory === 'webDevelop' ? '#fff' : '#626E94',
-                           backgroundColor: chosenCategory === 'webDevelop' ? '#65A6FC' : '#F5F8FC',
-                        }}
-                        onClick={() => setChosenCategory('webDevelop')}
-                     >
-                        {t('Web design')}
-                     </Button>
-                     <Button
-                        startIcon={<CallCalling size="24" />}
-                        variant="contained"
-                        className="!px-[46px] !text-[16px] md:!flex-1 md:!px-0 md:!text-[20px]"
-                        sx={{
-                           ...categoryButtonStyle,
-                           color: chosenCategory === 'reDesign' ? '#fff' : '#626E94',
-                           backgroundColor: chosenCategory === 'reDesign' ? '#65A6FC' : '#F5F8FC',
-                        }}
-                        onClick={() => setChosenCategory('reDesign')}
-                     >
-                        {t('Redesign')}
-                     </Button>
-                     <Button
-                        startIcon={<Shop size="24" />}
-                        variant="contained"
-                        className="!px-[46px] !text-[16px] md:!flex-1 md:!px-0 md:!text-[20px]"
-                        sx={{
-                           ...categoryButtonStyle,
-                           color: chosenCategory === 'uiux' ? '#fff' : '#626E94',
-                           backgroundColor: chosenCategory === 'uiux' ? '#65A6FC' : '#F5F8FC',
-                        }}
-                        onClick={() => setChosenCategory('uiux')}
-                     >
-                        {t('UiUx')}
-                     </Button>
+                     {categories?.map(item => (
+                        <Button
+                           key={item?.id}
+                           startIcon={
+                              <div
+                                 dangerouslySetInnerHTML={{ __html: item?.icon }}
+                                 className="flex items-center justify-center [&>svg]:size-[20px]"
+                              />
+                           }
+                           variant="contained"
+                           className="!px-[46px] !text-[16px] md:!flex-1 md:!px-0"
+                           sx={{
+                              ...categoryButtonStyle,
+                              color: chosenCategory === item?.title ? '#fff' : '#626E94',
+                              backgroundColor: chosenCategory === item?.title ? '#65A6FC' : '#F5F8FC',
+                              ...(chosenCategory === item?.title && {
+                                 ':hover': { color: '#fff', backgroundColor: '#65A6FC' },
+                              }),
+                           }}
+                           onClick={() => setChosenCategory(item?.title)}
+                        >
+                           {item?.title}
+                        </Button>
+                     ))}
                   </div>
                </div>
 
@@ -263,12 +232,16 @@ function Prices({ questions }) {
 export default Prices;
 
 export async function getStaticProps(context) {
-   const questions = await axiosInstance(`accounts/questions/?random_faq=true`).then(res => res.data);
+   const questions = await axiosInstance(`accounts/questions/?random_faq=true&lang=${context.locale}`).then(
+      res => res.data
+   );
+   const categories = await axiosInstance(`list-category/?lang=${context.locale}`).then(res => res.data);
 
    return {
       props: {
          messages: (await import(`@/messages/${context.locale}.json`)).default,
          questions,
+         categories,
       },
    };
 }

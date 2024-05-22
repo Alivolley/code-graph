@@ -25,7 +25,7 @@ function SignUpTemplate({ setChosenMethod, translator }) {
       formState: { errors },
    } = useForm({
       defaultValues: {
-         username: '',
+         name: '',
          email: '',
          password: '',
          confirmPassword: '',
@@ -37,7 +37,7 @@ function SignUpTemplate({ setChosenMethod, translator }) {
 
    const formSubmit = data => {
       const newData = {
-         name: data?.username,
+         name: data?.name,
          email: data?.email,
          password: data?.password,
       };
@@ -62,16 +62,16 @@ function SignUpTemplate({ setChosenMethod, translator }) {
             <TextField
                fullWidth
                size="small"
-               label={translator('Username')}
-               {...register('username', {
+               label={translator('Name')}
+               {...register('name', {
                   required: {
                      value: true,
                      message: translator('This filed is required'),
                   },
                })}
                InputLabelProps={{ sx: { fontSize: 14, color: '#8A97BF' } }}
-               error={!!errors?.username}
-               helperText={errors?.username?.message}
+               error={!!errors?.name}
+               helperText={errors?.name?.message}
                disabled={signUpIsMutating}
                sx={{ '.MuiOutlinedInput-notchedOutline': { borderColor: '#BDCEDE' } }}
                inputProps={{ className: '!text-sm !text-[#8A97BF]' }}

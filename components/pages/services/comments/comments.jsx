@@ -34,7 +34,7 @@ const navigationStyle = {
 function Comments({ detail }) {
    const swiperRef = useRef(null);
    const { locale } = useRouter();
-   const t = useTranslations('categoryDetail');
+   const t = useTranslations('services');
 
    const navigatePrev = () => {
       if (swiperRef.current) {

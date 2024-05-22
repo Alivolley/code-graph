@@ -23,7 +23,7 @@ function LoginTemplate({ setChosenMethod, translator }) {
       formState: { errors },
    } = useForm({
       defaultValues: {
-         usernameOrEmail: '',
+         email: '',
          password: '',
       },
       mode: 'onSubmit',
@@ -31,7 +31,7 @@ function LoginTemplate({ setChosenMethod, translator }) {
 
    const formSubmit = data => {
       const newData = {
-         email: data?.usernameOrEmail,
+         email: data?.email,
          password: data?.password,
       };
 
@@ -55,16 +55,20 @@ function LoginTemplate({ setChosenMethod, translator }) {
             <TextField
                fullWidth
                size="small"
-               label={translator('Email or username')}
-               {...register('usernameOrEmail', {
+               label={translator('Email')}
+               {...register('email', {
                   required: {
                      value: true,
                      message: translator('This filed is required'),
                   },
+                  pattern: {
+                     value: /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b/,
+                     message: translator('Please enter a valid email'),
+                  },
                })}
                InputLabelProps={{ sx: { fontSize: 14, color: '#8A97BF' } }}
-               error={!!errors?.usernameOrEmail}
-               helperText={errors?.usernameOrEmail?.message}
+               error={!!errors?.email}
+               helperText={errors?.email?.message}
                disabled={loginIsMutating}
                sx={{ '.MuiOutlinedInput-notchedOutline': { borderColor: '#BDCEDE' } }}
                inputProps={{ className: '!text-sm !text-[#8A97BF]' }}

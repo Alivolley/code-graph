@@ -14,7 +14,7 @@ import faqPic from '@/assets/images/faqPic.png';
 
 function Faqs({ detail }) {
    const { locale } = useRouter();
-   const t = useTranslations('categoryDetail');
+   const t = useTranslations('services');
 
    return (
       <div className="bg-[#F8F9FE]" dir="rtl">
@@ -78,7 +78,7 @@ function Faqs({ detail }) {
 
                   <Link
                      href="/faqs"
-                     className="mt-10 block"
+                     className="mt-10 block w-full lg:w-[202px]"
                      data-aos="zoom-in"
                      data-aos-delay="750"
                      data-aos-offset="-100"
@@ -86,7 +86,7 @@ function Faqs({ detail }) {
                      <Button
                         color="customPink"
                         variant="contained"
-                        className="!w-full lg:!w-[202px]"
+                        fullWidth
                         sx={{
                            height: 50,
                            borderRadius: 57,

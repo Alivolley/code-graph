@@ -149,8 +149,8 @@ function Footer() {
                                           />
                                           {t('About us')}
                                        </Link>
-                                       <Link
-                                          href="/categoryDetail/website"
+                                       {/* <Link
+                                          href="/services/website"
                                           className="flex items-center gap-1 transition-all duration-150 hover:text-customPink"
                                        >
                                           <Image
@@ -159,7 +159,7 @@ function Footer() {
                                              {...(locale === 'en' && { className: 'rotate-180' })}
                                           />
                                           {t('Services')}
-                                       </Link>
+                                       </Link> */}
                                        <Link
                                           href="/allProducts"
                                           className="flex items-center gap-1 transition-all duration-150 hover:text-customPink"

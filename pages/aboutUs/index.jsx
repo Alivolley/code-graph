@@ -15,7 +15,7 @@ import aboutUsServicePic from '@/assets/images/aboutUsServicePic.png';
 import aboutUsLogo from '@/assets/images/aboutUsLogo.png';
 
 // Components
-import Comments from '@/components/pages/categoryDetail/comments/comments';
+import Comments from '@/components/pages/services/comments/comments';
 import axiosInstance from '@/configs/axiosInstance';
 
 // Apis
@@ -568,7 +568,9 @@ function AboutUs({ comments }) {
 export default AboutUs;
 
 export async function getStaticProps(context) {
-   const comments = await axiosInstance(`accounts/customer-comments/?random_comments=True`).then(res => res.data);
+   const comments = await axiosInstance(`accounts/customer-comments/?random_comments=True&lang=${context.locale}`).then(
+      res => res.data
+   );
 
    return {
       props: {

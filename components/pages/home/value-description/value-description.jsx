@@ -58,12 +58,7 @@ function ValueDescription() {
                      {t('value description text')}
                   </p>
                   <div className="mt-6 flex flex-col gap-5 lg:mt-[27px] lg:flex-row lg:items-center lg:gap-[10px]">
-                     <Link
-                        href="/categoryDetail/website"
-                        data-aos="zoom-in"
-                        data-aos-delay="750"
-                        data-aos-offset="-100"
-                     >
+                     <Link href="/services/website" data-aos="zoom-in" data-aos-delay="750" data-aos-offset="-100">
                         <Button
                            color="customPink"
                            variant="contained"

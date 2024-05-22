@@ -1,5 +1,3 @@
-/* eslint-disable react/no-danger */
-/* eslint-disable react/no-danger-with-children */
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/router';
 import Link from 'next/link';

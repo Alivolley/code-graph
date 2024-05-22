@@ -1,7 +1,8 @@
+import Link from 'next/link';
 import Head from 'next/head';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useTranslations } from 'next-intl';
-import Image from 'next/image';
 
 // MUI
 import { Grid } from '@mui/material';
@@ -14,17 +15,15 @@ import { FaLinkedin } from 'react-icons/fa6';
 
 // Assets
 import contactUsPic from '@/assets/images/contactUsPic.png';
-import pic1 from '@/assets/icons/accounting.svg';
-import pic2 from '@/assets/icons/CRM.svg';
-import pic3 from '@/assets/icons/HR.svg';
-import pic4 from '@/assets/icons/store.svg';
 import wheelFirst from '@/assets/icons/wheel1.svg';
 import wheelSecond from '@/assets/icons/wheel2.svg';
+import noImage from '@/assets/images/noImage.jpg';
 
 // Components
 import Request from '@/components/templates/request/request';
+import axiosInstance from '@/configs/axiosInstance';
 
-function ContactUs() {
+function ContactUs({ categories }) {
    const t = useTranslations('contact us');
    const { locale } = useRouter();
 
@@ -210,70 +209,21 @@ function ContactUs() {
                      'linear-gradient(180deg, rgba(250, 254, 255, 0.3) 12%, rgba(213, 213, 213, 0.18) 66%, rgba(156, 156, 156, 0) 100%)',
                }}
             >
-               <div
-                  className="flex min-w-[215px] max-w-[288px] flex-col items-center gap-[10px] px-2 xl:px-[18px]"
-                  data-aos="fade-right"
-                  data-aos-duration="650"
-                  data-aos-delay="200"
-               >
-                  <div className="size-16">
-                     <Image src={pic4} alt="introduce" className="size-full" />
-                  </div>
-                  <h3 className="text-center font-almaraiBold700 text-lg">{t('box 1 title')}</h3>
-                  <p className="text-center text-xs text-[#6F778A]">{t('box 1 text')}</p>
-               </div>
-
-               <div
-                  className="flex min-w-[215px] max-w-[288px] flex-col items-center gap-[10px] px-2 xl:px-[18px]"
-                  data-aos="fade-right"
-                  data-aos-duration="650"
-                  data-aos-delay="400"
-               >
-                  <div className="size-16">
-                     <Image src={pic3} alt="introduce" className="size-full" />
-                  </div>
-                  <h3 className="text-center font-almaraiBold700 text-lg">{t('box 2 title')}</h3>
-                  <p className="text-center text-xs text-[#6F778A]">{t('box 2 text')}</p>
-               </div>
-
-               <div
-                  className="flex min-w-[215px] max-w-[288px] flex-col items-center gap-[10px] px-2 xl:px-[18px]"
-                  data-aos="fade-right"
-                  data-aos-duration="650"
-                  data-aos-delay="600"
-               >
-                  <div className="size-16">
-                     <Image src={pic3} alt="introduce" className="size-full" />
-                  </div>
-                  <h3 className="text-center font-almaraiBold700 text-lg">{t('box 3 title')}</h3>
-                  <p className="text-center text-xs text-[#6F778A]">{t('box 3 text')}</p>
-               </div>
-
-               <div
-                  className="flex min-w-[215px] max-w-[288px] flex-col items-center gap-[10px] px-2 xl:px-[18px]"
-                  data-aos="fade-right"
-                  data-aos-duration="650"
-                  data-aos-delay="800"
-               >
-                  <div className="size-16">
-                     <Image src={pic2} alt="introduce" className="size-full" />
-                  </div>
-                  <h3 className="text-center font-almaraiBold700 text-lg">{t('box 4 title')}</h3>
-                  <p className="text-center text-xs text-[#6F778A]">{t('box 4 text')}</p>
-               </div>
-
-               <div
-                  className="flex min-w-[215px] max-w-[288px] flex-col items-center gap-[10px] px-2 xl:px-[18px]"
-                  data-aos="fade-right"
-                  data-aos-duration="650"
-                  data-aos-delay="1000"
-               >
-                  <div className="size-16">
-                     <Image src={pic1} alt="introduce" className="size-full" />
-                  </div>
-                  <h3 className="text-center font-almaraiBold700 text-lg">{t('box 5 title')}</h3>
-                  <p className="text-center text-xs text-[#6F778A]">{t('box 5 text')}</p>
-               </div>
+               {categories?.map((item, index) => (
+                  <Link
+                     href={`/services/${item?.title}`}
+                     className="flex min-w-[215px] max-w-[288px] flex-col items-center gap-[10px] px-2 xl:px-[18px]"
+                     key={item?.id}
+                     data-aos="fade-right"
+                     data-aos-duration="650"
+                     data-aos-delay={(index + 1) * 200}
+                  >
+                     {/* eslint-disable-next-line @next/next/no-img-element */}
+                     <img src={item?.cover || noImage} alt={item?.title} className="h-16" />
+                     <h3 className="text-center font-almaraiBold700 text-lg">{item?.title}</h3>
+                     <p className="text-center text-xs text-[#6F778A]">{item?.description}</p>
+                  </Link>
+               ))}
             </div>
          </div>
 
@@ -285,9 +235,12 @@ function ContactUs() {
 export default ContactUs;
 
 export async function getStaticProps(context) {
+   const categories = await axiosInstance(`list-category/?lang=${context.locale}`).then(res => res.data);
+
    return {
       props: {
          messages: (await import(`@/messages/${context.locale}.json`)).default,
+         categories,
       },
       revalidate: 300,
    };

@@ -6,24 +6,26 @@ import HomeBanner from '@/components/pages/home/home-banner/home-banner';
 import HomeIntroduce from '@/components/pages/home/home-introduce/home-introduce';
 import ValueDescription from '@/components/pages/home/value-description/value-description';
 
-export default function Home({ products }) {
+export default function Home({ products, categories }) {
    return (
       <div>
-         <HomeBanner />
+         <HomeBanner categories={categories} />
          <HomeIntroduce />
-         <BoldProducts products={products} />
+         <BoldProducts products={products} categories={categories} />
          <ValueDescription />
       </div>
    );
 }
 
 export async function getStaticProps(context) {
-   const products = await axiosInstance(`suggested-project/`).then(res => res.data);
+   const products = await axiosInstance(`suggested-project/?lang=${context.locale}`).then(res => res.data);
+   const categories = await axiosInstance(`list-category/?lang=${context.locale}`).then(res => res.data);
 
    return {
       props: {
          messages: (await import(`@/messages/${context.locale}.json`)).default,
          products,
+         categories,
       },
       revalidate: 300,
    };

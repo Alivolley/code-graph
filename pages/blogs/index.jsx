@@ -19,7 +19,7 @@ import BlogCart from '@/components/pages/blogs/blog-cart/blog-cart';
 import Request from '@/components/templates/request/request';
 import axiosInstance from '@/configs/axiosInstance';
 
-function Blogs({ blogsList }) {
+function Blogs({ blogsList, categories }) {
    const t = useTranslations('blogs');
    const [tabsValue, setTabsValue] = useState('');
    const { push, query, locale } = useRouter();
@@ -112,10 +112,9 @@ function Blogs({ blogsList }) {
                <Tabs value={tabsValue} onChange={(e, newValue) => changeCategoryHandler(newValue)} variant="scrollable">
                   <Tab label={t('All articles')} value="" />
                   <Tab label={t('Newest')} value="newest" />
-                  <Tab label={t('Frontend blogs')} value="frontend" />
-                  <Tab label={t('Backend blogs')} value="backend" />
-                  <Tab label={t('UiUx blogs')} value="uiux" />
-                  <Tab label={t('Graphic blogs')} value="graphic" />
+                  {categories?.map(item => (
+                     <Tab label={item?.title} key={item?.id} value={item?.title} />
+                  ))}
                </Tabs>
             </div>
 
@@ -197,10 +196,13 @@ export async function getServerSideProps(context) {
       }),
    }).then(res => res.data);
 
+   const categories = await axiosInstance(`list-category/?lang=${context.locale}`).then(res => res.data);
+
    return {
       props: {
          messages: (await import(`@/messages/${context.locale}.json`)).default,
          blogsList,
+         categories,
       },
    };
 }

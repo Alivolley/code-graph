@@ -1,5 +1,5 @@
-import { useTranslations } from 'next-intl';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 
@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { Button } from '@mui/material';
 
 // Icons
-import { ArrowLeft, Calculator, CallCalling, Shop, UserOctagon } from 'iconsax-react';
+import { ArrowLeft } from 'iconsax-react';
 
 // Components
 import ProductCart from '@/components/templates/product-cart/product-cart';
@@ -23,15 +23,15 @@ const categoryButtonStyle = {
    },
 };
 
-function BoldProducts({ products }) {
-   const [chosenCategory, setChosenCategory] = useState('graphic');
+function BoldProducts({ products, categories }) {
+   const [chosenCategory, setChosenCategory] = useState(categories?.[0]?.title || '');
 
    const t = useTranslations('home');
    const { locale } = useRouter();
 
    return (
       <div className="bg-[#F5F8FC]">
-         <div className="mx-auto max-w-[1196px] px-5 py-[30px] customMd:px-[60px] customMd:py-[50px]">
+         <div className="mx-auto max-w-[1320px] px-5 py-[30px] customMd:px-[60px] customMd:py-[50px]">
             <p
                className="text-center text-xs text-[#3C4252] customMd:text-base"
                data-aos="zoom-in"
@@ -55,93 +55,41 @@ function BoldProducts({ products }) {
                data-aos="zoom-in"
                data-aos-duration="650"
             >
-               <Button
-                  startIcon={<Calculator size="24" />}
-                  variant="contained"
-                  className="!px-[46px] !text-[16px] md:!flex-1 md:!px-0 md:!text-[20px]"
-                  sx={{
-                     ...categoryButtonStyle,
-                     color: chosenCategory === 'graphic' ? '#fff' : '#626E94',
-                     backgroundColor: chosenCategory === 'graphic' ? '#65A6FC' : '#F5F8FC',
-                  }}
-                  onClick={() => setChosenCategory('graphic')}
-               >
-                  {t('Graphic')}
-               </Button>
-               <Button
-                  startIcon={<UserOctagon size="24" />}
-                  variant="contained"
-                  className="!px-[46px] !text-[16px] md:!flex-1 md:!px-0 md:!text-[20px]"
-                  sx={{
-                     ...categoryButtonStyle,
-                     color: chosenCategory === 'webDevelop' ? '#fff' : '#626E94',
-                     backgroundColor: chosenCategory === 'webDevelop' ? '#65A6FC' : '#F5F8FC',
-                  }}
-                  onClick={() => setChosenCategory('webDevelop')}
-               >
-                  {t('Web design')}
-               </Button>
-               <Button
-                  startIcon={<CallCalling size="24" />}
-                  variant="contained"
-                  className="!px-[46px] !text-[16px] md:!flex-1 md:!px-0 md:!text-[20px]"
-                  sx={{
-                     ...categoryButtonStyle,
-                     color: chosenCategory === 'reDesign' ? '#fff' : '#626E94',
-                     backgroundColor: chosenCategory === 'reDesign' ? '#65A6FC' : '#F5F8FC',
-                  }}
-                  onClick={() => setChosenCategory('reDesign')}
-               >
-                  {t('Redesign')}
-               </Button>
-               <Button
-                  startIcon={<Shop size="24" />}
-                  variant="contained"
-                  className="!px-[46px] !text-[16px] md:!flex-1 md:!px-0 md:!text-[20px]"
-                  sx={{
-                     ...categoryButtonStyle,
-                     color: chosenCategory === 'uiux' ? '#fff' : '#626E94',
-                     backgroundColor: chosenCategory === 'uiux' ? '#65A6FC' : '#F5F8FC',
-                  }}
-                  onClick={() => setChosenCategory('uiux')}
-               >
-                  {t('UiUx')}
-               </Button>
+               {categories?.map(item => (
+                  <Button
+                     key={item?.id}
+                     startIcon={
+                        <div
+                           dangerouslySetInnerHTML={{ __html: item?.icon }}
+                           className="flex items-center justify-center [&>svg]:size-[20px]"
+                        />
+                     }
+                     variant="contained"
+                     className="!px-[46px] !text-[16px] md:!flex-1 md:!px-0"
+                     sx={{
+                        ...categoryButtonStyle,
+                        color: chosenCategory === item?.title ? '#fff' : '#626E94',
+                        backgroundColor: chosenCategory === item?.title ? '#65A6FC' : '#F5F8FC',
+                        ...(chosenCategory === item?.title && {
+                           ':hover': { color: '#fff', backgroundColor: '#65A6FC' },
+                        }),
+                     }}
+                     onClick={() => setChosenCategory(item?.title)}
+                  >
+                     {item?.title}
+                  </Button>
+               ))}
             </div>
 
             <div className="mt-[30px] flex flex-nowrap items-center gap-5 overflow-auto customMd:overflow-hidden">
-               {chosenCategory === 'graphic'
-                  ? products?.graphic?.map((item, index) => (
-                       <ProductCart key={item?.id} className="w-[240px] customMd:flex-1" detail={item} index={index} />
-                    ))
-                  : chosenCategory === 'webDevelop'
-                    ? products?.website?.map((item, index) => (
-                         <ProductCart
-                            key={item?.id}
-                            className="w-[240px] customMd:flex-1"
-                            detail={item}
-                            index={index}
-                         />
-                      ))
-                    : chosenCategory === 'reDesign'
-                      ? products?.redesign?.map((item, index) => (
-                           <ProductCart
-                              key={item?.id}
-                              className="w-[240px] customMd:flex-1"
-                              detail={item}
-                              index={index}
-                           />
-                        ))
-                      : chosenCategory === 'uiux'
-                        ? products?.uiux?.map((item, index) => (
-                             <ProductCart
-                                key={item?.id}
-                                className="w-[240px] customMd:flex-1"
-                                detail={item}
-                                index={index}
-                             />
-                          ))
-                        : null}
+               {products?.[chosenCategory]?.map((item, index) => (
+                  <ProductCart
+                     key={item?.id}
+                     className="w-[240px] customMd:max-w-[400px] customMd:flex-1"
+                     detail={item}
+                     index={index}
+                  />
+               ))}
             </div>
 
             <Link

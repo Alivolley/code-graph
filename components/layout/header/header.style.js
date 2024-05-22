@@ -23,7 +23,6 @@ const HeaderStyle = styled.div(() => ({
       position: 'absolute',
       start: 0,
       top: '14px',
-      overflow: 'hidden',
       transition: 'all 0.3s',
       opacity: 0,
       visibility: 'hidden',

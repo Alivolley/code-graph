@@ -5,10 +5,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 // MUI
-import { Button, Grow, IconButton, Paper, Popper } from '@mui/material';
+import { Button, Grid, Grow, IconButton, Paper, Popper } from '@mui/material';
 
 // Icons
-import { ArrowDown2, Calculator, LogoutCurve, Profile, ProfileCircle, UserEdit } from 'iconsax-react';
+import { ArrowDown2, LogoutCurve, Profile, ProfileCircle, UserEdit } from 'iconsax-react';
 
 // Assets
 import headerLogo from '@/assets/images/headerLogo.png';
@@ -26,6 +26,7 @@ import { useGlobalContext } from '@/context/store';
 
 // Apis
 import useGetUserInfo from '@/apis/userInfo/useGetUserInfo';
+import useGetCategories from '@/apis/categories/useGetCategories';
 
 function Header() {
    const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -36,6 +37,7 @@ function Header() {
 
    // eslint-disable-next-line no-unused-vars
    const getUserInfo = useGetUserInfo(isUserLogin);
+   const { data: categoryData, isLoading: categoryIsLoading } = useGetCategories();
 
    const profileRef = useRef();
    const { isLogin, userInfo } = useGlobalContext();
@@ -93,7 +95,7 @@ function Header() {
                   <div id="dropdownWrapper">
                      <div
                         className={`flex cursor-pointer items-center gap-2 transition-all duration-150 ${
-                           pathname.startsWith('/categoryDetail') ? 'text-[#65A5FC]' : 'text-[#3A3E4D]'
+                           pathname.startsWith('/services') ? 'text-[#65A5FC]' : 'text-[#3A3E4D]'
                         }`}
                         id="dropdownTitle"
                      >
@@ -103,37 +105,44 @@ function Header() {
 
                      <div
                         id="dropdownBox"
-                        className="flex w-[263px] justify-between rounded-lg border-t-4 border-solid border-[#65A5FC] bg-white px-5 py-7"
+                        className="w-[340px] rounded-lg border-t-4 border-solid border-[#65A5FC] bg-white px-[22px] py-[26px]"
                      >
-                        <div className="flex flex-col gap-6 text-xs text-[#626E94]">
-                           <Link
-                              href="/categoryDetail/graphic"
-                              className="flex items-center gap-2 transition-all duration-200 hover:text-customPink"
-                           >
-                              <Calculator size="18" /> {t('Graphic')}
-                           </Link>
-                           <Link
-                              href="/categoryDetail/uiux"
-                              className="flex items-center gap-2 transition-all duration-200 hover:text-customPink"
-                           >
-                              <Calculator size="18" /> {t('UiUx')}
-                           </Link>
-                        </div>
-                        <div className="h-[73px] w-px bg-[#E4EAF0]" />
-                        <div className="flex flex-col gap-6 text-xs text-[#626E94]">
-                           <Link
-                              href="/categoryDetail/website"
-                              className="flex items-center gap-2 transition-all duration-200 hover:text-customPink"
-                           >
-                              <Calculator size="18" /> {t('Website')}
-                           </Link>
-                           <Link
-                              href="/categoryDetail/design"
-                              className="flex items-center gap-2 transition-all duration-200 hover:text-customPink"
-                           >
-                              <Calculator size="18" /> {t('Redesign')}
-                           </Link>
-                        </div>
+                        <Grid container rowSpacing="24px" columnSpacing="30px" position="relative">
+                           {categoryIsLoading ? (
+                              <>
+                                 <Grid item md={6}>
+                                    <div className="h-4 w-[120px] animate-pulse rounded bg-[#626e9441]" />
+                                 </Grid>
+                                 <Grid item md={6}>
+                                    <div className="h-4 w-[120px] animate-pulse rounded bg-[#626e9441]" />
+                                 </Grid>
+                                 <Grid item md={6}>
+                                    <div className="h-4 w-[120px] animate-pulse rounded bg-[#626e9441]" />
+                                 </Grid>
+                                 <Grid item md={6}>
+                                    <div className="h-4 w-[120px] animate-pulse rounded bg-[#626e9441]" />
+                                 </Grid>
+                              </>
+                           ) : (
+                              categoryData?.map(item => (
+                                 <Grid item md={6} key={item?.id}>
+                                    <Link
+                                       href={`/services/${item?.title}`}
+                                       className="flex items-center gap-2 text-[#626E94] transition-all duration-200 hover:text-customPink"
+                                    >
+                                       <div
+                                          dangerouslySetInnerHTML={{ __html: item?.icon }}
+                                          className="flex items-center justify-center [&>svg]:size-[18px]"
+                                       />
+
+                                       <p className="whitespace-nowrap text-xs">{item?.title}</p>
+                                    </Link>
+                                 </Grid>
+                              ))
+                           )}
+
+                           <div className="absolute bottom-0 start-[calc(50%+20px)] top-[24px] w-px translate-x-1/2 bg-[#E4EAF0]" />
+                        </Grid>
                      </div>
                   </div>
 

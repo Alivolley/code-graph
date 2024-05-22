@@ -52,7 +52,7 @@ function Login() {
    }, []);
 
    return (
-      <div className="mx-auto flex max-w-[1440px] flex-col-reverse gap-4 px-5 py-[30px] customMd:max-h-screen customMd:flex-row customMd:p-[60px] customLg:gap-20">
+      <div className="mx-auto flex max-w-[1440px] flex-col-reverse gap-4 px-5 py-[30px] customMd:flex-row customMd:p-[60px] customLg:gap-20">
          <Head>
             <title>{locale === 'fa' ? 'رودگراف - ورور / ثبت نام' : 'RoadGraph-login / signUp'}</title>
          </Head>
@@ -99,7 +99,7 @@ function Login() {
                   <span className="text-[#65a5fc]">{t('Graph')}</span>
                </p>
             </Link>
-            <div className="hidden size-full customMd:block">
+            <div className="hidden size-full customMd:block customMd:max-h-screen">
                <Image src={loginPic} alt="login" className="size-full object-cover" />
             </div>
             <div className="mx-auto h-[132px] w-[167px] customMd:hidden">

@@ -21,7 +21,7 @@ import pic4 from '@/assets/icons/store.svg';
 // Components
 import ProductCart from '@/components/templates/product-cart/product-cart';
 import ArticleCart from '@/components/templates/article-cart/article-cart';
-import Comments from '@/components/pages/categoryDetail/comments/comments';
+import Comments from '@/components/pages/services/comments/comments';
 import Faqs from '@/components/templates/faqs/faqs';
 import axiosInstance from '@/configs/axiosInstance';
 
@@ -30,7 +30,7 @@ import selectCategory from '@/data/categories';
 
 function CategoryTitle({ categoryData, projects, blogsList, comments, questions }) {
    const { locale } = useRouter();
-   const t = useTranslations('categoryDetail');
+   const t = useTranslations('services');
 
    return (
       <div>
@@ -274,7 +274,12 @@ function CategoryTitle({ categoryData, projects, blogsList, comments, questions 
                <div className="mt-[50px] flex flex-nowrap items-center gap-5 overflow-auto customMd:overflow-hidden">
                   {projects?.total_objects ? (
                      projects?.result?.map((item, index) => (
-                        <ProductCart className="w-[240px] customMd:flex-1" key={item?.id} detail={item} index={index} />
+                        <ProductCart
+                           className="w-[240px] customMd:max-w-[400px] customMd:flex-1"
+                           key={item?.id}
+                           detail={item}
+                           index={index}
+                        />
                      ))
                   ) : (
                      <p className="mx-auto py-20 text-center text-base customMd:text-2xl">{t('No projects yet !!!')}</p>
@@ -422,10 +427,16 @@ export default CategoryTitle;
 export async function getStaticPaths() {
    return {
       paths: [
-         { params: { categoryTitle: 'uiux' } },
-         { params: { categoryTitle: 'website' } },
-         { params: { categoryTitle: 'graphic' } },
-         // { params: { categoryTitle: 'design' } },
+         { params: { categoryTitle: 'Providing a platform' } },
+         { params: { categoryTitle: 'Branding' } },
+         { params: { categoryTitle: 'Design 2d & 3d' } },
+         { params: { categoryTitle: 'UIUX design' } },
+         { params: { categoryTitle: 'Web development' } },
+         { params: { categoryTitle: 'ارائه پلتفرم آماده' } },
+         { params: { categoryTitle: 'برند سازی' } },
+         { params: { categoryTitle: 'طراحی ۲بعدی و ۳ بعدی' } },
+         { params: { categoryTitle: 'طراحی UIUX' } },
+         { params: { categoryTitle: 'طراحی و توسعه سایت' } },
       ],
       fallback: 'blocking',
    };
@@ -454,11 +465,13 @@ export async function getStaticProps(context) {
 
    const blogsList = await axiosInstance(queryString).then(res => res.data);
 
-   const comments = await axiosInstance(`accounts/customer-comments/?category=${context?.params?.categoryTitle}`).then(
+   const comments = await axiosInstance(
+      `accounts/customer-comments/?category=${context?.params?.categoryTitle}&lang=${context.locale}`
+   ).then(res => res.data);
+
+   const questions = await axiosInstance(`accounts/questions/?random_faq=true&lang=${context.locale}`).then(
       res => res.data
    );
-
-   const questions = await axiosInstance(`accounts/questions/?random_faq=true`).then(res => res.data);
 
    return {
       props: {

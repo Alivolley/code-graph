@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { Accordion, AccordionDetails, AccordionSummary, Button, Drawer, IconButton } from '@mui/material';
 
 // Icons
-import { Add, ArrowDown2, Calculator, Profile, LogoutCurve, UserEdit } from 'iconsax-react';
+import { Add, ArrowDown2, Profile, LogoutCurve, UserEdit } from 'iconsax-react';
 
 // Assets
 import headerLogo from '@/assets/images/headerLogo.png';
@@ -17,10 +17,15 @@ import headerLogo from '@/assets/images/headerLogo.png';
 import LogoutModal from '@/components/templates/logout-modal/logout-modal';
 import MobileMenuStyle from './mobile-menu.style';
 
+// Apis
+import useGetCategories from '@/apis/categories/useGetCategories';
+
 function MobileMenu({ open, onClose, isUserLogin }) {
    const [showLogoutModal, setShowLogoutModal] = useState(false);
    const [profileExpand, setProfileExpand] = useState(false);
    const [servicesExpand, setServicesExpand] = useState(false);
+
+   const { data: categoryData, isLoading: categoryIsLoading } = useGetCategories();
 
    const { locale, pathname } = useRouter();
 
@@ -81,31 +86,28 @@ function MobileMenu({ open, onClose, isUserLogin }) {
                      </AccordionSummary>
                      <AccordionDetails>
                         <div className="-mt-4 flex flex-col items-start">
-                           <Link
-                              href="/categoryDetail/graphic"
-                              className="flex w-full items-center gap-1 border-b border-solid border-[#E4EAF0] py-3 text-xs"
-                           >
-                              <Calculator size="16" color="#626E94" />
-                              {t('Graphic')}
-                           </Link>
-                           <Link
-                              href="/categoryDetail/uiux"
-                              className="flex w-full items-center gap-1 border-b border-solid border-[#E4EAF0] py-3 text-xs"
-                           >
-                              <Calculator size="16" color="#626E94" />
-                              {t('UiUx')}
-                           </Link>
-                           <Link
-                              href="/categoryDetail/website"
-                              className="flex w-full items-center gap-1 border-b border-solid border-[#E4EAF0] py-3 text-xs"
-                           >
-                              <Calculator size="16" color="#626E94" />
-                              {t('Website')}
-                           </Link>
-                           <Link href="/categoryDetail/design" className="flex w-full items-center gap-1 py-3 text-xs">
-                              <Calculator size="16" color="#626E94" />
-                              {t('Redesign')}
-                           </Link>
+                           {categoryIsLoading ? (
+                              <div className="space-y-2">
+                                 <div className="h-5 w-[150px] animate-pulse rounded bg-[#626e9441]" />
+                                 <div className="h-5 w-[150px] animate-pulse rounded bg-[#626e9441]" />
+                                 <div className="h-5 w-[150px] animate-pulse rounded bg-[#626e9441]" />
+                                 <div className="h-5 w-[150px] animate-pulse rounded bg-[#626e9441]" />
+                              </div>
+                           ) : (
+                              categoryData?.map(item => (
+                                 <Link
+                                    href={`/services/${item?.title}`}
+                                    className="flex w-full items-center gap-2 border-b border-solid border-[#E4EAF0] py-3 text-xs"
+                                    key={item?.id}
+                                 >
+                                    <div
+                                       dangerouslySetInnerHTML={{ __html: item?.icon }}
+                                       className="flex items-center justify-center [&>svg]:size-[18px]"
+                                    />
+                                    <p>{item?.title}</p>
+                                 </Link>
+                              ))
+                           )}
                         </div>
                      </AccordionDetails>
                   </Accordion>

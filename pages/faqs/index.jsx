@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { Accordion, AccordionDetails, AccordionSummary, Button } from '@mui/material';
 
 // Icons
-import { ArrowDown2, DiscountShape, ShoppingCart, Truck, User } from 'iconsax-react';
+import { ArrowDown2, Solana } from 'iconsax-react';
 
 // Assets
 import bannerPic from '@/assets/images/faqPagePic.png';
@@ -25,15 +25,15 @@ const categoryButtonStyle = {
    gap: '8px',
    transition: 'all 0.1s !important',
    '*': { transition: 'all 0.1s !important' },
-   p: { color: '#050F2C' },
-   '#icon': { color: '#d14d72' },
+   p: { color: '#626E94' },
+   svg: { color: '#626E94' },
    ':hover': {
       p: { color: '#65A5FC' },
-      '#icon': { color: '#65A5FC' },
+      svg: { color: '#65A5FC' },
    },
 };
 
-function Faqs({ questions }) {
+function Faqs({ questions, categories }) {
    const [chosenCategory, setChosenCategory] = useState('');
 
    const t = useTranslations('faqs');
@@ -152,61 +152,33 @@ function Faqs({ questions }) {
                   }`}
                   onClick={() => changeCategoryHandler('')}
                >
-                  <Truck size="28" id="icon" variant="TwoTone" />
+                  <Solana size="28" id="icon" />
                   <p className="leading-[18px]">{t('All')}</p>
                </Button>
-               <Button
-                  sx={{
-                     ...categoryButtonStyle,
-                     ...(chosenCategory === 'website' && {
-                        backgroundColor: 'white',
-                        boxShadow: '0px 11px 44px 23px #7E8AAB29',
-                     }),
-                  }}
-                  className={`!h-[85px] !w-1/2 customSm:!h-[113px] customSm:!flex-1 ${
-                     chosenCategory === 'website'
-                        ? '!rounded-lg !border !border-solid !border-[#EF6D33]'
-                        : '!border-e !border-solid !border-[#E4EAF0]'
-                  }`}
-                  onClick={() => changeCategoryHandler('website')}
-               >
-                  <User size="28" id="icon" variant="TwoTone" />
-                  <p className="leading-[18px]">{t('Website')}</p>
-               </Button>
-               <Button
-                  sx={{
-                     ...categoryButtonStyle,
-                     ...(chosenCategory === 'uiux' && {
-                        backgroundColor: 'white',
-                        boxShadow: '0px 11px 44px 23px #7E8AAB29',
-                     }),
-                  }}
-                  className={`!h-[85px] !w-1/2 customSm:!h-[113px] customSm:!flex-1 ${
-                     chosenCategory === 'uiux'
-                        ? '!rounded-lg !border !border-solid !border-[#EF6D33]'
-                        : '!border-e !border-solid !border-[#E4EAF0]'
-                  }`}
-                  onClick={() => changeCategoryHandler('uiux')}
-               >
-                  <ShoppingCart size="28" id="icon" variant="TwoTone" />
-                  <p className="leading-[18px]">{t('UiUx')}</p>
-               </Button>
-               <Button
-                  sx={{
-                     ...categoryButtonStyle,
-                     ...(chosenCategory === 'graphic' && {
-                        backgroundColor: 'white',
-                        boxShadow: '0px 11px 44px 23px #7E8AAB29',
-                     }),
-                  }}
-                  className={`!h-[85px] !w-1/2 customSm:!h-[113px] customSm:!flex-1 ${
-                     chosenCategory === 'graphic' ? '!rounded-lg !border !border-solid !border-[#EF6D33]' : ''
-                  }`}
-                  onClick={() => changeCategoryHandler('graphic')}
-               >
-                  <DiscountShape size="28" id="icon" variant="TwoTone" />
-                  <p className="leading-[18px]">{t('Graphic')}</p>
-               </Button>
+               {categories?.map(item => (
+                  <Button
+                     key={item?.id}
+                     sx={{
+                        ...categoryButtonStyle,
+                        ...(chosenCategory === item?.title && {
+                           backgroundColor: 'white',
+                           boxShadow: '0px 11px 44px 23px #7E8AAB29',
+                        }),
+                     }}
+                     className={`!h-[85px] !w-1/2 customSm:!h-[113px] customSm:!flex-1 ${
+                        chosenCategory === item?.title
+                           ? '!rounded-lg !border !border-solid !border-[#EF6D33]'
+                           : '!border-e !border-solid !border-[#E4EAF0]'
+                     }`}
+                     onClick={() => changeCategoryHandler(item?.title)}
+                  >
+                     <div
+                        dangerouslySetInnerHTML={{ __html: item?.icon }}
+                        className="flex items-center justify-center [&>svg]:size-[28px]"
+                     />
+                     <p className="leading-[18px]">{item?.title}</p>
+                  </Button>
+               ))}
             </div>
          </div>
 
@@ -254,11 +226,13 @@ export async function getServerSideProps(context) {
    }
 
    const questions = await axiosInstance(queryString).then(res => res.data);
+   const categories = await axiosInstance(`list-category/?lang=${context.locale}`).then(res => res.data);
 
    return {
       props: {
          messages: (await import(`@/messages/${context.locale}.json`)).default,
          questions,
+         categories,
       },
    };
 }

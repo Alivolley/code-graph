@@ -10,7 +10,7 @@ import websiteIntroduce2Pic from '@/assets/images/websitePic3.png';
 import graphicIntroduce2Pic from '@/assets/images/graphicPic3.png';
 
 const selectCategory = cat => {
-   if (cat === 'uiux') {
+   if (cat === 'UIUX design' || cat === 'طراحی UIUX') {
       return {
          bannerFirstLetter: 'User experience design',
          bannerSecondLetter: 'User interface design',
@@ -23,7 +23,7 @@ const selectCategory = cat => {
          introduce2Pic: uiuxIntroduce2Pic,
       };
    }
-   if (cat === 'website') {
+   if (cat === 'Web development' || cat === 'طراحی و توسعه سایت') {
       return {
          bannerFirstLetter: 'Design website for',
          bannerSecondLetter: 'your brand',
@@ -36,7 +36,7 @@ const selectCategory = cat => {
          introduce2Pic: websiteIntroduce2Pic,
       };
    }
-   if (cat === 'graphic') {
+   if (cat === 'Design 2d & 3d' || cat === 'طراحی ۲بعدی و ۳ بعدی') {
       return {
          bannerFirstLetter: 'Design website for',
          bannerSecondLetter: 'your brand',
