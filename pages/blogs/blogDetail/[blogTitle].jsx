@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 import Link from 'next/link';
 import Head from 'next/head';
 
@@ -20,8 +21,6 @@ function BlogTitle({ blogDetail, blogsList }) {
    const { locale } = useRouter();
    const t = useTranslations('blogs');
 
-   console.log(blogDetail);
-
    return (
       <BlogDetailStyle data-aos="fade-up">
          <Head>
@@ -35,9 +34,12 @@ function BlogTitle({ blogDetail, blogsList }) {
             <p className="mt-[30px] font-almaraiBold700 text-[24px] leading-[38px] text-[#333333] customMd:text-[40px] customMd:leading-[64px]">
                {blogDetail?.title}
             </p>
+            <div className="relative mt-[26px] aspect-[2.17/1] w-full overflow-hidden rounded-[20px] customMd:mt-[51px]">
+               <Image src={blogDetail?.cover} alt={blogDetail?.title} fill objectFit="cover" />
+            </div>
 
             <div
-               className="mt-5 text-base customMd:mt-10"
+               className="mt-5 text-base leading-7 text-[#666666] customMd:mt-[69px]"
                dangerouslySetInnerHTML={{ __html: blogDetail?.description }}
                id="content"
             />
