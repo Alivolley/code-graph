@@ -11,11 +11,11 @@ function PagesLayout({ children, dir, language }) {
    return (
       <div dir={dir} className="overflow-hidden font-almaraiRegular400">
          <RtlProvider isRtl={language !== 'en'}>
-            {pathname !== '/login' && <Header />}
+            {pathname !== '/login' && !pathname?.startsWith('/profile') && <Header />}
 
             <main>{children}</main>
 
-            {pathname !== '/login' && <Footer />}
+            {pathname !== '/login' && !pathname?.startsWith('/profile') && <Footer />}
          </RtlProvider>
       </div>
    );

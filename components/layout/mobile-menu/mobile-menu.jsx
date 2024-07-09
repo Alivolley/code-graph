@@ -57,13 +57,13 @@ function MobileMenu({ open, onClose, isUserLogin }) {
                         </AccordionSummary>
                         <AccordionDetails>
                            <div className="-mt-4 flex flex-col items-start">
-                              {/* <Link
-                                 href="/"
+                              <Link
+                                 href="/profile/information"
                                  className="flex w-full items-center gap-1 border-b border-solid border-[#E4EAF0] py-3 text-xs"
                               >
                                  <UserEdit size="18" color="#626E94" variant="Broken" />
                                  {t('Account info')}
-                              </Link> */}
+                              </Link>
 
                               <Button
                                  startIcon={<LogoutCurve size="18" color="#626E94" variant="Broken" />}

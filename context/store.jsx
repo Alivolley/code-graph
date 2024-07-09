@@ -9,9 +9,21 @@ export function GlobalContextProvider({ children }) {
 
    const [isLogin, setIsLogin] = useState(isLoginDefault || false);
    const [userInfo, setUserInfo] = useState({});
+   const [isDashboardMenuSideBarOpen, setIsDashboardMenuSideBarOpen] = useState(false);
 
    return (
-      <GlobalContext.Provider value={{ isLogin, setIsLogin, userInfo, setUserInfo }}>{children}</GlobalContext.Provider>
+      <GlobalContext.Provider
+         value={{
+            isLogin,
+            setIsLogin,
+            userInfo,
+            setUserInfo,
+            isDashboardMenuSideBarOpen,
+            setIsDashboardMenuSideBarOpen,
+         }}
+      >
+         {children}
+      </GlobalContext.Provider>
    );
 }
 

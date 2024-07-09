@@ -260,5 +260,23 @@
         "No question yet !!!": "No question yet !!!",
         "text 1": "You can find answers to your questions here",
         "text 2": "In the FAQ section, we have answered the most common and frequently asked questions of our customers to help you learn more about our services and products. If you have a question that is not answered in this section, contact us and we will help you as soon as possible. We are always ready to answer your questions and we will be very happy to communicate with you."
+    },
+    "userDashboard": {
+        "Back to home page": "Back to home page",
+        "Services": "Services",
+        "Projects": "Projects",
+        "Blogs": "Blogs",
+        "Prices": "Prices",
+        "About us": "About us",
+        "Contact us": "Contact us",
+        "Faqs": "Faqs",
+        "Favorites": "Favorites",
+        "Tickets": "Tickets",
+        "Setting": "Setting",
+        "Personal information": "Personal information",
+        "Security & Codes": "Security & Codes",
+        "Do you need help?": "Do you need help?",
+        "Contact with us": "Contact with us",
+        "User profile": "User profile"
     }
 }

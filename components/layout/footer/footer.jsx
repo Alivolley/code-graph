@@ -21,6 +21,7 @@ import FooterStyle from './footer.style';
 
 // Apis
 import useGetBlogs from '@/apis/footer/useGetBlogs';
+import useGetCategories from '@/apis/categories/useGetCategories';
 
 const socialButtonsStyles = {
    color: 'white',
@@ -37,6 +38,8 @@ const socialButtonsStyles = {
 };
 
 function Footer() {
+   const { data: categoryData } = useGetCategories();
+
    const { locale } = useRouter();
    const t = useTranslations('footer');
 
@@ -149,8 +152,8 @@ function Footer() {
                                           />
                                           {t('About us')}
                                        </Link>
-                                       {/* <Link
-                                          href="/services/website"
+                                       <Link
+                                          href={`/services/${categoryData?.[0]?.title}`}
                                           className="flex items-center gap-1 transition-all duration-150 hover:text-customPink"
                                        >
                                           <Image
@@ -159,7 +162,7 @@ function Footer() {
                                              {...(locale === 'en' && { className: 'rotate-180' })}
                                           />
                                           {t('Services')}
-                                       </Link> */}
+                                       </Link>
                                        <Link
                                           href="/allProducts"
                                           className="flex items-center gap-1 transition-all duration-150 hover:text-customPink"

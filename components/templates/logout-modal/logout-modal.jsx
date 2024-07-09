@@ -43,10 +43,7 @@ function LogoutModal({ show, onClose }) {
                      height: 40,
                      borderRadius: '10px',
                      color: 'white',
-                     ':hover': {
-                        backgroundColor: '#E5EFFD',
-                        color: '#626E94',
-                     },
+                     ':hover': { backgroundColor: '#4773b0' },
                   }}
                >
                   {t('Yes')}

@@ -261,14 +261,14 @@ function Header() {
                                  }}
                               >
                                  <div className="flex min-w-[148px] flex-col">
-                                    {/* <Link
+                                    <Link
                                        href="/profile/information"
                                        className="flex h-10 items-center gap-3 bg-customPink px-3 text-xs text-white transition-all duration-150 hover:bg-[#B46451]"
                                        onClick={() => setProfileDropDown(false)}
                                     >
                                        <UserEdit size="15" variant="Broken" />
                                        {t('Account info')}
-                                    </Link> */}
+                                    </Link>
 
                                     <Button
                                        onClick={() => setShowLogoutModal(true)}
@@ -278,7 +278,7 @@ function Header() {
                                           alignItems: 'center',
                                           height: '44px',
                                           gap: '12px',
-                                          // borderTop: '1px solid #E4EAF0',
+                                          borderTop: '1px solid #E4EAF0',
                                           backgroundColor: '#FD8266',
                                           paddingX: '12px',
                                           fontSize: '12px',
@@ -343,9 +343,15 @@ function Header() {
                   {locale === 'en' ? 'فا' : 'EN'}
                </IconButton>
                <div className="h-6 w-px bg-[#DEDEDE]" />
-               <Link href="/login" className="flex items-center justify-center">
-                  <ProfileCircle size="35" color="#FD8266" />
-               </Link>
+               {isUserLogin ? (
+                  <div className="flex items-center justify-center">
+                     <ProfileCircle size="35" color="#FD8266" />
+                  </div>
+               ) : (
+                  <Link href="/login" className="flex items-center justify-center">
+                     <ProfileCircle size="35" color="#FD8266" />
+                  </Link>
+               )}
             </div>
          </div>
 
