@@ -286,6 +286,16 @@
         "Enter your fullName": "نام و نام خانوادگی خود را وارد کنید",
         "Enter your phone number": "شماره تلفن همراه خود را وارد کنید",
         "Return": "بازگشت",
-        "Please enter a valid 11-digit phone number": "لطفا یک شماره تلفن معتبر ۱۱ رقمی وارد کنید"
+        "Please enter a valid 11-digit phone number": "لطفا یک شماره تلفن معتبر ۱۱ رقمی وارد کنید",
+        "Change password": "تغییر رمز عبور",
+        "Current password": "رمز عبور فعلی",
+        "Enter your Current password": "رمز عبور فعلی خود را وارد کنید",
+        "New password": "رمز عبور جدید",
+        "Enter your new password": "رمز عبور جدید خود را وارد کنید",
+        "Confirm new password": "تکرار رمز عبور جدید",
+        "Confirm your new password": "رمز عبور جدید خود را تکرار کنید",
+        "This filed is required": "این فیلد اجباری است",
+        "Password must be greater than 8 character": "رمز عبور باید حداقل ۸ حرف باشد",
+        "Passwords are not match": "رمز های عبور با یکدیگر همخوانی ندارند"
     }
 }
