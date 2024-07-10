@@ -11,6 +11,9 @@ const getDesignTokens = (mode, direction, language) => ({
       primary: {
          main: '#65a5fc',
       },
+      secondaryBlue: {
+         main: '#024A90',
+      },
       customPink: {
          main: '#FD8266',
       },

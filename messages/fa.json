@@ -277,6 +277,15 @@
         "Security & Codes": "امنیت و رمزها",
         "Do you need help?": "به کمک نیاز دارید؟",
         "Contact with us": "با ما در ارتباط باشید",
-        "User profile": "پروفایل کاربر"
+        "User profile": "پروفایل کاربر",
+        "Account information": "اطلاعات حساب کاربری",
+        "Edit information": "ویرایش اطلاعات کاربری",
+        "FullName": "نام و نام خانوادگی",
+        "Phone number": "شماره همراه",
+        "Email": "ایمیل",
+        "Enter your fullName": "نام و نام خانوادگی خود را وارد کنید",
+        "Enter your phone number": "شماره تلفن همراه خود را وارد کنید",
+        "Return": "بازگشت",
+        "Please enter a valid 11-digit phone number": "لطفا یک شماره تلفن معتبر ۱۱ رقمی وارد کنید"
     }
 }

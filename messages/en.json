@@ -277,6 +277,15 @@
         "Security & Codes": "Security & Codes",
         "Do you need help?": "Do you need help?",
         "Contact with us": "Contact with us",
-        "User profile": "User profile"
+        "User profile": "User profile",
+        "Account information": "Account information",
+        "Edit information": "Edit information",
+        "FullName": "FullName",
+        "Phone number": "Phone number",
+        "Email": "Email",
+        "Enter your fullName": "Enter your fullName",
+        "Enter your phone number": "Enter your phone number",
+        "Return": "Return",
+        "Please enter a valid 11-digit phone number": "Please enter a valid 11-digit phone number"
     }
 }
