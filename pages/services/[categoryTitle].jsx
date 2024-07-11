@@ -443,7 +443,9 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-   const categoryData = selectCategory(context?.params?.categoryTitle);
+   const categoryName = context?.params?.categoryTitle;
+
+   const categoryData = selectCategory(categoryName);
 
    if (!categoryData) {
       return {
@@ -452,21 +454,15 @@ export async function getStaticProps(context) {
    }
 
    const projects = await axiosInstance(
-      `list-project/?lang=${context.locale}&category=${context?.params?.categoryTitle}&page_size=4`
+      `list-project/?lang=${context.locale}&category=${categoryName}&page_size=4`
    ).then(res => res.data);
 
-   let queryString = `list-article/?lang=${context.locale}&page_size=3`;
-
-   if (context?.params?.categoryTitle === 'website') {
-      queryString += `&category=frontend`;
-   } else {
-      queryString += `&category=${context?.params?.categoryTitle}`;
-   }
-
-   const blogsList = await axiosInstance(queryString).then(res => res.data);
+   const blogsList = await axiosInstance(
+      `list-article/?lang=${context.locale}&category=${categoryName}&page_size=3`
+   ).then(res => res.data);
 
    const comments = await axiosInstance(
-      `accounts/customer-comments/?category=${context?.params?.categoryTitle}&lang=${context.locale}`
+      `accounts/customer-comments/?category=${categoryName}&lang=${context.locale}`
    ).then(res => res.data);
 
    const questions = await axiosInstance(`accounts/questions/?random_faq=true&lang=${context.locale}`).then(

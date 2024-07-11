@@ -57,7 +57,8 @@
         "box 4 title": "Branding",
         "box 4 text": "In our group, with creative ideas and smart strategy, we will turn your brand into an attractive and unique story.",
         "box 5 title": "Ready platform design",
-        "box 5 text": "With our ready-made platforms, small and large businesses can facilitate their startup and growth quickly, efficiently and effectively."
+        "box 5 text": "With our ready-made platforms, small and large businesses can facilitate their startup and growth quickly, efficiently and effectively.",
+        "To add to favorites, first log in to your account": "To add to favorites, first log in to your account"
     },
     "footer": {
         "Get started": "Get started",
@@ -192,7 +193,10 @@
         "See all": "See all",
         "No blogs yet !!!": "No blogs yet !!!",
         "Message sent": "Message sent",
-        "request text 1": "If you still need more information for your order, our experts are ready to advise you"
+        "request text 1": "If you still need more information for your order, our experts are ready to advise you",
+        "Add to favorites": "Add to favorites",
+        "Remove from favorites": "Remove from favorites",
+        "To add to favorites, first log in to your account": "To add to favorites, first log in to your account"
     },
     "contact us": {
         "lorem1": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi magnam architecto dolor cum in autem saepe natus quos ducimus obcaecati dignissimos perferendis",

@@ -24,7 +24,15 @@ function ProductDetail({ productData }) {
             {productData?.title}
          </p>
 
-         <p className="mt-10 text-sm text-[#626E94] customMd:mt-6 customMd:text-[18px]">{productData?.category}</p>
+         <div className="mt-10 flex items-center gap-1 text-sm text-[#626E94] customMd:mt-6 customMd:text-[18px]">
+            {productData?.categories?.map((item, itemIndex) => (
+               <p key={item}>
+                  {item}
+                  {itemIndex + 1 !== productData?.categories?.length && '،'}
+               </p>
+            ))}
+         </div>
+
          <div className="mt-6 flex items-center gap-2 text-sm text-[#626E94] customMd:text-base">
             <p>{t('Visit project link')} :</p>
             <a href={productData?.link} target="_blank" rel="noreferrer" className="underline" dir="ltr">

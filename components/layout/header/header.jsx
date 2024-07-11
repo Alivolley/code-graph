@@ -344,9 +344,9 @@ function Header() {
                </IconButton>
                <div className="h-6 w-px bg-[#DEDEDE]" />
                {isUserLogin ? (
-                  <div className="flex items-center justify-center">
+                  <Link href="/profile/information" className="flex items-center justify-center">
                      <ProfileCircle size="35" color="#FD8266" />
-                  </div>
+                  </Link>
                ) : (
                   <Link href="/login" className="flex items-center justify-center">
                      <ProfileCircle size="35" color="#FD8266" />

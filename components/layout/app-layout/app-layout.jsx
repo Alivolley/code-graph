@@ -65,6 +65,7 @@ function AppLayout({ children }) {
                      fontFamily: 'almaraiRegular400',
                      fontSize: '14px',
                      direction: locale === 'en' ? 'ltr' : 'rtl',
+                     lineHeight: locale === 'fa' && '24px',
                   },
                   duration: 4000,
                }}

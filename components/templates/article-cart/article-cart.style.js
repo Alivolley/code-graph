@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const ArticleCartStyle = styled(Link)(() => ({
    ':hover': {
-      boxShadow: '0px 12px 22.700000762939453px 0px #AAB2BC26',
+      boxShadow: '0px 12px 22.7px 0px #AAB2BC26',
 
       '#text': {
          color: '#FD8266',

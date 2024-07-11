@@ -1,14 +1,19 @@
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/router';
+import toast from 'react-hot-toast';
 import Image from 'next/image';
 import Link from 'next/link';
 import Head from 'next/head';
 
 // MUI
 import { Button, Grid } from '@mui/material';
+import { LoadingButton } from '@mui/lab';
 
 // Icons
-import { ArrowLeft } from 'iconsax-react';
+import { ArrowLeft, HeartAdd, HeartRemove } from 'iconsax-react';
+
+// Context
+import { useGlobalContext } from '@/context/store';
 
 // Assets
 import axiosInstance from '@/configs/axiosInstance';
@@ -17,9 +22,27 @@ import axiosInstance from '@/configs/axiosInstance';
 import BlogCart from '@/components/pages/blogs/blog-cart/blog-cart';
 import BlogDetailStyle from './blogDetail.style';
 
+// Apis
+import useToggleFavorites from '@/apis/favorites/useToggleFavorites';
+import useGetFavorites from '@/apis/favorites/useGetFavorites';
+
 function BlogTitle({ blogDetail, blogsList }) {
    const { locale } = useRouter();
    const t = useTranslations('blogs');
+   const { isLogin } = useGlobalContext();
+
+   const { trigger: toggleFavoriteTrigger, isMutating: toggleFavoriteIsMutating } = useToggleFavorites();
+   const { data: favoritesData } = useGetFavorites(isLogin);
+
+   const isLiked = favoritesData?.find(item => item?.id === blogDetail?.id);
+
+   const toggleLike = () => {
+      if (isLogin) {
+         toggleFavoriteTrigger(blogDetail?.id);
+      } else {
+         toast.error(t('To add to favorites, first log in to your account'));
+      }
+   };
 
    return (
       <BlogDetailStyle data-aos="fade-up">
@@ -27,9 +50,45 @@ function BlogTitle({ blogDetail, blogsList }) {
             <title>{locale === 'fa' ? 'رودگراف - مقاله' : 'RoadGraph-blog'}</title>
          </Head>
          <div className="relative mx-auto mt-[110px] max-w-[1440px] px-5 customMd:mt-[148px] customMd:px-[60px]">
-            <div className="flex items-center gap-[10px]">
-               <p className="font-almaraiBold700 text-sm uppercase text-[#333333]">{blogDetail?.category}</p>
-               <p className="text-sm text-[#999999]">{blogDetail?.created_at}</p>
+            <div className="flex flex-col max-customMd:gap-4 customMd:flex-row customMd:items-center customMd:justify-between">
+               <div className="flex items-center gap-[10px]">
+                  <div className="flex items-center gap-1 font-almaraiBold700 text-xs uppercase text-[#333333] customMd:text-sm">
+                     {blogDetail?.categories?.map((item, itemIndex) => (
+                        <p key={item}>
+                           {item}
+                           {itemIndex + 1 !== blogDetail?.categories?.length && '،'}
+                        </p>
+                     ))}
+                  </div>
+                  <p className="text-xs text-[#999999] customMd:text-sm">{blogDetail?.created_at}</p>
+               </div>
+
+               <LoadingButton
+                  sx={{
+                     width: 'fit-content',
+                     color: '#626E94',
+                     fontSize: 14,
+                     borderRadius: 2,
+                     paddingX: '5px',
+                  }}
+                  onClick={toggleLike}
+                  loading={toggleFavoriteIsMutating}
+                  startIcon={
+                     <div
+                        className={`flex size-10 items-center justify-center rounded-full border border-solid ${
+                           toggleFavoriteIsMutating ? '' : 'border-[#E4EAF0] bg-[#F5F8FC]'
+                        }`}
+                     >
+                        {isLiked ? (
+                           <HeartRemove size={20} color={!toggleFavoriteIsMutating && '#f47373'} variant="Bold" />
+                        ) : (
+                           <HeartAdd size={20} color={!toggleFavoriteIsMutating && '#A9AFBB'} />
+                        )}
+                     </div>
+                  }
+               >
+                  {isLiked ? t('Remove from favorites') : t('Add to favorites')}
+               </LoadingButton>
             </div>
             <p className="mt-[30px] font-almaraiBold700 text-[24px] leading-[38px] text-[#333333] customMd:text-[40px] customMd:leading-[64px]">
                {blogDetail?.title}
