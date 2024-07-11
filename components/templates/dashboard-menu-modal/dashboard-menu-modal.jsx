@@ -42,7 +42,7 @@ function DashboardMenuModal({ setShowDashboardMenuModal, showDashboardMenuModal 
             '&>.MuiBackdrop-root': { backgroundColor: 'rgba(0, 0, 0, 0)' },
          }}
       >
-         <div className="px-[30px] pb-[30px] pt-3">
+         <div className="h-full px-[30px] pb-[30px] pt-3">
             <Accordion sx={{ boxShadow: 'none' }} expanded={servicesExpand}>
                <AccordionSummary
                   expandIcon={<ArrowDown2 size="18" {...(servicesExpand && { color: '#FD8266' })} />}

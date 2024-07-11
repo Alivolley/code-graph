@@ -300,6 +300,7 @@
         "Confirm your new password": "رمز عبور جدید خود را تکرار کنید",
         "This filed is required": "این فیلد اجباری است",
         "Password must be greater than 8 character": "رمز عبور باید حداقل ۸ حرف باشد",
-        "Passwords are not match": "رمز های عبور با یکدیگر همخوانی ندارند"
+        "Passwords are not match": "رمز های عبور با یکدیگر همخوانی ندارند",
+        "Favorites list": "لیست علاقه مندی ها"
     }
 }

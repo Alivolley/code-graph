@@ -72,15 +72,15 @@ function BlogCart({ detail, index }) {
 
             <div className="mt-5 customMd:mt-10">
                <div className="flex items-center gap-4">
-                  <div className="flex items-center gap-1 font-almaraiExtraBold800 text-10 text-[#333333] customMd:text-xs">
+                  <div className="flex items-center gap-1 font-almaraiExtraBold800 text-10 text-[#333333]">
                      {detail?.categories?.map((item, itemIndex) => (
-                        <p id="text1" key={item}>
+                        <p id="text1" key={item} className="text-nowrap">
                            {item}
                            {itemIndex + 1 !== detail?.categories?.length && '،'}
                         </p>
                      ))}
                   </div>
-                  <p className="text-10 text-[#999999] customMd:text-xs" id="text2">
+                  <p className="text-nowrap text-10 text-[#999999]" id="text2">
                      {detail?.created_at}
                   </p>
                </div>

@@ -55,7 +55,7 @@ function UserDashboardRightSide() {
    };
 
    return (
-      <div className="max-customMd:mt-[25px]">
+      <div className="h-full pb-20 max-customMd:mt-[25px]">
          <div className="flex items-center justify-between max-customMd:hidden">
             <Link href="/profile/information">
                <IconButton sx={{ padding: 0, color: '#C3CAD9', ':hover': { color: '#65A5FC' } }}>

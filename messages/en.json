@@ -300,6 +300,7 @@
         "Confirm your new password": "Confirm your new password",
         "This filed is required": "This filed is required",
         "Password must be greater than 8 character": "Password must be greater than 8 character",
-        "Passwords are not match": "Passwords are not match"
+        "Passwords are not match": "Passwords are not match",
+        "Favorites list": "Favorites list"
     }
 }
