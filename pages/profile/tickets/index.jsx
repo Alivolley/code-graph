@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 import Link from 'next/link';
 
 // MUI
@@ -13,6 +14,9 @@ import { IoMdAdd } from 'react-icons/io';
 import ProfileLayout from '@/components/layout/profile-layout/profile-layout';
 import WriteNewTicket from '@/components/pages/profile/tickets/write-new-ticket/write-new-ticket';
 import TicketDetail from '@/components/pages/profile/tickets/ticket-detail/ticket-detail';
+
+// Assets
+import noTickets from '@/assets/images/noTickets.png';
 
 // Apis
 import useGetTickets from '@/apis/tickets/useGetTickets';
@@ -32,6 +36,8 @@ function Tickets() {
    const changePageHandler = (e, newValue) => {
       setPageStatus(newValue);
    };
+
+   console.log(ticketsData);
 
    return (
       <ProfileLayout>
@@ -79,7 +85,7 @@ function Tickets() {
                      <div className="mt-20 flex items-center justify-center">
                         <CircularProgress color="customPink" />
                      </div>
-                  ) : (
+                  ) : ticketsData?.total_objects > 0 ? (
                      <>
                         <div className="mt-5 max-customMd:overflow-auto">
                            <table className="w-full border-separate border-spacing-y-[15px]">
@@ -95,7 +101,7 @@ function Tickets() {
                                     >
                                        <td
                                           className="rounded-s-10 ps-6 text-center align-middle font-almaraiExtraBold800 tracking-wide
-                                  text-[#0451A4] max-customMd:text-nowrap max-customMd:px-4"
+                               text-[#0451A4] max-customMd:text-nowrap max-customMd:px-4"
                                        >
                                           #{item?.id}
                                        </td>
@@ -185,6 +191,18 @@ function Tickets() {
                            </div>
                         )}
                      </>
+                  ) : (
+                     <div className="mt-[100px] flex flex-col items-center customMd:mt-[172px]">
+                        <div className="relative h-[172px] w-[161px]">
+                           <Image src={noTickets} alt="empty favorites" fill />
+                        </div>
+                        <p className="mt-7 text-center font-almaraiExtraBold800 text-[18px] leading-6 customMd:text-[22px]">
+                           {t('Your Tickets list is empty')}
+                        </p>
+                        <p className="mt-2 text-center text-sm leading-6 text-[#626E94]">
+                           {t('You have not received any tickets')}
+                        </p>
+                     </div>
                   )}
                </>
             )}

@@ -326,6 +326,8 @@
         "RoadGraph answer :": "RoadGraph answer :",
         "Attached photos :": "Attached photos :",
         "Write your answer": "Write your answer",
-        "Register and send answer": "Register and send answer"
+        "Register and send answer": "Register and send answer",
+        "Your Tickets list is empty": "Your Tickets list is empty",
+        "You have not received any tickets": "You have not received any tickets"
     }
 }

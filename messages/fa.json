@@ -326,6 +326,8 @@
         "RoadGraph answer :": "پاسخ رودگراف :",
         "Attached photos :": "عکس های ضمیمه :",
         "Write your answer": "پاسخ خود را بنویسید",
-        "Register and send answer": "ثبت و ارسال پاسخ"
+        "Register and send answer": "ثبت و ارسال پاسخ",
+        "Your Tickets list is empty": "لیست تیکت های شما خالی است",
+        "You have not received any tickets": "شما هیچ تیکتی دریافت نکردید"
     }
 }
