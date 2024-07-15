@@ -69,11 +69,20 @@ function Information() {
          <div>
             {query?.editInfo ? (
                <>
-                  <div className="rounded-10 bg-[#F5F8FC] px-[15px] py-[27px] font-almaraiExtraBold800 text-[#0F172A] customMd:text-xl">
+                  <div
+                     className="rounded-10 bg-[#F5F8FC] px-[15px] py-[27px] font-almaraiExtraBold800 text-[#0F172A] customMd:text-xl"
+                     data-aos="fade-left"
+                     data-aos-duration="650"
+                  >
                      {t('Account information')}
                   </div>
 
-                  <form className="mt-8" onSubmit={handleSubmit(formSubmit)}>
+                  <form
+                     className="mt-8"
+                     onSubmit={handleSubmit(formSubmit)}
+                     data-aos="fade-left"
+                     data-aos-duration="650"
+                  >
                      <Grid container columnSpacing={{ md: '15px' }} rowSpacing="25px">
                         <Grid item xs={12} md={6}>
                            <div className="space-y-2">
@@ -177,7 +186,11 @@ function Information() {
                </>
             ) : (
                <>
-                  <div className="flex flex-wrap items-center justify-between gap-5 rounded-10 bg-[#F5F8FC] p-[15px]">
+                  <div
+                     className="flex flex-wrap items-center justify-between gap-5 rounded-10 bg-[#F5F8FC] p-[15px]"
+                     data-aos="fade-left"
+                     data-aos-duration="650"
+                  >
                      <p className="font-almaraiExtraBold800 text-[#0F172A] customMd:text-xl">
                         {t('Account information')}
                      </p>
@@ -198,7 +211,7 @@ function Information() {
                      </Link>
                   </div>
 
-                  <div className="mt-[30px] flex flex-col gap-[30px]">
+                  <div className="mt-[30px] flex flex-col gap-[30px]" data-aos="fade-left" data-aos-duration="650">
                      <div className="flex flex-col gap-[15px]">
                         <p className="font-almaraiBold700 text-[#626E94]">{t('FullName')}</p>
                         <p className="text-sm text-[#7E8AAB]">{userInfo?.name || '-'}</p>

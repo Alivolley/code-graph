@@ -55,7 +55,7 @@ function Security() {
 
    return (
       <ProfileLayout>
-         <div>
+         <div data-aos="fade-left" data-aos-duration="650">
             <div className="rounded-10 bg-[#F5F8FC] px-[15px] py-[27px] font-almaraiExtraBold800 text-[#0F172A] customMd:text-xl">
                {t('Change password')}
             </div>

@@ -331,7 +331,7 @@ function ProfileLayout({ children }) {
                         {t('Tickets')}
                      </p>
 
-                     <div className="absolute start-0 top-0.5 size-[10px] rounded-full bg-[#E62E7B]" />
+                     {/* <div className="absolute start-0 top-0.5 size-[10px] rounded-full bg-[#E62E7B]" /> */}
                   </Link>
                </div>
             </aside>

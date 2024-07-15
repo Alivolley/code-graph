@@ -17,7 +17,6 @@ const useToggleFavorites = () => {
             }
          )
          .then(res => {
-            console.log(res?.data);
             mutate('accounts/favorites/', res.data?.data);
             return res.data;
          })

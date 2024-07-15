@@ -23,7 +23,11 @@ function Favorites() {
    return (
       <ProfileLayout>
          <div>
-            <div className="rounded-10 bg-[#F5F8FC] px-[15px] py-[27px] font-almaraiExtraBold800 text-[#0F172A] customMd:text-xl">
+            <div
+               className="rounded-10 bg-[#F5F8FC] px-[15px] py-[27px] font-almaraiExtraBold800 text-[#0F172A] customMd:text-xl"
+               data-aos="fade-left"
+               data-aos-duration="650"
+            >
                {t('Favorites list')}
             </div>
 
@@ -46,14 +50,14 @@ function Favorites() {
                         <Image src={noFavorites} alt="empty favorites" fill />
                      </div>
                      <p className="mt-7 text-center font-almaraiExtraBold800 text-xl leading-6 customMd:text-[22px]">
-                        لیست علاقه مندی‌های شما خالی است
+                        {t('Your favorites list is empty')}
                      </p>
                      <p className="mt-2 text-center text-sm leading-6 text-[#626E94]">
-                        در حال حاضر لیستی برای شما وجود ندارد
+                        {t('There are currently no listings for you')}
                      </p>
                      <Link href="/blogs" className="mt-6 max-customMd:min-w-[280px] customMd:w-[392px]">
                         <Button variant="contained" sx={{ color: 'white', height: 50, borderRadius: 37 }} fullWidth>
-                           برو به مقالات
+                           {t('Go to blogs')}
                         </Button>
                      </Link>
                   </div>
