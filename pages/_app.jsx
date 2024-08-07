@@ -13,7 +13,7 @@ export default function App({ Component, pageProps }) {
    const timeZone = 'Europe/Vienna';
 
    useEffect(() => {
-      AOS.init();
+      AOS.init({ once: true });
       AOS.refresh();
    }, []);
 
