@@ -109,7 +109,13 @@ function Blogs({ blogsList, categories }) {
                data-aos-delay="350"
                data-aos-duration="650"
             >
-               <Tabs value={tabsValue} onChange={(e, newValue) => changeCategoryHandler(newValue)} variant="scrollable">
+               <Tabs
+                  value={tabsValue}
+                  onChange={(e, newValue) => changeCategoryHandler(newValue)}
+                  variant="scrollable"
+                  scrollButtons="auto"
+                  allowScrollButtonsMobile
+               >
                   <Tab label={t('All articles')} value="" />
                   <Tab label={t('Newest')} value="newest" />
                   {categories?.map(item => (

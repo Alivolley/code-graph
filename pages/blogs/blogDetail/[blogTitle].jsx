@@ -21,6 +21,7 @@ import axiosInstance from '@/configs/axiosInstance';
 // Components
 import BlogCart from '@/components/pages/blogs/blog-cart/blog-cart';
 import BlogDetailStyle from './blogDetail.style';
+import Request from '@/components/templates/request/request';
 
 // Apis
 import useToggleFavorites from '@/apis/favorites/useToggleFavorites';
@@ -93,7 +94,7 @@ function BlogTitle({ blogDetail, blogsList }) {
             <p className="mt-[30px] font-almaraiBold700 text-[24px] leading-[38px] text-[#333333] customMd:text-[40px] customMd:leading-[64px]">
                {blogDetail?.title}
             </p>
-            <div className="relative mt-[26px] aspect-[2.17/1] w-full overflow-hidden rounded-[20px] customMd:mt-[51px]">
+            <div className="relative mx-auto mt-[26px] aspect-[2.17/1] w-full max-w-[800px] overflow-hidden rounded-[20px] customMd:mt-[51px]">
                <Image src={blogDetail?.cover} alt={blogDetail?.title} fill objectFit="cover" />
             </div>
 
@@ -103,7 +104,12 @@ function BlogTitle({ blogDetail, blogsList }) {
                id="content"
             />
          </div>
-         <div className="mt-10 bg-[#F5F8FC] customMd:mt-[76px]">
+
+         <div>
+            <Request />
+         </div>
+
+         <div className="bg-[#F5F8FC]">
             <div className="relative mx-auto max-w-[1440px] px-5 py-[30px] customMd:p-[60px]">
                <div className="flex items-center justify-center customMd:justify-between">
                   <p className="font-almaraiBold700 text-2xl leading-[64px] text-[#333333] customMd:text-[36px]">
