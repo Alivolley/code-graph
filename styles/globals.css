@@ -52,4 +52,13 @@
          background: #0b1c3fc5;
       }
    }
+
+   .hideScroll {
+      ::-webkit-scrollbar {
+         display: none;
+      }
+
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+   }
 }

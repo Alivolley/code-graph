@@ -112,9 +112,8 @@ function Blogs({ blogsList, categories }) {
                <Tabs
                   value={tabsValue}
                   onChange={(e, newValue) => changeCategoryHandler(newValue)}
-                  variant="scrollable"
-                  scrollButtons="auto"
-                  allowScrollButtonsMobile
+                  sx={{ '& .MuiTabs-scroller': { overflowX: 'auto !important' } }}
+                  className="hideScroll"
                >
                   <Tab label={t('All articles')} value="" />
                   <Tab label={t('Newest')} value="newest" />
